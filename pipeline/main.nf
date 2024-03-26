@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:c9072f84af79e08499c009c7635d186d07027db2669a92fc00c0ecf8d7daa834
+// hash:sha256:016e4ffa7add9d2bcd0221715e4b4a6491b1b6c0cd32a23dbf25ae9230e102a7
 
 nextflow.enable.dsl = 1
 
@@ -201,8 +201,8 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 
 // capsule - aind-ophys-trace-extraction
 process capsule_aind_ophys_trace_extraction_5 {
-	tag 'capsule-5901951'
-	container "$REGISTRY_HOST/published/1054eca7-5c8b-49a3-a921-c9ac78d88f01:v2"
+	tag 'capsule-8581031'
+	container "$REGISTRY_HOST/capsule/b70049b4-83c2-4c40-aecf-7bae689e4b6a"
 
 	cpus 1
 	memory '8 GB'
@@ -222,7 +222,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=1054eca7-5c8b-49a3-a921-c9ac78d88f01
+	export CO_CAPSULE_ID=b70049b4-83c2-4c40-aecf-7bae689e4b6a
 	export CO_CPUS=1
 	export CO_MEMORY=8589934592
 
@@ -232,7 +232,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5901951.git" capsule-repo
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8581031.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
