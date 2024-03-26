@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:1996cc8366325c1404cf78576b497ad2aeb634e88a4e2b16fcb25ea28ed4425e
+// hash:sha256:f3c8fda00659becea98da6fa0d04272a5aa6079e18c6b4ac82e14cb326f2b1f6
 
 nextflow.enable.dsl = 1
 
@@ -13,7 +13,8 @@ multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_motion_correction_5 = 
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_2_6 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_8 = channel.create()
-capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_9 = channel.create()
+capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_9 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_10 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -36,7 +37,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_2_6
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7
-	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_9
+	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_10
 
 	script:
 	"""
@@ -122,6 +123,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	output:
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_8
+	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_9
 
 	script:
 	"""
@@ -204,7 +206,8 @@ process capsule_aind_ophys_trace_extraction_5 {
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_9
+	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_9
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_10
 
 	script:
 	"""
