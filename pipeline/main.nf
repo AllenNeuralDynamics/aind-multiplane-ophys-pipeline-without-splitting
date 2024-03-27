@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:3ac2f40b4a288f578b6f3740bff91048d333f84d8fc9cdb9849b9681a8fe4a21
+// hash:sha256:97abcfa1d5947da98607f8880f12d068ccefda58f63d0f42c1626adbd4d480fc
 
 nextflow.enable.dsl = 1
 
@@ -80,7 +80,7 @@ process capsule_aind_ophys_decrosstalk_split_2 {
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/' from multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_decrosstalk_split_6.collect()
+	path 'capsule/data/' from multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_decrosstalk_split_6
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_2_7.collect()
 
 	output:
