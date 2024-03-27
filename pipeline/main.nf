@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:cb4461357885bad8350275f91dc91437d9fc9829cf4cc3fd1e97e29a827a37b9
+// hash:sha256:c953dbcbf24e1d32b434e2c3e966c373555c41e5fd30dde7a93d70a90d8327bf
 
 nextflow.enable.dsl = 1
 
@@ -12,7 +12,7 @@ multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_motion_correction_4 = 
 multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_motion_correction_5 = channel.fromPath(params.multiplane_ophys_485152_2019_12_09_13_04_09_url + "/*/*platform.json", type: 'any')
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_2_6 = channel.create()
 multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_decrosstalk_split_7 = channel.fromPath(params.multiplane_ophys_485152_2019_12_09_13_04_09_url + "/pophys/*MESOSCOPE*", type: 'any')
-multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_decrosstalk_roi_images_8 = channel.fromPath(params.multiplane_ophys_485152_2019_12_09_13_04_09_url + "/*", type: 'any')
+multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_decrosstalk_roi_images_8 = channel.fromPath(params.multiplane_ophys_485152_2019_12_09_13_04_09_url + "/*/*/*.h5", type: 'any')
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_9 = channel.create()
 capsule_aind_ophys_decrosstalk_split_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_10 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_11 = channel.create()
@@ -152,7 +152,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4612268.git" capsule-repo
-	git -C capsule-repo checkout 04607f19da7d5037b805155f0cc8546ced87577c --quiet
+	git -C capsule-repo checkout 23e65db4e2cd6a9d1a22072d4412517ddd615bd6 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
