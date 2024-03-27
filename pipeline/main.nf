@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:68d59c68000b7e2e93e576a4ef7f51663e14171661bcdd58c53fd53cb7ee051b
+// hash:sha256:27b3fbdad7832d815273440566e2b3c1e02d2b89bcf1198bc11df77cd5e8e868
 
 nextflow.enable.dsl = 1
 
@@ -58,7 +58,7 @@ process capsule_aind_ophys_motion_correction_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5379831.git" capsule-repo
-	git -C capsule-repo checkout b6ef8af0a8438fadca0411e0e49bbcff50154d66 --quiet
+	git -C capsule-repo checkout fecf8aa4aa23e330cb0c136d7bc7f3ed049598be --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -102,7 +102,7 @@ process capsule_aind_ophys_decrosstalk_split_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0299374.git" capsule-repo
-	git -C capsule-repo checkout 34fa4a5f7d2ef9ece951d864b77346d77257a9c9 --quiet
+	git -C capsule-repo checkout aff60090b384de3b7206e0f64b76c7f8d925d4ea --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -150,7 +150,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4612268.git" capsule-repo
-	git -C capsule-repo checkout 2b78a6dffc9ca4203fc0f34355d017ab33a38370 --quiet
+	git -C capsule-repo checkout 04607f19da7d5037b805155f0cc8546ced87577c --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
