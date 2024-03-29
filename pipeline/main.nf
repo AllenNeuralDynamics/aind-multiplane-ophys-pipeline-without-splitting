@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ad8751eb133452b9ffc7690ec39f6c101e8fcf8698ca464a97210bd048d167a9
+// hash:sha256:e23f263a475209365ae18d5a178aaf0d9967aea0a318a6d8859616c0c23bb8b0
 
 nextflow.enable.dsl = 1
 
@@ -40,7 +40,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_2_6
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_8
-	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_11
+	path 'capsule/results/*/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_11
 
 	script:
 	"""
