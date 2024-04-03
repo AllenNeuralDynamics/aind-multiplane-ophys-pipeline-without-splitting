@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:dc713190c8b519ffa8bc186726e72de36f9c5958ab47113365df1169ea77a4b9
+// hash:sha256:5322fb9f1553a2234934ecd227cf7ae58e49b031bf06d3dc2932025ea4fd294f
 
 nextflow.enable.dsl = 1
 
@@ -217,10 +217,15 @@ process capsule_aind_ophys_trace_extraction_5 {
 	cpus 1
 	memory '8 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_11.collect()
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_12.collect()
 	path 'capsule/data/' from capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_13
+
+	output:
+	path 'capsule/results/*'
 
 	script:
 	"""
