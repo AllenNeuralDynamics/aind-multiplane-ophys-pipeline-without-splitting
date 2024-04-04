@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:3fb599ec00c9c401ab91833632e4e894cda8345ae041885da4650b6510288ad4
+// hash:sha256:4d0d5bba79f7ee776311b84370d319b2f50827a948cd3a3a53089b1f6fb95804
 
 nextflow.enable.dsl = 1
 
@@ -244,6 +244,42 @@ process capsule_aind_ophys_trace_extraction_5 {
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7385227.git" capsule-repo
 	git -C capsule-repo checkout 5dbbaa4ad8ac6132391b6c5fd9546924fe64ee14 --quiet
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-demixing
+process capsule_aind_ophys_demixing_6 {
+	tag 'capsule-4967276'
+	container "$REGISTRY_HOST/capsule/dbdbbcbc-b1bc-4a38-a458-e29214c488b6"
+
+	cpus 16
+	memory '128 GB'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=dbdbbcbc-b1bc-4a38-a458-e29214c488b6
+	export CO_CPUS=16
+	export CO_MEMORY=137438953472
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4967276.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
