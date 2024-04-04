@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:fd4df681ba627c4ab6b1bce21406de0a15a818f5b4f5b2e5e9b566f787f66704
+// hash:sha256:9fa80d810c91eb8241de1709582874f751e727f983f2158ae1339e7190d9efcf
 
 nextflow.enable.dsl = 1
 
@@ -302,8 +302,13 @@ process capsule_aind_ophys_neuropil_correction_7 {
 	cpus 1
 	memory '8 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_14
+
+	output:
+	path 'capsule/results/*'
 
 	script:
 	"""
