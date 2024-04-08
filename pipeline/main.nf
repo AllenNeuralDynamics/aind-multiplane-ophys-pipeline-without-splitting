@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:95d755bc022dca8f7d568c9f45a33b94fa541c098a6eac68cbe6284f02930ee5
+// hash:sha256:8a04fb97b6fcfe82b13fd77f8ab37e68d6f35e4dd2cee91bae6cc7f8a1e76fa0
 
 nextflow.enable.dsl = 1
 
@@ -21,6 +21,7 @@ capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extractio
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_14 = channel.create()
 capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_15 = channel.create()
 capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_16 = channel.create()
+capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_17 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -323,6 +324,7 @@ process capsule_aind_ophys_dff_8 {
 
 	output:
 	path 'capsule/results/*'
+	path 'capsule/results/*' into capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_17
 
 	script:
 	"""
@@ -359,6 +361,9 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 
 	cpus 1
 	memory '8 GB'
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_17
 
 	script:
 	"""
