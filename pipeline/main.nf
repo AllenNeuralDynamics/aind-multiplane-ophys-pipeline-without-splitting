@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:79fe569b00bc39ceae07c6c76aa702ee8dde7ea66297805ad7029607caa31b2c
+// hash:sha256:ba50c05e466fb90ee4b33b8b00d834a93f04d08c6401f1d22eeb945dbb6fb8d0
 
 nextflow.enable.dsl = 1
 
@@ -20,6 +20,7 @@ capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_
 capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_13 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_14 = channel.create()
 capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_15 = channel.create()
+capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_16 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -276,6 +277,7 @@ process capsule_aind_ophys_neuropil_correction_7 {
 
 	output:
 	path 'capsule/results/*'
+	path 'capsule/results/*' into capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_16
 
 	script:
 	"""
@@ -313,6 +315,9 @@ process capsule_aind_ophys_dff_8 {
 
 	cpus 1
 	memory '8 GB'
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_16
 
 	script:
 	"""
