@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:93875e1883ba50089a36c2fc3d2c92e648a1987f1b4b8ea077ed0a05aa4bf54a
+// hash:sha256:a27e5f0031d22acf549bcafe50fa1925a353619afbc1ce5d04067348c0b1f041
 
 nextflow.enable.dsl = 1
 
@@ -36,7 +36,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1
+	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1.flatten()
 	path 'capsule/data/' from multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_motion_correction_2
 	path 'capsule/data/' from multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_motion_correction_3.collect()
 	path 'capsule/data/' from multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_motion_correction_4.collect()
@@ -415,7 +415,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 	path 'capsule/data/' from multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_mesoscope_image_splitter_19
 
 	output:
-	path 'capsule/results/*' into capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1
+	path 'capsule/results/ophys/*' into capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1
 
 	script:
 	"""
