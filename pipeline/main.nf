@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e1a5af27e3939c5dab00e59fbfd60351855fa8b096e2b198f7780443748ba5cb
+// hash:sha256:25fcc862c33f10826140a1008844b91d6347660838c801289c501a47c41c7c5a
 
 nextflow.enable.dsl = 1
 
@@ -175,13 +175,13 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 	cpus 2
 	memory '16 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH/segmentation", saveAs: { filename -> filename.matches("capsule/results/segmentation") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_9.flatten()
 
 	output:
-	path 'capsule/results/*'
+	path 'capsule/results/segmentation'
 	path 'capsule/results/*' into capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_12
 
 	script:
@@ -221,7 +221,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 	cpus 1
 	memory '8 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH/trace_extraction", saveAs: { filename -> filename.matches("capsule/results/trace_extraction") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_10.collect()
@@ -229,7 +229,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 	path 'capsule/data/' from capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_12
 
 	output:
-	path 'capsule/results/*'
+	path 'capsule/results/trace_extraction'
 	path 'capsule/results/*' into capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_14
 
 	script:
@@ -269,14 +269,14 @@ process capsule_aind_ophys_neuropil_correction_7 {
 	cpus 1
 	memory '8 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH/neuropil_correction", saveAs: { filename -> filename.matches("capsule/results/neuropil_correction") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_13.collect()
 	path 'capsule/data/' from capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_14
 
 	output:
-	path 'capsule/results/*'
+	path 'capsule/results/neuropil_correction'
 	path 'capsule/results/*' into capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_15
 
 	script:
@@ -316,13 +316,13 @@ process capsule_aind_ophys_dff_8 {
 	cpus 1
 	memory '8 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH/dff", saveAs: { filename -> filename.matches("capsule/results/dff") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_15
 
 	output:
-	path 'capsule/results/*'
+	path 'capsule/results/dff/*'
 	path 'capsule/results/*' into capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_16
 
 	script:
@@ -362,13 +362,13 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 	cpus 1
 	memory '8 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH/events", saveAs: { filename -> filename.matches("capsule/results/events") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_16
 
 	output:
-	path 'capsule/results/*'
+	path 'capsule/results/events'
 
 	script:
 	"""
