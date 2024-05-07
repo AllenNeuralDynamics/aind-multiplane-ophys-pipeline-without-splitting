@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:476348d34b2d5f0f71496c2dc858fbd2f1e95e11d357dd7fb633047443c0457f
+// hash:sha256:e1a5af27e3939c5dab00e59fbfd60351855fa8b096e2b198f7780443748ba5cb
 
 nextflow.enable.dsl = 1
 
@@ -31,7 +31,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	cpus 16
 	memory '128 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/.*") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH/motion_correction", saveAs: { filename -> filename.matches("capsule/results/motion_correction") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from multiplane_ophys_718431_2024_04_29_14_22_36_to_aind_ophys_motion_correction_1.collect()
@@ -40,7 +40,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4.flatten()
 
 	output:
-	path 'capsule/results/*/*'
+	path 'capsule/results/motion_correction'
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_2_6
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7
 	path 'capsule/results/*/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_11
@@ -126,14 +126,14 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	cpus 16
 	memory '128 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH/decrosstalk", saveAs: { filename -> filename.matches("capsule/results/decrosstalk") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7.collect()
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_split_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_8.flatten()
 
 	output:
-	path 'capsule/results/*'
+	path 'capsule/results/decrosstalk/*'
 	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_9
 	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_10
 	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_13
