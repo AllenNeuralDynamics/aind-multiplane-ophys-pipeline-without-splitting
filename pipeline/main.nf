@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:7feef367b1abe58acc74b7500713497816b4694bed0051351945eb23119c43eb
+// hash:sha256:59be0b96e6ab22c40cc96b1ebbc5d2295724575bd643e59adc8cb9286f758363
 
 nextflow.enable.dsl = 1
 
@@ -22,11 +22,12 @@ capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_corre
 capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_15 = channel.create()
 capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_16 = channel.create()
 capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_17 = channel.create()
+multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_mesoscope_image_splitter_18 = channel.fromPath(params.multiplane_ophys_485152_2019_12_09_13_04_09_url + "/*", type: 'any')
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
 	tag 'capsule-5379831'
-	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:54fd64ce46b9fe2049c5b49853884e40"
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911"
 
 	cpus 16
 	memory '128 GB'
@@ -78,7 +79,7 @@ process capsule_aind_ophys_motion_correction_1 {
 // capsule - aind-ophys-decrosstalk-split
 process capsule_aind_ophys_decrosstalk_split_2 {
 	tag 'capsule-0299374'
-	container "$REGISTRY_HOST/capsule/08588d21-5a40-420f-b1a1-e2e755709e54:1519fdf309d78dd82a10342e201aaceb"
+	container "$REGISTRY_HOST/capsule/08588d21-5a40-420f-b1a1-e2e755709e54"
 
 	cpus 1
 	memory '8 GB'
@@ -122,7 +123,7 @@ process capsule_aind_ophys_decrosstalk_split_2 {
 // capsule - aind-ophys-decrosstalk-roi-images
 process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	tag 'capsule-4612268'
-	container "$REGISTRY_HOST/capsule/e31d29f8-7eee-446b-8f0a-2f027fe6f39b:e08919cfa653218cbf318746f96354b2"
+	container "$REGISTRY_HOST/capsule/e31d29f8-7eee-446b-8f0a-2f027fe6f39b"
 
 	cpus 16
 	memory '128 GB'
@@ -171,7 +172,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - aind-ophys-segmentation-cellpose
 process capsule_aind_ophys_segmentation_cellpose_4 {
 	tag 'capsule-0136322'
-	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e:16240be44963e68c4b073f63c85e9642"
+	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e"
 
 	cpus 2
 	memory '16 GB'
@@ -217,7 +218,7 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 // capsule - aind-ophys-trace-extraction
 process capsule_aind_ophys_trace_extraction_5 {
 	tag 'capsule-7385227'
-	container "$REGISTRY_HOST/capsule/3821c170-5883-48ed-a2d5-4a627a432f18:a474970c0994836b1af63a293cb5c8ac"
+	container "$REGISTRY_HOST/capsule/3821c170-5883-48ed-a2d5-4a627a432f18"
 
 	cpus 1
 	memory '8 GB'
@@ -265,7 +266,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 // capsule - aind-ophys-neuropil-correction
 process capsule_aind_ophys_neuropil_correction_7 {
 	tag 'capsule-7531658'
-	container "$REGISTRY_HOST/capsule/7b9dcdd9-4f54-405b-974c-c4c9e405ce26:16ee84df68cc8d353dbf6d28e44ac7e4"
+	container "$REGISTRY_HOST/capsule/7b9dcdd9-4f54-405b-974c-c4c9e405ce26"
 
 	cpus 1
 	memory '8 GB'
@@ -312,7 +313,7 @@ process capsule_aind_ophys_neuropil_correction_7 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_8 {
 	tag 'capsule-5186816'
-	container "$REGISTRY_HOST/capsule/4d1bad07-ff45-4e69-a50f-874e840cd7e6:311824140a3679ad7f3d2d7e4eadec79"
+	container "$REGISTRY_HOST/capsule/4d1bad07-ff45-4e69-a50f-874e840cd7e6"
 
 	cpus 1
 	memory '8 GB'
@@ -358,7 +359,7 @@ process capsule_aind_ophys_dff_8 {
 // capsule - aind-ophys-oasis-event-detection
 process capsule_aind_ophys_oasis_event_detection_9 {
 	tag 'capsule-0298748'
-	container "$REGISTRY_HOST/capsule/382062c4-fd31-4812-806b-cc81bad29bf4:2a6daab9fc0b1f5601cd9975356d1180"
+	container "$REGISTRY_HOST/capsule/382062c4-fd31-4812-806b-cc81bad29bf4"
 
 	cpus 1
 	memory '8 GB'
@@ -388,6 +389,45 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0298748.git" capsule-repo
 	git -C capsule-repo checkout 2b5d6f2beaf5d954739c81ed62750f74cdfbc646 --quiet
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-mesoscope-image-splitter
+process capsule_aind_ophys_mesoscope_image_splitter_10 {
+	tag 'capsule-0115380'
+	container "$REGISTRY_HOST/capsule/c567666c-dd08-45dd-a824-6a570bd4675d"
+
+	cpus 4
+	memory '32 GB'
+
+	input:
+	path 'capsule/data/' from multiplane_ophys_485152_2019_12_09_13_04_09_to_aind_ophys_mesoscope_image_splitter_18
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=c567666c-dd08-45dd-a824-6a570bd4675d
+	export CO_CPUS=4
+	export CO_MEMORY=34359738368
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0115380.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
