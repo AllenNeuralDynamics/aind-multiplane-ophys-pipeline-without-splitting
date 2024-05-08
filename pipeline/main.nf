@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ea5a9123a90fbb318b79012c8bb3fd4558a5af22af362e97a31bacd043a2f4bb
+// hash:sha256:06bf33cfb60d210490f98a590e6e2a82da8fcdd9fb4374fac08d16b023382d4f
 
 nextflow.enable.dsl = 1
 
@@ -34,7 +34,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	publishDir "$RESULTS_PATH/motion_correction", saveAs: { filename -> filename.matches("capsule/results/motion_correction") ? new File(filename).getName() : null }
 
 	input:
-	path 'capsule/data/ophys' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1.flatten()
+	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1.flatten()
 	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_2.collect()
 	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_3.collect()
 	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_4.collect()
@@ -105,7 +105,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7511402.git" capsule-repo
-	git -C capsule-repo checkout 3b175e4782eb64a761b4366c62870b8c4d08b263 --quiet
+	git -C capsule-repo checkout 855e5c5bbc7942fca99af8146dfbb7d77153661e --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
