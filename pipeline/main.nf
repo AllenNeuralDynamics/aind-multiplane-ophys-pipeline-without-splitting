@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:9b7e8e05ff70ddd9dca1e1b083c6179fdb09b0dce5fab900ddb5eed2fb3a425f
+// hash:sha256:dc4789cfd2492d5ead8bdaf506bef4fd24b4e2db2028756edf129383e313d9f0
 
 nextflow.enable.dsl = 1
 
@@ -221,7 +221,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 	cpus 1
 	memory '8 GB'
 
-	publishDir "$RESULTS_PATH/trace_extraction", saveAs: { filename -> filename.matches("capsule/results/trace_extraction") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH/trace_extraction", saveAs: { filename -> filename.matches("capsule/results/.*/trace_extraction") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_10.collect()
@@ -229,7 +229,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 	path 'capsule/data/' from capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_12
 
 	output:
-	path 'capsule/results/trace_extraction'
+	path 'capsule/results/*/trace_extraction'
 	path 'capsule/results/*' into capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_14
 
 	script:
