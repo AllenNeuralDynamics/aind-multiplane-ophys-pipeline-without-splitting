@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:dc4789cfd2492d5ead8bdaf506bef4fd24b4e2db2028756edf129383e313d9f0
+// hash:sha256:ac5f0856cdb888e65446e101ca109067545c3036fe80642279ad12d50e8703f4
 
 nextflow.enable.dsl = 1
 
@@ -126,14 +126,14 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	cpus 16
 	memory '128 GB'
 
-	publishDir "$RESULTS_PATH/decrosstalk", saveAs: { filename -> filename.matches("capsule/results/decrosstalk") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/.*/decrosstalk") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7.collect()
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_split_session_json_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_8.flatten()
 
 	output:
-	path 'capsule/results/decrosstalk/*'
+	path 'capsule/results/*/decrosstalk/*'
 	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_9
 	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_10
 	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_13
