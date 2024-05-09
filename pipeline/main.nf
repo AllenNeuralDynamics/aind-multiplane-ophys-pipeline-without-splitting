@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:65ecd5f314ca98ee39e6179cc367713f081e165b34319964d4c10a7f0d43d207
+// hash:sha256:92df4a48d419bfd544358bffe76e9e384271fabefd8a8e50409d3fcc1201f30f
 
 nextflow.enable.dsl = 1
 
@@ -61,7 +61,7 @@ process capsule_aind_ophys_motion_correction_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5379831.git" capsule-repo
-	git -C capsule-repo checkout 92cfcf9176fe6ede1e64e91eeb38e925556af716 --quiet
+	git -C capsule-repo checkout 11aeebaab9722b41aa589b9b02ccfbbc8a28a564 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
