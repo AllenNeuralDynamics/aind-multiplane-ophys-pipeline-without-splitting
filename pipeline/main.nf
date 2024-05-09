@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:d5456edbfece5429abe2878aa97cfa6c204f054acd432738fa67a3f256452cc7
+// hash:sha256:8708a79eb2c804f9893f370f36c6299c48551b35543c6f8885805938f050ee73
 
 nextflow.enable.dsl = 1
 
@@ -31,7 +31,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	cpus 16
 	memory '128 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/.*/motion_correction") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1.flatten()
@@ -40,7 +40,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_4.collect()
 
 	output:
-	path 'capsule/results/*/motion_correction'
+	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7
 	path 'capsule/results/*/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_11
