@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ac5f0856cdb888e65446e101ca109067545c3036fe80642279ad12d50e8703f4
+// hash:sha256:d5456edbfece5429abe2878aa97cfa6c204f054acd432738fa67a3f256452cc7
 
 nextflow.enable.dsl = 1
 
@@ -175,13 +175,13 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 	cpus 2
 	memory '16 GB'
 
-	publishDir "$RESULTS_PATH/segmentation", saveAs: { filename -> filename.matches("capsule/results/segmentation") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/.*/segmentation") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_9.flatten()
 
 	output:
-	path 'capsule/results/segmentation'
+	path 'capsule/results/*/segmentation'
 	path 'capsule/results/*' into capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_12
 
 	script:
