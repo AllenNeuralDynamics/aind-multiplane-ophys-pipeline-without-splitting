@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:959f73fde55f7cebaf9b67bd8082749b2c301df2df5cba7a73766d7522219fb8
+// hash:sha256:c7dfc9df1ad7f4128ef03263cf0e883f9d51d4ffcdbec9fd13909ae5ebec19dd
 
 nextflow.enable.dsl = 1
 
@@ -316,13 +316,13 @@ process capsule_aind_ophys_dff_8 {
 	cpus 1
 	memory '8 GB'
 
-	publishDir "$RESULTS_PATH/dff", saveAs: { filename -> filename.matches("capsule/results/dff") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_15
 
 	output:
-	path 'capsule/results/dff/*'
+	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_16
 
 	script:
@@ -362,13 +362,13 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 	cpus 1
 	memory '8 GB'
 
-	publishDir "$RESULTS_PATH/events", saveAs: { filename -> filename.matches("capsule/results/events") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_16
 
 	output:
-	path 'capsule/results/events'
+	path 'capsule/results/*'
 
 	script:
 	"""
