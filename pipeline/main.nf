@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:873c49735cfccb6153a2f770ef01c0f3454a4c0a908895ebdb3cca5012cd2ea7
+// hash:sha256:b059c4fd05a15a53ffb547d54404c3e36e47a4b6948d7eac65d4b00fdc0815f0
 
 nextflow.enable.dsl = 1
 
@@ -34,7 +34,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/motion_correction") ? new File(filename).getName() : null }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1
+	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_1.flatten()
 	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_2.collect()
 	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_3.collect()
 	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_4.collect()
