@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0cca906525913d34af6515597290188cda7edf3d7f1e80a7a16c1fd048647f94
+// hash:sha256:ef13d6ff7dca9afac9ba560a1d488cd9ab69e3e1e7e27e215a231fcd52bf4e96
 
 nextflow.enable.dsl = 1
 
@@ -157,7 +157,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4612268.git" capsule-repo
-	git -C capsule-repo checkout b3fe44290d5338bb5565552fde35ce2661435d51 --quiet
+	git -C capsule-repo checkout 0cde614c91affcc4e95a802075fe932ad988c183 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
