@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:4ab1150fb1084f98c359ea71aa35cc34cc5ac5919a70c85897cf991914d2285e
+// hash:sha256:0f5b5a6638c2a206c9ce6bab8b9f84819bec8c64aa4b7a1fe6b6fcc2fd15074e
 
 nextflow.enable.dsl = 1
 
@@ -9,8 +9,8 @@ capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_corr
 multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_2 = channel.fromPath(params.multiplane_ophys_717824_2024_05_07_09_18_34_url + "/*.json", type: 'any')
 multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_3 = channel.fromPath(params.multiplane_ophys_717824_2024_05_07_09_18_34_url + "/ophys/*platform.json", type: 'any')
 multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_motion_correction_4 = channel.fromPath(params.multiplane_ophys_717824_2024_05_07_09_18_34_url + "/ophys/*.h5", type: 'any')
-multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_decrosstalk_split_session_json_5 = channel.fromPath(params.multiplane_ophys_717824_2024_05_07_09_18_34_url + "/session.json", type: 'any')
-capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_5 = channel.create()
+multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_decrosstalk_split_session_json_6 = channel.fromPath(params.multiplane_ophys_717824_2024_05_07_09_18_34_url + "/session.json", type: 'any')
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7 = channel.create()
 capsule_aind_ophys_decrosstalk_split_session_json_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_8 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_9 = channel.create()
@@ -41,7 +41,7 @@ process capsule_aind_ophys_motion_correction_1 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6
+	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_5
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7
 	path 'capsule/results/*/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_11
 
@@ -85,8 +85,8 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_decrosstalk_split_session_json_5.collect()
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6.collect()
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_5.flatten()
+	path 'capsule/data/' from multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_decrosstalk_split_session_json_6.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -108,7 +108,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7511402.git" capsule-repo
-	git -C capsule-repo checkout 855e5c5bbc7942fca99af8146dfbb7d77153661e --quiet
+	git -C capsule-repo checkout 4d2a40df9309e24ad58759ffceeb75e4fb505db1 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -157,7 +157,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4612268.git" capsule-repo
-	git -C capsule-repo checkout d8e03a2f40304863789615c380055c1932e97bf6 --quiet
+	git -C capsule-repo checkout ab409d03ed6ef6c4e32b279d850ef0d8207fe150 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
