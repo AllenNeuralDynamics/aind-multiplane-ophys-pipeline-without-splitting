@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:8f7731d46c59fac9b875f522a9eea12e4119c9279657e42d4ce728fb449f210a
+// hash:sha256:18bcebffad1b9be1538ff055899f04dd64aefd802d882698b3c204c1c92412de
 
 nextflow.enable.dsl = 1
 
@@ -173,7 +173,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - aind-ophys-segmentation-cellpose
 process capsule_aind_ophys_segmentation_cellpose_4 {
 	tag 'capsule-0136322'
-	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e:16240be44963e68c4b073f63c85e9642"
+	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e:886ae050db3f643b4ef0b446e7a586db"
 
 	cpus 2
 	memory '16 GB'
@@ -203,7 +203,7 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0136322.git" capsule-repo
-	git -C capsule-repo checkout 92b14d08928bac3521dca511374a1dedd2de895a --quiet
+	git -C capsule-repo checkout 139659655e7c1a4c07d8830e668968e2f93c6bb6 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
