@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:4c1fcd9d80bff8ed05223f77102d1035886a111a099763743c6a9e139298708b
+// hash:sha256:26ffe3204a074a303811b7b3ccb987553edffb2ce97d06db067aa587ec440d2a
 
 nextflow.enable.dsl = 1
 
@@ -219,7 +219,7 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 // capsule - aind-ophys-trace-extraction
 process capsule_aind_ophys_trace_extraction_5 {
 	tag 'capsule-7385227'
-	container "$REGISTRY_HOST/capsule/3821c170-5883-48ed-a2d5-4a627a432f18:88b4c33b73e427b5bcbb5cb11efd0b10"
+	container "$REGISTRY_HOST/capsule/3821c170-5883-48ed-a2d5-4a627a432f18:ac5f0dbce1717c3652e2240af60a6cb7"
 
 	cpus 1
 	memory '8 GB'
@@ -251,7 +251,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7385227.git" capsule-repo
-	git -C capsule-repo checkout 346a24246e7ac303ca1f345177ed183b9b8747e3 --quiet
+	git -C capsule-repo checkout 2014ed3bdb8010089807a9137859e2f37a7b72b9 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -267,7 +267,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 // capsule - aind-ophys-neuropil-correction
 process capsule_aind_ophys_neuropil_correction_7 {
 	tag 'capsule-7531658'
-	container "$REGISTRY_HOST/capsule/7b9dcdd9-4f54-405b-974c-c4c9e405ce26:16ee84df68cc8d353dbf6d28e44ac7e4"
+	container "$REGISTRY_HOST/capsule/7b9dcdd9-4f54-405b-974c-c4c9e405ce26:755b0b124dbd590de146fcbdff2a83d8"
 
 	cpus 1
 	memory '8 GB'
@@ -298,7 +298,7 @@ process capsule_aind_ophys_neuropil_correction_7 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7531658.git" capsule-repo
-	git -C capsule-repo checkout 04870dc631b66e75d9f22521450828a1c7cfd33b --quiet
+	git -C capsule-repo checkout 960095acef00c65537c1290ba046413155928b7e --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -314,7 +314,7 @@ process capsule_aind_ophys_neuropil_correction_7 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_8 {
 	tag 'capsule-5186816'
-	container "$REGISTRY_HOST/capsule/4d1bad07-ff45-4e69-a50f-874e840cd7e6:311824140a3679ad7f3d2d7e4eadec79"
+	container "$REGISTRY_HOST/capsule/4d1bad07-ff45-4e69-a50f-874e840cd7e6:12e97cc1d769f84406fc4508341beb33"
 
 	cpus 1
 	memory '8 GB'
@@ -344,7 +344,7 @@ process capsule_aind_ophys_dff_8 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5186816.git" capsule-repo
-	git -C capsule-repo checkout 492ccdb7e76d10cf5740812526505d0c795105e8 --quiet
+	git -C capsule-repo checkout 5c58f5f11d6e0d0527b275c5c75b0d8bb3a347aa --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -389,7 +389,7 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0298748.git" capsule-repo
-	git -C capsule-repo checkout 2b5d6f2beaf5d954739c81ed62750f74cdfbc646 --quiet
+	git -C capsule-repo checkout 42f266411c0420bca3b27a29767ef8594069e8fa --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
