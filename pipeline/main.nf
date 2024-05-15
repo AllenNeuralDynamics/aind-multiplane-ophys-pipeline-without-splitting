@@ -1,12 +1,12 @@
 #!/usr/bin/env nextflow
-// hash:sha256:3796b17c5bd768109b617c32448466604ea44d745b0b5bfcf5faa8ecb37f55a8
+// hash:sha256:79d22b1456f4a98041158a63f46105e8df94b2504843aca145f2e3dcd9ec0494
 
 nextflow.enable.dsl = 1
 
-params.multiplane_ophys_714725_2024_05_14_10_14_15_url = 's3://aind-private-data-prod-o5171v/multiplane-ophys_714725_2024-05-14_10-14-15'
+params.multiplane_ophys_721291_2024_05_14_08_24_49_url = 's3://aind-private-data-prod-o5171v/multiplane-ophys_721291_2024-05-14_08-24-49'
 
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_1 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/*json", type: 'any')
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_2 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/ophys/*_sync.h5", type: 'any')
+multiplane_ophys_721291_2024_05_14_08_24_49_to_aind_ophys_motion_correction_1 = channel.fromPath(params.multiplane_ophys_721291_2024_05_14_08_24_49_url + "/*json", type: 'any')
+multiplane_ophys_721291_2024_05_14_08_24_49_to_aind_ophys_motion_correction_2 = channel.fromPath(params.multiplane_ophys_721291_2024_05_14_08_24_49_url + "/ophys/*_sync.h5", type: 'any')
 capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_3 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_4 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_5 = channel.create()
@@ -19,7 +19,7 @@ capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_corre
 capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_12 = channel.create()
 capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_13 = channel.create()
 capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_14 = channel.create()
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_mesoscope_image_splitter_15 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/", type: 'any')
+multiplane_ophys_721291_2024_05_14_08_24_49_to_aind_ophys_mesoscope_image_splitter_15 = channel.fromPath(params.multiplane_ophys_721291_2024_05_14_08_24_49_url + "/", type: 'any')
 capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_16 = channel.create()
 
 // capsule - aind-ophys-motion-correction
@@ -33,8 +33,8 @@ process capsule_aind_ophys_motion_correction_1 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_1.collect()
-	path 'capsule/data/' from multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_2.collect()
+	path 'capsule/data/' from multiplane_ophys_721291_2024_05_14_08_24_49_to_aind_ophys_motion_correction_1.collect()
+	path 'capsule/data/' from multiplane_ophys_721291_2024_05_14_08_24_49_to_aind_ophys_motion_correction_2.collect()
 	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_3.flatten()
 
 	output:
@@ -409,7 +409,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 	memory '32 GB'
 
 	input:
-	path 'capsule/data' from multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_mesoscope_image_splitter_15.collect()
+	path 'capsule/data' from multiplane_ophys_721291_2024_05_14_08_24_49_to_aind_ophys_mesoscope_image_splitter_15.collect()
 
 	output:
 	path 'capsule/results/*_[0-9]' into capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_3
@@ -475,7 +475,7 @@ process capsule_processingjsonaggregator_11 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1130313.git" capsule-repo
-	git -C capsule-repo checkout f206b42fb396f37aa52649fca435c8b5db867c95 --quiet
+	git -C capsule-repo checkout 2c65a9b38e6f16fe3ab72c83311fb840578d7a8b --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
