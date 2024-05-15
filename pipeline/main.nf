@@ -1,12 +1,12 @@
 #!/usr/bin/env nextflow
-// hash:sha256:1c7f9a5b30033703b89c7600238afd65dcf3128a45f6cea090b84ce1e57af0fe
+// hash:sha256:3796b17c5bd768109b617c32448466604ea44d745b0b5bfcf5faa8ecb37f55a8
 
 nextflow.enable.dsl = 1
 
 params.multiplane_ophys_714725_2024_05_14_10_14_15_url = 's3://aind-private-data-prod-o5171v/multiplane-ophys_714725_2024-05-14_10-14-15'
 
 multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_1 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/*json", type: 'any')
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_2 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/ophys/*.h5", type: 'any')
+multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_2 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/ophys/*_sync.h5", type: 'any')
 capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_3 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_4 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_5 = channel.create()
