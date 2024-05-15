@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:948a57fd6bd86baa273ffb06308cb69b2b5ec3aa0feb0287ccfdf85a20d478ec
+// hash:sha256:f4838d9c8774705aa4c1c5b9fbb5f3b57a518fedafb5b88e71a939d6a506fbc0
 
 nextflow.enable.dsl = 1
 
@@ -22,6 +22,7 @@ capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_
 capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_15 = channel.create()
 capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_16 = channel.create()
 multiplane_ophys_717824_2024_05_07_09_18_34_to_aind_ophys_mesoscope_image_splitter_17 = channel.fromPath(params.multiplane_ophys_717824_2024_05_07_09_18_34_url + "/", type: 'any')
+capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_18 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -372,6 +373,7 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 
 	output:
 	path 'capsule/results/*'
+	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_18
 
 	script:
 	"""
@@ -452,6 +454,9 @@ process capsule_processingjsonaggregator_11 {
 
 	cpus 1
 	memory '8 GB'
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_18.collect()
 
 	script:
 	"""
