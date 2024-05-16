@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:2318300ccfe3f592d35ebc73563ad3fae57a12fee47d408b7c2f25e589be1aa6
+// hash:sha256:802cd1dbb202a6bfbede9a15e44ab070bbc12f95eea039f3ad16dbd8feb6b3bb
 
 nextflow.enable.dsl = 1
 
@@ -7,7 +7,7 @@ params.multiplane_ophys_726433_2024_05_14_08_13_02_url = 's3://aind-private-data
 
 multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_1 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/*json", type: 'any')
 multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_2 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/ophys/*_sync.h5", type: 'any')
-multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_3 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/ophys/*platform.json", type: 'any')
+multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_3 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/ophys/*platform*", type: 'any')
 capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_5 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_6 = channel.create()
