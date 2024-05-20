@@ -1,15 +1,15 @@
 #!/usr/bin/env nextflow
-// hash:sha256:6bf3fa2a547e9012bec505493fe5932f90ed19d5e89abbdba1a513cbb641c739
+// hash:sha256:e705fe287a80fee6fe2ae8d851775800d4acbb1db9a99422ba20bd077c93bf68
 
 nextflow.enable.dsl = 1
 
-params.multiplane_ophys_714725_2024_05_14_10_14_15_url = 's3://aind-private-data-prod-o5171v/multiplane-ophys_714725_2024-05-14_10-14-15'
+params.multiplane_ophys_726433_2024_05_14_08_13_02_url = 's3://aind-private-data-prod-o5171v/multiplane-ophys_726433_2024-05-14_08-13-02'
 
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_1 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/*json", type: 'any')
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_2 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/ophys/*_sync.h5", type: 'any')
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_3 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/ophys/*platform*", type: 'any')
+multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_1 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/*json", type: 'any')
+multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_2 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/ophys/*_sync.h5", type: 'any')
+multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_3 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/ophys/*platform*", type: 'any')
 capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4 = channel.create()
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_decrosstalk_split_session_json_5 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/session.json", type: 'any')
+multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_decrosstalk_split_session_json_5 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/session.json", type: 'any')
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7 = channel.create()
 capsule_aind_ophys_decrosstalk_split_session_json_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_8 = channel.create()
@@ -21,7 +21,7 @@ capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_corre
 capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_14 = channel.create()
 capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_15 = channel.create()
 capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_16 = channel.create()
-multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_mesoscope_image_splitter_17 = channel.fromPath(params.multiplane_ophys_714725_2024_05_14_10_14_15_url + "/", type: 'any')
+multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_mesoscope_image_splitter_17 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/", type: 'any')
 capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_18 = channel.create()
 
 // capsule - aind-ophys-motion-correction
@@ -35,9 +35,9 @@ process capsule_aind_ophys_motion_correction_1 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_1.collect()
-	path 'capsule/data/' from multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_2.collect()
-	path 'capsule/data/' from multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_motion_correction_3.collect()
+	path 'capsule/data/' from multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_1.collect()
+	path 'capsule/data/' from multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_2.collect()
+	path 'capsule/data/' from multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_motion_correction_3.collect()
 	path 'capsule/data/' from capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4.flatten()
 
 	output:
@@ -86,7 +86,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_decrosstalk_split_session_json_5.collect()
+	path 'capsule/data/' from multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_decrosstalk_split_session_json_5.collect()
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6.collect()
 
 	output:
@@ -413,7 +413,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 	memory '32 GB'
 
 	input:
-	path 'capsule/data' from multiplane_ophys_714725_2024_05_14_10_14_15_to_aind_ophys_mesoscope_image_splitter_17.collect()
+	path 'capsule/data' from multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_mesoscope_image_splitter_17.collect()
 
 	output:
 	path 'capsule/results/*_[0-9]' into capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4
