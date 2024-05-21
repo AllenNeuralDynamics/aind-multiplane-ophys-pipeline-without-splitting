@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:641541497ab4be71590a5df27b242a76d4876f9487fc6ddf55c3178998899aa4
+// hash:sha256:f2e311deb714714e31fd4bdcb59cb6fc99d878f26685d6f64626178d3b9815ca
 
 nextflow.enable.dsl = 1
 
@@ -412,14 +412,14 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 	cpus 4
 	memory '32 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/.*\\.h5") ? new File(filename).getName() : null }
 
 	input:
 	path 'capsule/data' from multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_mesoscope_image_splitter_17.collect()
 
 	output:
 	path 'capsule/results/*_[0-9]' into capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4
-	path 'capsule/results/*'
+	path 'capsule/results/*.h5'
 
 	script:
 	"""
