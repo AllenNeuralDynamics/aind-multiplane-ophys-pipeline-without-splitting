@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:c14b28dffe4ff7aa670490911b4067437179579f8c478dec1a0ef4bdf5d3ed28
+// hash:sha256:0c57ecc8cf0ef0242ff670d6c6c974fe4cc97a46eaf64fffe70435961168efc0
 
 nextflow.enable.dsl = 1
 
@@ -26,7 +26,7 @@ capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_1
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
 	tag 'capsule-5379831'
-	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911"
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:292ed0127a25a27de3b0570d9d3aabe5"
 
 	cpus 16
 	memory '128 GB'
@@ -76,7 +76,7 @@ process capsule_aind_ophys_motion_correction_1 {
 // capsule - aind-ophys-decrosstalk-split-session-json
 process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 	tag 'capsule-7511402'
-	container "$REGISTRY_HOST/capsule/76b52bbc-5e23-4e4b-9bc7-f48d24031e09"
+	container "$REGISTRY_HOST/capsule/76b52bbc-5e23-4e4b-9bc7-f48d24031e09:de893bc98b0d6be44026e2c92fee1f1a"
 
 	cpus 1
 	memory '8 GB'
@@ -123,7 +123,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 // capsule - aind-ophys-decrosstalk-roi-images
 process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	tag 'capsule-4612268'
-	container "$REGISTRY_HOST/capsule/e31d29f8-7eee-446b-8f0a-2f027fe6f39b"
+	container "$REGISTRY_HOST/capsule/e31d29f8-7eee-446b-8f0a-2f027fe6f39b:0d448093a0b63f73b1729c6bd22d3046"
 
 	cpus 16
 	memory '128 GB'
@@ -172,7 +172,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - aind-ophys-segmentation-cellpose
 process capsule_aind_ophys_segmentation_cellpose_4 {
 	tag 'capsule-0136322'
-	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e"
+	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e:d7361814d542116ca4f6c4487a0fddcf"
 
 	cpus 2
 	memory '16 GB'
@@ -218,7 +218,7 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 // capsule - aind-ophys-trace-extraction
 process capsule_aind_ophys_trace_extraction_5 {
 	tag 'capsule-7385227'
-	container "$REGISTRY_HOST/capsule/3821c170-5883-48ed-a2d5-4a627a432f18"
+	container "$REGISTRY_HOST/capsule/3821c170-5883-48ed-a2d5-4a627a432f18:ac5f0dbce1717c3652e2240af60a6cb7"
 
 	cpus 1
 	memory '8 GB'
@@ -266,7 +266,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 // capsule - aind-ophys-neuropil-correction
 process capsule_aind_ophys_neuropil_correction_7 {
 	tag 'capsule-7531658'
-	container "$REGISTRY_HOST/capsule/7b9dcdd9-4f54-405b-974c-c4c9e405ce26"
+	container "$REGISTRY_HOST/capsule/7b9dcdd9-4f54-405b-974c-c4c9e405ce26:755b0b124dbd590de146fcbdff2a83d8"
 
 	cpus 1
 	memory '8 GB'
@@ -313,7 +313,7 @@ process capsule_aind_ophys_neuropil_correction_7 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_8 {
 	tag 'capsule-5186816'
-	container "$REGISTRY_HOST/capsule/4d1bad07-ff45-4e69-a50f-874e840cd7e6"
+	container "$REGISTRY_HOST/capsule/4d1bad07-ff45-4e69-a50f-874e840cd7e6:12e97cc1d769f84406fc4508341beb33"
 
 	cpus 1
 	memory '8 GB'
@@ -359,7 +359,7 @@ process capsule_aind_ophys_dff_8 {
 // capsule - aind-ophys-oasis-event-detection
 process capsule_aind_ophys_oasis_event_detection_9 {
 	tag 'capsule-0298748'
-	container "$REGISTRY_HOST/capsule/382062c4-fd31-4812-806b-cc81bad29bf4"
+	container "$REGISTRY_HOST/capsule/382062c4-fd31-4812-806b-cc81bad29bf4:2a6daab9fc0b1f5601cd9975356d1180"
 
 	cpus 1
 	memory '8 GB'
@@ -405,7 +405,7 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 // capsule - aind-ophys-mesoscope-image-splitter
 process capsule_aind_ophys_mesoscope_image_splitter_10 {
 	tag 'capsule-0115380'
-	container "$REGISTRY_HOST/capsule/c567666c-dd08-45dd-a824-6a570bd4675d"
+	container "$REGISTRY_HOST/capsule/c567666c-dd08-45dd-a824-6a570bd4675d:43a670fd4eacc08b5a31923b9dcbd449"
 
 	cpus 4
 	memory '32 GB'
@@ -451,7 +451,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 // capsule - Processing json aggregator
 process capsule_processingjsonaggregator_11 {
 	tag 'capsule-1130313'
-	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0"
+	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0:8799cafa8b42ae37e34d561877a370de"
 
 	cpus 1
 	memory '8 GB'
