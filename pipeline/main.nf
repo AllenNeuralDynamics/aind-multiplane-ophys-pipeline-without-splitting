@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:83cdbae44e352c81913fa0da6b064462d6d0d0c650e9ed52723904f6b940ecb5
+// hash:sha256:4668d1541b0f60f5b0cd72a5cbb1ed6d956c45d71799eef11ca7ceb97b1a8f4d
 
 nextflow.enable.dsl = 1
 
@@ -22,7 +22,7 @@ capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_
 capsule_aind_ophys_neuropil_correction_7_to_capsule_aind_ophys_dff_8_15 = channel.create()
 capsule_aind_ophys_dff_8_to_capsule_aind_ophys_oasis_event_detection_9_16 = channel.create()
 multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_mesoscope_image_splitter_17 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/", type: 'any')
-multiplane_ophys_726433_2024_05_14_08_13_02_to_processing_json_aggregator_18 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/*", type: 'any')
+multiplane_ophys_726433_2024_05_14_08_13_02_to_processing_json_aggregator_18 = channel.fromPath(params.multiplane_ophys_726433_2024_05_14_08_13_02_url + "/*.json", type: 'any')
 capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_19 = channel.create()
 
 // capsule - aind-ophys-motion-correction
@@ -462,7 +462,7 @@ process capsule_processingjsonaggregator_11 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from multiplane_ophys_726433_2024_05_14_08_13_02_to_processing_json_aggregator_18
+	path 'capsule/data/' from multiplane_ophys_726433_2024_05_14_08_13_02_to_processing_json_aggregator_18.collect()
 	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_19.collect()
 
 	output:
