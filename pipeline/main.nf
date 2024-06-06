@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:6014b7a7e34f5afc8bc12b1f8690e7a3ccc7ceb1d4d12aca9d7b0cd3cd3bcdbd
+// hash:sha256:09c46e5d53fb105ec2a30e12af3582d43008a628941a1e5eabbd1a4389df026f
 
 nextflow.enable.dsl = 1
 
@@ -172,7 +172,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - aind-ophys-segmentation-cellpose
 process capsule_aind_ophys_segmentation_cellpose_4 {
 	tag 'capsule-0136322'
-	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e"
+	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e:d7361814d542116ca4f6c4487a0fddcf"
 
 	cpus 2
 	memory '16 GB'
