@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:812be1246b89e89fc252646805c0ac49b886d467164dace6c6654a651cd78b81
+// hash:sha256:3b422b69581f03db16db0dfc124807e9a72e46f386d5f192dc730ad4e85f79d2
 
 nextflow.enable.dsl = 1
 
@@ -13,8 +13,8 @@ multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_decrosstalk_split_sess
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7 = channel.create()
 capsule_aind_ophys_decrosstalk_split_session_json_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_8 = channel.create()
-capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_9 = channel.create()
-capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_10 = channel.create()
+capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_flattened_4_9 = channel.create()
+capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_10 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_11 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_12 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_13 = channel.create()
@@ -137,7 +137,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_9
+	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_flattened_4_9
 	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_11
 	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_13
 
@@ -169,10 +169,10 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	"""
 }
 
-// capsule - aind-ophys-segmentation-cellpose
-process capsule_aind_ophys_segmentation_cellpose_4 {
-	tag 'capsule-1727693'
-	container "$REGISTRY_HOST/capsule/82771435-6edd-4363-ae09-2c72ed82af2c"
+// capsule - aind-ophys-segmentation-cellpose -- FLATTENED
+process capsule_aind_ophys_segmentation_cellpose_flattened_4 {
+	tag 'capsule-0136322'
+	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e:8d6bbd79002e756770ddccad41cb57f2"
 
 	cpus 2
 	memory '16 GB'
@@ -180,18 +180,18 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_4_9.flatten()
+	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_flattened_4_9.flatten()
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_10
+	path 'capsule/results/*' into capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_10
 
 	script:
 	"""
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=82771435-6edd-4363-ae09-2c72ed82af2c
+	export CO_CAPSULE_ID=84e6b3e3-e24b-450e-b275-589fc229087e
 	export CO_CPUS=2
 	export CO_MEMORY=17179869184
 
@@ -201,7 +201,8 @@ process capsule_aind_ophys_segmentation_cellpose_4 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1727693.git" capsule-repo
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0136322.git" capsule-repo
+	git -C capsule-repo checkout bb7059e8cd2c1db358413f29bad573b6633b0800 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -225,7 +226,7 @@ process capsule_aind_ophys_trace_extraction_5 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_segmentation_cellpose_4_to_capsule_aind_ophys_trace_extraction_5_10
+	path 'capsule/data/' from capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_10
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_11.collect()
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_12.collect()
 
@@ -445,7 +446,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 // capsule - Processing json aggregator
 process capsule_processingjsonaggregator_11 {
 	tag 'capsule-1130313'
-	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0"
+	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0:8799cafa8b42ae37e34d561877a370de"
 
 	cpus 1
 	memory '8 GB'
