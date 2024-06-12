@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:7ed2c7fd9c874f640feefe6eb59767c519abdfd8b13e2d94be3c75896f2ef5ed
+// hash:sha256:0a42f06bdfa5f9744800868312ff55ede554889dfef337cfeca4055b98b18c9c
 
 nextflow.enable.dsl = 1
 
@@ -172,7 +172,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - aind-ophys-segmentation-cellpose -- FLATTENED
 process capsule_aind_ophys_segmentation_cellpose_flattened_4 {
 	tag 'capsule-0136322'
-	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e"
+	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e:8d6bbd79002e756770ddccad41cb57f2"
 
 	cpus 2
 	memory '16 GB'
@@ -202,7 +202,7 @@ process capsule_aind_ophys_segmentation_cellpose_flattened_4 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0136322.git" capsule-repo
-	git -C capsule-repo checkout bb7059e8cd2c1db358413f29bad573b6633b0800 --quiet
+	git -C capsule-repo checkout bbe34934b034e133488e652c103800400466a71d --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -446,7 +446,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 // capsule - Processing json aggregator
 process capsule_processingjsonaggregator_11 {
 	tag 'capsule-1130313'
-	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0"
+	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0:8799cafa8b42ae37e34d561877a370de"
 
 	cpus 1
 	memory '8 GB'
