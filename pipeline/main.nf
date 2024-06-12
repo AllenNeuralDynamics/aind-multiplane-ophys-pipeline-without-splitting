@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0a42f06bdfa5f9744800868312ff55ede554889dfef337cfeca4055b98b18c9c
+// hash:sha256:7cc2128d1e73185e4c3801fa679f02b923ddce85669551f84ab4ad68792eb510
 
 nextflow.enable.dsl = 1
 
@@ -446,7 +446,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 // capsule - Processing json aggregator
 process capsule_processingjsonaggregator_11 {
 	tag 'capsule-1130313'
-	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0:8799cafa8b42ae37e34d561877a370de"
+	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0:574aa7caf8cf0d15bd437b84d1cc02c6"
 
 	cpus 1
 	memory '8 GB'
@@ -476,7 +476,7 @@ process capsule_processingjsonaggregator_11 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1130313.git" capsule-repo
-	git -C capsule-repo checkout 0b4f1e04ee8bbbb3362ff33a0dcc36cb8bc9316c --quiet
+	git -C capsule-repo checkout c82b55f7d77f3cb78fcc2856f3528582d122d25a --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
