@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:3b422b69581f03db16db0dfc124807e9a72e46f386d5f192dc730ad4e85f79d2
+// hash:sha256:7ed2c7fd9c874f640feefe6eb59767c519abdfd8b13e2d94be3c75896f2ef5ed
 
 nextflow.enable.dsl = 1
 
@@ -14,8 +14,8 @@ capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_s
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7 = channel.create()
 capsule_aind_ophys_decrosstalk_split_session_json_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_8 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_flattened_4_9 = channel.create()
-capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_10 = channel.create()
-capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_11 = channel.create()
+capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_10 = channel.create()
+capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_11 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_12 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_13 = channel.create()
 capsule_aind_ophys_trace_extraction_5_to_capsule_aind_ophys_neuropil_correction_7_14 = channel.create()
@@ -138,7 +138,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	output:
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_segmentation_cellpose_flattened_4_9
-	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_11
+	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_10
 	path 'capsule/results/*/decrosstalk/*decrosstalk.h5' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_neuropil_correction_7_13
 
 	script:
@@ -172,7 +172,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - aind-ophys-segmentation-cellpose -- FLATTENED
 process capsule_aind_ophys_segmentation_cellpose_flattened_4 {
 	tag 'capsule-0136322'
-	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e:8d6bbd79002e756770ddccad41cb57f2"
+	container "$REGISTRY_HOST/capsule/84e6b3e3-e24b-450e-b275-589fc229087e"
 
 	cpus 2
 	memory '16 GB'
@@ -184,7 +184,7 @@ process capsule_aind_ophys_segmentation_cellpose_flattened_4 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_10
+	path 'capsule/results/*' into capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_11
 
 	script:
 	"""
@@ -226,8 +226,8 @@ process capsule_aind_ophys_trace_extraction_5 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_10
-	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_11.collect()
+	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_trace_extraction_5_10.collect()
+	path 'capsule/data/' from capsule_aind_ophys_segmentation_cellpose_flattened_4_to_capsule_aind_ophys_trace_extraction_5_11
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_trace_extraction_5_12.collect()
 
 	output:
@@ -446,7 +446,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 // capsule - Processing json aggregator
 process capsule_processingjsonaggregator_11 {
 	tag 'capsule-1130313'
-	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0:8799cafa8b42ae37e34d561877a370de"
+	container "$REGISTRY_HOST/capsule/266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0"
 
 	cpus 1
 	memory '8 GB'
