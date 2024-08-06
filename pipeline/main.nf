@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ca686cb4a6056906ee7d233c4e810eddf48fee88b50199fcce764e8b6e31e9f3
+// hash:sha256:7bd1f3a183648cd2ffc2b38000cfc90132008791a85452b2fdb92bb6315397bf
 
 nextflow.enable.dsl = 1
 
@@ -219,8 +219,8 @@ process capsule_aind_ophys_trace_extraction_5 {
 	tag 'capsule-7646836'
 	container "$REGISTRY_HOST/published/929400ed-397b-4949-b18a-b4a427338508:v2"
 
-	cpus 1
-	memory '8 GB'
+	cpus 4
+	memory '32 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -239,8 +239,8 @@ process capsule_aind_ophys_trace_extraction_5 {
 	set -e
 
 	export CO_CAPSULE_ID=929400ed-397b-4949-b18a-b4a427338508
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=4
+	export CO_MEMORY=34359738368
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -266,8 +266,8 @@ process capsule_aind_ophys_neuropil_correction_7 {
 	tag 'capsule-1847538'
 	container "$REGISTRY_HOST/published/04eb301c-a224-407c-a3e9-ca740d63839e:v3"
 
-	cpus 1
-	memory '8 GB'
+	cpus 4
+	memory '32 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -285,8 +285,8 @@ process capsule_aind_ophys_neuropil_correction_7 {
 	set -e
 
 	export CO_CAPSULE_ID=04eb301c-a224-407c-a3e9-ca740d63839e
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=4
+	export CO_MEMORY=34359738368
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -312,8 +312,8 @@ process capsule_aind_ophys_dff_8 {
 	tag 'capsule-0818193'
 	container "$REGISTRY_HOST/published/56258629-f09d-4927-b73e-78e5ab2fb04f:v1"
 
-	cpus 1
-	memory '8 GB'
+	cpus 4
+	memory '32 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -330,8 +330,8 @@ process capsule_aind_ophys_dff_8 {
 	set -e
 
 	export CO_CAPSULE_ID=56258629-f09d-4927-b73e-78e5ab2fb04f
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=4
+	export CO_MEMORY=34359738368
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -357,8 +357,8 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 	tag 'capsule-8957649'
 	container "$REGISTRY_HOST/published/c6394aab-0db7-47b2-90ba-864866d6755e:v1"
 
-	cpus 1
-	memory '8 GB'
+	cpus 4
+	memory '32 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -375,8 +375,8 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 	set -e
 
 	export CO_CAPSULE_ID=c6394aab-0db7-47b2-90ba-864866d6755e
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=4
+	export CO_MEMORY=34359738368
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -405,14 +405,14 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 	cpus 4
 	memory '32 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> filename.matches("capsule/results/.*\\.h5") ? new File(filename).getName() : null }
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data' from multiplane_ophys_726433_2024_05_14_08_13_02_to_aind_ophys_mesoscope_image_splitter_17.collect()
 
 	output:
 	path 'capsule/results/*_[0-9]' into capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4
-	path 'capsule/results/*.h5'
+	path 'capsule/results/*'
 
 	script:
 	"""
