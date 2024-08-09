@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0d93b0ece90e388a9fd462f77927ea32c846ec2a8a36f03f61553773223056dd
+// hash:sha256:2381f3711e1feebb0ffb437dd08808e38291025c2e908c8899ff448ebab55b9d
 
 nextflow.enable.dsl = 1
 
@@ -445,10 +445,10 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 // capsule - Processing json aggregator
 process capsule_processingjsonaggregator_11 {
 	tag 'capsule-1054292'
-	container "$REGISTRY_HOST/published/2fafe85f-e0fa-41a7-b2a6-9ac24b88605d:v5"
+	container "$REGISTRY_HOST/published/2fafe85f-e0fa-41a7-b2a6-9ac24b88605d:v8"
 
-	cpus 1
-	memory '8 GB'
+	cpus 4
+	memory '32 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -465,8 +465,8 @@ process capsule_processingjsonaggregator_11 {
 	set -e
 
 	export CO_CAPSULE_ID=2fafe85f-e0fa-41a7-b2a6-9ac24b88605d
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=4
+	export CO_MEMORY=34359738368
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -474,7 +474,7 @@ process capsule_processingjsonaggregator_11 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v5.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1054292.git" capsule-repo
+	git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1054292.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
