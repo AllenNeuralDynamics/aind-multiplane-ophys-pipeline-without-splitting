@@ -11,7 +11,7 @@ This is a [Nextflow](https://www.nextflow.io/) pipeline which runs the following
 
 * [aind-ophys-motion-correction](https://github.com/AllenNeuralDynamics/aind-ophys-motion-correction): Suite2p non-rigid motion correction is run on each plane in parallel.
 
-* [aind-ophys-decrosstalk-roi-images](https://github.com/AllenNeuralDynamics/aind-ophys-decrosstalk-roi-images): Removes the ghosting of cells from concurrent plane scans.
+* [aind-ophys-decrosstalk-roi-images](https://github.com/AllenNeuralDynamics/aind-ophys-decrosstalk-roi-images): Removes the ghosting of cells from plane pairs scanned consecutively.
 
 * [aind-ophys-extraction-suite2p](https://github.com/AllenNeuralDynamics/aind-ophys-extraction-suite2p): Combination of cellpose and Suite2p cell detection and extraction.
 
