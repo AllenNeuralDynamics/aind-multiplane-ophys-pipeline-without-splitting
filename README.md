@@ -22,6 +22,7 @@ The multiplane pipeline runs on [Nextflow](https://www.nextflow.io/) and contain
 
 * [aind-ophys-oasis-event-detection](https://github.com/AllenNeuralDynamics/aind-ophys-oasis-event-detection): Generates events for each detected ROI using the OASIS library.
 
+* [aind-ophys-processing-json-collection](https://github.com/AllenNeuralDynamics/aind-ophys-processing-json-collection): The processing JSON generated for each plane are appended together and saved into the top-level session directory.
 
 # Input
 
@@ -31,9 +32,21 @@ Currently, the pipeline supports the following input data types:
 
 # Output
 
-The output pipeline is saved to the `results` with JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema). Each parallel process will output a folder within the processes field of view (or plane). As the movies go through the processsing pipeline, a JSON file called processing.json gets created and processing data from processing parameters are appended to this file. The final JSON will sit at the root of the `results` folder at the end of processing. 
 
-Tools used to read files in python are h5py, json and csv.
+Tools used to read files in python are [H5py](https://pypi.org/project/h5py/), json and csv.
+
+* `aind`: The output pipeline is saved to the `results` with JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema). Each field of view (plane) runs as a parallel process from motion-correction to event detection. The top-level directory is named according to AllenNeuralDynamics derived asset formatting. Below that folder, each field of view is named according to the anatomical region of imaging and the index (or plane number) it corresponds to. This number is found in the session JSON which gives an index to each imaging plane. As the movies go through the processsing pipeline, a JSON file called processing.json is created where processing data from input parameters are appended. The final JSON will sit at the root of the `results` folder at the end of processing. 
+
+```plaintext
+📦results
+ ┣ 📂multiplane-ophys_MouseID_YYYY-MM-DD_HH-M-S_processed_YYYY-MM-DD_HH-M-S
+ ┃ ┣ 📂anatomical_region_0
+ ┃ ┣ 📂anatomical_region_1
+ ┃ ┣ 📂...
+ ┃ ┣ 📂anatomical_region_N
+ ┗ 📜processing.json
+ ```
+
 
 The following folders will be under the field of view directory within the `results` folder:
 
@@ -75,13 +88,7 @@ All data within the following HDF5 files are stored under the 'data' key as a nu
 📦extraction
  ┗ 📜extraction.h5
 ```
-* Extraction (HDF5): Datasets include:
- 
-    * 'traces/roi', the raw trace
-    * 'traces/neuropil', neuropil trace
-    * 'traces/corrected', corrected trace
-    * 'traces/coords', coordinates of ROIs
-    * 'traces/data', ROI pixel values
+Visit [aind-ophys-extraction-suite2p](https://github.com/AllenNeuralDynamics/aind-ophys-extraction-suite2p) to view the contents of the extracted file.
 
 **`dff`**
 
