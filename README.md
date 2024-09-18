@@ -1,6 +1,6 @@
 # Multiplane optical physiology processing pipeline
 
-The multiplane pipeline processes planar optical physiology data acquired in parallel to extract events from the ROIs in each plane *Figure 1*. Motion correction and segmentation are both done using [Suite2p](https://github.com/MouseLand/suite2p) and the final outputs of the pipeline are the cellular events detected by [OASIS](https://github.com/j-friedrich/OASIS). This pipeline is an extenstion of the [aind-single-plane-ophys-pipeline](https://github.com/AllenNeuralDynamics/aind-single-plane-ophys-pipeline) and includes steps to de-interleave the collected images shown in *Figure 1* and remove ghosting of cells in pairs of planes collected simultaneously.
+The multiplane pipeline processes planar optical physiology data acquired in parallel to extract events from the ROIs in each plane *Figure 1*. Motion correction and segmentation are both done using [Suite2p](https://github.com/MouseLand/suite2p) and the final outputs of the pipeline are the cellular events detected by [OASIS](https://github.com/j-friedrich/OASIS). This pipeline is an extension of the [aind-single-plane-ophys-pipeline](https://github.com/AllenNeuralDynamics/aind-single-plane-ophys-pipeline) and includes steps to de-interleave the collected images shown in *Figure 1* and remove ghosting of cells in pairs of planes collected simultaneously.
 
 ![alt text](resources/MesoscopeTIFFConstruction.png)
 *Figure1*
@@ -28,14 +28,13 @@ The multiplane pipeline runs on [Nextflow](https://www.nextflow.io/) and contain
 
 Currently, the pipeline supports the following input data types:
 
-* `aind`: data intgestion used at AIND. The input folder must contain a subdirectory called `pophys` (for planar-ophys) which contains the raw TIFF timeseries. The root directory must contain JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema).
+* `aind`: data ingestion used at AIND. The input folder must contain a subdirectory called `pophys` (for planar-ophys) which contains the raw TIFF timeseries. The root directory must contain JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema).
 
 # Output
 
-
 Tools used to read files in python are [H5py](https://pypi.org/project/h5py/), json and csv.
 
-* `aind`: The output pipeline is saved to the `results` with JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema). Each field of view (plane) runs as a parallel process from motion-correction to event detection. The top-level directory is named according to AllenNeuralDynamics derived asset formatting. Below that folder, each field of view is named according to the anatomical region of imaging and the index (or plane number) it corresponds to. This number is found in the session JSON which gives an index to each imaging plane. As the movies go through the processsing pipeline, a JSON file called processing.json is created where processing data from input parameters are appended. The final JSON will sit at the root of the `results` folder at the end of processing. 
+* `aind`: The pipeline outputs are saved under the `results` top-level folder with JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema). Each field of view (plane) runs as a parallel process from motion-correction to event detection. The first subdirectory under `results` is named according to AllenNeuralDynamics derived asset formatting. Below that folder, each field of view is named according to the anatomical region of imaging and the index (or plane number) it corresponds to. The index number is generated before processing in the session.json which details out the imaging configuration during acquisition. As the movies go through the processsing pipeline, a JSON file called processing.json is created where processing data from input parameters are appended. The final JSON will sit at the root of the `results` folder at the end of processing. 
 
 ```plaintext
 📦results
