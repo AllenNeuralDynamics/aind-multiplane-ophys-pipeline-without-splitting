@@ -97,8 +97,8 @@ dF/F signals for each ROI are packed into the 'data' key within the dataset.
  ┣ 📂plots
  ┃ ┣ 📜cell_0.png
  ┃ ┣ 📜cell_1.png
- ┃ ┣ 📜cell_n.png
- ┃ ┗ 📜cell_n+1.png
+ ┃ ┣ 📜...
+ ┃ ┗ 📜cell_n.png
  ┗ 📜events.h5
 ```
 The events.h5 contains the following keys:
@@ -155,5 +155,83 @@ Argparse is used to parse arguments from the command line. All capsules take in 
         --pretrained_model                            Path to pretrained model or string for model type (can be user’s model).
 
         --use_suite2p_neuropil                        Whether to use the fix weight provided by suite2p for neuropil correction. If not, we use a mutual information based method.
+
+```
+
+# Run
+
+`aind` Runs in the Code Ocean pipeline [here](https://codeocean.allenneuraldynamics.org/capsule/7026342/tree). If a user has credentials for this Code Ocean, the pipeline can be run using the [Code Ocean API](https://github.com/codeocean/codeocean-sdk-python). 
+
+From the examples page on the [Code Ocean API Github](https://github.com/codeocean/codeocean-sdk-python/blob/main/examples/run_pipeline.py)
+```python
+import os
+
+from codeocean import CodeOcean
+from codeocean.computation import RunParams
+from codeocean.data_asset import (
+    DataAssetParams,
+    DataAssetsRunParam,
+    PipelineProcessParams,
+    Source,
+    ComputationSource,
+    Target,
+    AWSS3Target,
+)
+
+
+# Create the client using your domain and API token.
+
+client = CodeOcean(domain=os.environ["CODEOCEAN_URL"], token=os.environ["API_TOKEN"])
+
+# Run a pipeline with ordered parameters.
+
+run_params = RunParams(
+    pipeline_id=os.environ["PIPELINE_ID"],
+    data_assets=[
+        DataAssetsRunParam(
+            id="eeefcc52-b445-4e3c-80c5-0e65526cd712",
+            mount="Reference",
+        ),
+    ],
+    processes=[
+        PipelineProcessParams(
+            name="capsule_art_simulation_illumina_1",
+            parameters=["75", "1", "HS25", "SingleEnded"],
+        ),
+        PipelineProcessParams(
+            name="capsule_copy_of_fast_qc_2",
+        ),
+    ],
+)
+
+computation = client.computations.run_capsule(run_params)
+
+# Wait for pipeline to finish.
+
+computation = client.computations.wait_until_completed(computation)
+
+# Create an external (S3) data asset from computation results.
+
+data_asset_params = DataAssetParams(
+    name="My External Result",
+    description="Computation result",
+    mount="my-result",
+    tags=["my", "external", "result"],
+    source=Source(
+        computation=ComputationSource(
+            id=computation.id,
+        ),
+    ),
+    target=Target(
+        aws=AWSS3Target(
+            bucket=os.environ["EXTERNAL_S3_BUCKET"],
+            prefix=os.environ.get("EXTERNAL_S3_BUCKET_PREFIX"),
+        ),
+    ),
+)
+
+data_asset = client.data_assets.create_data_asset(data_asset_params)
+
+data_asset = client.data_assets.wait_until_ready(data_asset)
 
 ```
