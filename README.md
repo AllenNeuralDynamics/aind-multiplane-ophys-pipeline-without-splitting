@@ -1,8 +1,5 @@
 # Multiplane optical physiology processing pipeline
 
-
-# aind-multiplane-ophys-pipeline
-
 The multiplane-ophys pipeline is a processing pipeline which uses [Suite2p](https://github.com/MouseLand/suite2p) for both motion correction and segmentation. The final outputs of the pipeline are ROI events detected by [OASIS](https://github.com/j-friedrich/OASIS).
 
 This is a [Nextflow](https://www.nextflow.io/) pipeline which runs the following steps:
@@ -36,24 +33,43 @@ The following folders will be under the field of view directory within the `resu
 
 **`motion_correction`**
 
-* Registered HDF5: motion corrected data are stored as a numpy array under the 'data' key
-* Average projection PNG
-* Max projection PNG
-* Preview of movie WEBM
-* Motion transforms CSV
+```plaintext
+📦motion_correction
+ ┣ 📜anatomical_region_registered.h5
+ ┣ 📜anatomical_region_max_projection.png
+ ┣ 📜anatomical_region_motion_preview.webm
+ ┣ 📜anatomical_region_average_projection.png
+ ┣ 📜anatomical_region_registered.h5
+ ┣ 📜anatomical_region_summary_nonrigid.png
+ ┣ 📜anatomical_region_summary_PC0high.png
+ ┣ 📜anatomical_region_summary_PC0low.png
+ ┣ 📜anatomical_region_summary_PC0rof.png
+ ┣ 📜anatomical_region_summary_PC27high.png
+ ┣ 📜anatomical_region_summary_PC27low.png
+ ┣ 📜anatomical_region_summary_PC27rof.png
+ ┣ 📜anatomical_region_registration_summary.png
+ ```
 
+Motion corrected data are stored as a numpy array under the 'data' key of the registered data asset.
 
 **`decrosstalk`**
 
-All data within the following HDF5 files are stored under the 'data' key as a numpy array.
+```plaintext
+📦decrosstalk
+ ┣ 📜anatomical_region_decrosstalk_episodic_mean_fov.h5
+ ┣ 📜anatomical_region_decrosstalk_episodic_mean_fov.webm
+ ┣ 📜anatomical_region_registered_episodic_mean_fov.h5
+ ┣ 📜anatomical_region_registered_to_pair_episodic_mean_fov.h5
+ ```
 
-* Decrosstalked movie (HDF5)
-* Decrosstalked episodic mean field of view (HDF5)
-* Decrosstalked eposodic mean field of view registered to pair (HDF5)
-* Episodic mean field of view of the registered movie (HDF5)
+All data within the following HDF5 files are stored under the 'data' key as a numpy array.
 
 **`extraction`**
 
+```plaintext
+📦extraction
+ ┣ 📜extraction.h5
+```
 * Extraction (HDF5): Datasets include:
  
     * 'traces/roi', the raw trace
@@ -64,11 +80,24 @@ All data within the following HDF5 files are stored under the 'data' key as a nu
 
 **`dff`**
 
-Contains a dff HDF5 file where the dF/F signals for each ROI are packed into the 'data' key within the dataset. 
+```plaintext
+📦dff
+ ┣ 📜dff.h5
+```
+dF/F signals for each ROI are packed into the 'data' key within the dataset. 
 
 **`events`**
 
-The events folder will contain a plots folder where the events trace for each ROI are plotted and saved as a PNG labeled by cell number. The oasis event file is saved as an HDF5 file. The HDF5 contains the following keys:
+```plaintext
+📦events
+ ┣ 📂plots
+ ┃ ┣ 📜cell_0.png
+ ┃ ┣ 📜cell_1.png
+ ┃ ┣ 📜cell_n.png
+ ┃ ┣ 📜cell_n+1.png
+ ┣ 📜events.h5
+```
+The events.h5 contains the following keys:
 
 * 'cell_roi_ids', list of ROI ID values
 * 'events', event traces for each ROI
