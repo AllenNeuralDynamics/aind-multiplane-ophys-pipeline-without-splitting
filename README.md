@@ -1,10 +1,14 @@
 # Multiplane optical physiology processing pipeline
 
-The multiplane-ophys pipeline is a processing pipeline which uses [Suite2p](https://github.com/MouseLand/suite2p) for both motion correction and segmentation. The final outputs of the pipeline are ROI events detected by [OASIS](https://github.com/j-friedrich/OASIS).
+The multiplane pipeline processes planar optical physiology data acquired in parallel to extract events from the ROIs in each plane (figure 1). Motion correction and segmentation are both done using [Suite2p](https://github.com/MouseLand/suite2p) while the final outputs of the pipeline are the cellular events detected by [OASIS](https://github.com/j-friedrich/OASIS). This pipeline is an extenstion of the [aind-single-plane-ophys-pipeline](https://github.com/AllenNeuralDynamics/aind-single-plane-ophys-pipeline) and includes steps to de-interleave the collected images shown in *Figure 1* and remove ghosting of cells in pairs of planes collected simultaneously.
+
+![alt text](resources/MesoscopeTIFFConstruction.png)
+*Figure1*
+
 
 This is a [Nextflow](https://www.nextflow.io/) pipeline which runs the following steps:
 
-* [aind-ophys-mesoscope-image-splitter](https://github.com/AllenNeuralDynamics/aind-ophys-mesoscope-image-splitter): Multiplanar imaging sessions requires that the TIFF series acquired on the ScanImage system be de-interleaved. All frames acquired simultaneously are stitched on a single page within the TIFF series and need to be pulled out into their respective planes.
+* [aind-ophys-mesoscope-image-splitter](https://github.com/AllenNeuralDynamics/aind-ophys-mesoscope-image-splitter): Multiplanar imaging sessions requires that the TIFF series acquired on the ScanImage system be de-interleaved. All frames acquired simultaneously are stitched onto a single page within the TIFF series and need to be pulled out into their respective planes.
 
 * [aind-ophys-motion-correction](https://github.com/AllenNeuralDynamics/aind-ophys-motion-correction): Suite2p non-rigid motion correction is run on each plane in parallel.
 
@@ -47,7 +51,7 @@ The following folders will be under the field of view directory within the `resu
  ┣ 📜anatomical_region_summary_PC27high.png
  ┣ 📜anatomical_region_summary_PC27low.png
  ┣ 📜anatomical_region_summary_PC27rof.png
- ┣ 📜anatomical_region_registration_summary.png
+ ┗ 📜anatomical_region_registration_summary.png
  ```
 
 Motion corrected data are stored as a numpy array under the 'data' key of the registered data asset.
@@ -59,7 +63,7 @@ Motion corrected data are stored as a numpy array under the 'data' key of the re
  ┣ 📜anatomical_region_decrosstalk_episodic_mean_fov.h5
  ┣ 📜anatomical_region_decrosstalk_episodic_mean_fov.webm
  ┣ 📜anatomical_region_registered_episodic_mean_fov.h5
- ┣ 📜anatomical_region_registered_to_pair_episodic_mean_fov.h5
+ ┗ 📜anatomical_region_registered_to_pair_episodic_mean_fov.h5
  ```
 
 All data within the following HDF5 files are stored under the 'data' key as a numpy array.
@@ -68,7 +72,7 @@ All data within the following HDF5 files are stored under the 'data' key as a nu
 
 ```plaintext
 📦extraction
- ┣ 📜extraction.h5
+ ┗ 📜extraction.h5
 ```
 * Extraction (HDF5): Datasets include:
  
@@ -82,7 +86,7 @@ All data within the following HDF5 files are stored under the 'data' key as a nu
 
 ```plaintext
 📦dff
- ┣ 📜dff.h5
+ ┗ 📜dff.h5
 ```
 dF/F signals for each ROI are packed into the 'data' key within the dataset. 
 
@@ -94,8 +98,8 @@ dF/F signals for each ROI are packed into the 'data' key within the dataset.
  ┃ ┣ 📜cell_0.png
  ┃ ┣ 📜cell_1.png
  ┃ ┣ 📜cell_n.png
- ┃ ┣ 📜cell_n+1.png
- ┣ 📜events.h5
+ ┃ ┗ 📜cell_n+1.png
+ ┗ 📜events.h5
 ```
 The events.h5 contains the following keys:
 
