@@ -1,12 +1,12 @@
 # Multiplane optical physiology processing pipeline
 
-The multiplane pipeline processes planar optical physiology data acquired in parallel to extract events from the ROIs in each plane (figure 1). Motion correction and segmentation are both done using [Suite2p](https://github.com/MouseLand/suite2p) while the final outputs of the pipeline are the cellular events detected by [OASIS](https://github.com/j-friedrich/OASIS). This pipeline is an extenstion of the [aind-single-plane-ophys-pipeline](https://github.com/AllenNeuralDynamics/aind-single-plane-ophys-pipeline) and includes steps to de-interleave the collected images shown in *Figure 1* and remove ghosting of cells in pairs of planes collected simultaneously.
+The multiplane pipeline processes planar optical physiology data acquired in parallel to extract events from the ROIs in each plane *Figure 1*. Motion correction and segmentation are both done using [Suite2p](https://github.com/MouseLand/suite2p) and the final outputs of the pipeline are the cellular events detected by [OASIS](https://github.com/j-friedrich/OASIS). This pipeline is an extenstion of the [aind-single-plane-ophys-pipeline](https://github.com/AllenNeuralDynamics/aind-single-plane-ophys-pipeline) and includes steps to de-interleave the collected images shown in *Figure 1* and remove ghosting of cells in pairs of planes collected simultaneously.
 
 ![alt text](resources/MesoscopeTIFFConstruction.png)
 *Figure1*
 
 
-This is a [Nextflow](https://www.nextflow.io/) pipeline which runs the following steps:
+The multiplane pipeline runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
 
 * [aind-ophys-mesoscope-image-splitter](https://github.com/AllenNeuralDynamics/aind-ophys-mesoscope-image-splitter): Multiplanar imaging sessions requires that the TIFF series acquired on the ScanImage system be de-interleaved. All frames acquired simultaneously are stitched onto a single page within the TIFF series and need to be pulled out into their respective planes.
 
