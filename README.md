@@ -162,7 +162,8 @@ Argparse is used to parse arguments from the command line. All capsules take in 
 
 `aind` Runs in the Code Ocean pipeline [here](https://codeocean.allenneuraldynamics.org/capsule/7026342/tree). If a user has credentials for `aind` Code Ocean, the pipeline can be run using the [Code Ocean API](https://github.com/codeocean/codeocean-sdk-python). 
 
-From the examples page on the [Code Ocean API Github](https://github.com/codeocean/codeocean-sdk-python/blob/main/examples/run_pipeline.py)
+Derived from the examples page on the [Code Ocean API Github](https://github.com/codeocean/codeocean-sdk-python/blob/main/examples/run_pipeline.py)
+
 ```python
 import os
 
@@ -192,16 +193,6 @@ run_params = RunParams(
             id="eeefcc52-b445-4e3c-80c5-0e65526cd712",
             mount="Reference",
         ),
-    ],
-    processes=[
-        PipelineProcessParams(
-            name="capsule_art_simulation_illumina_1",
-            parameters=["75", "1", "HS25", "SingleEnded"],
-        ),
-        PipelineProcessParams(
-            name="capsule_copy_of_fast_qc_2",
-        ),
-    ],
 )
 
 computation = client.computations.run_capsule(run_params)
@@ -233,5 +224,4 @@ data_asset_params = DataAssetParams(
 data_asset = client.data_assets.create_data_asset(data_asset_params)
 
 data_asset = client.data_assets.wait_until_ready(data_asset)
-
 ```
