@@ -77,7 +77,7 @@ The events folder will contain a plots folder where the events trace for each RO
 
 Argparse is used to parse arguments from the command line. All capsules take in the input directory and output directory.
 
-`aind-ophys-motion-correction` and `aind-ophys-extraction-suite2p` can take in parameters to adjust all Suite2p settings.
+`aind-ophys-motion-correction` and `aind-ophys-extraction-suite2p` can take in parameters to adjust all Suite2p motion-correction and segmentation settings.
 
 `aind-ophys-motion-correction`
 
