@@ -12,6 +12,8 @@ The multiplane pipeline runs on [Nextflow](https://www.nextflow.io/) and contain
 
 * [aind-ophys-motion-correction](https://github.com/AllenNeuralDynamics/aind-ophys-motion-correction): Suite2p non-rigid motion correction is run on each plane in parallel.
 
+* [aind-ophys-group-planes](https://github.com/AllenNeuralDynamics/aind-ophys-group-planes): Uses metadata from the session JSON file to associate grouped planes for decrosstalk processing.
+
 * [aind-ophys-decrosstalk-roi-images](https://github.com/AllenNeuralDynamics/aind-ophys-decrosstalk-roi-images): Removes the ghosting of cells from plane pairs scanned consecutively.
 
 * [aind-ophys-extraction-suite2p](https://github.com/AllenNeuralDynamics/aind-ophys-extraction-suite2p): Combination of cellpose and Suite2p cell detection and extraction.
@@ -43,7 +45,6 @@ The following folders will be under the field of view directory within the `resu
  ┣ 📜anatomical_region_max_projection.png
  ┣ 📜anatomical_region_motion_preview.webm
  ┣ 📜anatomical_region_average_projection.png
- ┣ 📜anatomical_region_registered.h5
  ┣ 📜anatomical_region_summary_nonrigid.png
  ┣ 📜anatomical_region_summary_PC0high.png
  ┣ 📜anatomical_region_summary_PC0low.png
