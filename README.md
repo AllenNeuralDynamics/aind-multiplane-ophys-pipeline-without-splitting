@@ -5,7 +5,6 @@ The multiplane pipeline processes planar optical physiology data acquired in par
 ![alt text](resources/MesoscopeTIFFConstruction.png)
 *Figure1*
 
-
 The multiplane pipeline runs on [Nextflow](https://www.nextflow.io/) and contains the following steps:
 
 * [aind-ophys-mesoscope-image-splitter](https://github.com/AllenNeuralDynamics/aind-ophys-mesoscope-image-splitter): Multiplanar imaging sessions requires that the TIFF series acquired on the ScanImage system be de-interleaved. All frames acquired simultaneously are stitched onto a single page within the TIFF series and need to be pulled out into their respective planes.
@@ -16,7 +15,7 @@ The multiplane pipeline runs on [Nextflow](https://www.nextflow.io/) and contain
 
 * [aind-ophys-decrosstalk-roi-images](https://github.com/AllenNeuralDynamics/aind-ophys-decrosstalk-roi-images): Removes the ghosting of cells from plane pairs scanned consecutively.
 
-* [aind-ophys-extraction-suite2p](https://github.com/AllenNeuralDynamics/aind-ophys-extraction-suite2p): Combination of cellpose and Suite2p cell detection and extraction.
+* [aind-ophys-extraction-suite2p](https://github.com/AllenNeuralDynamics/aind-ophys-extraction-suite2p): Combination of Cellpose and Suite2p cell detection and extraction.
 
 * [aind-ophys-dff](https://github.com/AllenNeuralDynamics/aind-ophys-dff/blob/main/code/run_capsule.py#L116): Uses [aind-ophys-utils](https://github.com/AllenNeuralDynamics/aind-ophys-utils/tree/main) to compute the delta F over F from the fluorescence traces.
 
@@ -30,11 +29,19 @@ Currently, the pipeline supports the following input data types:
 
 * `aind`: data ingestion used at AIND. The input folder must contain a subdirectory called `pophys` (for planar-ophys) which contains the raw TIFF timeseries. The root directory must contain JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema).
 
+```plaintext
+📦data
+ ┣ 📂multiplane-ophys_MouseID_YYYY-MM-DD_HH-M-S_processed_YYYY-MM-DD_HH-M-S
+ ┃ ┣ 📂pophys
+ ┣ 📜data_description.json
+ ┣ 📜session.json
+ ┗ 📜processing.json
+ ```
 # Output
 
-Tools used to read files in python are [H5py](https://pypi.org/project/h5py/), json and csv.
+Tools used to read files in python are [h5py](https://pypi.org/project/h5py/), json and csv.
 
-* `aind`: The pipeline outputs are saved under the `results` top-level folder with JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema). Each field of view (plane) runs as a parallel process from motion-correction to event detection. The first subdirectory under `results` is named according to AllenNeuralDynamics derived asset formatting. Below that folder, each field of view is named according to the anatomical region of imaging and the index (or plane number) it corresponds to. The index number is generated before processing in the session.json which details out the imaging configuration during acquisition. As the movies go through the processsing pipeline, a JSON file called processing.json is created where processing data from input parameters are appended. The final JSON will sit at the root of the `results` folder at the end of processing. 
+* `aind`: The pipeline outputs are saved under the `results` top-level folder with JSON files following [aind-data-schema](https://github.com/AllenNeuralDynamics/aind-data-schema). Each field of view (plane) runs as a parallel process from motion-correction to event detection. The first subdirectory under `results` is named according to Allen Institute for Neural Dynamics standard for derived asset formatting. Below that folder, each field of view is named according to the anatomical region of imaging and the index (or plane number) it corresponds to. The index number is generated before processing in the session.json which details out the imaging configuration during acquisition. As the movies go through the processsing pipeline, a JSON file called processing.json is created where processing data from input parameters are appended. The final JSON will sit at the root of the `results` folder at the end of processing. 
 
 ```plaintext
 📦results
@@ -45,7 +52,6 @@ Tools used to read files in python are [H5py](https://pypi.org/project/h5py/), j
  ┃ ┣ 📂anatomical_region_N
  ┗ 📜processing.json
  ```
-
 
 The following folders will be under the field of view directory within the `results` folder:
 
@@ -79,7 +85,7 @@ Motion corrected data are stored as a numpy array under the 'data' key of the re
  ┗ 📜anatomical_region_registered_to_pair_episodic_mean_fov.h5
  ```
 
-All data within the following HDF5 files are stored under the 'data' key as a numpy array.
+All data within the following HDF5 files are stored under the 'data' key as a NumPy array.
 
 **`extraction`**
 
@@ -126,9 +132,9 @@ Argparse is used to parse arguments from the command line. All capsules take in 
 
         --outlier_detrend_window                      For outlier rejection in the xoff/yoff outputs of suite2p, the offsets are first de-trended with a median filter of this duration [seconds]. This value is ~30 or 90 samples in size for 11 and 31 Hz sampling rates respectively.
 
-        --outlier_maxregshift                         Units [fraction FOV dim]. After median-filter etrending, outliers more than this value are clipped to this value in x and y offset, independently.This is similar to Suite2Ps internal maxregshift, but allows for low-frequency drift. Default value of 0.05 is typically clipping outliers to 512 * 0.05 = 25 ixels above or below the median trend.
+        --outlier_maxregshift                         Units [fraction FOV dim]. After median-filter etrending, outliers more than this value are clipped to this value in x and y offset, independently.This is similar to Suite2Ps internal maxregshift, but allows for low-frequency drift. Default value of 0.05 is typically clipping outliers to 512 * 0.05 = 25 pixels above or below the median trend.
 
-        --clip_negative                               Whether or not to clip negative pixel values in output. Because the pixel values in the raw  movies are set by the current coming off a photomultiplier tube, there can be pixels with negative values (current has a sign), possibly due to noise in the rig. Some segmentation algorithms cannot handle negative values in the movie, so we have this option to artificially set those pixels to zero.
+        --clip_negative                               Whether or not to clip negative pixel values in output. Because the pixel values in the raw movies are set by the current coming off a photomultiplier tube, there can be pixels with negative values (current has a sign), possibly due to noise in the rig. Some segmentation algorithms cannot handle negative values in the movie, so we have this option to artificially set those pixels to zero.
 
         --max_reference_iterations                    Maximum number of iterations for creating a reference image (default: 8)
 
@@ -186,7 +192,6 @@ from codeocean.data_asset import (
     AWSS3Target,
 )
 
-
 # Create the client using your domain and API token.
 
 client = CodeOcean(domain=os.environ["CODEOCEAN_URL"], token=os.environ["API_TOKEN"])
@@ -232,3 +237,5 @@ data_asset = client.data_assets.create_data_asset(data_asset_params)
 
 data_asset = client.data_assets.wait_until_ready(data_asset)
 ```
+
+
