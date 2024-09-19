@@ -31,7 +31,7 @@ Currently, the pipeline supports the following input data types:
 
 ```plaintext
 📦data
- ┣ 📂multiplane-ophys_MouseID_YYYY-MM-DD_HH-M-S_processed_YYYY-MM-DD_HH-M-S
+ ┣ 📂multiplane-ophys_MouseID_YYYY-MM-DD_HH-M-S
  ┃ ┣ 📂pophys
  ┣ 📜data_description.json
  ┣ 📜session.json
