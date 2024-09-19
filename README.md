@@ -45,7 +45,7 @@ Tools used to read files in python are [h5py](https://pypi.org/project/h5py/), j
 
 ```plaintext
 📦results
- ┣ 📂multiplane-ophys_MouseID_YYYY-MM-DD_HH-M-S_processed_YYYY-MM-DD_HH-M-S
+ ┣ 📂multiplane-ophys_MouseID_YYYY-MM-DD_HH-M-S_
  ┃ ┣ 📂anatomical_region_0
  ┃ ┣ 📂anatomical_region_1
  ┃ ┣ 📂...
