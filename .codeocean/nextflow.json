@@ -130,6 +130,12 @@
 			},
 			"inputs": [
 				{
+					"id": "jLvj7iKAaDK3jyCv",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_12",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p"
+				},
+				{
 					"id": "uH-U_rYyuQWg33fS0z07V",
 					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
@@ -237,6 +243,13 @@
 			},
 			"inputs": [
 				{
+					"id": "YW6orXKVBc4Bdy4H",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-roi-images",
+					"flatten": true
+				},
+				{
 					"id": "8uRUbXulTmyzSa4d",
 					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
 					"type": "dataset",
@@ -245,10 +258,12 @@
 					"collect": true
 				},
 				{
-					"id": "YW6orXKVBc4Bdy4H",
-					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images"
+					"id": "gITA7wOK1UoZFcui",
+					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/session.json",
+					"collect": true
 				}
 			]
 		}

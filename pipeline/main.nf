@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e3d0148d58a22859632b1f308e21b0839b303c599994665056937a6f42407aac
+// hash:sha256:58108f80825e162285eb1d7811968a5b00b237e1b235ce0055268b4f6a594c35
 
 nextflow.enable.dsl = 1
 
@@ -13,13 +13,15 @@ ophys_mount_to_aind_ophys_decrosstalk_split_session_json_5 = channel.fromPath(pa
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7 = channel.create()
 capsule_aind_ophys_decrosstalk_split_session_json_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_8 = channel.create()
-capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_9 = channel.create()
-capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_10 = channel.create()
-ophys_mount_to_aind_ophys_mesoscope_image_splitter_11 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
-ophys_mount_to_processing_json_aggregator_12 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
-capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_13 = channel.create()
-ophys_mount_to_aind_ophys_extraction_suite2p_14 = channel.fromPath(params.ophys_mount_url + "/data_description.json", type: 'any')
+capsule_aind_ophys_extraction_suite_2_p_12_to_capsule_aind_ophys_dff_5_9 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_10 = channel.create()
+capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_11 = channel.create()
+ophys_mount_to_aind_ophys_mesoscope_image_splitter_12 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
+ophys_mount_to_processing_json_aggregator_13 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
+capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_14 = channel.create()
 capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15 = channel.create()
+ophys_mount_to_aind_ophys_extraction_suite2p_16 = channel.fromPath(params.ophys_mount_url + "/data_description.json", type: 'any')
+ophys_mount_to_aind_ophys_extraction_suite2p_17 = channel.fromPath(params.ophys_mount_url + "/session.json", type: 'any')
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -41,7 +43,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7
-	path 'capsule/results/*/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_9
+	path 'capsule/results/*/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_10
 
 	script:
 	"""
@@ -174,11 +176,12 @@ process capsule_aind_ophys_dff_5 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_9.collect()
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_12_to_capsule_aind_ophys_dff_5_9
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_10.collect()
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_10
+	path 'capsule/results/*' into capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_11
 
 	script:
 	"""
@@ -219,11 +222,11 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_10
+	path 'capsule/data/' from capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_11
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_13
+	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_14
 
 	script:
 	"""
@@ -262,7 +265,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 	memory '128 GB'
 
 	input:
-	path 'capsule/data' from ophys_mount_to_aind_ophys_mesoscope_image_splitter_11.collect()
+	path 'capsule/data' from ophys_mount_to_aind_ophys_mesoscope_image_splitter_12.collect()
 
 	output:
 	path 'capsule/results/*_[0-9]' into capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4
@@ -306,8 +309,8 @@ process capsule_processingjsonaggregator_11 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from ophys_mount_to_processing_json_aggregator_12.collect()
-	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_13.collect()
+	path 'capsule/data/' from ophys_mount_to_processing_json_aggregator_13.collect()
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_14.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -349,8 +352,12 @@ process capsule_aind_ophys_extraction_suite_2_p_12 {
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/' from ophys_mount_to_aind_ophys_extraction_suite2p_14.collect()
-	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15
+	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15.flatten()
+	path 'capsule/data/' from ophys_mount_to_aind_ophys_extraction_suite2p_16.collect()
+	path 'capsule/data/' from ophys_mount_to_aind_ophys_extraction_suite2p_17.collect()
+
+	output:
+	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_12_to_capsule_aind_ophys_dff_5_9
 
 	script:
 	"""
