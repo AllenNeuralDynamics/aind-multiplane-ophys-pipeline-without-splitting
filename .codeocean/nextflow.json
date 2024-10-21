@@ -195,6 +195,14 @@
 			},
 			"inputs": [
 				{
+					"id": "PQZjvlyAcziujnhz",
+					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
 					"id": "C1zXqQLcVA7na_kO0SMO8",
 					"source_id": "capsule_aind_ophys_oasis_event_detection_9",
 					"type": "capsule",
