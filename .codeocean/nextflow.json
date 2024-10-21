@@ -23,6 +23,14 @@
 					"collect": true
 				},
 				{
+					"id": "lcmhJCfNvsLn9ETv",
+					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*json",
+					"collect": true
+				},
+				{
 					"id": "e3ILeCgPeE-S53SaaV6PR",
 					"source_id": "capsule_aind_ophys_mesoscope_image_splitter_10",
 					"type": "capsule",
