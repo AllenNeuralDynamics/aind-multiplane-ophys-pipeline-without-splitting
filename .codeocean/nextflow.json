@@ -65,6 +65,14 @@
 			},
 			"inputs": [
 				{
+					"id": "QBQDDDnevZfFW9Ox",
+					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/session.json",
+					"collect": true
+				},
+				{
 					"id": "GJAX4dMC2KAmZOnU8alK8",
 					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
