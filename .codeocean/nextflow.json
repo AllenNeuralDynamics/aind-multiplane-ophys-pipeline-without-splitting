@@ -1,0 +1,208 @@
+{
+	"version": 1,
+	"processes": [
+		{
+			"name": "capsule_aind_ophys_motion_correction_1",
+			"capsule": {
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
+				"name": "aind-ophys-motion-correction",
+				"slug": "7474660",
+				"version": 6
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 128
+			},
+			"inputs": [
+				{
+					"id": "e3ILeCgPeE-S53SaaV6PR",
+					"source_id": "capsule_aind_ophys_mesoscope_image_splitter_10",
+					"type": "capsule",
+					"name": "aind-ophys-mesoscope-image-splitter",
+					"source_path": "*_[0-9]",
+					"flatten": true
+				}
+			],
+			"results": {
+				"id": "63a8ce2e-f232-4590-9098-36b820202911"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_decrosstalk_split_session_json_2",
+			"capsule": {
+				"id": "fc1b1e9a-fb4b-47e8-a223-b06d8eeb1462",
+				"name": "aind-ophys-decrosstalk-split-session-json",
+				"slug": "4425001",
+				"version": 1
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "GJAX4dMC2KAmZOnU8alK8",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "76b52bbc-5e23-4e4b-9bc7-f48d24031e09"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"capsule": {
+				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053",
+				"name": "aind-ophys-decrosstalk-roi-images",
+				"slug": "1533578",
+				"version": 4
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 128
+			},
+			"inputs": [
+				{
+					"id": "_xWzqVThoTLrrFDjgqJ4f",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"collect": true
+				},
+				{
+					"id": "41DF5BdXDa7xt6iEAutyw",
+					"source_id": "capsule_aind_ophys_decrosstalk_split_session_json_2",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-split-session-json",
+					"flatten": true
+				}
+			],
+			"results": {
+				"id": "e31d29f8-7eee-446b-8f0a-2f027fe6f39b"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"capsule": {
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
+				"name": "aind-ophys-extraction-suite2p",
+				"slug": "9911715",
+				"version": 2,
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 128
+			},
+			"inputs": [
+				{
+					"id": "TMbODn2rRwC48MMT1bXtQ",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-roi-images",
+					"flatten": true
+				}
+			],
+			"results": {
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_dff_5",
+			"capsule": {
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
+				"name": "aind-ophys-dff",
+				"slug": "6574773",
+				"version": 1
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 32
+			},
+			"inputs": [
+				{
+					"id": "l6gBZiiBL3kEUyAhHA-dw",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p"
+				},
+				{
+					"id": "uH-U_rYyuQWg33fS0z07V",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*transform.csv",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "8511f8d7-ac43-4c63-ae00-dad820185c47"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_oasis_event_detection_9",
+			"capsule": {
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
+				"name": "aind-ophys-oasis-event-detection",
+				"slug": "8957649",
+				"version": 2
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 32
+			},
+			"inputs": [
+				{
+					"id": "ZgLhTVYbCO95WWDk",
+					"source_id": "capsule_aind_ophys_dff_5",
+					"type": "capsule",
+					"name": "aind-ophys-dff"
+				}
+			],
+			"results": {
+				"id": "382062c4-fd31-4812-806b-cc81bad29bf4"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_mesoscope_image_splitter_10",
+			"capsule": {
+				"id": "74cf5765-d490-4ff8-accc-8cca3cbd05ae",
+				"name": "aind-ophys-mesoscope-image-splitter",
+				"slug": "4287852",
+				"version": 3
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 128
+			}
+		},
+		{
+			"name": "capsule_processingjsonaggregator_11",
+			"capsule": {
+				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d",
+				"name": "Processing json aggregator",
+				"slug": "1054292",
+				"version": 8
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 32
+			},
+			"inputs": [
+				{
+					"id": "C1zXqQLcVA7na_kO0SMO8",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_9",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0"
+			}
+		}
+	]
+}
