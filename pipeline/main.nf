@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:7590ea0c79d11a3a1760670ca4ea15743a59ca7db5f580afd9d66607a98bd14f
+// hash:sha256:e3d0148d58a22859632b1f308e21b0839b303c599994665056937a6f42407aac
 
 nextflow.enable.dsl = 1
 
@@ -18,6 +18,8 @@ capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_10 = chan
 ophys_mount_to_aind_ophys_mesoscope_image_splitter_11 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
 ophys_mount_to_processing_json_aggregator_12 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
 capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_13 = channel.create()
+ophys_mount_to_aind_ophys_extraction_suite2p_14 = channel.fromPath(params.ophys_mount_url + "/data_description.json", type: 'any')
+capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -131,6 +133,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 
 	output:
 	path 'capsule/results/*'
+	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15
 
 	script:
 	"""
@@ -332,6 +335,46 @@ process capsule_processingjsonaggregator_11 {
 	cd capsule/code
 	chmod +x run
 	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-extraction-suite2p
+process capsule_aind_ophys_extraction_suite_2_p_12 {
+	tag 'capsule-9911715'
+	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v2"
+
+	cpus 1
+	memory '8 GB'
+
+	input:
+	path 'capsule/data/' from ophys_mount_to_aind_ophys_extraction_suite2p_14.collect()
+	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run ${params.capsule_aind_ophys_extraction_suite_2_p_12_args}
 
 	echo "[${task.tag}] completed!"
 	"""
