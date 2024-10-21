@@ -1,0 +1,9 @@
+{
+	"version": 1,
+	"attached_datasets": [
+		{
+			"id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+			"mount": "ophys_mount"
+		}
+	]
+}
