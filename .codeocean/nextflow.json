@@ -238,8 +238,8 @@
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 8,
+				"memory": 64
 			},
 			"inputs": [
 				{

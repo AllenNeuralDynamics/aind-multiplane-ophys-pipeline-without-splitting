@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:58108f80825e162285eb1d7811968a5b00b237e1b235ce0055268b4f6a594c35
+// hash:sha256:045832a550445a2743fc0bff19bab63adf97c5309e7051cb52ec682ab45a99c0
 
 nextflow.enable.dsl = 1
 
@@ -348,8 +348,8 @@ process capsule_aind_ophys_extraction_suite_2_p_12 {
 	tag 'capsule-9911715'
 	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v2"
 
-	cpus 1
-	memory '8 GB'
+	cpus 8
+	memory '64 GB'
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15.flatten()
@@ -365,8 +365,8 @@ process capsule_aind_ophys_extraction_suite_2_p_12 {
 	set -e
 
 	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=8
+	export CO_MEMORY=68719476736
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
