@@ -1,27 +1,27 @@
 #!/usr/bin/env nextflow
-// hash:sha256:045832a550445a2743fc0bff19bab63adf97c5309e7051cb52ec682ab45a99c0
+// hash:sha256:7308dd36cec89a2a7d9e1305df7e0e2b6759427ef15915bc716da5305a0b77bb
 
 nextflow.enable.dsl = 1
 
-params.ophys_mount_url = 's3://aind-private-data-prod-o5171v/multiplane-ophys_746541_2024-10-18_12-22-01'
+params.ophys_mount_url = 's3://aind-private-data-prod-o5171v/multiplane-ophys_739564_2024-09-30_13-31-36'
 
-ophys_mount_to_aind_ophys_motion_correction_1 = channel.fromPath(params.ophys_mount_url + "/*ophys/*platform*", type: 'any')
-ophys_mount_to_aind_ophys_motion_correction_2 = channel.fromPath(params.ophys_mount_url + "/*json", type: 'any')
+ophys_mount_to_aind_ophys_motion_correction_1 = channel.fromPath(params.ophys_mount_url + "/*json", type: 'any')
+ophys_mount_to_aind_ophys_motion_correction_2 = channel.fromPath(params.ophys_mount_url + "/*ophys/*platform*", type: 'any')
 ophys_mount_to_aind_ophys_motion_correction_3 = channel.fromPath(params.ophys_mount_url + "/*/*.h5", type: 'any')
 capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4 = channel.create()
 ophys_mount_to_aind_ophys_decrosstalk_split_session_json_5 = channel.fromPath(params.ophys_mount_url + "/session.json", type: 'any')
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7 = channel.create()
 capsule_aind_ophys_decrosstalk_split_session_json_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_8 = channel.create()
-capsule_aind_ophys_extraction_suite_2_p_12_to_capsule_aind_ophys_dff_5_9 = channel.create()
-capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_10 = channel.create()
-capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_11 = channel.create()
-ophys_mount_to_aind_ophys_mesoscope_image_splitter_12 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
-ophys_mount_to_processing_json_aggregator_13 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
-capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_14 = channel.create()
-capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15 = channel.create()
-ophys_mount_to_aind_ophys_extraction_suite2p_16 = channel.fromPath(params.ophys_mount_url + "/data_description.json", type: 'any')
-ophys_mount_to_aind_ophys_extraction_suite2p_17 = channel.fromPath(params.ophys_mount_url + "/session.json", type: 'any')
+ophys_mount_to_aind_ophys_extraction_suite2p_9 = channel.fromPath(params.ophys_mount_url + "/data_description.json", type: 'any')
+ophys_mount_to_aind_ophys_extraction_suite2p_10 = channel.fromPath(params.ophys_mount_url + "/session.json", type: 'any')
+capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_4_11 = channel.create()
+capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_dff_5_12 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_13 = channel.create()
+capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_14 = channel.create()
+ophys_mount_to_aind_ophys_mesoscope_image_splitter_15 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
+ophys_mount_to_processing_json_aggregator_16 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
+capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_17 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -43,7 +43,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_7
-	path 'capsule/results/*/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_10
+	path 'capsule/results/*/motion_correction/*transform.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_13
 
 	script:
 	"""
@@ -135,7 +135,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15
+	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_4_11
 
 	script:
 	"""
@@ -165,6 +165,53 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	"""
 }
 
+// capsule - aind-ophys-extraction-suite2p
+process capsule_aind_ophys_extraction_suite_2_p_4 {
+	tag 'capsule-9911715'
+	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v2"
+
+	cpus 4
+	memory '128 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/' from ophys_mount_to_aind_ophys_extraction_suite2p_9.collect()
+	path 'capsule/data/' from ophys_mount_to_aind_ophys_extraction_suite2p_10.collect()
+	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_4_11.flatten()
+
+	output:
+	path 'capsule/results/*'
+	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_dff_5_12
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
+	export CO_CPUS=4
+	export CO_MEMORY=137438953472
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run ${params.capsule_aind_ophys_extraction_suite_2_p_4_args}
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_5 {
 	tag 'capsule-6574773'
@@ -176,12 +223,12 @@ process capsule_aind_ophys_dff_5 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_12_to_capsule_aind_ophys_dff_5_9
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_10.collect()
+	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_dff_5_12
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_dff_5_13.collect()
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_11
+	path 'capsule/results/*' into capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_14
 
 	script:
 	"""
@@ -222,11 +269,11 @@ process capsule_aind_ophys_oasis_event_detection_9 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_11
+	path 'capsule/data/' from capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_9_14
 
 	output:
 	path 'capsule/results/*'
-	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_14
+	path 'capsule/results/*' into capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_17
 
 	script:
 	"""
@@ -265,7 +312,7 @@ process capsule_aind_ophys_mesoscope_image_splitter_10 {
 	memory '128 GB'
 
 	input:
-	path 'capsule/data' from ophys_mount_to_aind_ophys_mesoscope_image_splitter_12.collect()
+	path 'capsule/data' from ophys_mount_to_aind_ophys_mesoscope_image_splitter_15.collect()
 
 	output:
 	path 'capsule/results/*_[0-9]' into capsule_aind_ophys_mesoscope_image_splitter_10_to_capsule_aind_ophys_motion_correction_1_4
@@ -309,8 +356,8 @@ process capsule_processingjsonaggregator_11 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from ophys_mount_to_processing_json_aggregator_13.collect()
-	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_14.collect()
+	path 'capsule/data/' from ophys_mount_to_processing_json_aggregator_16.collect()
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_9_to_capsule_processingjsonaggregator_11_17.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -338,50 +385,6 @@ process capsule_processingjsonaggregator_11 {
 	cd capsule/code
 	chmod +x run
 	./run
-
-	echo "[${task.tag}] completed!"
-	"""
-}
-
-// capsule - aind-ophys-extraction-suite2p
-process capsule_aind_ophys_extraction_suite_2_p_12 {
-	tag 'capsule-9911715'
-	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v2"
-
-	cpus 8
-	memory '64 GB'
-
-	input:
-	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_extraction_suite_2_p_12_15.flatten()
-	path 'capsule/data/' from ophys_mount_to_aind_ophys_extraction_suite2p_16.collect()
-	path 'capsule/data/' from ophys_mount_to_aind_ophys_extraction_suite2p_17.collect()
-
-	output:
-	path 'capsule/results/*' into capsule_aind_ophys_extraction_suite_2_p_12_to_capsule_aind_ophys_dff_5_9
-
-	script:
-	"""
-	#!/usr/bin/env bash
-	set -e
-
-	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
-	export CO_CPUS=8
-	export CO_MEMORY=68719476736
-
-	mkdir -p capsule
-	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
-	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
-	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
-
-	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
-	mv capsule-repo/code capsule/code
-	rm -rf capsule-repo
-
-	echo "[${task.tag}] running capsule..."
-	cd capsule/code
-	chmod +x run
-	./run ${params.capsule_aind_ophys_extraction_suite_2_p_12_args}
 
 	echo "[${task.tag}] completed!"
 	"""
