@@ -1,5 +1,5 @@
 metadata_version: 1
-name: Multiplane pipeline (v5.0) with file splitting
+name: TEST MERGED CAPSULES Multiplane pipeline (v5.1) with file splitting
 description: Runs calcium image processing on multiplane datasets from raw tiff image.
 authors:
 - name: AIND
