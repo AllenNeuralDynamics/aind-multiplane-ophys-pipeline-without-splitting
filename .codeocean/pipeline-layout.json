@@ -103,7 +103,41 @@
 				"x": 462.6666666666667,
 				"y": 122.66666666666667
 			},
-			"type": "dataset"
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "results",
+			"position": {
+				"x": 938.4158813861957,
+				"y": -94.98609308975477
+			},
+			"selected": true,
+			"type": "results"
+		},
+		{
+			"data": {
+				"capsule_id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
+			},
+			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"position": {
+				"x": -176.9578781269597,
+				"y": -618.4160482277264
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "c6394aab-0db7-47b2-90ba-864866d6755e"
+			},
+			"id": "capsule_aind_ophys_oasis_event_detection_9",
+			"position": {
+				"x": 65.92605693886344,
+				"y": -58.84109602324793
+			},
+			"selected": false,
+			"type": "capsule"
 		},
 		{
 			"data": {
@@ -207,14 +241,14 @@
 				"x": 1138.6666666666667,
 				"y": 756
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1729292842243,
+	"timestamp": 1731021797919,
 	"viewport": {
-		"x": -116,
-		"y": -274,
-		"zoom": 0.75
+		"x": 205.11354600057575,
+		"y": 602.1795461289821,
+		"zoom": 0.3
 	}
 }
