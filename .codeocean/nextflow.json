@@ -94,10 +94,7 @@
 					"name": "aind-ophys-motion-correction",
 					"collect": true
 				}
-			],
-			"results": {
-				"id": "fc1b1e9a-fb4b-47e8-a223-b06d8eeb1462"
-			}
+			]
 		},
 		{
 			"name": "capsule_aind_ophys_decrosstalk_roi_images_3",
@@ -277,7 +274,7 @@
 			},
 			"inputs": [
 				{
-					"id": "A4BUXYDMNQUr9Uxv",
+					"id": "sU1uC9oGktwQAJWd",
 					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
@@ -288,12 +285,12 @@
 			]
 		},
 		{
-			"name": "capsule_test_extraction_aind_ophys_nwb_11",
+			"name": "capsule_aind_ophys_nwb_11",
 			"capsule": {
-				"id": "e20dfac5-ac7a-4666-9f33-93db845f6181",
-				"name": "TEST EXTRACTION aind-ophys-nwb",
-				"slug": "4035993",
-				"commit": "ab922e63aab9de0d767aef5a0ae5522c37381514"
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"name": "aind-ophys-nwb",
+				"slug": "9383700",
+				"version": 3
 			},
 			"resources": {
 				"cpus": 1,
@@ -301,93 +298,7 @@
 			},
 			"inputs": [
 				{
-					"id": "07wn6sjLBg9XwwXg",
-					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
-					"type": "capsule",
-					"name": "aind-ophys-oasis-event-detection",
-					"source_path": "*/events/*.h5",
-					"target_path": "processed",
-					"collect": true
-				},
-				{
-					"id": "M7C1mvbU2Zpkb8KY",
-					"source_id": "capsule_aind_ophys_dff_5",
-					"type": "capsule",
-					"name": "aind-ophys-dff",
-					"source_path": "*/dff/*.h5",
-					"target_path": "processed",
-					"collect": true
-				},
-				{
-					"id": "vIlolJ2lW9yNkaIN",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
-					"type": "capsule",
-					"name": "aind-ophys-extraction-suite2p",
-					"source_path": "*/extraction/*.h5",
-					"target_path": "processed",
-					"collect": true
-				},
-				{
-					"id": "fajk0wuSn4NieAJK",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
-					"type": "capsule",
-					"name": "aind-ophys-extraction-suite2p",
-					"source_path": "*/extraction/*.png",
-					"collect": true
-				},
-				{
-					"id": "d7Zucz4O2MSoc9SE",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*.h5",
-					"target_path": "processed",
-					"collect": true
-				},
-				{
-					"id": "jVvHfPyHCZPPVJQD",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*.png",
-					"collect": true
-				},
-				{
-					"id": "3J2gOWDCrEkYE4WM",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*.csv",
-					"collect": true
-				},
-				{
-					"id": "ICDKPBd9ci8cMdjE",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*.webm",
-					"collect": true
-				},
-				{
-					"id": "715tjYQ2fY8mhWgV",
-					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images",
-					"source_path": "*/decrosstalk/*.h5",
-					"target_path": "processed",
-					"collect": true
-				},
-				{
-					"id": "U4eNn3OdFN1uOx9x",
-					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/",
-					"target_path": "raw",
-					"collect": true
-				},
-				{
-					"id": "gUpzaAiGW6TaS3rn",
+					"id": "KLIIAvT2B5APZ4Kg",
 					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 					"type": "dataset",
 					"name": "schemas",
@@ -396,16 +307,102 @@
 					"collect": true
 				},
 				{
-					"id": "5ecb8czoSNS4bzHH",
+					"id": "zPlXBpHhFeiHMSh5",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/",
+					"target_path": "raw",
+					"collect": true
+				},
+				{
+					"id": "8THXkzmXqwbUGn6n",
 					"source_id": "capsule_nwb_packaging_subject_capsule_10",
 					"type": "capsule",
 					"name": "NWB-Packaging-Subject-Capsule",
 					"target_path": "nwb",
 					"collect": true
+				},
+				{
+					"id": "AGZdJ3NR6bdo4D2g",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
+					"source_path": "*/events/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "JFRfYBSN8AN6RSiH",
+					"source_id": "capsule_aind_ophys_dff_5",
+					"type": "capsule",
+					"name": "aind-ophys-dff",
+					"source_path": "*/dff/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "xIjk60ZOxxfVyFlJ",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p",
+					"source_path": "*/extraction/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "fYCS5jeAS1IY8JYi",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p",
+					"source_path": "*/extraction/*.png",
+					"collect": true
+				},
+				{
+					"id": "WpnDw8cETmth7R6c",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-roi-images",
+					"source_path": "*/decrosstalk/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "wlXDsbqTtgjtm5Cj",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.png",
+					"collect": true
+				},
+				{
+					"id": "1zjNw7dsVSFF5XvF",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.csv",
+					"collect": true
+				},
+				{
+					"id": "ldSwIxEz8IBOLxri",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.webm",
+					"collect": true
+				},
+				{
+					"id": "EptfEw3lmgLF47mi",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.h5",
+					"target_path": "processed",
+					"collect": true
 				}
 			],
 			"results": {
-				"id": "e20dfac5-ac7a-4666-9f33-93db845f6181"
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			}
 		}
 	]

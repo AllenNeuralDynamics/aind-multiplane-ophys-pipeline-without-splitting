@@ -8,6 +8,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_split_session_json_2",
+			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
@@ -28,25 +29,10 @@
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-resultsresults-start",
-			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-results",
-			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"target": "results"
-		},
-		{
 			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_extraction_suite_2_p_4",
 			"selected": false,
 			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-resultsresults-start",
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"target": "results"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_processingjsonaggregator_9",
@@ -96,56 +82,57 @@
 			"target": "capsule_nwb_packaging_subject_capsule_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_10-capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_10-capsule_aind_ophys_nwb_11",
 			"selected": false,
 			"source": "capsule_nwb_packaging_subject_capsule_10",
-			"target": "capsule_test_extraction_aind_ophys_nwb_11"
+			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_extraction_aind_ophys_nwb_11-results",
-			"source": "capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "reactflow__edge-capsule_aind_ophys_nwb_11-results",
+			"source": "capsule_aind_ophys_nwb_11",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_test_extraction_aind_ophys_nwb_11",
-			"selected": false,
-			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
-			"target": "capsule_test_extraction_aind_ophys_nwb_11"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_nwb_11",
 			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_test_extraction_aind_ophys_nwb_11"
+			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_11",
+			"selected": false,
+			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+			"target": "capsule_aind_ophys_nwb_11"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_nwb_11",
 			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_test_extraction_aind_ophys_nwb_11"
+			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_nwb_11",
 			"selected": false,
 			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "capsule_test_extraction_aind_ophys_nwb_11"
+			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_aind_ophys_nwb_11",
 			"selected": false,
 			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"target": "capsule_test_extraction_aind_ophys_nwb_11"
+			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_11",
 			"selected": false,
 			"source": "capsule_aind_ophys_dff_5",
-			"target": "capsule_test_extraction_aind_ophys_nwb_11"
+			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_11",
+			"selected": false,
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
-			"target": "capsule_test_extraction_aind_ophys_nwb_11"
+			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-results",
@@ -155,6 +142,11 @@
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-results",
 			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-results",
+			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
 			"target": "results"
 		},
 		{
@@ -175,8 +167,8 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
-				"x": 758.5918475125166,
-				"y": -314.647123663044
+				"x": 906.5415407326384,
+				"y": -149.80972963609918
 			},
 			"selected": false,
 			"type": "capsule"
@@ -184,10 +176,10 @@
 		{
 			"id": "results",
 			"position": {
-				"x": 949.4989840890003,
-				"y": 932.2834181013754
+				"x": 1022.7558629172204,
+				"y": 1211.991500900035
 			},
-			"selected": true,
+			"selected": false,
 			"type": "results"
 		},
 		{
@@ -196,8 +188,8 @@
 			},
 			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"position": {
-				"x": 216.79117297375547,
-				"y": 346.7156724984861
+				"x": 182.06556386971374,
+				"y": 514.5561165013544
 			},
 			"selected": false,
 			"type": "capsule"
@@ -232,8 +224,8 @@
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_4",
 			"position": {
-				"x": -281.4747981225905,
-				"y": 651.8153965407137
+				"x": -218.14146478925727,
+				"y": 721.8153965407137
 			},
 			"selected": false,
 			"type": "capsule"
@@ -244,8 +236,8 @@
 			},
 			"id": "capsule_aind_ophys_dff_5",
 			"position": {
-				"x": -375.66522295959476,
-				"y": 864.7187056828413
+				"x": -328.998556292928,
+				"y": 934.7187056828413
 			},
 			"selected": false,
 			"type": "capsule"
@@ -264,8 +256,8 @@
 			},
 			"id": "capsule_aind_ophys_decrosstalk_split_session_json_2",
 			"position": {
-				"x": -74.6743269171061,
-				"y": 43.29292333098056
+				"x": -98.00766025043959,
+				"y": 126.62625666431387
 			},
 			"selected": false,
 			"type": "capsule"
@@ -276,20 +268,20 @@
 			},
 			"id": "capsule_nwb_packaging_subject_capsule_10",
 			"position": {
-				"x": 1196.7854616461098,
-				"y": -414.2261205587875
+				"x": 1241.9534870786879,
+				"y": -407.0148048098437
 			},
 			"selected": false,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "e20dfac5-ac7a-4666-9f33-93db845f6181"
+				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			},
-			"id": "capsule_test_extraction_aind_ophys_nwb_11",
+			"id": "capsule_aind_ophys_nwb_11",
 			"position": {
-				"x": 735.5409141200687,
-				"y": 645.7738794412126
+				"x": 1045.2868204120218,
+				"y": 722.9851951901562
 			},
 			"selected": false,
 			"type": "capsule"
@@ -297,16 +289,16 @@
 		{
 			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 			"position": {
-				"x": -119.88120502055665,
-				"y": -514.2261205587874
+				"x": 65.28682041202141,
+				"y": -547.0148048098437
 			},
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1731001288886,
+	"timestamp": 1731978548434,
 	"viewport": {
-		"x": 115.7788446488808,
-		"y": -52.1436349404851,
-		"zoom": 0.3005110215790699
+		"x": 219.68061647404988,
+		"y": 195.23777274178116,
+		"zoom": 0.3
 	}
 }
