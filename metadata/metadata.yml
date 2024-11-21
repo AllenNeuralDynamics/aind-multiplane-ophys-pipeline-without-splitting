@@ -1,5 +1,5 @@
 metadata_version: 1
-name: TEST MERGED CAPSULES Multiplane pipeline (v5.1) with file splitting
+name: aind-multiplane-ophys-pipeline with splitting v6 extraction
 description: Runs calcium image processing on multiplane datasets from raw tiff image.
 authors:
 - name: AIND

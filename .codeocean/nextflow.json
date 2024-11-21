@@ -15,24 +15,24 @@
 			},
 			"inputs": [
 				{
-					"id": "d3Nx18Mge0m0jraq",
-					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/*ophys/*platform*",
-					"collect": true
-				},
-				{
-					"id": "lcmhJCfNvsLn9ETv",
-					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"id": "shss8a841zxh45G9FnAZJ",
+					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*json",
 					"collect": true
 				},
 				{
-					"id": "BatXpqJjWxUUToHT",
-					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"id": "0lQ8_66t7slDYYl1N-Ivx",
+					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*ophys/*platform*",
+					"collect": true
+				},
+				{
+					"id": "dW2sgE4QaeP-dBHA85AgR",
+					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*/*.h5",
@@ -65,8 +65,8 @@
 			},
 			"inputs": [
 				{
-					"id": "QBQDDDnevZfFW9Ox",
-					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"id": "qjChmoJ20XeaEGPsHOjFC",
+					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/session.json",
@@ -117,6 +117,48 @@
 			}
 		},
 		{
+			"name": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"capsule": {
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
+				"name": "aind-ophys-extraction-suite2p",
+				"slug": "9911715",
+				"version": 2,
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 128
+			},
+			"inputs": [
+				{
+					"id": "Igz2SaWliTICjJ0j",
+					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/data_description.json",
+					"collect": true
+				},
+				{
+					"id": "PWmYV4eEQyVVgD81",
+					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/session.json",
+					"collect": true
+				},
+				{
+					"id": "TMbODn2rRwC48MMT1bXtQ",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-roi-images",
+					"flatten": true
+				}
+			],
+			"results": {
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
+			}
+		},
+		{
 			"name": "capsule_aind_ophys_dff_5",
 			"capsule": {
 				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
@@ -130,8 +172,8 @@
 			},
 			"inputs": [
 				{
-					"id": "jLvj7iKAaDK3jyCv",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_p_12",
+					"id": "l6gBZiiBL3kEUyAhHA-dw",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
 					"type": "capsule",
 					"name": "aind-ophys-extraction-suite2p"
 				},
@@ -186,8 +228,8 @@
 			},
 			"inputs": [
 				{
-					"id": "K2bzTggtg5Wsy9dv",
-					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"id": "1Yhj3z1s9qpaxr2Ge_QLI",
+					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*",
@@ -209,8 +251,8 @@
 			},
 			"inputs": [
 				{
-					"id": "PQZjvlyAcziujnhz",
-					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
+					"id": "6vEEC0shND9OPhAmaCKdT",
+					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*.json",
@@ -227,45 +269,6 @@
 			"results": {
 				"id": "266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0"
 			}
-		},
-		{
-			"name": "capsule_aind_ophys_extraction_suite_2_p_12",
-			"capsule": {
-				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
-				"name": "aind-ophys-extraction-suite2p",
-				"slug": "9911715",
-				"version": 2,
-				"app_panel": true
-			},
-			"resources": {
-				"cpus": 8,
-				"memory": 64
-			},
-			"inputs": [
-				{
-					"id": "YW6orXKVBc4Bdy4H",
-					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images",
-					"flatten": true
-				},
-				{
-					"id": "8uRUbXulTmyzSa4d",
-					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/data_description.json",
-					"collect": true
-				},
-				{
-					"id": "gITA7wOK1UoZFcui",
-					"source_id": "c3072d7f-5fd4-419f-bf6a-a8a056268117",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/session.json",
-					"collect": true
-				}
-			]
 		}
 	]
 }
