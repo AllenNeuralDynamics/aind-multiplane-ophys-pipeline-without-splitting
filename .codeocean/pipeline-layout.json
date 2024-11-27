@@ -1,15 +1,10 @@
 {
 	"edges": [
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-resultsresults-start",
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-results",
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_motion_correction_1",
 			"selected": false,
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "results"
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_aind_ophys_motion_correction_1"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_split_session_json_2",
@@ -25,24 +20,69 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_aind_ophys_decrosstalk_roi_images_3",
-			"selected": false,
 			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
 			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-results",
-			"selected": false,
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "results"
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_split_session_json_2",
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_extraction_suite_2_p_4",
+			"selected": false,
 			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-resultsresults-start",
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_processingjsonaggregator_9",
+			"selected": false,
+			"source": "capsule_aind_ophys_oasis_event_detection_8",
+			"target": "capsule_processingjsonaggregator_9"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_processingjsonaggregator_9",
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_processingjsonaggregator_9"
+		},
+		{
+			"id": "reactflow__edge-capsule_processingjsonaggregator_9-resultsresults-start",
+			"source": "capsule_processingjsonaggregator_9",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_processingjsonaggregator_9-results",
+			"source": "capsule_processingjsonaggregator_9",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_roi_images_3",
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_extraction_suite_2_p_4",
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_oasis_event_detection_8",
+			"source": "capsule_aind_ophys_dff_5",
+			"target": "capsule_aind_ophys_oasis_event_detection_8"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_aind_ophys_dff_5",
 			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"target": "capsule_aind_ophys_dff_5"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-results",
+			"source": "capsule_aind_ophys_motion_correction_1",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-results",
+			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"target": "results"
 		},
 		{
@@ -51,99 +91,14 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_aind_ophys_dff_5",
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"target": "capsule_aind_ophys_dff_5"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_dff_5",
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_ophys_dff_5"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-resultsresults-start",
-			"source": "capsule_aind_ophys_dff_5",
-			"target": "results"
-		},
-		{
 			"id": "reactflow__edge-capsule_aind_ophys_dff_5-results",
 			"source": "capsule_aind_ophys_dff_5",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_9-resultsresults-start",
-			"source": "capsule_aind_ophys_oasis_event_detection_9",
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-results",
+			"source": "capsule_aind_ophys_oasis_event_detection_8",
 			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_9-results",
-			"selected": false,
-			"source": "capsule_aind_ophys_oasis_event_detection_9",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_mesoscope_image_splitter_10-capsule_aind_ophys_motion_correction_1",
-			"selected": false,
-			"source": "capsule_aind_ophys_mesoscope_image_splitter_10",
-			"target": "capsule_aind_ophys_motion_correction_1"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-resultsresults-start",
-			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-results",
-			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_9-capsule_processingjsonaggregator_11",
-			"selected": false,
-			"source": "capsule_aind_ophys_oasis_event_detection_9",
-			"target": "capsule_processingjsonaggregator_11"
-		},
-		{
-			"id": "reactflow__edge-capsule_processingjsonaggregator_11-resultsresults-start",
-			"source": "capsule_processingjsonaggregator_11",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_processingjsonaggregator_11-results",
-			"source": "capsule_processingjsonaggregator_11",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-36d80b7b-e191-46c8-b25a-b46bddcc60ee-capsule_aind_ophys_mesoscope_image_splitter_10",
-			"selected": false,
-			"source": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
-			"target": "capsule_aind_ophys_mesoscope_image_splitter_10"
-		},
-		{
-			"id": "reactflow__edge-36d80b7b-e191-46c8-b25a-b46bddcc60ee-capsule_aind_ophys_motion_correction_1",
-			"selected": false,
-			"source": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
-			"target": "capsule_aind_ophys_motion_correction_1"
-		},
-		{
-			"id": "reactflow__edge-36d80b7b-e191-46c8-b25a-b46bddcc60ee-capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"source": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
-			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
-		},
-		{
-			"id": "reactflow__edge-36d80b7b-e191-46c8-b25a-b46bddcc60ee-capsule_processingjsonaggregator_11",
-			"source": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
-			"target": "capsule_processingjsonaggregator_11"
-		},
-		{
-			"id": "reactflow__edge-36d80b7b-e191-46c8-b25a-b46bddcc60ee-capsule_aind_ophys_extraction_suite_2_p_4",
-			"source": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
-			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_oasis_event_detection_9",
-			"source": "capsule_aind_ophys_dff_5",
-			"target": "capsule_aind_ophys_oasis_event_detection_9"
 		}
 	],
 	"nodes": [
@@ -153,8 +108,8 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
-				"x": 537.166036035081,
-				"y": -941.1817581337795
+				"x": 758.2360259677373,
+				"y": -125.81913165942396
 			},
 			"selected": false,
 			"type": "capsule"
@@ -162,8 +117,8 @@
 		{
 			"id": "results",
 			"position": {
-				"x": 565.0825480528624,
-				"y": -231.65275975642143
+				"x": 1022.7558629172204,
+				"y": 1211.991500900035
 			},
 			"selected": false,
 			"type": "results"
@@ -174,8 +129,8 @@
 			},
 			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"position": {
-				"x": -233.62454479362646,
-				"y": -735.082714894393
+				"x": 184.24652732213872,
+				"y": 473.11781090527904
 			},
 			"selected": false,
 			"type": "capsule"
@@ -184,48 +139,36 @@
 			"data": {
 				"capsule_id": "c6394aab-0db7-47b2-90ba-864866d6755e"
 			},
-			"id": "capsule_aind_ophys_oasis_event_detection_9",
+			"id": "capsule_aind_ophys_oasis_event_detection_8",
 			"position": {
-				"x": 65.92605693886344,
-				"y": -58.84109602324793
+				"x": -219.61481195671786,
+				"y": 1233.963013957272
 			},
 			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "74cf5765-d490-4ff8-accc-8cca3cbd05ae"
-			},
-			"id": "capsule_aind_ophys_mesoscope_image_splitter_10",
-			"position": {
-				"x": 713.8603197821635,
-				"y": -1370.9716398702953
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "fc1b1e9a-fb4b-47e8-a223-b06d8eeb1462"
-			},
-			"id": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"position": {
-				"x": 86.82317547728815,
-				"y": -1033.2091118344501
-			},
-			"selected": true,
 			"type": "capsule"
 		},
 		{
 			"data": {
 				"capsule_id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d"
 			},
-			"id": "capsule_processingjsonaggregator_11",
+			"id": "capsule_processingjsonaggregator_9",
 			"position": {
-				"x": 406.72137997317714,
-				"y": -5.716450201602925
+				"x": 344.4516766711006,
+				"y": 1585.551934763593
 			},
 			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
+			},
+			"id": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"position": {
+				"x": -220.32242824168225,
+				"y": 571.3289183233875
+			},
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -234,32 +177,37 @@
 			},
 			"id": "capsule_aind_ophys_dff_5",
 			"position": {
-				"x": -340.0315060380966,
-				"y": -205.47056526468617
+				"x": -294.1031410541277,
+				"y": 934.7187056828413
 			},
 			"selected": false,
 			"type": "capsule"
 		},
 		{
-			"id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+			"id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"position": {
-				"x": 220.06422842942686,
-				"y": -1528.761341822782
+				"x": 469.33333333333337,
+				"y": -609.0666666666666
 			},
 			"type": "dataset"
 		},
 		{
 			"data": {
-				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
+				"capsule_id": "fc1b1e9a-fb4b-47e8-a223-b06d8eeb1462"
 			},
-			"id": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"id": "capsule_aind_ophys_decrosstalk_split_session_json_2",
 			"position": {
-				"x": -615.0250753917447,
-				"y": -521.2096795215662
+				"x": -98.00766025043959,
+				"y": 126.62625666431387
 			},
 			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1729291885519
+	"timestamp": 1732235410403,
+	"viewport": {
+		"x": 337.0381640179568,
+		"y": 310.1241918837976,
+		"zoom": 0.4585129562295499
+	}
 }

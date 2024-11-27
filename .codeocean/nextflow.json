@@ -7,7 +7,7 @@
 				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
 				"slug": "7474660",
-				"version": 6
+				"version": 5
 			},
 			"resources": {
 				"cpus": 16,
@@ -15,40 +15,47 @@
 			},
 			"inputs": [
 				{
-					"id": "shss8a841zxh45G9FnAZJ",
-					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"id": "PczNWTNKlnm84Q6K",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
-					"source_path": "ophys_mount/*json",
+					"source_path": "ophys_mount/*/*platform.json",
 					"collect": true
 				},
 				{
-					"id": "0lQ8_66t7slDYYl1N-Ivx",
-					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"id": "s4q1lArFoAHAA8tI",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
-					"source_path": "ophys_mount/*ophys/*platform*",
+					"source_path": "ophys_mount/*.json",
 					"collect": true
 				},
 				{
-					"id": "dW2sgE4QaeP-dBHA85AgR",
-					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"id": "dySOQTvwJp6Y7A7n",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*/*.h5",
 					"collect": true
 				},
 				{
-					"id": "e3ILeCgPeE-S53SaaV6PR",
-					"source_id": "capsule_aind_ophys_mesoscope_image_splitter_10",
-					"type": "capsule",
-					"name": "aind-ophys-mesoscope-image-splitter",
-					"source_path": "*_[0-9]",
-					"flatten": true
+					"id": "eaHoscoPjmvVV8ol",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*/MESOSCOPE_FILE*",
+					"collect": true
+				},
+				{
+					"id": "ZcFPqK1MlDHG8G8y",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*/V*"
 				}
 			],
 			"results": {
-				"id": "63a8ce2e-f232-4590-9098-36b820202911"
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
 			}
 		},
 		{
@@ -65,24 +72,29 @@
 			},
 			"inputs": [
 				{
-					"id": "qjChmoJ20XeaEGPsHOjFC",
-					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"id": "DXKKwTddgaHAQE3g",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/session.json",
 					"collect": true
 				},
 				{
-					"id": "GJAX4dMC2KAmZOnU8alK8",
+					"id": "xJGVCwQcZZBQSe0c",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*/MESO*",
+					"collect": true
+				},
+				{
+					"id": "KEZvQCkfy729BcYM",
 					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
 					"name": "aind-ophys-motion-correction",
 					"collect": true
 				}
-			],
-			"results": {
-				"id": "76b52bbc-5e23-4e4b-9bc7-f48d24031e09"
-			}
+			]
 		},
 		{
 			"name": "capsule_aind_ophys_decrosstalk_roi_images_3",
@@ -98,22 +110,30 @@
 			},
 			"inputs": [
 				{
-					"id": "_xWzqVThoTLrrFDjgqJ4f",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
+					"id": "3Sj5cMmwGYlDRnNM",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*ophys/*MESO*.json",
 					"collect": true
 				},
 				{
-					"id": "41DF5BdXDa7xt6iEAutyw",
+					"id": "et9dgF4WwjWDCYY3",
 					"source_id": "capsule_aind_ophys_decrosstalk_split_session_json_2",
 					"type": "capsule",
 					"name": "aind-ophys-decrosstalk-split-session-json",
 					"flatten": true
+				},
+				{
+					"id": "R7aHyqkTjUzQay72",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"collect": true
 				}
 			],
 			"results": {
-				"id": "e31d29f8-7eee-446b-8f0a-2f027fe6f39b"
+				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
 			}
 		},
 		{
@@ -122,36 +142,36 @@
 				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction-suite2p",
 				"slug": "9911715",
-				"version": 2,
+				"version": 4,
 				"app_panel": true
 			},
 			"resources": {
 				"cpus": 4,
-				"memory": 128
+				"memory": 240
 			},
 			"inputs": [
 				{
-					"id": "Igz2SaWliTICjJ0j",
-					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"id": "HcGSe5PeXx7Gz2V1",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-roi-images",
+					"flatten": true
+				},
+				{
+					"id": "jcSsLnYjxwWWXdxz",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/data_description.json",
 					"collect": true
 				},
 				{
-					"id": "PWmYV4eEQyVVgD81",
-					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"id": "HkBRCgkV8C1hM1AJ",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/session.json",
 					"collect": true
-				},
-				{
-					"id": "TMbODn2rRwC48MMT1bXtQ",
-					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images",
-					"flatten": true
 				}
 			],
 			"results": {
@@ -164,39 +184,31 @@
 				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
 				"name": "aind-ophys-dff",
 				"slug": "6574773",
-				"version": 1
+				"version": 2
 			},
 			"resources": {
-				"cpus": 4,
-				"memory": 32
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
-					"id": "l6gBZiiBL3kEUyAhHA-dw",
+					"id": "hyHgztQOJgik27r3",
 					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
 					"type": "capsule",
 					"name": "aind-ophys-extraction-suite2p"
-				},
-				{
-					"id": "uH-U_rYyuQWg33fS0z07V",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*transform.csv",
-					"collect": true
 				}
 			],
 			"results": {
-				"id": "8511f8d7-ac43-4c63-ae00-dad820185c47"
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_oasis_event_detection_9",
+			"name": "capsule_aind_ophys_oasis_event_detection_8",
 			"capsule": {
 				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
 				"name": "aind-ophys-oasis-event-detection",
 				"slug": "8957649",
-				"version": 2
+				"version": 3
 			},
 			"resources": {
 				"cpus": 4,
@@ -204,41 +216,18 @@
 			},
 			"inputs": [
 				{
-					"id": "ZgLhTVYbCO95WWDk",
+					"id": "SJJnE102UEhisUEo",
 					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
 					"name": "aind-ophys-dff"
 				}
 			],
 			"results": {
-				"id": "382062c4-fd31-4812-806b-cc81bad29bf4"
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_mesoscope_image_splitter_10",
-			"capsule": {
-				"id": "74cf5765-d490-4ff8-accc-8cca3cbd05ae",
-				"name": "aind-ophys-mesoscope-image-splitter",
-				"slug": "4287852",
-				"version": 3
-			},
-			"resources": {
-				"cpus": 16,
-				"memory": 128
-			},
-			"inputs": [
-				{
-					"id": "1Yhj3z1s9qpaxr2Ge_QLI",
-					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/*",
-					"collect": true
-				}
-			]
-		},
-		{
-			"name": "capsule_processingjsonaggregator_11",
+			"name": "capsule_processingjsonaggregator_9",
 			"capsule": {
 				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d",
 				"name": "Processing json aggregator",
@@ -251,23 +240,23 @@
 			},
 			"inputs": [
 				{
-					"id": "6vEEC0shND9OPhAmaCKdT",
-					"source_id": "36d80b7b-e191-46c8-b25a-b46bddcc60ee",
+					"id": "gZeDmenxPxTX6mnO",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*.json",
 					"collect": true
 				},
 				{
-					"id": "C1zXqQLcVA7na_kO0SMO8",
-					"source_id": "capsule_aind_ophys_oasis_event_detection_9",
+					"id": "XOEzWn77kDzhrdYN",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
 					"type": "capsule",
 					"name": "aind-ophys-oasis-event-detection",
 					"collect": true
 				}
 			],
 			"results": {
-				"id": "266b93f8-1b9b-4e1e-9415-4eb9ae8eccb0"
+				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d"
 			}
 		}
 	]
