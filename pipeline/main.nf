@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:b22350af07d86fc13bc3086bc78bb5f926e087f47b6f023de3164c6ed333748b
+// hash:sha256:221f1608022ba44921f14175846fb35613b0e07244c295e0bb2d0f1fdde19749
 
 nextflow.enable.dsl = 1
 
@@ -23,6 +23,7 @@ capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_dff_5_15 = chann
 capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_8_16 = channel.create()
 ophys_mount_to_processing_json_aggregator_17 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_processingjsonaggregator_9_18 = channel.create()
+ophys_mount_to_nwb_packaging_subject_capsule_19 = channel.fromPath(params.ophys_mount_url + "/*", type: 'any')
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -335,6 +336,81 @@ process capsule_processingjsonaggregator_9 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1054292.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - NWB-Packaging-Subject-Capsule
+process capsule_nwb_packaging_subject_capsule_10 {
+	tag 'capsule-8198603'
+	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v2"
+
+	cpus 1
+	memory '8 GB'
+
+	input:
+	path 'capsule/data/' from ophys_mount_to_nwb_packaging_subject_capsule_19
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run ${params.capsule_nwb_packaging_subject_capsule_10_args}
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-nwb
+process capsule_aind_ophys_nwb_11 {
+	tag 'capsule-9383700'
+	container "$REGISTRY_HOST/published/8c436e95-8607-4752-8e9f-2b62024f9326:v4"
+
+	cpus 1
+	memory '8 GB'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=8c436e95-8607-4752-8e9f-2b62024f9326
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

@@ -258,6 +258,42 @@
 			"results": {
 				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d"
 			}
+		},
+		{
+			"name": "capsule_nwb_packaging_subject_capsule_10",
+			"capsule": {
+				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
+				"name": "NWB-Packaging-Subject-Capsule",
+				"slug": "8198603",
+				"version": 2,
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "rqC8ecYbWC2Yg5jQ",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/"
+				}
+			]
+		},
+		{
+			"name": "capsule_aind_ophys_nwb_11",
+			"capsule": {
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"name": "aind-ophys-nwb",
+				"slug": "9383700",
+				"version": 4
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			}
 		}
 	]
 }
