@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:221f1608022ba44921f14175846fb35613b0e07244c295e0bb2d0f1fdde19749
+// hash:sha256:661c4f2a29bc35c96bdad123e1ce2e7dfcfb8a42a2f06bc2a672ce2d55eabac3
 
 nextflow.enable.dsl = 1
 
@@ -23,7 +23,8 @@ capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_dff_5_15 = chann
 capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_8_16 = channel.create()
 ophys_mount_to_processing_json_aggregator_17 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_processingjsonaggregator_9_18 = channel.create()
-ophys_mount_to_nwb_packaging_subject_capsule_19 = channel.fromPath(params.ophys_mount_url + "/*", type: 'any')
+ophys_mount_to_nwb_packaging_subject_capsule_19 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
+capsule_nwb_packaging_subject_capsule_10_to_capsule_aind_ophys_nwb_11_20 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -357,7 +358,10 @@ process capsule_nwb_packaging_subject_capsule_10 {
 	memory '8 GB'
 
 	input:
-	path 'capsule/data/' from ophys_mount_to_nwb_packaging_subject_capsule_19
+	path 'capsule/data/ophys_session' from ophys_mount_to_nwb_packaging_subject_capsule_19.collect()
+
+	output:
+	path 'capsule/results/*' into capsule_nwb_packaging_subject_capsule_10_to_capsule_aind_ophys_nwb_11_20
 
 	script:
 	"""
@@ -395,6 +399,14 @@ process capsule_aind_ophys_nwb_11 {
 	cpus 1
 	memory '8 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_capsule_10_to_capsule_aind_ophys_nwb_11_20.collect()
+
+	output:
+	path 'capsule/results/*'
+
 	script:
 	"""
 	#!/usr/bin/env bash
@@ -408,6 +420,8 @@ process capsule_aind_ophys_nwb_11 {
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	ln -s "/tmp/data/schemas" "capsule/data/schemas" # id: fb4b5cef-4505-4145-b8bd-e41d6863d7a9
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo

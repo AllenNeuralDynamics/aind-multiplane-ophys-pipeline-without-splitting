@@ -102,8 +102,26 @@
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_nwb_packaging_subject_capsule_10",
+			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"target": "capsule_nwb_packaging_subject_capsule_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_nwb_packaging_subject_capsule_10-capsule_aind_ophys_nwb_11",
+			"selected": false,
+			"source": "capsule_nwb_packaging_subject_capsule_10",
+			"target": "capsule_aind_ophys_nwb_11"
+		},
+		{
+			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_11",
+			"selected": false,
+			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+			"target": "capsule_aind_ophys_nwb_11"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_nwb_11-results",
+			"source": "capsule_aind_ophys_nwb_11",
+			"target": "results"
 		}
 	],
 	"nodes": [
@@ -226,14 +244,22 @@
 			},
 			"id": "capsule_aind_ophys_nwb_11",
 			"position": {
-				"x": 1212.5461294846154,
-				"y": 430.77737778099845
+				"x": 1122.6387385989028,
+				"y": 569.096440682095
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+			"position": {
+				"x": -258.24657269704414,
+				"y": -449.85398935598266
+			},
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1733186618052,
+	"timestamp": 1733186676401,
 	"viewport": {
 		"x": 472.9054491243518,
 		"y": 362.87086071436,

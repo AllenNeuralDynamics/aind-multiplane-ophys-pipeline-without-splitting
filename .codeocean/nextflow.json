@@ -278,7 +278,9 @@
 					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
-					"source_path": "ophys_mount/"
+					"source_path": "ophys_mount/",
+					"target_path": "ophys_session",
+					"collect": true
 				}
 			]
 		},
@@ -293,6 +295,28 @@
 			"resources": {
 				"cpus": 1,
 				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "02YxvfGqwCgSXHfg",
+					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"type": "dataset",
+					"name": "schemas",
+					"source_path": "schemas/",
+					"target_path": "schemas",
+					"collect": true
+				},
+				{
+					"id": "Svg76cz1ICt2ibsD",
+					"source_id": "capsule_nwb_packaging_subject_capsule_10",
+					"type": "capsule",
+					"name": "NWB-Packaging-Subject-Capsule",
+					"target_path": "nwb",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			}
 		}
 	]
