@@ -298,10 +298,36 @@
 			},
 			"inputs": [
 				{
+					"id": "rDZ1QwU0lz8cDz4C",
+					"source_id": "capsule_aind_ophys_dff_5",
+					"type": "capsule",
+					"name": "aind-ophys-dff"
+				},
+				{
+					"id": "y889zJmyjP80vn0U",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p",
+					"source_path": "*/extraction/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "Z4eY3HXbLCPTmEYQ",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p",
+					"source_path": "*/extraction/*.png",
+					"collect": true
+				},
+				{
 					"id": "3Q3KcU71MO0KM7HS",
 					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images"
+					"name": "aind-ophys-decrosstalk-roi-images",
+					"source_path": "*/decrosstalk/*.h5",
+					"target_path": "processed",
+					"collect": true
 				},
 				{
 					"id": "IrZwyTnsraIIGCtX",

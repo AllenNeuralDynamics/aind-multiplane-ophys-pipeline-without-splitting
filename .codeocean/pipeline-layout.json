@@ -131,7 +131,19 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_nwb_11",
+			"selected": false,
 			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"target": "capsule_aind_ophys_nwb_11"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_aind_ophys_nwb_11",
+			"selected": false,
+			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"target": "capsule_aind_ophys_nwb_11"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_11",
+			"source": "capsule_aind_ophys_dff_5",
 			"target": "capsule_aind_ophys_nwb_11"
 		}
 	],
@@ -270,10 +282,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1733186782417,
+	"timestamp": 1733186840736,
 	"viewport": {
 		"x": 472.9054491243518,
-		"y": 357.87086071436,
+		"y": 354.87086071436,
 		"zoom": 0.43377968836372416
 	}
 }
