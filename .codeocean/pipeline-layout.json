@@ -149,12 +149,13 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_11",
-			"selected": false,
+			"selected": true,
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
 			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_nwb_11",
+			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"target": "capsule_aind_ophys_nwb_11"
 		}
@@ -187,8 +188,8 @@
 			},
 			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"position": {
-				"x": 182.06556386971374,
-				"y": 513.4656347751419
+				"x": 264.9691098013732,
+				"y": 98.94790511684465
 			},
 			"selected": false,
 			"type": "capsule"
@@ -282,7 +283,7 @@
 				"x": 1657.2931802686917,
 				"y": 343.34063443894047
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -295,10 +296,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1733246941647,
+	"timestamp": 1733247042519,
 	"viewport": {
-		"x": -148.6941358581237,
-		"y": 360.54855327531095,
+		"x": 8.305864141876327,
+		"y": 313.54855327531095,
 		"zoom": 0.3739285171897771
 	}
 }
