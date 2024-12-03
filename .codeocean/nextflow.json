@@ -301,7 +301,10 @@
 					"id": "rDZ1QwU0lz8cDz4C",
 					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
-					"name": "aind-ophys-dff"
+					"name": "aind-ophys-dff",
+					"source_path": "*/dff/*.h5",
+					"target_path": "processed",
+					"collect": true
 				},
 				{
 					"id": "y889zJmyjP80vn0U",

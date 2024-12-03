@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ce9231fab6f720fb713ead5e30c1c6c45625b28af181b827245c1ebe959f1636
+// hash:sha256:4422ff4837097ff0c63d966be095481785d51c122f2849cf13d1b2799e5c08cc
 
 nextflow.enable.dsl = 1
 
@@ -245,7 +245,7 @@ process capsule_aind_ophys_dff_5 {
 	output:
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_aind_ophys_dff_5_to_capsule_aind_ophys_oasis_event_detection_8_16
-	path 'capsule/results/*' into capsule_aind_ophys_dff_5_to_capsule_aind_ophys_nwb_11_20
+	path 'capsule/results/*/dff/*.h5' into capsule_aind_ophys_dff_5_to_capsule_aind_ophys_nwb_11_20
 
 	script:
 	"""
@@ -418,7 +418,7 @@ process capsule_aind_ophys_nwb_11 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_dff_5_to_capsule_aind_ophys_nwb_11_20
+	path 'capsule/data/processed/' from capsule_aind_ophys_dff_5_to_capsule_aind_ophys_nwb_11_20.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_nwb_11_21.collect()
 	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_nwb_11_22.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_nwb_11_23.collect()
