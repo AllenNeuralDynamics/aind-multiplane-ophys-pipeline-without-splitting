@@ -298,6 +298,15 @@
 			},
 			"inputs": [
 				{
+					"id": "o4Qci4vN0HNVaslh",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
+					"source_path": "*/events/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
 					"id": "rDZ1QwU0lz8cDz4C",
 					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",

@@ -143,7 +143,13 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_11",
+			"selected": false,
 			"source": "capsule_aind_ophys_dff_5",
+			"target": "capsule_aind_ophys_nwb_11"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_11",
+			"source": "capsule_aind_ophys_oasis_event_detection_8",
 			"target": "capsule_aind_ophys_nwb_11"
 		}
 	],
@@ -282,7 +288,7 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1733186840736,
+	"timestamp": 1733186865029,
 	"viewport": {
 		"x": 472.9054491243518,
 		"y": 354.87086071436,
