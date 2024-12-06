@@ -92,6 +92,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_dff_5-results",
+			"selected": false,
 			"source": "capsule_aind_ophys_dff_5",
 			"target": "results"
 		},
@@ -149,7 +150,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_11",
-			"selected": false,
+			"selected": true,
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
 			"target": "capsule_aind_ophys_nwb_11"
 		},
@@ -280,10 +281,10 @@
 			},
 			"id": "capsule_aind_ophys_nwb_11",
 			"position": {
-				"x": 1609.1556374696638,
-				"y": 573.3311167009634
+				"x": 1769.6141134664235,
+				"y": 412.87264070420315
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -296,10 +297,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1733521357904,
+	"timestamp": 1733528421238,
 	"viewport": {
-		"x": 314.30586414187644,
-		"y": 321.54855327531095,
-		"zoom": 0.3739285171897771
+		"x": 56.3357064408591,
+		"y": -244.31696926651045,
+		"zoom": 0.504467910202614
 	}
 }
