@@ -149,7 +149,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_11",
-			"selected": true,
+			"selected": false,
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
 			"target": "capsule_aind_ophys_nwb_11"
 		},
@@ -268,8 +268,8 @@
 			},
 			"id": "capsule_nwb_packaging_subject_capsule_10",
 			"position": {
-				"x": 2227.262682382091,
-				"y": -106.92036204033144
+				"x": 1922.3915779882464,
+				"y": 13.423494957238745
 			},
 			"selected": false,
 			"type": "capsule"
@@ -289,17 +289,17 @@
 		{
 			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 			"position": {
-				"x": 1640.5120599312854,
-				"y": -476.59706868877606
+				"x": 1506.7966632673188,
+				"y": -514.0373797546868
 			},
-			"selected": false,
+			"selected": true,
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1733247042519,
+	"timestamp": 1733342932455,
 	"viewport": {
-		"x": 8.305864141876327,
-		"y": 313.54855327531095,
+		"x": 489.30586414187644,
+		"y": 248.54855327531095,
 		"zoom": 0.3739285171897771
 	}
 }
