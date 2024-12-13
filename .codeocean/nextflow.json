@@ -4,10 +4,13 @@
 		{
 			"name": "capsule_aind_ophys_motion_correction_1",
 			"capsule": {
-				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
+				"id": "63a8ce2e-f232-4590-9098-36b820202911",
 				"name": "aind-ophys-motion-correction",
-				"slug": "7474660",
-				"version": 8
+				"slug": "5379831",
+				"arguments": [
+					"--debug"
+				],
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 16,
@@ -97,12 +100,11 @@
 			]
 		},
 		{
-			"name": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"name": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
 			"capsule": {
-				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053",
-				"name": "aind-ophys-decrosstalk-roi-images",
-				"slug": "1533578",
-				"version": 5
+				"id": "0562623f-2647-4504-b87c-265b947a4869",
+				"name": "TEST aind-ophys-decrosstalk-roi-images",
+				"slug": "3756067"
 			},
 			"resources": {
 				"cpus": 16,
@@ -115,6 +117,14 @@
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*ophys/*MESO*.json",
+					"collect": true
+				},
+				{
+					"id": "cJ7cjrSoDUNospAz",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/pophys/*/V*_[0-9].h5",
 					"collect": true
 				},
 				{
@@ -133,7 +143,7 @@
 				}
 			],
 			"results": {
-				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
+				"id": "0562623f-2647-4504-b87c-265b947a4869"
 			}
 		},
 		{
@@ -152,9 +162,9 @@
 			"inputs": [
 				{
 					"id": "HcGSe5PeXx7Gz2V1",
-					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"source_id": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images",
+					"name": "TEST aind-ophys-decrosstalk-roi-images",
 					"flatten": true
 				},
 				{
@@ -343,9 +353,9 @@
 				},
 				{
 					"id": "3Q3KcU71MO0KM7HS",
-					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"source_id": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images",
+					"name": "TEST aind-ophys-decrosstalk-roi-images",
 					"source_path": "*/decrosstalk/*.h5",
 					"target_path": "processed",
 					"collect": true

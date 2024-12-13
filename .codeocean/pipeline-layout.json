@@ -13,15 +13,14 @@
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_roi_images_3",
-			"selected": false,
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_test_aind_ophys_decrosstalk_roi_images_3",
 			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
+			"target": "capsule_test_aind_ophys_decrosstalk_roi_images_3"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_test_aind_ophys_decrosstalk_roi_images_3",
 			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
+			"target": "capsule_test_aind_ophys_decrosstalk_roi_images_3"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_split_session_json_2",
@@ -29,9 +28,8 @@
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_extraction_suite_2_p_4",
-			"selected": false,
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_test_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_extraction_suite_2_p_4",
+			"source": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
 		},
 		{
@@ -56,9 +54,10 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_test_aind_ophys_decrosstalk_roi_images_3",
+			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
+			"target": "capsule_test_aind_ophys_decrosstalk_roi_images_3"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_extraction_suite_2_p_4",
@@ -81,8 +80,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-results",
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_test_aind_ophys_decrosstalk_roi_images_3-results",
+			"source": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
 			"target": "results"
 		},
 		{
@@ -130,9 +129,8 @@
 			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_nwb_11",
-			"selected": false,
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_test_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_nwb_11",
+			"source": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
 			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
@@ -149,13 +147,12 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_11",
-			"selected": true,
+			"selected": false,
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
 			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_nwb_11",
-			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"target": "capsule_aind_ophys_nwb_11"
 		}
@@ -163,14 +160,14 @@
 	"nodes": [
 		{
 			"data": {
-				"capsule_id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
+				"capsule_id": "63a8ce2e-f232-4590-9098-36b820202911"
 			},
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
 				"x": 742.8639829663409,
 				"y": -115.10560964823179
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -181,18 +178,6 @@
 			},
 			"selected": false,
 			"type": "results"
-		},
-		{
-			"data": {
-				"capsule_id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
-			},
-			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"position": {
-				"x": 264.9691098013732,
-				"y": 98.94790511684465
-			},
-			"selected": false,
-			"type": "capsule"
 		},
 		{
 			"data": {
@@ -294,12 +279,24 @@
 			},
 			"selected": false,
 			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "0562623f-2647-4504-b87c-265b947a4869"
+			},
+			"id": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
+			"position": {
+				"x": 182.06556386971374,
+				"y": 513.4656347751419
+			},
+			"selected": false,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1733247042519,
+	"timestamp": 1734071378982,
 	"viewport": {
-		"x": 8.305864141876327,
-		"y": 313.54855327531095,
-		"zoom": 0.3739285171897771
+		"x": 56.99177930967036,
+		"y": 74.24062039037187,
+		"zoom": 0.46834202557963556
 	}
 }
