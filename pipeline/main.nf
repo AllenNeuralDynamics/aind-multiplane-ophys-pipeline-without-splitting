@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:5596be91ed453bc642d30ea4ad4c73361bbf99b28a2e6b7cffe8445b8b7313d5
+// hash:sha256:6071ecefda2bd23100ff91d74d8269539898ebad2224778504d0a894fc47f1c8
 
 nextflow.enable.dsl = 1
 
@@ -40,7 +40,7 @@ capsule_nwb_packaging_subject_capsule_10_to_capsule_aind_ophys_nwb_11_31 = chann
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
 	tag 'capsule-5379831'
-	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911"
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:baabc08accddc0a0e01505e7dd64887a"
 
 	cpus 16
 	memory '128 GB'
@@ -79,13 +79,14 @@ process capsule_aind_ophys_motion_correction_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5379831.git" capsule-repo
+	git -C capsule-repo checkout b24210cecb2b578dec6733ee8b5cce50b396cccc --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --debug
+	./run ${params.capsule_aind_ophys_motion_correction_1_args}
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -138,7 +139,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 // capsule - TEST aind-ophys-decrosstalk-roi-images
 process capsule_test_aind_ophys_decrosstalk_roi_images_3 {
 	tag 'capsule-3756067'
-	container "$REGISTRY_HOST/capsule/0562623f-2647-4504-b87c-265b947a4869"
+	container "$REGISTRY_HOST/capsule/0562623f-2647-4504-b87c-265b947a4869:1b1ba8bfe253d969b28f6e0636c10092"
 
 	cpus 16
 	memory '128 GB'
@@ -172,6 +173,7 @@ process capsule_test_aind_ophys_decrosstalk_roi_images_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3756067.git" capsule-repo
+	git -C capsule-repo checkout 0c9545b6b3e89228fdd93e4ba1b56b7c98930ab7 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
