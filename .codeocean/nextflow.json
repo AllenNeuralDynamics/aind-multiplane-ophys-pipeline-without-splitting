@@ -7,7 +7,7 @@
 				"id": "63a8ce2e-f232-4590-9098-36b820202911",
 				"name": "aind-ophys-motion-correction",
 				"slug": "5379831",
-				"commit": "b24210cecb2b578dec6733ee8b5cce50b396cccc",
+				"commit": "3832b45c6576cf6d85f2cc50e8e291d293ab46e5",
 				"image_tag": "baabc08accddc0a0e01505e7dd64887a",
 				"app_panel": true
 			},
@@ -99,13 +99,13 @@
 			]
 		},
 		{
-			"name": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
+			"name": "capsule_decrosstalk_practice_3",
 			"capsule": {
-				"id": "0562623f-2647-4504-b87c-265b947a4869",
-				"name": "TEST aind-ophys-decrosstalk-roi-images",
-				"slug": "3756067",
-				"commit": "0c9545b6b3e89228fdd93e4ba1b56b7c98930ab7",
-				"image_tag": "1b1ba8bfe253d969b28f6e0636c10092"
+				"id": "ea169979-70ee-40e6-b29e-482173d9088d",
+				"name": "decrosstalk - practice",
+				"slug": "1787123",
+				"commit": "08066d242e2b4d6e91a755dc7e8863f496354580",
+				"image_tag": "94745108c10d19b12aca8e0c0c9e8fbb"
 			},
 			"resources": {
 				"cpus": 16,
@@ -129,6 +129,14 @@
 					"collect": true
 				},
 				{
+					"id": "3n73WZzeu7cQ8ImR",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/session.json",
+					"collect": true
+				},
+				{
 					"id": "et9dgF4WwjWDCYY3",
 					"source_id": "capsule_aind_ophys_decrosstalk_split_session_json_2",
 					"type": "capsule",
@@ -144,7 +152,7 @@
 				}
 			],
 			"results": {
-				"id": "0562623f-2647-4504-b87c-265b947a4869"
+				"id": "ea169979-70ee-40e6-b29e-482173d9088d"
 			}
 		},
 		{
@@ -163,9 +171,9 @@
 			"inputs": [
 				{
 					"id": "HcGSe5PeXx7Gz2V1",
-					"source_id": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
+					"source_id": "capsule_decrosstalk_practice_3",
 					"type": "capsule",
-					"name": "TEST aind-ophys-decrosstalk-roi-images",
+					"name": "decrosstalk - practice",
 					"flatten": true
 				},
 				{
@@ -354,9 +362,9 @@
 				},
 				{
 					"id": "3Q3KcU71MO0KM7HS",
-					"source_id": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
+					"source_id": "capsule_decrosstalk_practice_3",
 					"type": "capsule",
-					"name": "TEST aind-ophys-decrosstalk-roi-images",
+					"name": "decrosstalk - practice",
 					"source_path": "*/decrosstalk/*.h5",
 					"target_path": "processed",
 					"collect": true

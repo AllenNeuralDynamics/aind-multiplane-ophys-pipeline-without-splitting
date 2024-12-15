@@ -1,0 +1,8 @@
+{
+	"version": 1,
+	"processes": [
+		"capsule_aind_ophys_extraction_suite_2_p_4",
+		"capsule_nwb_packaging_subject_capsule_10",
+		"capsule_aind_ophys_motion_correction_1"
+	]
+}

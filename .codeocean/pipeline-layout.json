@@ -13,15 +13,14 @@
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_test_aind_ophys_decrosstalk_roi_images_3",
-			"selected": false,
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_decrosstalk_practice_3",
 			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_test_aind_ophys_decrosstalk_roi_images_3"
+			"target": "capsule_decrosstalk_practice_3"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_test_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_decrosstalk_practice_3",
 			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"target": "capsule_test_aind_ophys_decrosstalk_roi_images_3"
+			"target": "capsule_decrosstalk_practice_3"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_split_session_json_2",
@@ -29,8 +28,8 @@
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_extraction_suite_2_p_4",
-			"source": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_decrosstalk_practice_3-capsule_aind_ophys_extraction_suite_2_p_4",
+			"source": "capsule_decrosstalk_practice_3",
 			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
 		},
 		{
@@ -55,10 +54,9 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_test_aind_ophys_decrosstalk_roi_images_3",
-			"selected": false,
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_decrosstalk_practice_3",
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_test_aind_ophys_decrosstalk_roi_images_3"
+			"target": "capsule_decrosstalk_practice_3"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_extraction_suite_2_p_4",
@@ -81,8 +79,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_decrosstalk_roi_images_3-results",
-			"source": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_decrosstalk_practice_3-results",
+			"source": "capsule_decrosstalk_practice_3",
 			"target": "results"
 		},
 		{
@@ -130,8 +128,8 @@
 			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
-			"id": "reactflow__edge-capsule_test_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_nwb_11",
-			"source": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_decrosstalk_practice_3-capsule_aind_ophys_nwb_11",
+			"source": "capsule_decrosstalk_practice_3",
 			"target": "capsule_aind_ophys_nwb_11"
 		},
 		{
@@ -165,10 +163,10 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
-				"x": 742.8639829663409,
+				"x": 739.5306496330077,
 				"y": -115.10560964823179
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -278,14 +276,14 @@
 				"x": 1280.5120599312854,
 				"y": -543.2637353554427
 			},
-			"selected": true,
+			"selected": false,
 			"type": "dataset"
 		},
 		{
 			"data": {
-				"capsule_id": "0562623f-2647-4504-b87c-265b947a4869"
+				"capsule_id": "ea169979-70ee-40e6-b29e-482173d9088d"
 			},
-			"id": "capsule_test_aind_ophys_decrosstalk_roi_images_3",
+			"id": "capsule_decrosstalk_practice_3",
 			"position": {
 				"x": 182.06556386971374,
 				"y": 513.4656347751419
@@ -294,10 +292,5 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1734115421583,
-	"viewport": {
-		"x": 351.5526019516826,
-		"y": 213.52221288473658,
-		"zoom": 0.3
-	}
+	"timestamp": 1734287295025
 }
