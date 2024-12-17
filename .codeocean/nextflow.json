@@ -266,6 +266,10 @@
 				"name": "NWB-Packaging-Subject-Capsule",
 				"slug": "8198603",
 				"version": 2,
+				"arguments": [
+					"--backend",
+					"hdf5"
+				],
 				"app_panel": true
 			},
 			"resources": {
@@ -290,7 +294,7 @@
 				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
 				"name": "aind-ophys-nwb",
 				"slug": "9383700",
-				"version": 5
+				"version": 7
 			},
 			"resources": {
 				"cpus": 1,
