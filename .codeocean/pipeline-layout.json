@@ -19,11 +19,13 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_aind_ophys_decrosstalk_roi_images_3",
+			"selected": false,
 			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
 			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_split_session_json_2",
+			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
@@ -40,6 +42,7 @@
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_processingjsonaggregator_9",
+			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"target": "capsule_processingjsonaggregator_9"
 		},
@@ -91,6 +94,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_dff_5-results",
+			"selected": false,
 			"source": "capsule_aind_ophys_dff_5",
 			"target": "results"
 		},
@@ -197,8 +201,8 @@
 			},
 			"id": "capsule_processingjsonaggregator_9",
 			"position": {
-				"x": 344.4516766711006,
-				"y": 1585.551934763593
+				"x": 161.11834333776733,
+				"y": 1511.9962300109887
 			},
 			"selected": false,
 			"type": "capsule"
@@ -253,8 +257,8 @@
 			},
 			"id": "capsule_nwb_packaging_subject_capsule_10",
 			"position": {
-				"x": 2227.262682382091,
-				"y": -106.92036204033144
+				"x": 1922.3915779882464,
+				"y": 13.423494957238745
 			},
 			"selected": false,
 			"type": "capsule"
@@ -265,17 +269,17 @@
 			},
 			"id": "capsule_aind_ophys_nwb_11",
 			"position": {
-				"x": 1657.2931802686917,
-				"y": 343.34063443894047
+				"x": 1769.6141134664235,
+				"y": 412.37264070420315
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
 			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 			"position": {
-				"x": 1280.5120599312854,
-				"y": -543.2637353554427
+				"x": 1247.3887937392228,
+				"y": -562.1749225537149
 			},
 			"selected": false,
 			"type": "dataset"
@@ -293,10 +297,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1734497176334,
+	"timestamp": 1734459129059,
 	"viewport": {
-		"x": 35.76670397447373,
-		"y": 156.34293764619218,
+		"x": -98.36111165068604,
+		"y": 123.80966510062493,
 		"zoom": 0.3
 	}
 }
