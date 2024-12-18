@@ -4,11 +4,10 @@
 		{
 			"name": "capsule_aind_ophys_motion_correction_1",
 			"capsule": {
-				"id": "63a8ce2e-f232-4590-9098-36b820202911",
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
-				"slug": "5379831",
-				"commit": "3832b45c6576cf6d85f2cc50e8e291d293ab46e5",
-				"image_tag": "baabc08accddc0a0e01505e7dd64887a",
+				"slug": "7474660",
+				"version": 10,
 				"app_panel": true
 			},
 			"resources": {
@@ -99,13 +98,12 @@
 			]
 		},
 		{
-			"name": "capsule_decrosstalk_practice_3",
+			"name": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"capsule": {
-				"id": "ea169979-70ee-40e6-b29e-482173d9088d",
-				"name": "decrosstalk - practice",
-				"slug": "1787123",
-				"commit": "08066d242e2b4d6e91a755dc7e8863f496354580",
-				"image_tag": "94745108c10d19b12aca8e0c0c9e8fbb"
+				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053",
+				"name": "aind-ophys-decrosstalk-roi-images",
+				"slug": "1533578",
+				"version": 5
 			},
 			"resources": {
 				"cpus": 16,
@@ -152,7 +150,7 @@
 				}
 			],
 			"results": {
-				"id": "ea169979-70ee-40e6-b29e-482173d9088d"
+				"id": "e31d29f8-7eee-446b-8f0a-2f027fe6f39b"
 			}
 		},
 		{
@@ -171,9 +169,9 @@
 			"inputs": [
 				{
 					"id": "HcGSe5PeXx7Gz2V1",
-					"source_id": "capsule_decrosstalk_practice_3",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
-					"name": "decrosstalk - practice",
+					"name": "aind-ophys-decrosstalk-roi-images",
 					"flatten": true
 				},
 				{
@@ -362,9 +360,9 @@
 				},
 				{
 					"id": "3Q3KcU71MO0KM7HS",
-					"source_id": "capsule_decrosstalk_practice_3",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
-					"name": "decrosstalk - practice",
+					"name": "aind-ophys-decrosstalk-roi-images",
 					"source_path": "*/decrosstalk/*.h5",
 					"target_path": "processed",
 					"collect": true
