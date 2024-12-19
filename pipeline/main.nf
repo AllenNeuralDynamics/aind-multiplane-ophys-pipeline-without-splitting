@@ -37,6 +37,7 @@ capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_11_29 = channel
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_11_30 = channel.create()
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_11_31 = channel.create()
 capsule_nwb_packaging_subject_capsule_10_to_capsule_aind_ophys_nwb_11_32 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -63,6 +64,8 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*/motion_correction/*.csv' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_11_29
 	path 'capsule/results/*/motion_correction/*.webm' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_11_30
 	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_11_31
+	path 'capsule/results/*' into
+	capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33
 
 	script:
 	"""
@@ -458,6 +461,51 @@ process capsule_aind_ophys_nwb_11 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone --branch v7.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-quality-control-aggregator
+process capsule_aind_ophys_quality_control_aggregator_12 {
+	tag 'capsule-4691390'
+	container "$REGISTRY_HOST/capsule/05b8a796-f8c7-4177-b486-82abfc146e49:39de4320ad48a3f0bacfde41637c8137"
+
+	cpus 1
+	memory '8 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33.collect()
+
+	output:
+	path 'capsule/results/*'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=05b8a796-f8c7-4177-b486-82abfc146e49
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4691390.git" capsule-repo
+	git -C capsule-repo checkout a8a2dc1e85cc08b79b3e1743513a642b4cafa7e8 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
