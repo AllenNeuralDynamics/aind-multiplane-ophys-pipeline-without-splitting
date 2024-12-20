@@ -1,5 +1,6 @@
 metadata_version: 1
-name: aind-capsule-template
-description: Basic structure of a capsule to be customized as needed.
+name: aind-multiplane-ophys-pipeline without splitting v6 extraction
+description: Multiplane processing of data split in LIMS
 authors:
-- name: AIND
+- name: Arielle Leon
+- name: Johannes Friedrich

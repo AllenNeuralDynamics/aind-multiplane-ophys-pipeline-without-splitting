@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"attached_datasets": [
+		{
+			"id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"mount": "ophys_mount"
+		},
+		{
+			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+			"mount": "schemas"
+		}
+	]
+}
