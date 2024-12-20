@@ -108,10 +108,10 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
-				"x": 758.2360259677373,
-				"y": -125.81913165942396
+				"x": 1091.9234341887648,
+				"y": -154.1716565409492
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -129,8 +129,8 @@
 			},
 			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"position": {
-				"x": 184.24652732213872,
-				"y": 473.11781090527904
+				"x": 182.06556386971374,
+				"y": 514.5561165013544
 			},
 			"selected": false,
 			"type": "capsule"
@@ -165,10 +165,10 @@
 			},
 			"id": "capsule_aind_ophys_extraction_suite_2_p_4",
 			"position": {
-				"x": -220.32242824168225,
-				"y": 571.3289183233875
+				"x": -218.14146478925727,
+				"y": 721.8153965407137
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -177,7 +177,7 @@
 			},
 			"id": "capsule_aind_ophys_dff_5",
 			"position": {
-				"x": -294.1031410541277,
+				"x": -328.998556292928,
 				"y": 934.7187056828413
 			},
 			"selected": false,
@@ -204,10 +204,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1732235410403,
+	"timestamp": 1734730145818,
 	"viewport": {
-		"x": 337.0381640179568,
-		"y": 310.1241918837976,
+		"x": 223.03816401795677,
+		"y": 357.1241918837976,
 		"zoom": 0.4585129562295499
 	}
 }
