@@ -121,16 +121,69 @@
 			"id": "reactflow__edge-capsule_logging_aind_ophys_motion_correction_1-capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"source": "capsule_logging_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
+		},
+		{
+			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_nwb_packaging_subject_11",
+			"selected": false,
+			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+			"target": "capsule_nwb_packaging_subject_11"
+		},
+		{
+			"id": "reactflow__edge-capsule_nwb_packaging_subject_11-capsule_aind_ophys_nwb_10",
+			"selected": false,
+			"source": "capsule_nwb_packaging_subject_11",
+			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_nwb_10-results",
+			"source": "capsule_aind_ophys_nwb_10",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_nwb_10",
+			"selected": false,
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_motion_correction_1-capsule_aind_ophys_nwb_10",
+			"selected": false,
+			"source": "capsule_logging_aind_ophys_motion_correction_1",
+			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_nwb_10",
+			"selected": false,
+			"source": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_extraction_suite_2_p_4-capsule_aind_ophys_nwb_10",
+			"selected": false,
+			"source": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_dff_5-capsule_aind_ophys_nwb_10",
+			"selected": false,
+			"source": "capsule_logging_aind_ophys_dff_5",
+			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_10",
+			"selected": false,
+			"source": "capsule_logging_aind_ophys_oasis_event_detection_8",
+			"target": "capsule_aind_ophys_nwb_10"
 		}
 	],
 	"nodes": [
 		{
 			"id": "results",
 			"position": {
-				"x": 1022.7558629172204,
-				"y": 1211.991500900035
+				"x": 1005.8435742682382,
+				"y": 1406.482820363329
 			},
-			"selected": false,
+			"selected": true,
 			"type": "results"
 		},
 		{
@@ -159,8 +212,8 @@
 			},
 			"id": "capsule_logging_aind_ophys_motion_correction_1",
 			"position": {
-				"x": 821.7829601295425,
-				"y": -103.28274248583921
+				"x": 632.9290702159092,
+				"y": 40.47171103050857
 			},
 			"selected": false,
 			"type": "capsule"
@@ -227,12 +280,41 @@
 			},
 			"id": "capsule_logging_aind_ophys_dff_5",
 			"position": {
-				"x": -631.6032641691968,
-				"y": 884.0553579086877
+				"x": -631.6032641691969,
+				"y": 1013.7162375508835
 			},
-			"selected": true,
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
+			},
+			"id": "capsule_aind_ophys_nwb_10",
+			"position": {
+				"x": 1289.258919930874,
+				"y": 481.8382098414977
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19"
+			},
+			"id": "capsule_nwb_packaging_subject_11",
+			"position": {
+				"x": 1292.0776347057047,
+				"y": -25.530449627964913
+			},
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1734981952265
+	"timestamp": 1734982759420,
+	"viewport": {
+		"x": 248.49085887015826,
+		"y": 294.7908163129233,
+		"zoom": 0.35477161752209846
+	}
 }

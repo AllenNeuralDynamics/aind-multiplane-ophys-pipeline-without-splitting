@@ -7,6 +7,7 @@
 				"id": "9078ac4b-9073-4d3d-bd01-7feef6aa355b",
 				"name": "LOGGING aind-ophys-motion-correction",
 				"slug": "8075853",
+				"commit": "2727ef3dbe40a3303813d1d43a32b10be728c45e",
 				"arguments": [
 					"--debug"
 				]
@@ -104,6 +105,7 @@
 				"id": "1c537182-e732-42d3-b5c3-5c320e7df4b1",
 				"name": "LOGGING aind-ophys-decrosstalk-roi-images",
 				"slug": "6343030",
+				"commit": "7320a41eaa6a924d78c12b0ad1ba14f66883df83",
 				"arguments": [
 					"--debug"
 				]
@@ -145,7 +147,8 @@
 			"capsule": {
 				"id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17",
 				"name": "LOGGING aind-ophys-extraction-suite2p",
-				"slug": "5021297"
+				"slug": "5021297",
+				"commit": "6a30bb0d3b1ab7383f07a4fab0d218b2e5172091"
 			},
 			"resources": {
 				"cpus": 4,
@@ -177,7 +180,8 @@
 			"capsule": {
 				"id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52",
 				"name": "LOGGING aind-ophys-dff",
-				"slug": "4898929"
+				"slug": "4898929",
+				"commit": "e5073bcc40bc13f79945de790fed7e69e1b2aa9d"
 			},
 			"resources": {
 				"cpus": 2,
@@ -208,7 +212,8 @@
 			"capsule": {
 				"id": "d85189da-954d-45f4-b76c-98a70fa4955d",
 				"name": "LOGGING aind-ophys-oasis-event-detection",
-				"slug": "9367816"
+				"slug": "9367816",
+				"commit": "e660abc0ad89d4cf9528292bc7589395c0cb2608"
 			},
 			"resources": {
 				"cpus": 4,
@@ -285,6 +290,111 @@
 			"results": {
 				"id": "d51df783-d892-4304-a129-238a9baea72a"
 			}
+		},
+		{
+			"name": "capsule_aind_ophys_nwb_10",
+			"capsule": {
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"name": "aind-ophys-nwb",
+				"slug": "9383700",
+				"version": 8
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "fwhcG1GSP93eUITh",
+					"source_id": "capsule_logging_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-oasis-event-detection",
+					"source_path": "*/events/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "VcFxZxm2Dsofe4hY",
+					"source_id": "capsule_logging_aind_ophys_dff_5",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-dff",
+					"source_path": "*/dff/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "E6C3Vqd94sE51LAS",
+					"source_id": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-extraction-suite2p",
+					"source_path": "*/extraction/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "jceCMYjcfQXIN6Mi",
+					"source_id": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-decrosstalk-roi-images",
+					"source_path": "*/decrosstalk/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "PkAHZLYC8ZgxBPK5",
+					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "yI77Te6i1FgK9CRg",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/",
+					"target_path": "multiplane-ophys_raw",
+					"collect": true
+				},
+				{
+					"id": "Q779RY6uXlCP9JX6",
+					"source_id": "capsule_nwb_packaging_subject_11",
+					"type": "capsule",
+					"name": "NWB-Packaging-Subject-Capsule",
+					"target_path": "nwb",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326"
+			}
+		},
+		{
+			"name": "capsule_nwb_packaging_subject_11",
+			"capsule": {
+				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
+				"name": "NWB-Packaging-Subject-Capsule",
+				"slug": "8198603",
+				"version": 2,
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "q4HsVHVY2dGkuEV1",
+					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"type": "dataset",
+					"name": "schemas",
+					"source_path": "schemas/",
+					"target_path": "schemas",
+					"collect": true
+				}
+			]
 		}
 	]
 }

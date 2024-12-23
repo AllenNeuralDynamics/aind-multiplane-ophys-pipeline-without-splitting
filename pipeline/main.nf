@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:ef93a38d3288c6caa0bd8650183a37e747e1f03682afad329bbfa7dc173ddd53
+// hash:sha256:6585aed18c2be2799d0a12db2ce65dabb7764b3010ba4d9946eacfc310ab3f8a
 
 nextflow.enable.dsl = 1
 
@@ -27,6 +27,13 @@ capsule_logging_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_pipeline_proce
 capsule_logging_aind_ophys_dff_5_to_capsule_aind_pipeline_processing_metadata_aggregator_9_20 = channel.create()
 ophys_mount_to_aind_pipeline_processing_metadata_aggregator_21 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
 capsule_logging_aind_ophys_oasis_event_detection_8_to_capsule_aind_pipeline_processing_metadata_aggregator_9_22 = channel.create()
+capsule_logging_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_nwb_10_23 = channel.create()
+capsule_logging_aind_ophys_dff_5_to_capsule_aind_ophys_nwb_10_24 = channel.create()
+capsule_logging_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_nwb_10_25 = channel.create()
+capsule_logging_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_nwb_10_26 = channel.create()
+capsule_logging_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_27 = channel.create()
+ophys_mount_to_aind_ophys_nwb_28 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
+capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_29 = channel.create()
 
 // capsule - LOGGING aind-ophys-motion-correction
 process capsule_logging_aind_ophys_motion_correction_1 {
@@ -50,6 +57,7 @@ process capsule_logging_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*' into capsule_logging_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_8
 	path 'capsule/results/*' into capsule_logging_aind_ophys_motion_correction_1_to_capsule_logging_aind_ophys_decrosstalk_roi_images_3_11
 	path 'capsule/results/*' into capsule_logging_aind_ophys_motion_correction_1_to_capsule_aind_pipeline_processing_metadata_aggregator_9_18
+	path 'capsule/results/*/motion_correction/*.h5' into capsule_logging_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_27
 
 	script:
 	"""
@@ -67,6 +75,7 @@ process capsule_logging_aind_ophys_motion_correction_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8075853.git" capsule-repo
+	git -C capsule-repo checkout 2727ef3dbe40a3303813d1d43a32b10be728c45e --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -141,6 +150,7 @@ process capsule_logging_aind_ophys_decrosstalk_roi_images_3 {
 	output:
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_logging_aind_ophys_decrosstalk_roi_images_3_to_capsule_logging_aind_ophys_extraction_suite_2_p_4_13
+	path 'capsule/results/*/decrosstalk/*.h5' into capsule_logging_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_nwb_10_26
 
 	script:
 	"""
@@ -158,6 +168,7 @@ process capsule_logging_aind_ophys_decrosstalk_roi_images_3 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6343030.git" capsule-repo
+	git -C capsule-repo checkout 7320a41eaa6a924d78c12b0ad1ba14f66883df83 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -188,6 +199,7 @@ process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_logging_aind_ophys_extraction_suite_2_p_4_to_capsule_logging_aind_ophys_dff_5_15
 	path 'capsule/results/*' into capsule_logging_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_pipeline_processing_metadata_aggregator_9_19
+	path 'capsule/results/*/extraction/*.h5' into capsule_logging_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_nwb_10_25
 
 	script:
 	"""
@@ -205,6 +217,7 @@ process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5021297.git" capsule-repo
+	git -C capsule-repo checkout 6a30bb0d3b1ab7383f07a4fab0d218b2e5172091 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -235,6 +248,7 @@ process capsule_logging_aind_ophys_dff_5 {
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_logging_aind_ophys_dff_5_to_capsule_logging_aind_ophys_oasis_event_detection_8_17
 	path 'capsule/results/*' into capsule_logging_aind_ophys_dff_5_to_capsule_aind_pipeline_processing_metadata_aggregator_9_20
+	path 'capsule/results/*/dff/*.h5' into capsule_logging_aind_ophys_dff_5_to_capsule_aind_ophys_nwb_10_24
 
 	script:
 	"""
@@ -252,6 +266,7 @@ process capsule_logging_aind_ophys_dff_5 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4898929.git" capsule-repo
+	git -C capsule-repo checkout e5073bcc40bc13f79945de790fed7e69e1b2aa9d --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -281,6 +296,7 @@ process capsule_logging_aind_ophys_oasis_event_detection_8 {
 	output:
 	path 'capsule/results/*'
 	path 'capsule/results/*' into capsule_logging_aind_ophys_oasis_event_detection_8_to_capsule_aind_pipeline_processing_metadata_aggregator_9_22
+	path 'capsule/results/*/events/*.h5' into capsule_logging_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_nwb_10_23
 
 	script:
 	"""
@@ -298,6 +314,7 @@ process capsule_logging_aind_ophys_oasis_event_detection_8 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9367816.git" capsule-repo
+	git -C capsule-repo checkout e660abc0ad89d4cf9528292bc7589395c0cb2608 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -353,6 +370,97 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	cd capsule/code
 	chmod +x run
 	./run ${params.capsule_aind_pipeline_processing_metadata_aggregator_9_args}
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-nwb
+process capsule_aind_ophys_nwb_10 {
+	tag 'capsule-9383700'
+	container "$REGISTRY_HOST/published/8c436e95-8607-4752-8e9f-2b62024f9326:v8"
+
+	cpus 1
+	memory '8 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/processed/' from capsule_logging_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_nwb_10_23.collect()
+	path 'capsule/data/processed/' from capsule_logging_aind_ophys_dff_5_to_capsule_aind_ophys_nwb_10_24.collect()
+	path 'capsule/data/processed/' from capsule_logging_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_nwb_10_25.collect()
+	path 'capsule/data/processed/' from capsule_logging_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_nwb_10_26.collect()
+	path 'capsule/data/processed/' from capsule_logging_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_27.collect()
+	path 'capsule/data/multiplane-ophys_raw' from ophys_mount_to_aind_ophys_nwb_28.collect()
+	path 'capsule/data/nwb/' from capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_29.collect()
+
+	output:
+	path 'capsule/results/*'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=8c436e95-8607-4752-8e9f-2b62024f9326
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - NWB-Packaging-Subject-Capsule
+process capsule_nwb_packaging_subject_11 {
+	tag 'capsule-8198603'
+	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v2"
+
+	cpus 1
+	memory '8 GB'
+
+	output:
+	path 'capsule/results/*' into capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_29
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	ln -s "/tmp/data/schemas" "capsule/data/schemas" # id: fb4b5cef-4505-4145-b8bd-e41d6863d7a9
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run ${params.capsule_nwb_packaging_subject_11_args}
 
 	echo "[${task.tag}] completed!"
 	"""
