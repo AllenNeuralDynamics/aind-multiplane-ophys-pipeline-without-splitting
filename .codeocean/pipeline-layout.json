@@ -1,27 +1,24 @@
 {
 	"edges": [
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_motion_correction_1",
-			"selected": false,
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_logging_aind_ophys_motion_correction_1",
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_motion_correction_1"
+			"target": "capsule_logging_aind_ophys_motion_correction_1"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"selected": false,
-			"source": "capsule_aind_ophys_motion_correction_1",
+			"id": "reactflow__edge-capsule_logging_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_split_session_json_2",
+			"source": "capsule_logging_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_roi_images_3",
-			"selected": false,
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
+			"id": "reactflow__edge-capsule_logging_aind_ophys_motion_correction_1-capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"source": "capsule_logging_aind_ophys_motion_correction_1",
+			"target": "capsule_logging_aind_ophys_decrosstalk_roi_images_3"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_aind_ophys_decrosstalk_roi_images_3",
+			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_logging_aind_ophys_decrosstalk_roi_images_3",
 			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
+			"target": "capsule_logging_aind_ophys_decrosstalk_roi_images_3"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_split_session_json_2",
@@ -29,91 +26,104 @@
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_extraction_suite_2_p_4",
+			"id": "reactflow__edge-capsule_logging_aind_ophys_decrosstalk_roi_images_3-capsule_logging_aind_ophys_extraction_suite_2_p_4",
+			"source": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"target": "capsule_logging_aind_ophys_extraction_suite_2_p_4"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_oasis_event_detection_8-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "capsule_logging_aind_ophys_oasis_event_detection_8",
+			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_pipeline_processing_metadata_aggregator_9-resultsresults-start",
+			"source": "capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_pipeline_processing_metadata_aggregator_9-results",
+			"source": "capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_logging_aind_ophys_decrosstalk_roi_images_3"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_logging_aind_ophys_extraction_suite_2_p_4",
 			"selected": false,
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_logging_aind_ophys_extraction_suite_2_p_4"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_processingjsonaggregator_9",
+			"id": "reactflow__edge-capsule_logging_aind_ophys_dff_5-capsule_logging_aind_ophys_oasis_event_detection_8",
+			"source": "capsule_logging_aind_ophys_dff_5",
+			"target": "capsule_logging_aind_ophys_oasis_event_detection_8"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_extraction_suite_2_p_4-capsule_logging_aind_ophys_dff_5",
+			"source": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+			"target": "capsule_logging_aind_ophys_dff_5"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_motion_correction_1-results",
+			"source": "capsule_logging_aind_ophys_motion_correction_1",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_decrosstalk_roi_images_3-results",
+			"source": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_extraction_suite_2_p_4-results",
+			"source": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_dff_5-results",
+			"source": "capsule_logging_aind_ophys_dff_5",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_oasis_event_detection_8-results",
+			"source": "capsule_logging_aind_ophys_oasis_event_detection_8",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_logging_aind_ophys_dff_5",
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_logging_aind_ophys_dff_5"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_logging_aind_ophys_oasis_event_detection_8",
 			"selected": false,
-			"source": "capsule_aind_ophys_oasis_event_detection_8",
-			"target": "capsule_processingjsonaggregator_9"
-		},
-		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_processingjsonaggregator_9",
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_processingjsonaggregator_9"
+			"target": "capsule_logging_aind_ophys_oasis_event_detection_8"
 		},
 		{
-			"id": "reactflow__edge-capsule_processingjsonaggregator_9-resultsresults-start",
-			"source": "capsule_processingjsonaggregator_9",
-			"target": "results"
+			"id": "reactflow__edge-capsule_logging_aind_ophys_dff_5-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "capsule_logging_aind_ophys_dff_5",
+			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_processingjsonaggregator_9-results",
-			"source": "capsule_processingjsonaggregator_9",
-			"target": "results"
+			"id": "reactflow__edge-capsule_logging_aind_ophys_extraction_suite_2_p_4-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_roi_images_3",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
-		},
-		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_extraction_suite_2_p_4",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_oasis_event_detection_8",
-			"source": "capsule_aind_ophys_dff_5",
-			"target": "capsule_aind_ophys_oasis_event_detection_8"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_aind_ophys_dff_5",
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"target": "capsule_aind_ophys_dff_5"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-results",
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-results",
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-results",
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-results",
-			"source": "capsule_aind_ophys_dff_5",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-results",
-			"source": "capsule_aind_ophys_oasis_event_detection_8",
-			"target": "results"
+			"id": "reactflow__edge-capsule_logging_aind_ophys_motion_correction_1-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "capsule_logging_aind_ophys_motion_correction_1",
+			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		}
 	],
 	"nodes": [
-		{
-			"data": {
-				"capsule_id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
-			},
-			"id": "capsule_aind_ophys_motion_correction_1",
-			"position": {
-				"x": 1091.9234341887648,
-				"y": -154.1716565409492
-			},
-			"selected": true,
-			"type": "capsule"
-		},
 		{
 			"id": "results",
 			"position": {
@@ -122,66 +132,6 @@
 			},
 			"selected": false,
 			"type": "results"
-		},
-		{
-			"data": {
-				"capsule_id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
-			},
-			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"position": {
-				"x": 182.06556386971374,
-				"y": 514.5561165013544
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "c6394aab-0db7-47b2-90ba-864866d6755e"
-			},
-			"id": "capsule_aind_ophys_oasis_event_detection_8",
-			"position": {
-				"x": -219.61481195671786,
-				"y": 1233.963013957272
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d"
-			},
-			"id": "capsule_processingjsonaggregator_9",
-			"position": {
-				"x": 344.4516766711006,
-				"y": 1585.551934763593
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
-			},
-			"id": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"position": {
-				"x": -218.14146478925727,
-				"y": 721.8153965407137
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "85987e27-601c-4863-811b-71e5b4bdea37"
-			},
-			"id": "capsule_aind_ophys_dff_5",
-			"position": {
-				"x": -328.998556292928,
-				"y": 934.7187056828413
-			},
-			"selected": false,
-			"type": "capsule"
 		},
 		{
 			"id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
@@ -202,12 +152,87 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "9078ac4b-9073-4d3d-bd01-7feef6aa355b"
+			},
+			"id": "capsule_logging_aind_ophys_motion_correction_1",
+			"position": {
+				"x": 821.7829601295425,
+				"y": -103.28274248583921
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "1c537182-e732-42d3-b5c3-5c320e7df4b1"
+			},
+			"id": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"position": {
+				"x": 182.06556386971374,
+				"y": 514.5561165013544
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17"
+			},
+			"id": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+			"position": {
+				"x": -218.14146478925727,
+				"y": 721.8153965407137
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "d85189da-954d-45f4-b76c-98a70fa4955d"
+			},
+			"id": "capsule_logging_aind_ophys_oasis_event_detection_8",
+			"position": {
+				"x": -259.07681880434245,
+				"y": 1298.7934537783703
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "d51df783-d892-4304-a129-238a9baea72a"
+			},
+			"id": "capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"position": {
+				"x": 285.2586663996633,
+				"y": 1641.9262302601999
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+			"position": {
+				"x": 1415.8843123679753,
+				"y": -324.4352262763717
+			},
+			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52"
+			},
+			"id": "capsule_logging_aind_ophys_dff_5",
+			"position": {
+				"x": -631.6032641691968,
+				"y": 884.0553579086877
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1734730145818,
-	"viewport": {
-		"x": 223.03816401795677,
-		"y": 357.1241918837976,
-		"zoom": 0.4585129562295499
-	}
+	"timestamp": 1734981952265
 }

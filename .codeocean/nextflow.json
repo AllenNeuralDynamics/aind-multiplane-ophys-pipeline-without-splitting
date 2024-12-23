@@ -2,12 +2,14 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_aind_ophys_motion_correction_1",
+			"name": "capsule_logging_aind_ophys_motion_correction_1",
 			"capsule": {
-				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
-				"name": "aind-ophys-motion-correction",
-				"slug": "7474660",
-				"version": 5
+				"id": "9078ac4b-9073-4d3d-bd01-7feef6aa355b",
+				"name": "LOGGING aind-ophys-motion-correction",
+				"slug": "8075853",
+				"arguments": [
+					"--debug"
+				]
 			},
 			"resources": {
 				"cpus": 16,
@@ -55,7 +57,7 @@
 				}
 			],
 			"results": {
-				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
+				"id": "9078ac4b-9073-4d3d-bd01-7feef6aa355b"
 			}
 		},
 		{
@@ -89,20 +91,22 @@
 				},
 				{
 					"id": "KEZvQCkfy729BcYM",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
 					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
+					"name": "LOGGING aind-ophys-motion-correction",
 					"collect": true
 				}
 			]
 		},
 		{
-			"name": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"name": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
 			"capsule": {
-				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053",
-				"name": "aind-ophys-decrosstalk-roi-images",
-				"slug": "1533578",
-				"version": 4
+				"id": "1c537182-e732-42d3-b5c3-5c320e7df4b1",
+				"name": "LOGGING aind-ophys-decrosstalk-roi-images",
+				"slug": "6343030",
+				"arguments": [
+					"--debug"
+				]
 			},
 			"resources": {
 				"cpus": 16,
@@ -126,24 +130,22 @@
 				},
 				{
 					"id": "R7aHyqkTjUzQay72",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
 					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
+					"name": "LOGGING aind-ophys-motion-correction",
 					"collect": true
 				}
 			],
 			"results": {
-				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
+				"id": "1c537182-e732-42d3-b5c3-5c320e7df4b1"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"name": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
 			"capsule": {
-				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
-				"name": "aind-ophys-extraction-suite2p",
-				"slug": "9911715",
-				"version": 4,
-				"app_panel": true
+				"id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17",
+				"name": "LOGGING aind-ophys-extraction-suite2p",
+				"slug": "5021297"
 			},
 			"resources": {
 				"cpus": 4,
@@ -151,40 +153,31 @@
 			},
 			"inputs": [
 				{
-					"id": "HcGSe5PeXx7Gz2V1",
-					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images",
-					"flatten": true
-				},
-				{
 					"id": "jcSsLnYjxwWWXdxz",
 					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
 					"name": "ophys_mount",
-					"source_path": "ophys_mount/data_description.json",
+					"source_path": "ophys_mount/*.json",
 					"collect": true
 				},
 				{
-					"id": "HkBRCgkV8C1hM1AJ",
-					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/session.json",
-					"collect": true
+					"id": "HcGSe5PeXx7Gz2V1",
+					"source_id": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-decrosstalk-roi-images",
+					"flatten": true
 				}
 			],
 			"results": {
-				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
+				"id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_dff_5",
+			"name": "capsule_logging_aind_ophys_dff_5",
 			"capsule": {
-				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
-				"name": "aind-ophys-dff",
-				"slug": "6574773",
-				"version": 2
+				"id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52",
+				"name": "LOGGING aind-ophys-dff",
+				"slug": "4898929"
 			},
 			"resources": {
 				"cpus": 2,
@@ -192,23 +185,30 @@
 			},
 			"inputs": [
 				{
+					"id": "SWJ10ApIYqLkioxX",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
 					"id": "hyHgztQOJgik27r3",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"source_id": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
 					"type": "capsule",
-					"name": "aind-ophys-extraction-suite2p"
+					"name": "LOGGING aind-ophys-extraction-suite2p"
 				}
 			],
 			"results": {
-				"id": "85987e27-601c-4863-811b-71e5b4bdea37"
+				"id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_oasis_event_detection_8",
+			"name": "capsule_logging_aind_ophys_oasis_event_detection_8",
 			"capsule": {
-				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
-				"name": "aind-ophys-oasis-event-detection",
-				"slug": "8957649",
-				"version": 3
+				"id": "d85189da-954d-45f4-b76c-98a70fa4955d",
+				"name": "LOGGING aind-ophys-oasis-event-detection",
+				"slug": "9367816"
 			},
 			"resources": {
 				"cpus": 4,
@@ -216,29 +216,56 @@
 			},
 			"inputs": [
 				{
+					"id": "ftW6djfcCvzce0tL",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
 					"id": "SJJnE102UEhisUEo",
-					"source_id": "capsule_aind_ophys_dff_5",
+					"source_id": "capsule_logging_aind_ophys_dff_5",
 					"type": "capsule",
-					"name": "aind-ophys-dff"
+					"name": "LOGGING aind-ophys-dff"
 				}
 			],
 			"results": {
-				"id": "c6394aab-0db7-47b2-90ba-864866d6755e"
+				"id": "d85189da-954d-45f4-b76c-98a70fa4955d"
 			}
 		},
 		{
-			"name": "capsule_processingjsonaggregator_9",
+			"name": "capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"capsule": {
-				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d",
-				"name": "Processing json aggregator",
-				"slug": "1054292",
-				"version": 8
+				"id": "d51df783-d892-4304-a129-238a9baea72a",
+				"name": "aind-pipeline-processing-metadata-aggregator",
+				"slug": "8250608",
+				"version": 2,
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 4,
 				"memory": 32
 			},
 			"inputs": [
+				{
+					"id": "gUH8v0DsYRcVWl59",
+					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-motion-correction"
+				},
+				{
+					"id": "WMmpNaASauV1vBy0",
+					"source_id": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-extraction-suite2p"
+				},
+				{
+					"id": "qOcbSv7kqKYwuBGw",
+					"source_id": "capsule_logging_aind_ophys_dff_5",
+					"type": "capsule",
+					"name": "LOGGING aind-ophys-dff"
+				},
 				{
 					"id": "gZeDmenxPxTX6mnO",
 					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
@@ -249,14 +276,14 @@
 				},
 				{
 					"id": "XOEzWn77kDzhrdYN",
-					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"source_id": "capsule_logging_aind_ophys_oasis_event_detection_8",
 					"type": "capsule",
-					"name": "aind-ophys-oasis-event-detection",
+					"name": "LOGGING aind-ophys-oasis-event-detection",
 					"collect": true
 				}
 			],
 			"results": {
-				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d"
+				"id": "d51df783-d892-4304-a129-238a9baea72a"
 			}
 		}
 	]
