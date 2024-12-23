@@ -17,6 +17,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"selected": false,
 			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
 			"target": "capsule_logging_aind_ophys_decrosstalk_roi_images_3"
 		},
@@ -52,6 +53,7 @@
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"target": "capsule_logging_aind_ophys_decrosstalk_roi_images_3"
 		},
@@ -183,7 +185,7 @@
 				"x": 1005.8435742682382,
 				"y": 1406.482820363329
 			},
-			"selected": true,
+			"selected": false,
 			"type": "results"
 		},
 		{
@@ -236,10 +238,10 @@
 			},
 			"id": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
 			"position": {
-				"x": -218.14146478925727,
-				"y": 721.8153965407137
+				"x": -198.00864676921134,
+				"y": 528.2306078864267
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -311,10 +313,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1734982759420,
+	"timestamp": 1734990669979,
 	"viewport": {
-		"x": 248.49085887015826,
-		"y": 294.7908163129233,
-		"zoom": 0.35477161752209846
+		"x": 274.4662833182234,
+		"y": 212.4664615547842,
+		"zoom": 0.6457118912541779
 	}
 }
