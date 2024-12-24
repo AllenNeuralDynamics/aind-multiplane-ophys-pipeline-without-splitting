@@ -184,7 +184,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_logging_aind_ophys_decrosstalk_roi_images_3-capsule_aind_pipeline_processing_metadata_aggregator_9",
-			"selected": false,
+			"selected": true,
 			"source": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		}
@@ -276,7 +276,7 @@
 				"x": -10.421721301009597,
 				"y": 1894.3598659984607
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -324,10 +324,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1735069521230,
+	"timestamp": 1735075191196,
 	"viewport": {
-		"x": 584.6330675597143,
-		"y": -351.59438609359034,
-		"zoom": 0.4700983121696044
+		"x": 356.7321603236404,
+		"y": -473.0523378216782,
+		"zoom": 0.4222771342739451
 	}
 }
