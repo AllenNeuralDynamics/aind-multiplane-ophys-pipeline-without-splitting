@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:fc9eabccea361a01d63b6e1aabc41835f01edd184a26c7e11651565d2576a55c
+// hash:sha256:ad3e5f97893a3f4cb4558a7dd64a1ee2c8b803b17c641d309ff3069e2083c130
 
 nextflow.enable.dsl = 1
 
@@ -39,7 +39,7 @@ capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_30 = channel.creat
 // capsule - LOGGING aind-ophys-motion-correction
 process capsule_logging_aind_ophys_motion_correction_1 {
 	tag 'capsule-8075853'
-	container "$REGISTRY_HOST/capsule/9078ac4b-9073-4d3d-bd01-7feef6aa355b:0da186b632b36a65afc14b406afd4686"
+	container "$REGISTRY_HOST/capsule/9078ac4b-9073-4d3d-bd01-7feef6aa355b"
 
 	cpus 16
 	memory '128 GB'
@@ -136,7 +136,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 // capsule - LOGGING aind-ophys-decrosstalk-roi-images
 process capsule_logging_aind_ophys_decrosstalk_roi_images_3 {
 	tag 'capsule-6343030'
-	container "$REGISTRY_HOST/capsule/1c537182-e732-42d3-b5c3-5c320e7df4b1:51be0e5e0bdf61d162db3f6d0842f048"
+	container "$REGISTRY_HOST/capsule/1c537182-e732-42d3-b5c3-5c320e7df4b1"
 
 	cpus 16
 	memory '128 GB'
@@ -186,7 +186,7 @@ process capsule_logging_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - LOGGING aind-ophys-extraction-suite2p
 process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 	tag 'capsule-5021297'
-	container "$REGISTRY_HOST/capsule/d4a61cb3-c0ff-4df5-afb5-fdd27705ae17:6a40d11c7c1296057da5e49513c15fcc"
+	container "$REGISTRY_HOST/capsule/d4a61cb3-c0ff-4df5-afb5-fdd27705ae17"
 
 	cpus 4
 	memory '240 GB'
@@ -219,7 +219,7 @@ process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5021297.git" capsule-repo
-	git -C capsule-repo checkout c36a5d80d2ce3113b2d5cae3bcb6014cdb7538f1 --quiet
+	git -C capsule-repo checkout 757aef7ffc6be9d64e683842061e01f6914afd63 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -235,7 +235,7 @@ process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 // capsule - LOGGING aind-ophys-dff
 process capsule_logging_aind_ophys_dff_5 {
 	tag 'capsule-4898929'
-	container "$REGISTRY_HOST/capsule/f6cea6eb-ab57-45a3-81c6-c12acea8cd52:6ef8cac907b176d5b1229d7f8e0811c3"
+	container "$REGISTRY_HOST/capsule/f6cea6eb-ab57-45a3-81c6-c12acea8cd52"
 
 	cpus 2
 	memory '16 GB'
@@ -284,7 +284,7 @@ process capsule_logging_aind_ophys_dff_5 {
 // capsule - LOGGING aind-ophys-oasis-event-detection
 process capsule_logging_aind_ophys_oasis_event_detection_8 {
 	tag 'capsule-9367816'
-	container "$REGISTRY_HOST/capsule/d85189da-954d-45f4-b76c-98a70fa4955d:21e2e88a5a6655ed8039cf0ce40bc84a"
+	container "$REGISTRY_HOST/capsule/d85189da-954d-45f4-b76c-98a70fa4955d"
 
 	cpus 4
 	memory '32 GB'
