@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:cae34d75b0727310f667b8207538a667232a4a3f8c0e3d0e220c1f0e7d030583
+// hash:sha256:78d342b627d90e65dc1107bd56799fea6608914ac72f1b6d3d9db0cfefad6481
 
 nextflow.enable.dsl = 1
 
@@ -40,7 +40,7 @@ capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_31 = channel.creat
 // capsule - aind-ophys-motion-correction
 process capsule_logging_aind_ophys_motion_correction_1 {
 	tag 'capsule-8075853'
-	container "$REGISTRY_HOST/capsule/9078ac4b-9073-4d3d-bd01-7feef6aa355b"
+	container "$REGISTRY_HOST/capsule/9078ac4b-9073-4d3d-bd01-7feef6aa355b:0da186b632b36a65afc14b406afd4686"
 
 	cpus 16
 	memory '128 GB'
@@ -137,7 +137,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 // capsule - aind-ophys-decrosstalk-roi-images
 process capsule_logging_aind_ophys_decrosstalk_roi_images_3 {
 	tag 'capsule-6343030'
-	container "$REGISTRY_HOST/capsule/1c537182-e732-42d3-b5c3-5c320e7df4b1"
+	container "$REGISTRY_HOST/capsule/1c537182-e732-42d3-b5c3-5c320e7df4b1:51be0e5e0bdf61d162db3f6d0842f048"
 
 	cpus 16
 	memory '128 GB'
@@ -188,7 +188,7 @@ process capsule_logging_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - aind-ophys-extraction-suite2p
 process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 	tag 'capsule-5021297'
-	container "$REGISTRY_HOST/capsule/d4a61cb3-c0ff-4df5-afb5-fdd27705ae17"
+	container "$REGISTRY_HOST/capsule/d4a61cb3-c0ff-4df5-afb5-fdd27705ae17:6e0f1119a4294fcd07543dafee4c0971"
 
 	cpus 4
 	memory '240 GB'
@@ -237,7 +237,7 @@ process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 // capsule - LOGGING aind-ophys-dff
 process capsule_logging_aind_ophys_dff_5 {
 	tag 'capsule-4898929'
-	container "$REGISTRY_HOST/capsule/f6cea6eb-ab57-45a3-81c6-c12acea8cd52"
+	container "$REGISTRY_HOST/capsule/f6cea6eb-ab57-45a3-81c6-c12acea8cd52:6ef8cac907b176d5b1229d7f8e0811c3"
 
 	cpus 2
 	memory '16 GB'
@@ -286,7 +286,7 @@ process capsule_logging_aind_ophys_dff_5 {
 // capsule - aind-ophys-oasis-event-detection
 process capsule_logging_aind_ophys_oasis_event_detection_8 {
 	tag 'capsule-9367816'
-	container "$REGISTRY_HOST/capsule/d85189da-954d-45f4-b76c-98a70fa4955d"
+	container "$REGISTRY_HOST/capsule/d85189da-954d-45f4-b76c-98a70fa4955d:21e2e88a5a6655ed8039cf0ce40bc84a"
 
 	cpus 4
 	memory '32 GB'
