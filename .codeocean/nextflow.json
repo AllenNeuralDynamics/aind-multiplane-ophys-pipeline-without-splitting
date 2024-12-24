@@ -7,7 +7,7 @@
 				"id": "9078ac4b-9073-4d3d-bd01-7feef6aa355b",
 				"name": "aind-ophys-motion-correction",
 				"slug": "8075853",
-				"commit": "7a385847e888a32b341332cc7b6425e55309e9f8",
+				"commit": "732d5932b44526270fb2886b90db46fa0d3d265d",
 				"image_tag": "0da186b632b36a65afc14b406afd4686",
 				"arguments": [
 					"--debug"
