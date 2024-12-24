@@ -8,7 +8,6 @@
 				"name": "LOGGING aind-ophys-motion-correction",
 				"slug": "8075853",
 				"commit": "56df75134975f9c84d77a60d2dcd47cf451f395b",
-				"image_tag": "0da186b632b36a65afc14b406afd4686",
 				"arguments": [
 					"--debug"
 				]
@@ -107,7 +106,6 @@
 				"name": "LOGGING aind-ophys-decrosstalk-roi-images",
 				"slug": "6343030",
 				"commit": "f7c9aa9d560cc1a0851c9791dab657ea3dd19232",
-				"image_tag": "51be0e5e0bdf61d162db3f6d0842f048",
 				"arguments": [
 					"--debug"
 				]
@@ -158,8 +156,7 @@
 				"id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17",
 				"name": "LOGGING aind-ophys-extraction-suite2p",
 				"slug": "5021297",
-				"commit": "912507216ad968bf174e76bca46cfb8dbd91b1d1",
-				"image_tag": "6e0f1119a4294fcd07543dafee4c0971"
+				"commit": "912507216ad968bf174e76bca46cfb8dbd91b1d1"
 			},
 			"resources": {
 				"cpus": 4,
@@ -192,8 +189,7 @@
 				"id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52",
 				"name": "LOGGING aind-ophys-dff",
 				"slug": "4898929",
-				"commit": "76f5edac9e94e19787ea65bac15cecc4765370b7",
-				"image_tag": "6ef8cac907b176d5b1229d7f8e0811c3"
+				"commit": "76f5edac9e94e19787ea65bac15cecc4765370b7"
 			},
 			"resources": {
 				"cpus": 2,
@@ -225,8 +221,7 @@
 				"id": "d85189da-954d-45f4-b76c-98a70fa4955d",
 				"name": "LOGGING aind-ophys-oasis-event-detection",
 				"slug": "9367816",
-				"commit": "011c657f9474b3149ce6713c41c8ea305adb29de",
-				"image_tag": "21e2e88a5a6655ed8039cf0ce40bc84a"
+				"commit": "011c657f9474b3149ce6713c41c8ea305adb29de"
 			},
 			"resources": {
 				"cpus": 4,
