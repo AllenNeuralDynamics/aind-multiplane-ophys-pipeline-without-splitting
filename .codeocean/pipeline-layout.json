@@ -82,6 +82,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_logging_aind_ophys_decrosstalk_roi_images_3-results",
+			"selected": false,
 			"source": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
 			"target": "results"
 		},
@@ -187,6 +188,17 @@
 			"selected": false,
 			"source": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_motion_correction_1-capsule_aind_ophys_quality_control_aggregator_12",
+			"selected": true,
+			"source": "capsule_logging_aind_ophys_motion_correction_1",
+			"target": "capsule_aind_ophys_quality_control_aggregator_12"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_quality_control_aggregator_12-results",
+			"source": "capsule_aind_ophys_quality_control_aggregator_12",
+			"target": "results"
 		}
 	],
 	"nodes": [
@@ -322,12 +334,24 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "05b8a796-f8c7-4177-b486-82abfc146e49"
+			},
+			"id": "capsule_aind_ophys_quality_control_aggregator_12",
+			"position": {
+				"x": 998.3209265144667,
+				"y": 747.9183593351686
+			},
+			"selected": false,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1735075273466,
+	"timestamp": 1735079297134,
 	"viewport": {
-		"x": 260.7321603236404,
-		"y": -365.0523378216782,
-		"zoom": 0.4222771342739451
+		"x": 196.20825955636587,
+		"y": 216.82583362199648,
+		"zoom": 0.3
 	}
 }
