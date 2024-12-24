@@ -39,6 +39,7 @@
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
@@ -112,16 +113,19 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_logging_aind_ophys_dff_5-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"selected": false,
 			"source": "capsule_logging_aind_ophys_dff_5",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
 			"id": "reactflow__edge-capsule_logging_aind_ophys_extraction_suite_2_p_4-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"selected": false,
 			"source": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
 			"id": "reactflow__edge-capsule_logging_aind_ophys_motion_correction_1-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"selected": false,
 			"source": "capsule_logging_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
@@ -177,6 +181,12 @@
 			"selected": false,
 			"source": "capsule_logging_aind_ophys_oasis_event_detection_8",
 			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_logging_aind_ophys_decrosstalk_roi_images_3-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"selected": false,
+			"source": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		}
 	],
 	"nodes": [
@@ -218,7 +228,7 @@
 				"x": 632.9290702159092,
 				"y": 40.47171103050857
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -263,10 +273,10 @@
 			},
 			"id": "capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"position": {
-				"x": 448.7441233398233,
-				"y": 1937.8912816173863
+				"x": -10.421721301009597,
+				"y": 1894.3598659984607
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -314,10 +324,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1735066193006,
+	"timestamp": 1735069521230,
 	"viewport": {
-		"x": 525.6973073973365,
-		"y": 267.0164287035023,
-		"zoom": 0.3
+		"x": 584.6330675597143,
+		"y": -351.59438609359034,
+		"zoom": 0.4700983121696044
 	}
 }
