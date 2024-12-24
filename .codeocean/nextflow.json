@@ -8,7 +8,6 @@
 				"name": "LOGGING aind-ophys-motion-correction",
 				"slug": "8075853",
 				"commit": "fb1420341c18fbced4052b640cda2eeb79f9face",
-				"image_tag": "0da186b632b36a65afc14b406afd4686",
 				"arguments": [
 					"--debug"
 				]
@@ -106,8 +105,7 @@
 				"id": "1c537182-e732-42d3-b5c3-5c320e7df4b1",
 				"name": "LOGGING aind-ophys-decrosstalk-roi-images",
 				"slug": "6343030",
-				"commit": "7320a41eaa6a924d78c12b0ad1ba14f66883df83",
-				"image_tag": "51be0e5e0bdf61d162db3f6d0842f048",
+				"commit": "94ec7fa8ffe65c8b37f8a843b75d904634dcf2b0",
 				"arguments": [
 					"--debug"
 				]
@@ -123,6 +121,14 @@
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
+					"id": "f2x80MCtZ0LOadvp",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/pophys/V*",
 					"collect": true
 				},
 				{
@@ -150,8 +156,7 @@
 				"id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17",
 				"name": "LOGGING aind-ophys-extraction-suite2p",
 				"slug": "5021297",
-				"commit": "6a30bb0d3b1ab7383f07a4fab0d218b2e5172091",
-				"image_tag": "6a40d11c7c1296057da5e49513c15fcc"
+				"commit": "6a30bb0d3b1ab7383f07a4fab0d218b2e5172091"
 			},
 			"resources": {
 				"cpus": 4,
@@ -184,8 +189,7 @@
 				"id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52",
 				"name": "LOGGING aind-ophys-dff",
 				"slug": "4898929",
-				"commit": "e5073bcc40bc13f79945de790fed7e69e1b2aa9d",
-				"image_tag": "6ef8cac907b176d5b1229d7f8e0811c3"
+				"commit": "e5073bcc40bc13f79945de790fed7e69e1b2aa9d"
 			},
 			"resources": {
 				"cpus": 2,
@@ -217,8 +221,7 @@
 				"id": "d85189da-954d-45f4-b76c-98a70fa4955d",
 				"name": "LOGGING aind-ophys-oasis-event-detection",
 				"slug": "9367816",
-				"commit": "e660abc0ad89d4cf9528292bc7589395c0cb2608",
-				"image_tag": "21e2e88a5a6655ed8039cf0ce40bc84a"
+				"commit": "e660abc0ad89d4cf9528292bc7589395c0cb2608"
 			},
 			"resources": {
 				"cpus": 4,
