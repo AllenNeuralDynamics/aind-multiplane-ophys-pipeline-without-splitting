@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:b976667948257e18e3f000ed79bc87c8add6f64f98b6e213b6782c07189ac3c2
+// hash:sha256:0b55f2667239a69db90c823d22a7d36da90633a2518b2671263486b81779a255
 
 nextflow.enable.dsl = 1
 
@@ -36,11 +36,12 @@ capsule_logging_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_ophys_nwb_10
 capsule_logging_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_29 = channel.create()
 ophys_mount_to_aind_ophys_nwb_30 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
 capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_31 = channel.create()
+ophys_mount_to_nwb_packaging_subject_capsule_32 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
 
 // capsule - aind-ophys-motion-correction
 process capsule_logging_aind_ophys_motion_correction_1 {
 	tag 'capsule-8075853'
-	container "$REGISTRY_HOST/capsule/9078ac4b-9073-4d3d-bd01-7feef6aa355b:0da186b632b36a65afc14b406afd4686"
+	container "$REGISTRY_HOST/capsule/9078ac4b-9073-4d3d-bd01-7feef6aa355b"
 
 	cpus 16
 	memory '128 GB'
@@ -77,7 +78,7 @@ process capsule_logging_aind_ophys_motion_correction_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8075853.git" capsule-repo
-	git -C capsule-repo checkout 732d5932b44526270fb2886b90db46fa0d3d265d --quiet
+	git -C capsule-repo checkout 9ca7e15959d13c2be7c929f79321f62d237edc2e --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -137,7 +138,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 // capsule - aind-ophys-decrosstalk-roi-images
 process capsule_logging_aind_ophys_decrosstalk_roi_images_3 {
 	tag 'capsule-6343030'
-	container "$REGISTRY_HOST/capsule/1c537182-e732-42d3-b5c3-5c320e7df4b1:51be0e5e0bdf61d162db3f6d0842f048"
+	container "$REGISTRY_HOST/capsule/1c537182-e732-42d3-b5c3-5c320e7df4b1"
 
 	cpus 16
 	memory '128 GB'
@@ -188,7 +189,7 @@ process capsule_logging_aind_ophys_decrosstalk_roi_images_3 {
 // capsule - aind-ophys-extraction-suite2p
 process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 	tag 'capsule-5021297'
-	container "$REGISTRY_HOST/capsule/d4a61cb3-c0ff-4df5-afb5-fdd27705ae17:6e0f1119a4294fcd07543dafee4c0971"
+	container "$REGISTRY_HOST/capsule/d4a61cb3-c0ff-4df5-afb5-fdd27705ae17"
 
 	cpus 4
 	memory '240 GB'
@@ -237,7 +238,7 @@ process capsule_logging_aind_ophys_extraction_suite_2_p_4 {
 // capsule - LOGGING aind-ophys-dff
 process capsule_logging_aind_ophys_dff_5 {
 	tag 'capsule-4898929'
-	container "$REGISTRY_HOST/capsule/f6cea6eb-ab57-45a3-81c6-c12acea8cd52:6ef8cac907b176d5b1229d7f8e0811c3"
+	container "$REGISTRY_HOST/capsule/f6cea6eb-ab57-45a3-81c6-c12acea8cd52"
 
 	cpus 2
 	memory '16 GB'
@@ -286,7 +287,7 @@ process capsule_logging_aind_ophys_dff_5 {
 // capsule - aind-ophys-oasis-event-detection
 process capsule_logging_aind_ophys_oasis_event_detection_8 {
 	tag 'capsule-9367816'
-	container "$REGISTRY_HOST/capsule/d85189da-954d-45f4-b76c-98a70fa4955d:21e2e88a5a6655ed8039cf0ce40bc84a"
+	container "$REGISTRY_HOST/capsule/d85189da-954d-45f4-b76c-98a70fa4955d"
 
 	cpus 4
 	memory '32 GB'
@@ -374,7 +375,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_pipeline_processing_metadata_aggregator_9_args}
+	./run --processor_full_name "Arielle Leon"
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -416,6 +417,8 @@ process capsule_aind_ophys_nwb_10 {
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
+	ln -s "/tmp/data/schemas" "capsule/data/schemas" # id: fb4b5cef-4505-4145-b8bd-e41d6863d7a9
+
 	echo "[${task.tag}] cloning git repo..."
 	git clone --branch v8.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo
 	mv capsule-repo/code capsule/code
@@ -438,6 +441,9 @@ process capsule_nwb_packaging_subject_11 {
 	cpus 1
 	memory '8 GB'
 
+	input:
+	path 'capsule/data/ophys_session' from ophys_mount_to_nwb_packaging_subject_capsule_32.collect()
+
 	output:
 	path 'capsule/results/*' into capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_31
 
@@ -454,8 +460,6 @@ process capsule_nwb_packaging_subject_11 {
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
-
-	ln -s "/tmp/data/schemas" "capsule/data/schemas" # id: fb4b5cef-4505-4145-b8bd-e41d6863d7a9
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8198603.git" capsule-repo

@@ -7,8 +7,7 @@
 				"id": "9078ac4b-9073-4d3d-bd01-7feef6aa355b",
 				"name": "aind-ophys-motion-correction",
 				"slug": "8075853",
-				"commit": "732d5932b44526270fb2886b90db46fa0d3d265d",
-				"image_tag": "0da186b632b36a65afc14b406afd4686",
+				"commit": "9ca7e15959d13c2be7c929f79321f62d237edc2e",
 				"arguments": [
 					"--debug"
 				]
@@ -107,7 +106,6 @@
 				"name": "aind-ophys-decrosstalk-roi-images",
 				"slug": "6343030",
 				"commit": "7236228afe44e55bc0075b42392173e22e33362a",
-				"image_tag": "51be0e5e0bdf61d162db3f6d0842f048",
 				"arguments": [
 					"--debug"
 				]
@@ -158,8 +156,7 @@
 				"id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17",
 				"name": "aind-ophys-extraction-suite2p",
 				"slug": "5021297",
-				"commit": "03385735db54cad4cd95e55b3accfeb5088e6c02",
-				"image_tag": "6e0f1119a4294fcd07543dafee4c0971"
+				"commit": "03385735db54cad4cd95e55b3accfeb5088e6c02"
 			},
 			"resources": {
 				"cpus": 4,
@@ -192,8 +189,7 @@
 				"id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52",
 				"name": "LOGGING aind-ophys-dff",
 				"slug": "4898929",
-				"commit": "f2c649c8d49c4205bb088f82f3906105dbe87fb7",
-				"image_tag": "6ef8cac907b176d5b1229d7f8e0811c3"
+				"commit": "f2c649c8d49c4205bb088f82f3906105dbe87fb7"
 			},
 			"resources": {
 				"cpus": 2,
@@ -225,8 +221,7 @@
 				"id": "d85189da-954d-45f4-b76c-98a70fa4955d",
 				"name": "aind-ophys-oasis-event-detection",
 				"slug": "9367816",
-				"commit": "c5c670bcf2e7864b06227964b58ac8e663188acb",
-				"image_tag": "21e2e88a5a6655ed8039cf0ce40bc84a"
+				"commit": "c5c670bcf2e7864b06227964b58ac8e663188acb"
 			},
 			"resources": {
 				"cpus": 4,
@@ -259,6 +254,11 @@
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "8250608",
 				"version": 2,
+				"arguments": [
+					"--processor_full_name",
+					"\"Arielle",
+					"Leon\""
+				],
 				"app_panel": true
 			},
 			"resources": {
@@ -332,6 +332,15 @@
 				"memory": 8
 			},
 			"inputs": [
+				{
+					"id": "NNXYjCjVIZBV0gYp",
+					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"type": "dataset",
+					"name": "schemas",
+					"source_path": "schemas/",
+					"target_path": "schemas",
+					"collect": true
+				},
 				{
 					"id": "fwhcG1GSP93eUITh",
 					"source_id": "capsule_logging_aind_ophys_oasis_event_detection_8",
@@ -414,12 +423,12 @@
 			},
 			"inputs": [
 				{
-					"id": "q4HsVHVY2dGkuEV1",
-					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"id": "sMNMdyn5rb1GMbHI",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
-					"name": "schemas",
-					"source_path": "schemas/",
-					"target_path": "schemas",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/",
+					"target_path": "ophys_session",
 					"collect": true
 				}
 			]
