@@ -12,6 +12,7 @@ ophys_mount_to_aind_ophys_motion_correction_4 = channel.fromPath(params.ophys_mo
 ophys_mount_to_aind_ophys_motion_correction_5 = channel.fromPath(params.ophys_mount_url + "/*/V*", type: 'any')
 ophys_mount_to_aind_ophys_decrosstalk_split_session_json_6 = channel.fromPath(params.ophys_mount_url + "/session.json", type: 'any')
 ophys_mount_to_aind_ophys_decrosstalk_split_session_json_7 = channel.fromPath(params.ophys_mount_url + "/*/MESO*", type: 'any')
+
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_8 = channel.create()
 ophys_mount_to_aind_ophys_decrosstalk_roi_images_9 = channel.fromPath(params.ophys_mount_url + "/*.json", type: 'any')
 ophys_mount_to_aind_ophys_decrosstalk_roi_images_10 = channel.fromPath(params.ophys_mount_url + "/pophys/*/V*_[0-9].h5", type: 'any')
@@ -67,7 +68,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=91a8ed4d-3b9a-49c6-9283-3f16ea5482bf
+	export CO_CAPSULE_ID=9078ac4b-9073-4d3d-bd01-7feef6aa355b
 	export CO_CPUS=16
 	export CO_MEMORY=137438953472
 
@@ -84,7 +85,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_motion_correction_1_args}
+	./run --debug
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -101,7 +102,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 	input:
 	path 'capsule/data/' from ophys_mount_to_aind_ophys_decrosstalk_split_session_json_6.collect()
 	path 'capsule/data/' from ophys_mount_to_aind_ophys_decrosstalk_split_session_json_7.collect()
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_8.collect()
+	path 'capsule/data/' from capsule_logging_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_8.collect()
 
 	output:
 	path 'capsule/results/*' into capsule_aind_ophys_decrosstalk_split_session_json_2_to_capsule_aind_ophys_decrosstalk_roi_images_3_11
@@ -161,7 +162,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=1383b25a-ecd2-4c56-8b7f-cde811c0b053
+	export CO_CAPSULE_ID=1c537182-e732-42d3-b5c3-5c320e7df4b1
 	export CO_CPUS=16
 	export CO_MEMORY=137438953472
 
@@ -178,7 +179,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run
+	./run --debug
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -209,7 +210,7 @@ process capsule_aind_ophys_extraction_suite_2_p_4 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
+	export CO_CAPSULE_ID=d4a61cb3-c0ff-4df5-afb5-fdd27705ae17
 	export CO_CPUS=4
 	export CO_MEMORY=257698037760
 
@@ -226,7 +227,7 @@ process capsule_aind_ophys_extraction_suite_2_p_4 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_extraction_suite_2_p_4_args}
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -257,7 +258,7 @@ process capsule_aind_ophys_dff_5 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=85987e27-601c-4863-811b-71e5b4bdea37
+	export CO_CAPSULE_ID=f6cea6eb-ab57-45a3-81c6-c12acea8cd52
 	export CO_CPUS=2
 	export CO_MEMORY=17179869184
 
@@ -304,7 +305,7 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=c6394aab-0db7-47b2-90ba-864866d6755e
+	export CO_CAPSULE_ID=d85189da-954d-45f4-b76c-98a70fa4955d
 	export CO_CPUS=4
 	export CO_MEMORY=34359738368
 
@@ -446,7 +447,6 @@ process capsule_nwb_packaging_subject_11 {
 	"""
 	#!/usr/bin/env bash
 	set -e
-
 	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
 	export CO_CPUS=1
 	export CO_MEMORY=8589934592
