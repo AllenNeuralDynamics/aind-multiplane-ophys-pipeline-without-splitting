@@ -2,15 +2,13 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_logging_aind_ophys_motion_correction_1",
+			"name": "capsule_aind_ophys_motion_correction_1",
 			"capsule": {
-				"id": "9078ac4b-9073-4d3d-bd01-7feef6aa355b",
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
-				"slug": "8075853",
-				"commit": "732d5932b44526270fb2886b90db46fa0d3d265d",
-				"arguments": [
-					"--debug"
-				]
+				"slug": "7474660",
+				"version": 12,
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 16,
@@ -58,7 +56,7 @@
 				}
 			],
 			"results": {
-				"id": "9078ac4b-9073-4d3d-bd01-7feef6aa355b"
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
 			}
 		},
 		{
@@ -92,23 +90,20 @@
 				},
 				{
 					"id": "KEZvQCkfy729BcYM",
-					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-motion-correction",
+					"name": "aind-ophys-motion-correction",
 					"collect": true
 				}
 			]
 		},
 		{
-			"name": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+			"name": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"capsule": {
-				"id": "1c537182-e732-42d3-b5c3-5c320e7df4b1",
+				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053",
 				"name": "aind-ophys-decrosstalk-roi-images",
-				"slug": "6343030",
-				"commit": "7236228afe44e55bc0075b42392173e22e33362a",
-				"arguments": [
-					"--debug"
-				]
+				"slug": "1533578",
+				"version": 7
 			},
 			"resources": {
 				"cpus": 16,
@@ -140,23 +135,24 @@
 				},
 				{
 					"id": "R7aHyqkTjUzQay72",
-					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-motion-correction",
+					"name": "aind-ophys-motion-correction",
 					"collect": true
 				}
 			],
 			"results": {
-				"id": "1c537182-e732-42d3-b5c3-5c320e7df4b1"
+				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
 			}
 		},
 		{
-			"name": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+			"name": "capsule_aind_ophys_extraction_suite_2_p_4",
 			"capsule": {
-				"id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17",
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction-suite2p",
-				"slug": "5021297",
-				"commit": "03385735db54cad4cd95e55b3accfeb5088e6c02"
+				"slug": "9911715",
+				"version": 7,
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 4,
@@ -173,23 +169,23 @@
 				},
 				{
 					"id": "HcGSe5PeXx7Gz2V1",
-					"source_id": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-decrosstalk-roi-images",
+					"name": "aind-ophys-decrosstalk-roi-images",
 					"flatten": true
 				}
 			],
 			"results": {
-				"id": "d4a61cb3-c0ff-4df5-afb5-fdd27705ae17"
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			}
 		},
 		{
-			"name": "capsule_logging_aind_ophys_dff_5",
+			"name": "capsule_aind_ophys_dff_5",
 			"capsule": {
-				"id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52",
-				"name": "LOGGING aind-ophys-dff",
-				"slug": "4898929",
-				"commit": "f2c649c8d49c4205bb088f82f3906105dbe87fb7"
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
+				"name": "aind-ophys-dff",
+				"slug": "6574773",
+				"version": 4
 			},
 			"resources": {
 				"cpus": 2,
@@ -206,22 +202,22 @@
 				},
 				{
 					"id": "hyHgztQOJgik27r3",
-					"source_id": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-extraction-suite2p"
+					"name": "aind-ophys-extraction-suite2p"
 				}
 			],
 			"results": {
-				"id": "f6cea6eb-ab57-45a3-81c6-c12acea8cd52"
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37"
 			}
 		},
 		{
-			"name": "capsule_logging_aind_ophys_oasis_event_detection_8",
+			"name": "capsule_aind_ophys_oasis_event_detection_8",
 			"capsule": {
-				"id": "d85189da-954d-45f4-b76c-98a70fa4955d",
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
 				"name": "aind-ophys-oasis-event-detection",
-				"slug": "9367816",
-				"commit": "c5c670bcf2e7864b06227964b58ac8e663188acb"
+				"slug": "8957649",
+				"version": 5
 			},
 			"resources": {
 				"cpus": 4,
@@ -238,13 +234,13 @@
 				},
 				{
 					"id": "SJJnE102UEhisUEo",
-					"source_id": "capsule_logging_aind_ophys_dff_5",
+					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-dff"
+					"name": "aind-ophys-dff"
 				}
 			],
 			"results": {
-				"id": "d85189da-954d-45f4-b76c-98a70fa4955d"
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e"
 			}
 		},
 		{
@@ -254,6 +250,11 @@
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "8250608",
 				"version": 2,
+				"arguments": [
+					"--processor_full_name",
+					"\"Arielle",
+					"Leon\""
+				],
 				"app_panel": true
 			},
 			"resources": {
@@ -263,31 +264,31 @@
 			"inputs": [
 				{
 					"id": "qOcbSv7kqKYwuBGw",
-					"source_id": "capsule_logging_aind_ophys_dff_5",
+					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-dff",
+					"name": "aind-ophys-dff",
 					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
 				{
 					"id": "XOEzWn77kDzhrdYN",
-					"source_id": "capsule_logging_aind_ophys_oasis_event_detection_8",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-oasis-event-detection",
+					"name": "aind-ophys-oasis-event-detection",
 					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
 				{
 					"id": "WMmpNaASauV1vBy0",
-					"source_id": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-extraction-suite2p",
+					"name": "aind-ophys-extraction-suite2p",
 					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
 				{
 					"id": "pbT38C7U4DisYr04",
-					"source_id": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
 					"name": "aind-ophys-decrosstalk-roi-images",
 					"source_path": "*/*/*data_process.json",
@@ -295,9 +296,9 @@
 				},
 				{
 					"id": "gUH8v0DsYRcVWl59",
-					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-motion-correction",
+					"name": "aind-ophys-motion-correction",
 					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
@@ -328,46 +329,55 @@
 			},
 			"inputs": [
 				{
+					"id": "NNXYjCjVIZBV0gYp",
+					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"type": "dataset",
+					"name": "schemas",
+					"source_path": "schemas/",
+					"target_path": "schemas",
+					"collect": true
+				},
+				{
 					"id": "fwhcG1GSP93eUITh",
-					"source_id": "capsule_logging_aind_ophys_oasis_event_detection_8",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-oasis-event-detection",
+					"name": "aind-ophys-oasis-event-detection",
 					"source_path": "*/events/*.h5",
 					"target_path": "processed",
 					"collect": true
 				},
 				{
 					"id": "VcFxZxm2Dsofe4hY",
-					"source_id": "capsule_logging_aind_ophys_dff_5",
+					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-dff",
+					"name": "aind-ophys-dff",
 					"source_path": "*/dff/*.h5",
 					"target_path": "processed",
 					"collect": true
 				},
 				{
 					"id": "E6C3Vqd94sE51LAS",
-					"source_id": "capsule_logging_aind_ophys_extraction_suite_2_p_4",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-extraction-suite2p",
+					"name": "aind-ophys-extraction-suite2p",
 					"source_path": "*/extraction/*.h5",
 					"target_path": "processed",
 					"collect": true
 				},
 				{
 					"id": "jceCMYjcfQXIN6Mi",
-					"source_id": "capsule_logging_aind_ophys_decrosstalk_roi_images_3",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-decrosstalk-roi-images",
+					"name": "aind-ophys-decrosstalk-roi-images",
 					"source_path": "*/decrosstalk/*.h5",
 					"target_path": "processed",
 					"collect": true
 				},
 				{
 					"id": "PkAHZLYC8ZgxBPK5",
-					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
-					"name": "LOGGING aind-ophys-motion-correction",
+					"name": "aind-ophys-motion-correction",
 					"source_path": "*/motion_correction/*.h5",
 					"target_path": "processed",
 					"collect": true
@@ -409,40 +419,15 @@
 			},
 			"inputs": [
 				{
-					"id": "q4HsVHVY2dGkuEV1",
-					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"id": "sMNMdyn5rb1GMbHI",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
-					"name": "schemas",
-					"source_path": "schemas/",
-					"target_path": "schemas",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/",
+					"target_path": "ophys_session",
 					"collect": true
 				}
 			]
-		},
-		{
-			"name": "capsule_aind_ophys_quality_control_aggregator_12",
-			"capsule": {
-				"id": "05b8a796-f8c7-4177-b486-82abfc146e49",
-				"name": "aind-ophys-quality-control-aggregator",
-				"slug": "4691390"
-			},
-			"resources": {
-				"cpus": 1,
-				"memory": 8
-			},
-			"inputs": [
-				{
-					"id": "HUjKP0FN21tVerL8",
-					"source_id": "capsule_logging_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*",
-					"collect": true
-				}
-			],
-			"results": {
-				"id": "05b8a796-f8c7-4177-b486-82abfc146e49"
-			}
 		}
 	]
 }
