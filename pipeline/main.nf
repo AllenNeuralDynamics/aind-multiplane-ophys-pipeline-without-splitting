@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:17320e53073454a4ce84119cfbde773ac3873f0e9602aa83f53e098bba54c994
+// hash:sha256:779fce82839e03dc72dffdd875f86cb6090730469b0805d5613391e87117c95e
 
 nextflow.enable.dsl = 1
 
@@ -37,6 +37,10 @@ capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_29 = channel
 ophys_mount_to_aind_ophys_nwb_30 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
 capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_31 = channel.create()
 ophys_mount_to_nwb_packaging_subject_capsule_32 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33 = channel.create()
+ophys_mount_to_forward_json_files_34 = channel.fromPath(params.ophys_mount_url + "/subject.json", type: 'any')
+ophys_mount_to_forward_json_files_35 = channel.fromPath(params.ophys_mount_url + "/procedures.json", type: 'any')
+ophys_mount_to_forward_json_files_36 = channel.fromPath(params.ophys_mount_url + "/session.json", type: 'any')
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -61,6 +65,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_12
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_pipeline_processing_metadata_aggregator_9_23
 	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_29
+	path 'capsule/results/*/motion_correction/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33
 
 	script:
 	"""
@@ -465,6 +470,96 @@ process capsule_nwb_packaging_subject_11 {
 	cd capsule/code
 	chmod +x run
 	./run ${params.capsule_nwb_packaging_subject_11_args}
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-quality-control-aggregator
+process capsule_aind_ophys_quality_control_aggregator_12 {
+	tag 'capsule-4691390'
+	container "$REGISTRY_HOST/capsule/05b8a796-f8c7-4177-b486-82abfc146e49"
+
+	cpus 1
+	memory '8 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33.collect()
+
+	output:
+	path 'capsule/results/*'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=05b8a796-f8c7-4177-b486-82abfc146e49
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4691390.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - Forward json files
+process capsule_forward_json_files_13 {
+	tag 'capsule-7519234'
+	container "$REGISTRY_HOST/capsule/5d873001-33d1-4e84-8818-4bf809aef56b"
+
+	cpus 1
+	memory '8 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/' from ophys_mount_to_forward_json_files_34
+	path 'capsule/data/' from ophys_mount_to_forward_json_files_35
+	path 'capsule/data/' from ophys_mount_to_forward_json_files_36
+
+	output:
+	path 'capsule/results/*'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=5d873001-33d1-4e84-8818-4bf809aef56b
+	export CO_CPUS=1
+	export CO_MEMORY=8589934592
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7519234.git" capsule-repo
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""
