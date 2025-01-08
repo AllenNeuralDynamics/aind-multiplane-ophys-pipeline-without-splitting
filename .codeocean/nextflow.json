@@ -428,6 +428,69 @@
 					"collect": true
 				}
 			]
+		},
+		{
+			"name": "capsule_aind_ophys_quality_control_aggregator_12",
+			"capsule": {
+				"id": "05b8a796-f8c7-4177-b486-82abfc146e49",
+				"name": "aind-ophys-quality-control-aggregator",
+				"slug": "4691390"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "giYxE9ZThNqYFtVw",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "05b8a796-f8c7-4177-b486-82abfc146e49"
+			}
+		},
+		{
+			"name": "capsule_forward_json_files_13",
+			"capsule": {
+				"id": "5d873001-33d1-4e84-8818-4bf809aef56b",
+				"name": "Forward json files",
+				"slug": "7519234"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "KPtMwhmhDpwW4oH6",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/subject.json"
+				},
+				{
+					"id": "M1RglnIKBYbexB4l",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/procedures.json"
+				},
+				{
+					"id": "xF14kGAn9tB7bjIr",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/session.json"
+				}
+			],
+			"results": {
+				"id": "5d873001-33d1-4e84-8818-4bf809aef56b"
+			}
 		}
 	]
 }

@@ -178,6 +178,28 @@
 			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_10",
 			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_quality_control_aggregator_12",
+			"selected": false,
+			"source": "capsule_aind_ophys_motion_correction_1",
+			"target": "capsule_aind_ophys_quality_control_aggregator_12"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_quality_control_aggregator_12-results",
+			"source": "capsule_aind_ophys_quality_control_aggregator_12",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_forward_json_files_13",
+			"selected": false,
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_forward_json_files_13"
+		},
+		{
+			"id": "reactflow__edge-capsule_forward_json_files_13-results",
+			"source": "capsule_forward_json_files_13",
+			"target": "results"
 		}
 	],
 	"nodes": [
@@ -313,7 +335,36 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "05b8a796-f8c7-4177-b486-82abfc146e49"
+			},
+			"id": "capsule_aind_ophys_quality_control_aggregator_12",
+			"position": {
+				"x": 970.9422698952076,
+				"y": 708.5982184334479
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "5d873001-33d1-4e84-8818-4bf809aef56b"
+			},
+			"id": "capsule_forward_json_files_13",
+			"position": {
+				"x": 1077.6089365618757,
+				"y": 558.5982184334478
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1735105030891
+	"timestamp": 1736374013184,
+	"viewport": {
+		"x": 302.71731903143746,
+		"y": 218.92053446996567,
+		"zoom": 0.3
+	}
 }
