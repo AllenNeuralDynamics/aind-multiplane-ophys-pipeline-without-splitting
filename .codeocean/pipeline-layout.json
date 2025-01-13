@@ -182,7 +182,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_quality_control_aggregator_12",
-			"selected": true,
+			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_quality_control_aggregator_12"
 		},
@@ -190,6 +190,17 @@
 			"id": "reactflow__edge-capsule_aind_ophys_quality_control_aggregator_12-results",
 			"source": "capsule_aind_ophys_quality_control_aggregator_12",
 			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_movie_qc_13",
+			"selected": true,
+			"source": "capsule_aind_ophys_motion_correction_1",
+			"target": "capsule_aind_ophys_movie_qc_13"
+		},
+		{
+			"id": "reactflow__edge-capsule_aind_ophys_movie_qc_13-capsule_aind_ophys_quality_control_aggregator_12",
+			"source": "capsule_aind_ophys_movie_qc_13",
+			"target": "capsule_aind_ophys_quality_control_aggregator_12"
 		}
 	],
 	"nodes": [
@@ -262,8 +273,8 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
-				"x": 632.9290702159092,
-				"y": 40.47171103050857
+				"x": 618.3037893928549,
+				"y": -28.476041421033415
 			},
 			"selected": false,
 			"type": "capsule"
@@ -339,7 +350,24 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "f52d9390-8569-49bb-9562-2d624b18ee56"
+			},
+			"id": "capsule_aind_ophys_movie_qc_13",
+			"position": {
+				"x": 928.9776238210828,
+				"y": 103.98737595820052
+			},
+			"selected": false,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1736785332534
+	"timestamp": 1736797424207,
+	"viewport": {
+		"x": 323.23634362071857,
+		"y": 367.59588887724055,
+		"zoom": 0.4786232883108573
+	}
 }

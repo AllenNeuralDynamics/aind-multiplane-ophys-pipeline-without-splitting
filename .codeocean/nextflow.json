@@ -451,6 +451,12 @@
 			},
 			"inputs": [
 				{
+					"id": "0wL4LH6tdOC7Uno6",
+					"source_id": "capsule_aind_ophys_movie_qc_13",
+					"type": "capsule",
+					"name": "aind-ophys-movie-qc"
+				},
+				{
 					"id": "giYxE9ZThNqYFtVw",
 					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
@@ -462,6 +468,28 @@
 			"results": {
 				"id": "05b8a796-f8c7-4177-b486-82abfc146e49"
 			}
+		},
+		{
+			"name": "capsule_aind_ophys_movie_qc_13",
+			"capsule": {
+				"id": "f52d9390-8569-49bb-9562-2d624b18ee56",
+				"name": "aind-ophys-movie-qc",
+				"slug": "0300037",
+				"version": 3
+			},
+			"resources": {
+				"cpus": 8,
+				"memory": 64
+			},
+			"inputs": [
+				{
+					"id": "NejLS038rglefmjT",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"flatten": true
+				}
+			]
 		}
 	]
 }

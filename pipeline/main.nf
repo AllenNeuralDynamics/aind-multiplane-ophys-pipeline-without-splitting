@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:2990df68c3210193544b845fd524e02203bd5fc4830f6ad1bca128fb5246ec73
+// hash:sha256:bcf6000ac57dca8259106d1de274959fb091e25c410bed21b3e04fc67b714d3e
 
 nextflow.enable.dsl = 1
 
@@ -37,7 +37,9 @@ capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_29 = channel
 ophys_mount_to_aind_ophys_nwb_30 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
 capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_31 = channel.create()
 ophys_mount_to_nwb_packaging_subject_capsule_32 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
-capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33 = channel.create()
+capsule_aind_ophys_movie_qc_13_to_capsule_aind_ophys_quality_control_aggregator_12_33 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_34 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_35 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -62,7 +64,8 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_12
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_pipeline_processing_metadata_aggregator_9_23
 	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_29
-	path 'capsule/results/*/motion_correction/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33
+	path 'capsule/results/*/motion_correction/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_34
+	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_35
 
 	script:
 	"""
@@ -483,7 +486,8 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33.collect()
+	path 'capsule/data/' from capsule_aind_ophys_movie_qc_13_to_capsule_aind_ophys_quality_control_aggregator_12_33
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_34.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -505,6 +509,48 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4691390.git" capsule-repo
 	git -C capsule-repo checkout 41be7c5f2b4e31f327dea94f4c8fdb5fba289345 --quiet
+	mv capsule-repo/code capsule/code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-movie-qc
+process capsule_aind_ophys_movie_qc_13 {
+	tag 'capsule-0300037'
+	container "$REGISTRY_HOST/published/f52d9390-8569-49bb-9562-2d624b18ee56:v3"
+
+	cpus 8
+	memory '64 GB'
+
+	input:
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_35.flatten()
+
+	output:
+	path 'capsule/results/*' into capsule_aind_ophys_movie_qc_13_to_capsule_aind_ophys_quality_control_aggregator_12_33
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=f52d9390-8569-49bb-9562-2d624b18ee56
+	export CO_CPUS=8
+	export CO_MEMORY=68719476736
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0300037.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
