@@ -440,10 +440,10 @@
 		{
 			"name": "capsule_aind_ophys_quality_control_aggregator_12",
 			"capsule": {
-				"id": "05b8a796-f8c7-4177-b486-82abfc146e49",
+				"id": "196ffc43-8298-4dfb-ba58-6565d60fd650",
 				"name": "aind-ophys-quality-control-aggregator",
-				"slug": "4691390",
-				"commit": "41be7c5f2b4e31f327dea94f4c8fdb5fba289345"
+				"slug": "5787827",
+				"version": 1
 			},
 			"resources": {
 				"cpus": 1,
@@ -460,7 +460,7 @@
 				}
 			],
 			"results": {
-				"id": "05b8a796-f8c7-4177-b486-82abfc146e49"
+				"id": "196ffc43-8298-4dfb-ba58-6565d60fd650"
 			}
 		},
 		{

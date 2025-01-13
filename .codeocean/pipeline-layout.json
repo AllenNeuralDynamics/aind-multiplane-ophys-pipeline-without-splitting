@@ -182,7 +182,6 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_quality_control_aggregator_12",
-			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_quality_control_aggregator_12"
 		},
@@ -329,18 +328,6 @@
 		},
 		{
 			"data": {
-				"capsule_id": "05b8a796-f8c7-4177-b486-82abfc146e49"
-			},
-			"id": "capsule_aind_ophys_quality_control_aggregator_12",
-			"position": {
-				"x": 884.3387124818444,
-				"y": 715.2169451118617
-			},
-			"selected": true,
-			"type": "capsule"
-		},
-		{
-			"data": {
 				"capsule_id": "d51df783-d892-4304-a129-238a9baea72a"
 			},
 			"id": "capsule_aind_pipeline_processing_metadata_aggregator_9",
@@ -362,12 +349,19 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "196ffc43-8298-4dfb-ba58-6565d60fd650"
+			},
+			"id": "capsule_aind_ophys_quality_control_aggregator_12",
+			"position": {
+				"x": 884.3387124818444,
+				"y": 715.2169451118617
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1736802562706,
-	"viewport": {
-		"x": 323.23634362071857,
-		"y": 367.59588887724055,
-		"zoom": 0.4786232883108573
-	}
+	"timestamp": 1736804039357
 }
