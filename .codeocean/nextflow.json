@@ -8,6 +8,9 @@
 				"name": "aind-ophys-motion-correction",
 				"slug": "7474660",
 				"version": 12,
+				"arguments": [
+					"--debug"
+				],
 				"app_panel": true
 			},
 			"resources": {
@@ -103,7 +106,10 @@
 				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053",
 				"name": "aind-ophys-decrosstalk-roi-images",
 				"slug": "1533578",
-				"version": 7
+				"version": 7,
+				"arguments": [
+					"--debug"
+				]
 			},
 			"resources": {
 				"cpus": 16,
@@ -249,11 +255,13 @@
 				"id": "d51df783-d892-4304-a129-238a9baea72a",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "8250608",
-				"version": 2,
+				"version": 3,
 				"arguments": [
 					"--processor_full_name",
 					"\"Arielle",
-					"Leon\""
+					"Leon\"",
+					"--copy-ancillary-files",
+					"True"
 				],
 				"app_panel": true
 			},
@@ -434,7 +442,8 @@
 			"capsule": {
 				"id": "05b8a796-f8c7-4177-b486-82abfc146e49",
 				"name": "aind-ophys-quality-control-aggregator",
-				"slug": "4691390"
+				"slug": "4691390",
+				"commit": "41be7c5f2b4e31f327dea94f4c8fdb5fba289345"
 			},
 			"resources": {
 				"cpus": 1,
@@ -452,44 +461,6 @@
 			],
 			"results": {
 				"id": "05b8a796-f8c7-4177-b486-82abfc146e49"
-			}
-		},
-		{
-			"name": "capsule_forward_json_files_13",
-			"capsule": {
-				"id": "5d873001-33d1-4e84-8818-4bf809aef56b",
-				"name": "Forward json files",
-				"slug": "7519234"
-			},
-			"resources": {
-				"cpus": 1,
-				"memory": 8
-			},
-			"inputs": [
-				{
-					"id": "KPtMwhmhDpwW4oH6",
-					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/subject.json"
-				},
-				{
-					"id": "M1RglnIKBYbexB4l",
-					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/procedures.json"
-				},
-				{
-					"id": "xF14kGAn9tB7bjIr",
-					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/session.json"
-				}
-			],
-			"results": {
-				"id": "5d873001-33d1-4e84-8818-4bf809aef56b"
 			}
 		}
 	]

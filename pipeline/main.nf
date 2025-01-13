@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:779fce82839e03dc72dffdd875f86cb6090730469b0805d5613391e87117c95e
+// hash:sha256:2990df68c3210193544b845fd524e02203bd5fc4830f6ad1bca128fb5246ec73
 
 nextflow.enable.dsl = 1
 
@@ -38,9 +38,6 @@ ophys_mount_to_aind_ophys_nwb_30 = channel.fromPath(params.ophys_mount_url + "/"
 capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_31 = channel.create()
 ophys_mount_to_nwb_packaging_subject_capsule_32 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
 capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33 = channel.create()
-ophys_mount_to_forward_json_files_34 = channel.fromPath(params.ophys_mount_url + "/subject.json", type: 'any')
-ophys_mount_to_forward_json_files_35 = channel.fromPath(params.ophys_mount_url + "/procedures.json", type: 'any')
-ophys_mount_to_forward_json_files_36 = channel.fromPath(params.ophys_mount_url + "/session.json", type: 'any')
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -89,7 +86,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_motion_correction_1_args}
+	./run --debug
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -183,7 +180,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run
+	./run --debug
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -335,7 +332,7 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 // capsule - aind-pipeline-processing-metadata-aggregator
 process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	tag 'capsule-8250608'
-	container "$REGISTRY_HOST/published/d51df783-d892-4304-a129-238a9baea72a:v2"
+	container "$REGISTRY_HOST/published/d51df783-d892-4304-a129-238a9baea72a:v3"
 
 	cpus 4
 	memory '32 GB'
@@ -368,14 +365,14 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
+	git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --processor_full_name "Arielle Leon"
+	./run --processor_full_name "Arielle Leon" --copy-ancillary-files True
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -507,52 +504,7 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4691390.git" capsule-repo
-	mv capsule-repo/code capsule/code
-	rm -rf capsule-repo
-
-	echo "[${task.tag}] running capsule..."
-	cd capsule/code
-	chmod +x run
-	./run
-
-	echo "[${task.tag}] completed!"
-	"""
-}
-
-// capsule - Forward json files
-process capsule_forward_json_files_13 {
-	tag 'capsule-7519234'
-	container "$REGISTRY_HOST/capsule/5d873001-33d1-4e84-8818-4bf809aef56b"
-
-	cpus 1
-	memory '8 GB'
-
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
-
-	input:
-	path 'capsule/data/' from ophys_mount_to_forward_json_files_34
-	path 'capsule/data/' from ophys_mount_to_forward_json_files_35
-	path 'capsule/data/' from ophys_mount_to_forward_json_files_36
-
-	output:
-	path 'capsule/results/*'
-
-	script:
-	"""
-	#!/usr/bin/env bash
-	set -e
-
-	export CO_CAPSULE_ID=5d873001-33d1-4e84-8818-4bf809aef56b
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
-
-	mkdir -p capsule
-	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
-	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
-	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
-
-	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7519234.git" capsule-repo
+	git -C capsule-repo checkout 41be7c5f2b4e31f327dea94f4c8fdb5fba289345 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
