@@ -451,12 +451,6 @@
 			},
 			"inputs": [
 				{
-					"id": "0wL4LH6tdOC7Uno6",
-					"source_id": "capsule_aind_ophys_movie_qc_13",
-					"type": "capsule",
-					"name": "aind-ophys-movie-qc"
-				},
-				{
 					"id": "giYxE9ZThNqYFtVw",
 					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
@@ -489,7 +483,10 @@
 					"name": "aind-ophys-motion-correction",
 					"flatten": true
 				}
-			]
+			],
+			"results": {
+				"id": "f52d9390-8569-49bb-9562-2d624b18ee56"
+			}
 		}
 	]
 }

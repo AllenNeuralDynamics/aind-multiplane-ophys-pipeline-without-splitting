@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:bcf6000ac57dca8259106d1de274959fb091e25c410bed21b3e04fc67b714d3e
+// hash:sha256:1fccc606128b628644dee9682f49706fe1ca2820a3a1f0a119fd33defeded10a
 
 nextflow.enable.dsl = 1
 
@@ -37,9 +37,8 @@ capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_29 = channel
 ophys_mount_to_aind_ophys_nwb_30 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
 capsule_nwb_packaging_subject_11_to_capsule_aind_ophys_nwb_10_31 = channel.create()
 ophys_mount_to_nwb_packaging_subject_capsule_32 = channel.fromPath(params.ophys_mount_url + "/", type: 'any')
-capsule_aind_ophys_movie_qc_13_to_capsule_aind_ophys_quality_control_aggregator_12_33 = channel.create()
-capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_34 = channel.create()
-capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_35 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33 = channel.create()
+capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_34 = channel.create()
 
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
@@ -64,8 +63,8 @@ process capsule_aind_ophys_motion_correction_1 {
 	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_roi_images_3_12
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_pipeline_processing_metadata_aggregator_9_23
 	path 'capsule/results/*/motion_correction/*.h5' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_nwb_10_29
-	path 'capsule/results/*/motion_correction/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_34
-	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_35
+	path 'capsule/results/*/motion_correction/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33
+	path 'capsule/results/*' into capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_34
 
 	script:
 	"""
@@ -486,8 +485,7 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_movie_qc_13_to_capsule_aind_ophys_quality_control_aggregator_12_33
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_34.collect()
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_quality_control_aggregator_12_33.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -529,11 +527,13 @@ process capsule_aind_ophys_movie_qc_13 {
 	cpus 8
 	memory '64 GB'
 
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_35.flatten()
+	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_movie_qc_13_34.flatten()
 
 	output:
-	path 'capsule/results/*' into capsule_aind_ophys_movie_qc_13_to_capsule_aind_ophys_quality_control_aggregator_12_33
+	path 'capsule/results/*'
 
 	script:
 	"""

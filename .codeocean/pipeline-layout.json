@@ -193,14 +193,14 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_movie_qc_13",
-			"selected": true,
+			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_movie_qc_13"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_movie_qc_13-capsule_aind_ophys_quality_control_aggregator_12",
+			"id": "reactflow__edge-capsule_aind_ophys_movie_qc_13-results",
 			"source": "capsule_aind_ophys_movie_qc_13",
-			"target": "capsule_aind_ophys_quality_control_aggregator_12"
+			"target": "results"
 		}
 	],
 	"nodes": [
@@ -333,10 +333,10 @@
 			},
 			"id": "capsule_aind_ophys_quality_control_aggregator_12",
 			"position": {
-				"x": 1007.6089365618741,
-				"y": 731.9315517667811
+				"x": 884.3387124818444,
+				"y": 715.2169451118617
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -357,14 +357,14 @@
 			},
 			"id": "capsule_aind_ophys_movie_qc_13",
 			"position": {
-				"x": 928.9776238210828,
-				"y": 103.98737595820052
+				"x": 1054.3371737329771,
+				"y": 200.09636422398626
 			},
 			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1736797424207,
+	"timestamp": 1736802562706,
 	"viewport": {
 		"x": 323.23634362071857,
 		"y": 367.59588887724055,
