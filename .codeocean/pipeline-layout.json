@@ -36,11 +36,6 @@
 			"target": "capsule_processing_json_aggregator_9"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_processing_json_aggregator_9",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_processing_json_aggregator_9"
-		},
-		{
 			"id": "reactflow__edge-capsule_processing_json_aggregator_9-resultsresults-start",
 			"source": "capsule_processing_json_aggregator_9",
 			"target": "results"
@@ -106,21 +101,6 @@
 			"target": "capsule_aind_ophys_oasis_event_detection_8"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_processing_json_aggregator_9",
-			"source": "capsule_aind_ophys_dff_5",
-			"target": "capsule_processing_json_aggregator_9"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_processing_json_aggregator_9",
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"target": "capsule_processing_json_aggregator_9"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_processing_json_aggregator_9",
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_processing_json_aggregator_9"
-		},
-		{
 			"id": "reactflow__edge-capsule_nwb_packaging_subject_11-capsule_aind_ophys_nwb_10",
 			"selected": false,
 			"source": "capsule_nwb_packaging_subject_11",
@@ -161,11 +141,6 @@
 			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_10",
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
 			"target": "capsule_aind_ophys_nwb_10"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_processing_json_aggregator_9",
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "capsule_processing_json_aggregator_9"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_nwb_packaging_subject_11",
@@ -314,5 +289,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1736877294165
+	"timestamp": 1736877352912,
+	"viewport": {
+		"x": 205.9242060112532,
+		"y": -293.24708986920297,
+		"zoom": 0.3
+	}
 }

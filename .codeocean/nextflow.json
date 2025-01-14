@@ -261,51 +261,10 @@
 			},
 			"inputs": [
 				{
-					"id": "qOcbSv7kqKYwuBGw",
-					"source_id": "capsule_aind_ophys_dff_5",
-					"type": "capsule",
-					"name": "aind-ophys-dff",
-					"source_path": "*/*/*data_process.json",
-					"collect": true
-				},
-				{
 					"id": "XOEzWn77kDzhrdYN",
 					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
 					"type": "capsule",
 					"name": "aind-ophys-oasis-event-detection",
-					"source_path": "*/*/*data_process.json",
-					"collect": true
-				},
-				{
-					"id": "WMmpNaASauV1vBy0",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
-					"type": "capsule",
-					"name": "aind-ophys-extraction-suite2p",
-					"source_path": "*/*/*data_process.json",
-					"collect": true
-				},
-				{
-					"id": "pbT38C7U4DisYr04",
-					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-					"type": "capsule",
-					"name": "aind-ophys-decrosstalk-roi-images",
-					"source_path": "*/*/*data_process.json",
-					"collect": true
-				},
-				{
-					"id": "gUH8v0DsYRcVWl59",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/*/*data_process.json",
-					"collect": true
-				},
-				{
-					"id": "gZeDmenxPxTX6mnO",
-					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-					"type": "dataset",
-					"name": "ophys_mount",
-					"source_path": "ophys_mount/*.json",
 					"collect": true
 				}
 			],
