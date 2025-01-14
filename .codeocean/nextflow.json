@@ -248,12 +248,7 @@
 				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d",
 				"name": "Processing json aggregator",
 				"slug": "1054292",
-				"version": 8,
-				"arguments": [
-					"--processor_full_name",
-					"\"Arielle",
-					"Leon\""
-				]
+				"version": 8
 			},
 			"resources": {
 				"cpus": 4,

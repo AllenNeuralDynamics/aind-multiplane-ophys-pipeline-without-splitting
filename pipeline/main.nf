@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:37d31a7b09c46bdd203d6c5791b0557ba9df9a6a7be5fe875bef7c8330d44eb6
+// hash:sha256:4d24f2fed04a63761c17319d5a628c76126f5803f75b3fddfc44e078e3c75f8f
 
 nextflow.enable.dsl = 1
 
@@ -356,7 +356,7 @@ process capsule_processing_json_aggregator_9 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --processor_full_name "Arielle Leon"
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""
