@@ -152,6 +152,11 @@
 			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_10",
 			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 			"target": "capsule_aind_ophys_nwb_10"
+		},
+		{
+			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_processing_json_aggregator_9",
+			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"target": "capsule_processing_json_aggregator_9"
 		}
 	],
 	"nodes": [
@@ -170,6 +175,7 @@
 				"x": 469.33333333333337,
 				"y": -609.0666666666666
 			},
+			"selected": true,
 			"type": "dataset"
 		},
 		{
@@ -201,7 +207,7 @@
 				"x": 1289.258919930874,
 				"y": 485.1715431748311
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -289,10 +295,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1736877374964,
+	"timestamp": 1736893700650,
 	"viewport": {
-		"x": -18.075793988746852,
-		"y": -43.24708986920291,
+		"x": 115.92420601125315,
+		"y": -194.3798962656874,
 		"zoom": 0.3
 	}
 }
