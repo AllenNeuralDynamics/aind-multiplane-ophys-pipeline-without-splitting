@@ -337,12 +337,12 @@
 			},
 			"inputs": [
 				{
-					"id": "NNXYjCjVIZBV0gYp",
-					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
-					"type": "dataset",
-					"name": "schemas",
-					"source_path": "schemas/",
-					"target_path": "schemas",
+					"id": "E6C3Vqd94sE51LAS",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p",
+					"source_path": "*/extraction/*.h5",
+					"target_path": "processed",
 					"collect": true
 				},
 				{
@@ -351,24 +351,6 @@
 					"type": "capsule",
 					"name": "aind-ophys-oasis-event-detection",
 					"source_path": "*/events/*.h5",
-					"target_path": "processed",
-					"collect": true
-				},
-				{
-					"id": "VcFxZxm2Dsofe4hY",
-					"source_id": "capsule_aind_ophys_dff_5",
-					"type": "capsule",
-					"name": "aind-ophys-dff",
-					"source_path": "*/dff/*.h5",
-					"target_path": "processed",
-					"collect": true
-				},
-				{
-					"id": "E6C3Vqd94sE51LAS",
-					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
-					"type": "capsule",
-					"name": "aind-ophys-extraction-suite2p",
-					"source_path": "*/extraction/*.h5",
 					"target_path": "processed",
 					"collect": true
 				},
@@ -386,8 +368,17 @@
 					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
 					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*.h5",
+					"source_path": "*/motion_correction/*",
 					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "NNXYjCjVIZBV0gYp",
+					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"type": "dataset",
+					"name": "schemas",
+					"source_path": "schemas/",
+					"target_path": "schemas",
 					"collect": true
 				},
 				{
@@ -440,10 +431,11 @@
 		{
 			"name": "capsule_aind_ophys_quality_control_aggregator_12",
 			"capsule": {
-				"id": "196ffc43-8298-4dfb-ba58-6565d60fd650",
+				"id": "6bee4fdf-0ef7-4461-b72b-9bfafc502466",
 				"name": "aind-ophys-quality-control-aggregator",
-				"slug": "5787827",
-				"version": 1
+				"slug": "9008767",
+				"commit": "06d0f7774b020112a5a2f7c6ebf385060c87af6d",
+				"image_tag": "39de4320ad48a3f0bacfde41637c8137"
 			},
 			"resources": {
 				"cpus": 1,
@@ -460,16 +452,17 @@
 				}
 			],
 			"results": {
-				"id": "196ffc43-8298-4dfb-ba58-6565d60fd650"
+				"id": "6bee4fdf-0ef7-4461-b72b-9bfafc502466"
 			}
 		},
 		{
 			"name": "capsule_aind_ophys_movie_qc_13",
 			"capsule": {
-				"id": "f52d9390-8569-49bb-9562-2d624b18ee56",
+				"id": "5c614fda-29f7-48de-9a7e-871be8c54a2d",
 				"name": "aind-ophys-movie-qc",
-				"slug": "0300037",
-				"version": 3
+				"slug": "0275435",
+				"commit": "a11236aaa4296ad4d90af218d01b0e2bcbeaa321",
+				"image_tag": "9ea83b3f1eff1bb9423b5f6b0c17b0eb"
 			},
 			"resources": {
 				"cpus": 8,
@@ -485,7 +478,7 @@
 				}
 			],
 			"results": {
-				"id": "f52d9390-8569-49bb-9562-2d624b18ee56"
+				"id": "5c614fda-29f7-48de-9a7e-871be8c54a2d"
 			}
 		}
 	]
