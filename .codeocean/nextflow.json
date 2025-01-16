@@ -7,7 +7,7 @@
 				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
 				"slug": "7474660",
-				"version": 12,
+				"version": 13,
 				"arguments": [
 					"--debug"
 				],
@@ -157,7 +157,7 @@
 				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction-suite2p",
 				"slug": "9911715",
-				"version": 7,
+				"version": 8,
 				"app_panel": true
 			},
 			"resources": {
@@ -431,11 +431,10 @@
 		{
 			"name": "capsule_aind_ophys_quality_control_aggregator_12",
 			"capsule": {
-				"id": "6bee4fdf-0ef7-4461-b72b-9bfafc502466",
+				"id": "196ffc43-8298-4dfb-ba58-6565d60fd650",
 				"name": "aind-ophys-quality-control-aggregator",
-				"slug": "9008767",
-				"commit": "06d0f7774b020112a5a2f7c6ebf385060c87af6d",
-				"image_tag": "39de4320ad48a3f0bacfde41637c8137"
+				"slug": "5787827",
+				"version": 1
 			},
 			"resources": {
 				"cpus": 1,
@@ -452,7 +451,7 @@
 				}
 			],
 			"results": {
-				"id": "6bee4fdf-0ef7-4461-b72b-9bfafc502466"
+				"id": "196ffc43-8298-4dfb-ba58-6565d60fd650"
 			}
 		},
 		{
@@ -461,8 +460,7 @@
 				"id": "5c614fda-29f7-48de-9a7e-871be8c54a2d",
 				"name": "aind-ophys-movie-qc",
 				"slug": "0275435",
-				"commit": "a11236aaa4296ad4d90af218d01b0e2bcbeaa321",
-				"image_tag": "9ea83b3f1eff1bb9423b5f6b0c17b0eb"
+				"commit": "a11236aaa4296ad4d90af218d01b0e2bcbeaa321"
 			},
 			"resources": {
 				"cpus": 8,
