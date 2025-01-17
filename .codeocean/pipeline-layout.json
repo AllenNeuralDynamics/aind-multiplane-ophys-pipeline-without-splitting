@@ -272,7 +272,7 @@
 				"x": 595.6371227261882,
 				"y": 32.85729191229993
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -349,21 +349,21 @@
 		},
 		{
 			"data": {
-				"capsule_id": "f52d9390-8569-49bb-9562-2d624b18ee56"
+				"capsule_id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546"
 			},
 			"id": "capsule_aind_ophys_movie_qc_13",
 			"position": {
-				"x": 1054.3371737329771,
-				"y": 200.09636422398626
+				"x": 1061.003840399644,
+				"y": 229.42969755731957
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1737076294794,
+	"timestamp": 1737137396144,
 	"viewport": {
-		"x": 0,
-		"y": 0,
+		"x": -518,
+		"y": 12,
 		"zoom": 0.75
 	}
 }

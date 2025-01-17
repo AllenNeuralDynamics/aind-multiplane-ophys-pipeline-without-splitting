@@ -76,6 +76,14 @@
 			},
 			"inputs": [
 				{
+					"id": "KEZvQCkfy729BcYM",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
+					"collect": true
+				},
+				{
 					"id": "DXKKwTddgaHAQE3g",
 					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
@@ -89,13 +97,6 @@
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*/MESO*",
-					"collect": true
-				},
-				{
-					"id": "KEZvQCkfy729BcYM",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
 					"collect": true
 				}
 			]
@@ -116,6 +117,14 @@
 				"memory": 128
 			},
 			"inputs": [
+				{
+					"id": "R7aHyqkTjUzQay72",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
+					"collect": true
+				},
 				{
 					"id": "3Sj5cMmwGYlDRnNM",
 					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
@@ -138,13 +147,6 @@
 					"type": "capsule",
 					"name": "aind-ophys-decrosstalk-split-session-json",
 					"flatten": true
-				},
-				{
-					"id": "R7aHyqkTjUzQay72",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"collect": true
 				}
 			],
 			"results": {
@@ -457,10 +459,10 @@
 		{
 			"name": "capsule_aind_ophys_movie_qc_13",
 			"capsule": {
-				"id": "f52d9390-8569-49bb-9562-2d624b18ee56",
+				"id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546",
 				"name": "aind-ophys-movie-qc",
-				"slug": "0300037",
-				"version": 4
+				"slug": "2921644",
+				"commit": "8b81dfee94df9f44d795aa10b86a5c68242c54da"
 			},
 			"resources": {
 				"cpus": 8,
@@ -472,11 +474,12 @@
 					"source_id": "capsule_aind_ophys_motion_correction_1",
 					"type": "capsule",
 					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
 					"flatten": true
 				}
 			],
 			"results": {
-				"id": "f52d9390-8569-49bb-9562-2d624b18ee56"
+				"id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546"
 			}
 		}
 	]
