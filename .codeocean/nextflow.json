@@ -329,7 +329,7 @@
 				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
 				"name": "aind-ophys-nwb",
 				"slug": "9383700",
-				"version": 8
+				"version": 10
 			},
 			"resources": {
 				"cpus": 1,
