@@ -269,10 +269,10 @@
 			},
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
-				"x": 618.3037893928549,
-				"y": -28.476041421033415
+				"x": 595.6371227261882,
+				"y": 32.85729191229993
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -337,7 +337,19 @@
 		},
 		{
 			"data": {
-				"capsule_id": "5c614fda-29f7-48de-9a7e-871be8c54a2d"
+				"capsule_id": "196ffc43-8298-4dfb-ba58-6565d60fd650"
+			},
+			"id": "capsule_aind_ophys_quality_control_aggregator_12",
+			"position": {
+				"x": 884.3387124818444,
+				"y": 709.8091612196482
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "f52d9390-8569-49bb-9562-2d624b18ee56"
 			},
 			"id": "capsule_aind_ophys_movie_qc_13",
 			"position": {
@@ -346,19 +358,12 @@
 			},
 			"selected": false,
 			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "196ffc43-8298-4dfb-ba58-6565d60fd650"
-			},
-			"id": "capsule_aind_ophys_quality_control_aggregator_12",
-			"position": {
-				"x": 884.3387124818444,
-				"y": 709.8091612196482
-			},
-			"selected": true,
-			"type": "capsule"
 		}
 	],
-	"timestamp": 1736990566853
+	"timestamp": 1737076294794,
+	"viewport": {
+		"x": 0,
+		"y": 0,
+		"zoom": 0.75
+	}
 }
