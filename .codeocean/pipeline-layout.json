@@ -140,7 +140,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_nwb_10",
-			"selected": false,
+			"selected": true,
 			"source": "capsule_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_nwb_10"
 		},
@@ -180,6 +180,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_quality_control_aggregator_12",
+			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_quality_control_aggregator_12"
 		},
@@ -197,6 +198,11 @@
 			"id": "reactflow__edge-capsule_aind_ophys_movie_qc_13-results",
 			"source": "capsule_aind_ophys_movie_qc_13",
 			"target": "results"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_10",
+			"source": "capsule_aind_ophys_dff_5",
+			"target": "capsule_aind_ophys_nwb_10"
 		}
 	],
 	"nodes": [
@@ -270,7 +276,7 @@
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
 				"x": 595.6371227261882,
-				"y": 32.85729191229993
+				"y": 30.963909804322043
 			},
 			"selected": false,
 			"type": "capsule"
@@ -337,7 +343,19 @@
 		},
 		{
 			"data": {
-				"capsule_id": "196ffc43-8298-4dfb-ba58-6565d60fd650"
+				"capsule_id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546"
+			},
+			"id": "capsule_aind_ophys_movie_qc_13",
+			"position": {
+				"x": 1061.003840399644,
+				"y": 229.42969755731957
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "05b8a796-f8c7-4177-b486-82abfc146e49"
 			},
 			"id": "capsule_aind_ophys_quality_control_aggregator_12",
 			"position": {
@@ -346,24 +364,12 @@
 			},
 			"selected": false,
 			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546"
-			},
-			"id": "capsule_aind_ophys_movie_qc_13",
-			"position": {
-				"x": 1061.003840399644,
-				"y": 229.42969755731957
-			},
-			"selected": true,
-			"type": "capsule"
 		}
 	],
-	"timestamp": 1737137396144,
+	"timestamp": 1737147886485,
 	"viewport": {
-		"x": -518,
-		"y": 12,
-		"zoom": 0.75
+		"x": -6.661330981747938,
+		"y": -36.59905621163904,
+		"zoom": 0.3
 	}
 }
