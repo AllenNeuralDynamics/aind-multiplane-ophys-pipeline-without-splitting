@@ -140,7 +140,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_nwb_10",
-			"selected": true,
+			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_nwb_10"
 		},
@@ -343,14 +343,14 @@
 		},
 		{
 			"data": {
-				"capsule_id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546"
+				"capsule_id": "f52d9390-8569-49bb-9562-2d624b18ee56"
 			},
 			"id": "capsule_aind_ophys_movie_qc_13",
 			"position": {
 				"x": 1061.003840399644,
 				"y": 229.42969755731957
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -366,10 +366,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1737147886485,
+	"timestamp": 1737497716114,
 	"viewport": {
-		"x": -6.661330981747938,
-		"y": -36.59905621163904,
-		"zoom": 0.3
+		"x": -113.32266196349588,
+		"y": 89.80188757672187,
+		"zoom": 0.6
 	}
 }
