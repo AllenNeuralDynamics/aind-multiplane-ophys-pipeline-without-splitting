@@ -7,7 +7,8 @@
 				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
 				"slug": "7474660",
-				"version": 6
+				"version": 13,
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 16,
@@ -72,6 +73,14 @@
 			},
 			"inputs": [
 				{
+					"id": "KEZvQCkfy729BcYM",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
+					"collect": true
+				},
+				{
 					"id": "DXKKwTddgaHAQE3g",
 					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 					"type": "dataset",
@@ -85,13 +94,6 @@
 					"type": "dataset",
 					"name": "ophys_mount",
 					"source_path": "ophys_mount/*/MESO*",
-					"collect": true
-				},
-				{
-					"id": "KEZvQCkfy729BcYM",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
 					"collect": true
 				}
 			]
@@ -109,6 +111,14 @@
 				"memory": 128
 			},
 			"inputs": [
+				{
+					"id": "R7aHyqkTjUzQay72",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
+					"collect": true
+				},
 				{
 					"id": "3Sj5cMmwGYlDRnNM",
 					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
@@ -131,13 +141,6 @@
 					"type": "capsule",
 					"name": "aind-ophys-decrosstalk-split-session-json",
 					"flatten": true
-				},
-				{
-					"id": "R7aHyqkTjUzQay72",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"collect": true
 				}
 			],
 			"results": {
@@ -150,7 +153,7 @@
 				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction-suite2p",
 				"slug": "9911715",
-				"version": 6,
+				"version": 8,
 				"app_panel": true
 			},
 			"resources": {
@@ -245,10 +248,18 @@
 		{
 			"name": "capsule_processing_json_aggregator_9",
 			"capsule": {
-				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d",
-				"name": "Processing json aggregator",
-				"slug": "1054292",
-				"version": 8
+				"id": "d51df783-d892-4304-a129-238a9baea72a",
+				"name": "aind-pipeline-processing-metadata-aggregator",
+				"slug": "8250608",
+				"version": 3,
+				"arguments": [
+					"--processor_full_name",
+					"\"Arielle",
+					"Leon\"",
+					"--copy-ancillary-files",
+					"True"
+				],
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 4,
@@ -281,7 +292,7 @@
 				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
 				"name": "aind-ophys-nwb",
 				"slug": "9383700",
-				"version": 8
+				"version": 11
 			},
 			"resources": {
 				"cpus": 1,
@@ -289,29 +300,29 @@
 			},
 			"inputs": [
 				{
-					"id": "NNXYjCjVIZBV0gYp",
-					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
-					"type": "dataset",
-					"name": "schemas",
-					"source_path": "schemas/",
-					"target_path": "schemas",
-					"collect": true
-				},
-				{
-					"id": "fwhcG1GSP93eUITh",
-					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
-					"type": "capsule",
-					"name": "aind-ophys-oasis-event-detection",
-					"source_path": "*/events/*.h5",
-					"target_path": "processed",
-					"collect": true
-				},
-				{
-					"id": "VcFxZxm2Dsofe4hY",
+					"id": "jvGfTPyeEH5H7VNc",
 					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
 					"name": "aind-ophys-dff",
 					"source_path": "*/dff/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "PkAHZLYC8ZgxBPK5",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "XNEbEtdzsoU05Nru",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.png",
 					"target_path": "processed",
 					"collect": true
 				},
@@ -325,6 +336,15 @@
 					"collect": true
 				},
 				{
+					"id": "fwhcG1GSP93eUITh",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
+					"source_path": "*/events/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
 					"id": "jceCMYjcfQXIN6Mi",
 					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 					"type": "capsule",
@@ -334,12 +354,12 @@
 					"collect": true
 				},
 				{
-					"id": "PkAHZLYC8ZgxBPK5",
-					"source_id": "capsule_aind_ophys_motion_correction_1",
-					"type": "capsule",
-					"name": "aind-ophys-motion-correction",
-					"source_path": "*/motion_correction/*.h5",
-					"target_path": "processed",
+					"id": "NNXYjCjVIZBV0gYp",
+					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"type": "dataset",
+					"name": "schemas",
+					"source_path": "schemas/",
+					"target_path": "schemas",
 					"collect": true
 				},
 				{
@@ -388,6 +408,58 @@
 					"collect": true
 				}
 			]
+		},
+		{
+			"name": "capsule_aind_ophys_quality_control_aggregator_12",
+			"capsule": {
+				"id": "05b8a796-f8c7-4177-b486-82abfc146e49",
+				"name": "aind-ophys-quality-control-aggregator",
+				"slug": "4691390",
+				"commit": "3d5d55b4b86a382742d791fd5a93be286105ec4c"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "giYxE9ZThNqYFtVw",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "05b8a796-f8c7-4177-b486-82abfc146e49"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_movie_qc_13",
+			"capsule": {
+				"id": "f52d9390-8569-49bb-9562-2d624b18ee56",
+				"name": "aind-ophys-movie-qc",
+				"slug": "0300037",
+				"version": 5
+			},
+			"resources": {
+				"cpus": 8,
+				"memory": 64
+			},
+			"inputs": [
+				{
+					"id": "NejLS038rglefmjT",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
+					"flatten": true
+				}
+			],
+			"results": {
+				"id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546"
+			}
 		}
 	]
 }
