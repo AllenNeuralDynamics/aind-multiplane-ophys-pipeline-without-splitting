@@ -1,0 +1,465 @@
+{
+	"version": 1,
+	"processes": [
+		{
+			"name": "capsule_aind_ophys_motion_correction_1",
+			"capsule": {
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
+				"name": "aind-ophys-motion-correction",
+				"slug": "7474660",
+				"version": 13,
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 128
+			},
+			"inputs": [
+				{
+					"id": "PczNWTNKlnm84Q6K",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*/*platform.json",
+					"collect": true
+				},
+				{
+					"id": "s4q1lArFoAHAA8tI",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
+					"id": "dySOQTvwJp6Y7A7n",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*/*.h5",
+					"collect": true
+				},
+				{
+					"id": "eaHoscoPjmvVV8ol",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*/MESOSCOPE_FILE*",
+					"collect": true
+				},
+				{
+					"id": "ZcFPqK1MlDHG8G8y",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*/V*"
+				}
+			],
+			"results": {
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_decrosstalk_split_session_json_2",
+			"capsule": {
+				"id": "fc1b1e9a-fb4b-47e8-a223-b06d8eeb1462",
+				"name": "aind-ophys-decrosstalk-split-session-json",
+				"slug": "4425001",
+				"version": 1
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "KEZvQCkfy729BcYM",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
+					"collect": true
+				},
+				{
+					"id": "DXKKwTddgaHAQE3g",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/session.json",
+					"collect": true
+				},
+				{
+					"id": "xJGVCwQcZZBQSe0c",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*/MESO*",
+					"collect": true
+				}
+			]
+		},
+		{
+			"name": "capsule_aind_ophys_decrosstalk_roi_images_3",
+			"capsule": {
+				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053",
+				"name": "aind-ophys-decrosstalk-roi-images",
+				"slug": "1533578",
+				"version": 5
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 128
+			},
+			"inputs": [
+				{
+					"id": "R7aHyqkTjUzQay72",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
+					"collect": true
+				},
+				{
+					"id": "3Sj5cMmwGYlDRnNM",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
+					"id": "f2x80MCtZ0LOadvp",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount//pophys/*/V*_[0-9].h5",
+					"collect": true
+				},
+				{
+					"id": "et9dgF4WwjWDCYY3",
+					"source_id": "capsule_aind_ophys_decrosstalk_split_session_json_2",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-split-session-json",
+					"flatten": true
+				}
+			],
+			"results": {
+				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"capsule": {
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
+				"name": "aind-ophys-extraction-suite2p",
+				"slug": "9911715",
+				"version": 8,
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 240
+			},
+			"inputs": [
+				{
+					"id": "jcSsLnYjxwWWXdxz",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
+					"id": "HcGSe5PeXx7Gz2V1",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-roi-images",
+					"flatten": true
+				}
+			],
+			"results": {
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_dff_5",
+			"capsule": {
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
+				"name": "aind-ophys-dff",
+				"slug": "6574773",
+				"version": 3
+			},
+			"resources": {
+				"cpus": 2,
+				"memory": 16
+			},
+			"inputs": [
+				{
+					"id": "SWJ10ApIYqLkioxX",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
+					"id": "hyHgztQOJgik27r3",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p"
+				}
+			],
+			"results": {
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_oasis_event_detection_8",
+			"capsule": {
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
+				"name": "aind-ophys-oasis-event-detection",
+				"slug": "8957649",
+				"version": 4
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 32
+			},
+			"inputs": [
+				{
+					"id": "ftW6djfcCvzce0tL",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
+					"id": "SJJnE102UEhisUEo",
+					"source_id": "capsule_aind_ophys_dff_5",
+					"type": "capsule",
+					"name": "aind-ophys-dff"
+				}
+			],
+			"results": {
+				"id": "c6394aab-0db7-47b2-90ba-864866d6755e"
+			}
+		},
+		{
+			"name": "capsule_processing_json_aggregator_9",
+			"capsule": {
+				"id": "d51df783-d892-4304-a129-238a9baea72a",
+				"name": "aind-pipeline-processing-metadata-aggregator",
+				"slug": "8250608",
+				"version": 3,
+				"arguments": [
+					"--processor_full_name",
+					"\"Arielle",
+					"Leon\"",
+					"--copy-ancillary-files",
+					"True"
+				],
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 32
+			},
+			"inputs": [
+				{
+					"id": "glNQkZd4kmck3f1v",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/*.json",
+					"collect": true
+				},
+				{
+					"id": "XOEzWn77kDzhrdYN",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "2fafe85f-e0fa-41a7-b2a6-9ac24b88605d"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_nwb_10",
+			"capsule": {
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"name": "aind-ophys-nwb",
+				"slug": "9383700",
+				"version": 11
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "jvGfTPyeEH5H7VNc",
+					"source_id": "capsule_aind_ophys_dff_5",
+					"type": "capsule",
+					"name": "aind-ophys-dff",
+					"source_path": "*/dff/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "PkAHZLYC8ZgxBPK5",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "XNEbEtdzsoU05Nru",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*.png",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "E6C3Vqd94sE51LAS",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p",
+					"source_path": "*/extraction/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "fwhcG1GSP93eUITh",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
+					"source_path": "*/events/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "jceCMYjcfQXIN6Mi",
+					"source_id": "capsule_aind_ophys_decrosstalk_roi_images_3",
+					"type": "capsule",
+					"name": "aind-ophys-decrosstalk-roi-images",
+					"source_path": "*/decrosstalk/*.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "NNXYjCjVIZBV0gYp",
+					"source_id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
+					"type": "dataset",
+					"name": "schemas",
+					"source_path": "schemas/",
+					"target_path": "schemas",
+					"collect": true
+				},
+				{
+					"id": "yI77Te6i1FgK9CRg",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/",
+					"target_path": "multiplane-ophys_raw",
+					"collect": true
+				},
+				{
+					"id": "Q779RY6uXlCP9JX6",
+					"source_id": "capsule_nwb_packaging_subject_11",
+					"type": "capsule",
+					"name": "NWB-Packaging-Subject-Capsule",
+					"target_path": "nwb",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326"
+			}
+		},
+		{
+			"name": "capsule_nwb_packaging_subject_11",
+			"capsule": {
+				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
+				"name": "NWB-Packaging-Subject-Capsule",
+				"slug": "8198603",
+				"version": 2,
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "sMNMdyn5rb1GMbHI",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/",
+					"target_path": "ophys_session",
+					"collect": true
+				}
+			]
+		},
+		{
+			"name": "capsule_aind_ophys_quality_control_aggregator_12",
+			"capsule": {
+				"id": "05b8a796-f8c7-4177-b486-82abfc146e49",
+				"name": "aind-ophys-quality-control-aggregator",
+				"slug": "4691390",
+				"commit": "3d5d55b4b86a382742d791fd5a93be286105ec4c"
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "giYxE9ZThNqYFtVw",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "*/motion_correction/*",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "05b8a796-f8c7-4177-b486-82abfc146e49"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_movie_qc_13",
+			"capsule": {
+				"id": "f52d9390-8569-49bb-9562-2d624b18ee56",
+				"name": "aind-ophys-movie-qc",
+				"slug": "0300037",
+				"version": 5
+			},
+			"resources": {
+				"cpus": 8,
+				"memory": 64
+			},
+			"inputs": [
+				{
+					"id": "NejLS038rglefmjT",
+					"source_id": "capsule_aind_ophys_motion_correction_1",
+					"type": "capsule",
+					"name": "aind-ophys-motion-correction",
+					"source_path": "V*",
+					"flatten": true
+				}
+			],
+			"results": {
+				"id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546"
+			}
+		}
+	]
+}
