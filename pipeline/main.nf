@@ -90,7 +90,7 @@ process capsule_aind_ophys_motion_correction_1 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_motion_correction_1_args}
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -143,7 +143,7 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 // capsule - aind-ophys-decrosstalk-roi-images
 process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	tag 'capsule-1533578'
-	container "$REGISTRY_HOST/published/1383b25a-ecd2-4c56-8b7f-cde811c0b053:v7"
+	container "$REGISTRY_HOST/published/1383b25a-ecd2-4c56-8b7f-cde811c0b053:v5"
 
 	cpus 16
 	memory '128 GB'
@@ -177,7 +177,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v7.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1533578.git" capsule-repo
+	git clone --branch v5.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-1533578.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -241,7 +241,7 @@ process capsule_aind_ophys_extraction_suite_2_p_4 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_5 {
 	tag 'capsule-6574773'
-	container "$REGISTRY_HOST/published/85987e27-601c-4863-811b-71e5b4bdea37:v4"
+	container "$REGISTRY_HOST/published/85987e27-601c-4863-811b-71e5b4bdea37:v3"
 
 	cpus 2
 	memory '16 GB'
@@ -273,7 +273,7 @@ process capsule_aind_ophys_dff_5 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6574773.git" capsule-repo
+	git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-6574773.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -289,7 +289,7 @@ process capsule_aind_ophys_dff_5 {
 // capsule - aind-ophys-oasis-event-detection
 process capsule_aind_ophys_oasis_event_detection_8 {
 	tag 'capsule-8957649'
-	container "$REGISTRY_HOST/published/c6394aab-0db7-47b2-90ba-864866d6755e:v5"
+	container "$REGISTRY_HOST/published/c6394aab-0db7-47b2-90ba-864866d6755e:v4"
 
 	cpus 4
 	memory '32 GB'
@@ -320,7 +320,7 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v5.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8957649.git" capsule-repo
+	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8957649.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -344,12 +344,8 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from capsule_aind_ophys_dff_5_to_capsule_aind_pipeline_processing_metadata_aggregator_9_19.collect()
-	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_pipeline_processing_metadata_aggregator_9_20.collect()
-	path 'capsule/data/' from capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_pipeline_processing_metadata_aggregator_9_21.collect()
-	path 'capsule/data/' from capsule_aind_ophys_decrosstalk_roi_images_3_to_capsule_aind_pipeline_processing_metadata_aggregator_9_22.collect()
-	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_pipeline_processing_metadata_aggregator_9_23.collect()
-	path 'capsule/data/' from ophys_mount_to_aind_pipeline_processing_metadata_aggregator_24.collect()
+	path 'capsule/data/' from ophys_mount_to_processing_json_aggregator_19.collect()
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_8_to_capsule_processing_json_aggregator_9_20.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -359,7 +355,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=d51df783-d892-4304-a129-238a9baea72a
+	export CO_CAPSULE_ID=2fafe85f-e0fa-41a7-b2a6-9ac24b88605d
 	export CO_CPUS=4
 	export CO_MEMORY=34359738368
 
