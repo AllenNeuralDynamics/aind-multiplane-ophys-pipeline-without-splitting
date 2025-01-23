@@ -7,6 +7,7 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_split_session_json_2",
+			"selected": false,
 			"source": "capsule_aind_ophys_motion_correction_1",
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
@@ -17,11 +18,13 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_aind_ophys_decrosstalk_roi_images_3",
+			"selected": false,
 			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
 			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_split_session_json_2",
+			"selected": false,
 			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
 			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
 		},
@@ -287,10 +290,10 @@
 			},
 			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"position": {
-				"x": 328.6387321608918,
-				"y": 422.81338803127426
+				"x": 328.638732160892,
+				"y": 408.22988939439267
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -350,12 +353,12 @@
 				"x": 1061.003840399644,
 				"y": 229.42969755731957
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "05b8a796-f8c7-4177-b486-82abfc146e49"
+				"capsule_id": "4a698b5c-f5f6-4671-8234-dc728d049a68"
 			},
 			"id": "capsule_aind_ophys_quality_control_aggregator_12",
 			"position": {
@@ -366,10 +369,10 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1737497716114,
+	"timestamp": 1737655046396,
 	"viewport": {
-		"x": -113.32266196349588,
-		"y": 89.80188757672187,
-		"zoom": 0.6
+		"x": 130.06147467271202,
+		"y": 12.360969692971878,
+		"zoom": 0.3
 	}
 }

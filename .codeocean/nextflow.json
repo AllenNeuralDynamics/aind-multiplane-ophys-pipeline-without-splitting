@@ -445,10 +445,10 @@
 		{
 			"name": "capsule_aind_ophys_quality_control_aggregator_12",
 			"capsule": {
-				"id": "05b8a796-f8c7-4177-b486-82abfc146e49",
+				"id": "4a698b5c-f5f6-4671-8234-dc728d049a68",
 				"name": "aind-ophys-quality-control-aggregator",
-				"slug": "4691390",
-				"commit": "3d5d55b4b86a382742d791fd5a93be286105ec4c"
+				"slug": "4044810",
+				"version": 2
 			},
 			"resources": {
 				"cpus": 1,
