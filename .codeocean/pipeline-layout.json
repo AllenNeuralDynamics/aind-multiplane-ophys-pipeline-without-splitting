@@ -32,9 +32,9 @@
 			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_processing_json_aggregator_9",
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-processing_json_aggregator_9",
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
-			"target": "capsule_processing_json_aggregator_9"
+			"target": "processing_json_aggregator_9"
 		},
 		{
 			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_pipeline_processing_metadata_aggregator_9",
@@ -47,8 +47,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_processing_json_aggregator_9-results",
-			"source": "capsule_processing_json_aggregator_9",
+			"id": "reactflow__edge-processing_json_aggregator_9-results",
+			"source": "processing_json_aggregator_9",
 			"target": "results"
 		},
 		{

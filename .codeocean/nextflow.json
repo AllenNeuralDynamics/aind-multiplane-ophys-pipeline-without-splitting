@@ -246,7 +246,7 @@
 			}
 		},
 		{
-			"name": "capsule_processing_json_aggregator_9",
+			"name": "processing_json_aggregator_9",
 			"capsule": {
 				"id": "d51df783-d892-4304-a129-238a9baea72a",
 				"name": "aind-pipeline-processing-metadata-aggregator",
