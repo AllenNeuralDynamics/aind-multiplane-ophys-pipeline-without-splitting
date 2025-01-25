@@ -258,7 +258,7 @@
 				"id": "2b968496-f5cd-47ce-b2ec-3c9d48c73a14",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "0249670",
-				"commit": "b83eb35df40ba07c0b9a49d2dd066bf4fc35f638",
+				"commit": "28c2da04f0c0352526a02b13840a39b808adfafb",
 				"image_tag": "f9c4a369ae14832b7d077ce8f15c7134",
 				"arguments": [
 					"--processor_full_name",
@@ -341,7 +341,7 @@
 				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
 				"name": "aind-ophys-nwb",
 				"slug": "7197641",
-				"commit": "cd3464b4fcc814cbea03f605dd5a547a72a6078a",
+				"commit": "4d2ec924c54ecd94360e86db965f52fdab872464",
 				"image_tag": "337ca81d3eed378e1d2474a171996ee4"
 			},
 			"resources": {
