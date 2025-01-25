@@ -4,14 +4,10 @@
 		{
 			"name": "capsule_aind_ophys_motion_correction_1",
 			"capsule": {
-				"id": "63a8ce2e-f232-4590-9098-36b820202911",
+				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
-				"slug": "5379831",
-				"commit": "b4f4126b9a1fb52344b4ede2cd9e547174929b98",
-				"image_tag": "0da186b632b36a65afc14b406afd4686",
-				"arguments": [
-					"--debug"
-				],
+				"slug": "7474660",
+				"version": 14,
 				"app_panel": true
 			},
 			"resources": {
@@ -108,10 +104,7 @@
 				"id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053",
 				"name": "aind-ophys-decrosstalk-roi-images",
 				"slug": "1533578",
-				"version": 7,
-				"arguments": [
-					"--debug"
-				]
+				"version": 7
 			},
 			"resources": {
 				"cpus": 16,
@@ -526,8 +519,7 @@
 				"id": "76a903cf-ce80-4367-8153-f17842748ab9",
 				"name": "aind-ophys-classifier",
 				"slug": "7076908",
-				"commit": "e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0",
-				"image_tag": "2680ec26544e38762a67f45fd6818686"
+				"commit": "e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0"
 			},
 			"resources": {
 				"cpus": 16,

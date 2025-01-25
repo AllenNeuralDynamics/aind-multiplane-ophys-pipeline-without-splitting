@@ -290,7 +290,7 @@
 				"x": 1346.8332942236138,
 				"y": 636.0552838399078
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -307,14 +307,14 @@
 		},
 		{
 			"data": {
-				"capsule_id": "63a8ce2e-f232-4590-9098-36b820202911"
+				"capsule_id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
 			},
 			"id": "capsule_aind_ophys_motion_correction_1",
 			"position": {
 				"x": 595.6371227261882,
 				"y": 30.963909804322043
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -422,10 +422,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1737778852361,
+	"timestamp": 1737819560332,
 	"viewport": {
-		"x": -74.15772096814436,
-		"y": -128.1645496940189,
+		"x": 115.8422790318557,
+		"y": 97.83545030598111,
 		"zoom": 0.3133690070220867
 	}
 }
