@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:d5940c22e5532a7a2ff6ed7b7f2e2d6da6e95b2d589511390b49a686137fab76
+// hash:sha256:acec1a29ec62fd0cd4ff65d78a3e84ab3653dcf508674f99a1bad4b117def763
 
 nextflow.enable.dsl = 1
 
@@ -48,7 +48,7 @@ capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_classifier_14_39
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
 	tag 'capsule-5379831'
-	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911"
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:0da186b632b36a65afc14b406afd4686"
 
 	cpus 16
 	memory '128 GB'
@@ -576,7 +576,7 @@ process capsule_aind_ophys_movie_qc_13 {
 // capsule - aind-ophys-classifier
 process capsule_aind_ophys_classifier_14 {
 	tag 'capsule-7076908'
-	container "$REGISTRY_HOST/capsule/76a903cf-ce80-4367-8153-f17842748ab9"
+	container "$REGISTRY_HOST/capsule/76a903cf-ce80-4367-8153-f17842748ab9:2680ec26544e38762a67f45fd6818686"
 
 	cpus 16
 	memory '61 GB'
