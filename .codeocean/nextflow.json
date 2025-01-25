@@ -7,8 +7,7 @@
 				"id": "63a8ce2e-f232-4590-9098-36b820202911",
 				"name": "aind-ophys-motion-correction",
 				"slug": "5379831",
-				"commit": "938014cb64caf4566a0736407cbbaa0f3007b449",
-				"image_tag": "0da186b632b36a65afc14b406afd4686",
+				"commit": "b4f4126b9a1fb52344b4ede2cd9e547174929b98",
 				"arguments": [
 					"--debug"
 				],
@@ -255,16 +254,17 @@
 		{
 			"name": "capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"capsule": {
-				"id": "2b968496-f5cd-47ce-b2ec-3c9d48c73a14",
+				"id": "d51df783-d892-4304-a129-238a9baea72a",
 				"name": "aind-pipeline-processing-metadata-aggregator",
-				"slug": "0249670",
-				"commit": "28c2da04f0c0352526a02b13840a39b808adfafb",
-				"image_tag": "f9c4a369ae14832b7d077ce8f15c7134",
+				"slug": "8250608",
+				"version": 4,
 				"arguments": [
 					"--processor_full_name",
 					"\"Arielle",
 					"Leon\"",
 					"--copy-ancillary-files",
+					"True",
+					"--derived-data-description",
 					"True"
 				],
 				"app_panel": true
@@ -338,11 +338,10 @@
 		{
 			"name": "capsule_aind_ophys_nwb_10",
 			"capsule": {
-				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
 				"name": "aind-ophys-nwb",
-				"slug": "7197641",
-				"commit": "328cae845b20af7d158101990c5f239da65ce3cd",
-				"image_tag": "337ca81d3eed378e1d2474a171996ee4"
+				"slug": "9383700",
+				"version": 11
 			},
 			"resources": {
 				"cpus": 1,
@@ -526,8 +525,7 @@
 				"id": "76a903cf-ce80-4367-8153-f17842748ab9",
 				"name": "aind-ophys-classifier",
 				"slug": "7076908",
-				"commit": "e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0",
-				"image_tag": "2680ec26544e38762a67f45fd6818686"
+				"commit": "e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0"
 			},
 			"resources": {
 				"cpus": 16,

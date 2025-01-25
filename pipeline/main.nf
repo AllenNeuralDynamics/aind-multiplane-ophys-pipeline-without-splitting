@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:b016126cb95be05c54747b34f959580c90d7d88a8f08dd820449ba54ea96793b
+// hash:sha256:d5940c22e5532a7a2ff6ed7b7f2e2d6da6e95b2d589511390b49a686137fab76
 
 nextflow.enable.dsl = 1
 
@@ -48,7 +48,7 @@ capsule_aind_ophys_extraction_suite_2_p_4_to_capsule_aind_ophys_classifier_14_39
 // capsule - aind-ophys-motion-correction
 process capsule_aind_ophys_motion_correction_1 {
 	tag 'capsule-5379831'
-	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911:0da186b632b36a65afc14b406afd4686"
+	container "$REGISTRY_HOST/capsule/63a8ce2e-f232-4590-9098-36b820202911"
 
 	cpus 16
 	memory '128 GB'
@@ -88,7 +88,7 @@ process capsule_aind_ophys_motion_correction_1 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5379831.git" capsule-repo
-	git -C capsule-repo checkout 938014cb64caf4566a0736407cbbaa0f3007b449 --quiet
+	git -C capsule-repo checkout b4f4126b9a1fb52344b4ede2cd9e547174929b98 --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -341,8 +341,8 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 
 // capsule - aind-pipeline-processing-metadata-aggregator
 process capsule_aind_pipeline_processing_metadata_aggregator_9 {
-	tag 'capsule-0249670'
-	container "$REGISTRY_HOST/capsule/2b968496-f5cd-47ce-b2ec-3c9d48c73a14:f9c4a369ae14832b7d077ce8f15c7134"
+	tag 'capsule-8250608'
+	container "$REGISTRY_HOST/published/d51df783-d892-4304-a129-238a9baea72a:v4"
 
 	cpus 4
 	memory '32 GB'
@@ -366,7 +366,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=2b968496-f5cd-47ce-b2ec-3c9d48c73a14
+	export CO_CAPSULE_ID=d51df783-d892-4304-a129-238a9baea72a
 	export CO_CPUS=4
 	export CO_MEMORY=34359738368
 
@@ -376,15 +376,14 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0249670.git" capsule-repo
-	git -C capsule-repo checkout 28c2da04f0c0352526a02b13840a39b808adfafb --quiet
+	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --processor_full_name "Arielle Leon" --copy-ancillary-files True
+	./run --processor_full_name "Arielle Leon" --copy-ancillary-files True --derived-data-description True
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -392,8 +391,8 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 
 // capsule - aind-ophys-nwb
 process capsule_aind_ophys_nwb_10 {
-	tag 'capsule-7197641'
-	container "$REGISTRY_HOST/capsule/0be2aae9-3cda-45de-b5f6-870c0b569819:337ca81d3eed378e1d2474a171996ee4"
+	tag 'capsule-9383700'
+	container "$REGISTRY_HOST/published/8c436e95-8607-4752-8e9f-2b62024f9326:v11"
 
 	cpus 1
 	memory '8 GB'
@@ -419,7 +418,7 @@ process capsule_aind_ophys_nwb_10 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=0be2aae9-3cda-45de-b5f6-870c0b569819
+	export CO_CAPSULE_ID=8c436e95-8607-4752-8e9f-2b62024f9326
 	export CO_CPUS=1
 	export CO_MEMORY=8589934592
 
@@ -431,8 +430,7 @@ process capsule_aind_ophys_nwb_10 {
 	ln -s "/tmp/data/schemas" "capsule/data/schemas" # id: fb4b5cef-4505-4145-b8bd-e41d6863d7a9
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7197641.git" capsule-repo
-	git -C capsule-repo checkout 328cae845b20af7d158101990c5f239da65ce3cd --quiet
+	git clone --branch v11.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -578,7 +576,7 @@ process capsule_aind_ophys_movie_qc_13 {
 // capsule - aind-ophys-classifier
 process capsule_aind_ophys_classifier_14 {
 	tag 'capsule-7076908'
-	container "$REGISTRY_HOST/capsule/76a903cf-ce80-4367-8153-f17842748ab9:2680ec26544e38762a67f45fd6818686"
+	container "$REGISTRY_HOST/capsule/76a903cf-ce80-4367-8153-f17842748ab9"
 
 	cpus 16
 	memory '61 GB'

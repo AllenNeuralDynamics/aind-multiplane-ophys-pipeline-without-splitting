@@ -283,14 +283,14 @@
 		},
 		{
 			"data": {
-				"capsule_id": "0be2aae9-3cda-45de-b5f6-870c0b569819"
+				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			},
 			"id": "capsule_aind_ophys_nwb_10",
 			"position": {
 				"x": 1346.8332942236138,
 				"y": 636.0552838399078
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -367,14 +367,14 @@
 		},
 		{
 			"data": {
-				"capsule_id": "2b968496-f5cd-47ce-b2ec-3c9d48c73a14"
+				"capsule_id": "d51df783-d892-4304-a129-238a9baea72a"
 			},
 			"id": "capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"position": {
-				"x": 496.2449453656568,
-				"y": 1564.3598659984607
+				"x": 412.9116120323233,
+				"y": 1179.1515326651277
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -422,10 +422,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1737762468302,
+	"timestamp": 1737778852361,
 	"viewport": {
-		"x": 329.9428018005751,
-		"y": 0.3888713041743017,
-		"zoom": 0.3
+		"x": -74.15772096814436,
+		"y": -128.1645496940189,
+		"zoom": 0.3133690070220867
 	}
 }
