@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:006a72cb5b1c0598455d07f3d15a56c1e50d97ebcf82012405f7598b5b85b891
+// hash:sha256:db62d7c34d1d03a31efcbfd3e5f949231902e57210238e891c7ae5edc66502f8
 
 nextflow.enable.dsl = 1
 
@@ -575,7 +575,7 @@ process capsule_aind_ophys_movie_qc_13 {
 // capsule - aind-ophys-classifier
 process capsule_aind_ophys_classifier_14 {
 	tag 'capsule-7076908'
-	container "$REGISTRY_HOST/capsule/76a903cf-ce80-4367-8153-f17842748ab9"
+	container "$REGISTRY_HOST/capsule/76a903cf-ce80-4367-8153-f17842748ab9:2680ec26544e38762a67f45fd6818686"
 
 	cpus 16
 	memory '61 GB'

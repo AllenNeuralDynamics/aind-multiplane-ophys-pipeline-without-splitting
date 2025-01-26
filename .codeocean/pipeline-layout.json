@@ -314,7 +314,7 @@
 				"x": 595.6371227261882,
 				"y": 30.963909804322043
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -323,10 +323,10 @@
 			},
 			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"position": {
-				"x": 328.638732160892,
-				"y": 408.22988939439267
+				"x": 335.0209842508666,
+				"y": 1406.4540053419937
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -422,10 +422,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1737819560332,
+	"timestamp": 1737850059393,
 	"viewport": {
 		"x": 115.8422790318557,
-		"y": 97.83545030598111,
+		"y": -126.97704969401889,
 		"zoom": 0.3133690070220867
 	}
 }
