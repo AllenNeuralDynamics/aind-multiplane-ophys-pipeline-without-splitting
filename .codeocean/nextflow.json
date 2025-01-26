@@ -7,7 +7,7 @@
 				"id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf",
 				"name": "aind-ophys-motion-correction",
 				"slug": "7474660",
-				"version": 13,
+				"version": 14,
 				"app_panel": true
 			},
 			"resources": {
@@ -251,12 +251,14 @@
 				"id": "d51df783-d892-4304-a129-238a9baea72a",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "8250608",
-				"version": 3,
+				"version": 4,
 				"arguments": [
 					"--processor_full_name",
 					"\"Arielle",
 					"Leon\"",
 					"--copy-ancillary-files",
+					"True",
+					"--derived-data-description",
 					"True"
 				],
 				"app_panel": true
@@ -266,6 +268,14 @@
 				"memory": 32
 			},
 			"inputs": [
+				{
+					"id": "zsw3INBPAnhHCyZZ",
+					"source_id": "capsule_aind_ophys_classifier_14",
+					"type": "capsule",
+					"name": "aind-ophys-classifier",
+					"source_path": "*/*/*data_process.json",
+					"collect": true
+				},
 				{
 					"id": "qOcbSv7kqKYwuBGw",
 					"source_id": "capsule_aind_ophys_dff_5",
@@ -332,6 +342,15 @@
 				"memory": 8
 			},
 			"inputs": [
+				{
+					"id": "Pv03yCUnoBSDDB6l",
+					"source_id": "capsule_aind_ophys_classifier_14",
+					"type": "capsule",
+					"name": "aind-ophys-classifier",
+					"source_path": "*/classification/*classification.h5",
+					"target_path": "processed",
+					"collect": true
+				},
 				{
 					"id": "jvGfTPyeEH5H7VNc",
 					"source_id": "capsule_aind_ophys_dff_5",
@@ -492,6 +511,47 @@
 			],
 			"results": {
 				"id": "4f0eb1d2-88ce-4dfb-82b2-00bb6e2b6546"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_classifier_14",
+			"capsule": {
+				"id": "76a903cf-ce80-4367-8153-f17842748ab9",
+				"name": "aind-ophys-classifier",
+				"slug": "7076908",
+				"commit": "e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0"
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 61,
+				"gpus": 1
+			},
+			"inputs": [
+				{
+					"id": "bsGoqpyvGI3Gqjuf",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/session.json",
+					"collect": true
+				},
+				{
+					"id": "sQryKwgBv8J5QuU2",
+					"source_id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+					"type": "dataset",
+					"name": "2p_roi_classifier",
+					"source_path": "2p_roi_classifier/",
+					"collect": true
+				},
+				{
+					"id": "uZhzhGIwldAR3RLT",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p"
+				}
+			],
+			"results": {
+				"id": "76a903cf-ce80-4367-8153-f17842748ab9"
 			}
 		}
 	]
