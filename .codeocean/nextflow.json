@@ -519,8 +519,7 @@
 				"id": "76a903cf-ce80-4367-8153-f17842748ab9",
 				"name": "aind-ophys-classifier",
 				"slug": "7076908",
-				"commit": "e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0",
-				"image_tag": "2680ec26544e38762a67f45fd6818686"
+				"commit": "e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0"
 			},
 			"resources": {
 				"cpus": 16,
