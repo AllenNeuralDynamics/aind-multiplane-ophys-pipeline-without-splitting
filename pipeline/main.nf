@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:006a72cb5b1c0598455d07f3d15a56c1e50d97ebcf82012405f7598b5b85b891
+// hash:sha256:17a353e463d1f89fb8af4f385d532f2560bd077f641c6b00def5b3cbeb424b53
 
 nextflow.enable.dsl = 1
 
@@ -574,8 +574,8 @@ process capsule_aind_ophys_movie_qc_13 {
 
 // capsule - aind-ophys-classifier
 process capsule_aind_ophys_classifier_14 {
-	tag 'capsule-7076908'
-	container "$REGISTRY_HOST/capsule/76a903cf-ce80-4367-8153-f17842748ab9"
+	tag 'capsule-0630574'
+	container "$REGISTRY_HOST/published/3819d125-9f03-48f3-ba09-b44c84a7a2c7:v1"
 
 	cpus 16
 	memory '61 GB'
@@ -598,7 +598,7 @@ process capsule_aind_ophys_classifier_14 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=76a903cf-ce80-4367-8153-f17842748ab9
+	export CO_CAPSULE_ID=3819d125-9f03-48f3-ba09-b44c84a7a2c7
 	export CO_CPUS=16
 	export CO_MEMORY=65498251264
 
@@ -610,8 +610,7 @@ process capsule_aind_ophys_classifier_14 {
 	ln -s "/tmp/data/2p_roi_classifier" "capsule/data/2p_roi_classifier" # id: 35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7076908.git" capsule-repo
-	git -C capsule-repo checkout e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0 --quiet
+	git clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0630574.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

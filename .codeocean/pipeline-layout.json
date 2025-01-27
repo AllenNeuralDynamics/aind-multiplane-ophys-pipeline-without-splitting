@@ -323,10 +323,10 @@
 			},
 			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
 			"position": {
-				"x": 392.46125306063846,
-				"y": 378.11363734482484
+				"x": 328.638732160892,
+				"y": 408.22988939439267
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -403,14 +403,14 @@
 		},
 		{
 			"data": {
-				"capsule_id": "76a903cf-ce80-4367-8153-f17842748ab9"
+				"capsule_id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
 			},
 			"id": "capsule_aind_ophys_classifier_14",
 			"position": {
 				"x": -443.3333841959641,
 				"y": 645.0000000000002
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -422,10 +422,10 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1737850132774,
+	"timestamp": 1737998586065,
 	"viewport": {
-		"x": 126.8422790318557,
-		"y": 15.272950305981112,
+		"x": 279.8422790318557,
+		"y": 126.83545030598111,
 		"zoom": 0.3133690070220867
 	}
 }

@@ -516,10 +516,10 @@
 		{
 			"name": "capsule_aind_ophys_classifier_14",
 			"capsule": {
-				"id": "76a903cf-ce80-4367-8153-f17842748ab9",
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7",
 				"name": "aind-ophys-classifier",
-				"slug": "7076908",
-				"commit": "e3281cbe0d1b7f360109f63b8f0d790e1aee0ab0"
+				"slug": "0630574",
+				"version": 1
 			},
 			"resources": {
 				"cpus": 16,
