@@ -334,7 +334,9 @@
 			"capsule": {
 				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
 				"name": "aind-ophys-nwb",
-				"slug": "7197641"
+				"slug": "7197641",
+				"commit": "188e4b2947ab2984daa5069fbd68a2b11b9c2608",
+				"image_tag": "337ca81d3eed378e1d2474a171996ee4"
 			},
 			"resources": {
 				"cpus": 1,
