@@ -332,15 +332,14 @@
 		{
 			"name": "capsule_aind_ophys_nwb_10",
 			"capsule": {
-				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
 				"name": "aind-ophys-nwb",
-				"slug": "7197641",
-				"commit": "188e4b2947ab2984daa5069fbd68a2b11b9c2608",
-				"image_tag": "337ca81d3eed378e1d2474a171996ee4"
+				"slug": "9383700",
+				"version": 12
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
