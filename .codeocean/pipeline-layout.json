@@ -283,14 +283,14 @@
 		},
 		{
 			"data": {
-				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
+				"capsule_id": "0be2aae9-3cda-45de-b5f6-870c0b569819"
 			},
 			"id": "capsule_aind_ophys_nwb_10",
 			"position": {
 				"x": 1346.8332942236138,
 				"y": 636.0552838399078
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -410,7 +410,7 @@
 				"x": -443.3333841959641,
 				"y": 645.0000000000002
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -422,7 +422,7 @@
 			"type": "dataset"
 		}
 	],
-	"timestamp": 1737998586065,
+	"timestamp": 1738285525941,
 	"viewport": {
 		"x": 279.8422790318557,
 		"y": 126.83545030598111,

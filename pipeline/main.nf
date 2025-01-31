@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:17a353e463d1f89fb8af4f385d532f2560bd077f641c6b00def5b3cbeb424b53
+// hash:sha256:90cafd0c66aff3a0211a5cdfeb232478a93abd532ec9ad6089b0b0a73174ce9b
 
 nextflow.enable.dsl = 1
 
@@ -390,8 +390,8 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 
 // capsule - aind-ophys-nwb
 process capsule_aind_ophys_nwb_10 {
-	tag 'capsule-9383700'
-	container "$REGISTRY_HOST/published/8c436e95-8607-4752-8e9f-2b62024f9326:v11"
+	tag 'capsule-7197641'
+	container "$REGISTRY_HOST/capsule/0be2aae9-3cda-45de-b5f6-870c0b569819"
 
 	cpus 1
 	memory '8 GB'
@@ -417,7 +417,7 @@ process capsule_aind_ophys_nwb_10 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=8c436e95-8607-4752-8e9f-2b62024f9326
+	export CO_CAPSULE_ID=0be2aae9-3cda-45de-b5f6-870c0b569819
 	export CO_CPUS=1
 	export CO_MEMORY=8589934592
 
@@ -429,7 +429,7 @@ process capsule_aind_ophys_nwb_10 {
 	ln -s "/tmp/data/schemas" "capsule/data/schemas" # id: fb4b5cef-4505-4145-b8bd-e41d6863d7a9
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v11.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo
+	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-7197641.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 

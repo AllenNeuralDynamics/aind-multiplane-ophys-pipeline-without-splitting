@@ -332,10 +332,9 @@
 		{
 			"name": "capsule_aind_ophys_nwb_10",
 			"capsule": {
-				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"id": "0be2aae9-3cda-45de-b5f6-870c0b569819",
 				"name": "aind-ophys-nwb",
-				"slug": "9383700",
-				"version": 11
+				"slug": "7197641"
 			},
 			"resources": {
 				"cpus": 1,
