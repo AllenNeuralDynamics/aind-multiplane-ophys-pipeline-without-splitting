@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:52f502d541eb9f7c6adb299574eef89074bac30b87d1169b3ce05d2376d47df7
+// hash:sha256:aabc25ad2959ec89109dec5453f63f6d7296e6e75ece736e5e051218cfca9d20
 
 nextflow.enable.dsl = 1
 
@@ -105,8 +105,8 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 	tag 'capsule-4425001'
 	container "$REGISTRY_HOST/published/fc1b1e9a-fb4b-47e8-a223-b06d8eeb1462:v1"
 
-	cpus 1
-	memory '8 GB'
+	cpus 2
+	memory '32 GB'
 
 	input:
 	path 'capsule/data/' from capsule_aind_ophys_motion_correction_1_to_capsule_aind_ophys_decrosstalk_split_session_json_2_6.collect()
@@ -122,8 +122,8 @@ process capsule_aind_ophys_decrosstalk_split_session_json_2 {
 	set -e
 
 	export CO_CAPSULE_ID=fc1b1e9a-fb4b-47e8-a223-b06d8eeb1462
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=2
+	export CO_MEMORY=34359738368
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -150,7 +150,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 	container "$REGISTRY_HOST/published/1383b25a-ecd2-4c56-8b7f-cde811c0b053:v8"
 
 	cpus 16
-	memory '128 GB'
+	memory '200 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -173,7 +173,7 @@ process capsule_aind_ophys_decrosstalk_roi_images_3 {
 
 	export CO_CAPSULE_ID=1383b25a-ecd2-4c56-8b7f-cde811c0b053
 	export CO_CPUS=16
-	export CO_MEMORY=137438953472
+	export CO_MEMORY=214748364800
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -447,8 +447,8 @@ process capsule_nwb_packaging_subject_11 {
 	tag 'capsule-8198603'
 	container "$REGISTRY_HOST/published/bdc9f09f-0005-4d09-aaf9-7e82abd93f19:v2"
 
-	cpus 1
-	memory '8 GB'
+	cpus 2
+	memory '16 GB'
 
 	input:
 	path 'capsule/data/ophys_session' from ophys_mount_to_nwb_packaging_subject_capsule_35.collect()
@@ -462,8 +462,8 @@ process capsule_nwb_packaging_subject_11 {
 	set -e
 
 	export CO_CAPSULE_ID=bdc9f09f-0005-4d09-aaf9-7e82abd93f19
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=2
+	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -489,8 +489,8 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	tag 'capsule-4044810'
 	container "$REGISTRY_HOST/published/4a698b5c-f5f6-4671-8234-dc728d049a68:v2"
 
-	cpus 1
-	memory '8 GB'
+	cpus 2
+	memory '16 GB'
 
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
@@ -506,8 +506,8 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	set -e
 
 	export CO_CAPSULE_ID=4a698b5c-f5f6-4671-8234-dc728d049a68
-	export CO_CPUS=1
-	export CO_MEMORY=8589934592
+	export CO_CPUS=2
+	export CO_MEMORY=17179869184
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data

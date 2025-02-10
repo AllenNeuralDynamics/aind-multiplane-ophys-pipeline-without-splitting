@@ -68,8 +68,8 @@
 				"version": 1
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 32
 			},
 			"inputs": [
 				{
@@ -108,7 +108,7 @@
 			},
 			"resources": {
 				"cpus": 16,
-				"memory": 128
+				"memory": 200
 			},
 			"inputs": [
 				{
@@ -446,8 +446,8 @@
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
@@ -470,8 +470,8 @@
 				"version": 2
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
