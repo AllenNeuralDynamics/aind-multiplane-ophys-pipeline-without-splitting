@@ -1,6 +1,6 @@
 metadata_version: 1
-name: PRE-CLASSIFIER aind-multiplane-ophys-pipeline without splitting v6 extraction
-description: Multiplane processing of data split in LIMS
+name: TRUNCATED aind-multiplane-ophys-pipeline
+description: Truncated multiplane pipeline for reprocessing data post-decrosstalk
 authors:
 - name: Arielle Leon
 - name: Johannes Friedrich

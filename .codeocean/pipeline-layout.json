@@ -1,46 +1,14 @@
 {
 	"edges": [
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_motion_correction_1",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_motion_correction_1"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"selected": false,
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_decrosstalk_roi_images_3",
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_split_session_json_2-capsule_aind_ophys_decrosstalk_roi_images_3",
-			"selected": false,
-			"source": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
-		},
-		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"selected": false,
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_decrosstalk_split_session_json_2"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_extraction_suite_2_p_4",
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
-		},
-		{
 			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_pipeline_processing_metadata_aggregator_9",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"selected": false,
+			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
@@ -54,14 +22,10 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_decrosstalk_roi_images_3",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_decrosstalk_roi_images_3"
-		},
-		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_extraction_suite_2_p_4",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_extraction_suite_2_p_4"
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_extraction_4",
+			"selected": false,
+			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
+			"target": "capsule_aind_ophys_extraction_4"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_oasis_event_detection_8",
@@ -69,24 +33,13 @@
 			"target": "capsule_aind_ophys_oasis_event_detection_8"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_aind_ophys_dff_5",
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_ophys_dff_5",
+			"source": "capsule_aind_ophys_extraction_4",
 			"target": "capsule_aind_ophys_dff_5"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-results",
-			"selected": false,
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-results",
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-results",
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-results",
+			"source": "capsule_aind_ophys_extraction_4",
 			"target": "results"
 		},
 		{
@@ -100,13 +53,14 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_dff_5",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_dff_5",
+			"selected": false,
+			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 			"target": "capsule_aind_ophys_dff_5"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_oasis_event_detection_8",
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_oasis_event_detection_8",
+			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 			"target": "capsule_aind_ophys_oasis_event_detection_8"
 		},
 		{
@@ -115,150 +69,81 @@
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_aind_pipeline_processing_metadata_aggregator_9",
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "capsule_aind_ophys_extraction_4",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_pipeline_processing_metadata_aggregator_9",
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
-		},
-		{
-			"id": "reactflow__edge-capsule_nwb_packaging_subject_11-capsule_aind_ophys_nwb_10",
-			"selected": false,
+			"id": "reactflow__edge-capsule_nwb_packaging_subject_11-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
 			"source": "capsule_nwb_packaging_subject_11",
-			"target": "capsule_aind_ophys_nwb_10"
+			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_nwb_10-results",
-			"source": "capsule_aind_ophys_nwb_10",
+			"id": "reactflow__edge-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10-results",
+			"source": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_aind_ophys_nwb_10",
-			"selected": false,
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"target": "capsule_aind_ophys_nwb_10"
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
+			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_nwb_10",
-			"selected": false,
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_ophys_nwb_10"
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"source": "capsule_aind_ophys_extraction_4",
+			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_ophys_nwb_10",
-			"selected": false,
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "capsule_aind_ophys_nwb_10"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_suite_2_p_4-capsule_aind_ophys_nwb_10",
-			"selected": false,
-			"source": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"target": "capsule_aind_ophys_nwb_10"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_10",
-			"selected": false,
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
-			"target": "capsule_aind_ophys_nwb_10"
+			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_decrosstalk_roi_images_3-capsule_aind_pipeline_processing_metadata_aggregator_9",
-			"source": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
-		},
-		{
-			"id": "reactflow__edge-60c2d29b-79c3-492a-a1ec-680d45174e91-capsule_nwb_packaging_subject_11",
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_nwb_packaging_subject_11",
 			"selected": false,
-			"source": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 			"target": "capsule_nwb_packaging_subject_11"
 		},
 		{
-			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_10",
+			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
 			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
-			"target": "capsule_aind_ophys_nwb_10"
+			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_quality_control_aggregator_12",
-			"selected": false,
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_ophys_quality_control_aggregator_12"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_quality_control_aggregator_12-results",
-			"source": "capsule_aind_ophys_quality_control_aggregator_12",
-			"target": "results"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_motion_correction_1-capsule_aind_ophys_movie_qc_13",
-			"source": "capsule_aind_ophys_motion_correction_1",
-			"target": "capsule_aind_ophys_movie_qc_13"
-		},
-		{
-			"id": "reactflow__edge-capsule_aind_ophys_movie_qc_13-results",
-			"source": "capsule_aind_ophys_movie_qc_13",
-			"target": "results"
-		},
-		{
-			"id": "xy-edge__capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_10",
+			"id": "xy-edge__capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
 			"source": "capsule_aind_ophys_dff_5",
-			"target": "capsule_aind_ophys_nwb_10"
+			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
+		},
+		{
+			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_ophys_extraction_4",
+			"selected": false,
+			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+			"target": "capsule_aind_ophys_extraction_4"
+		},
+		{
+			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
 		}
 	],
 	"nodes": [
 		{
 			"id": "results",
 			"position": {
-				"x": 1005.8435742682382,
-				"y": 1406.482820363329
+				"x": 232.96726414504747,
+				"y": 1568.5689005060742
 			},
 			"selected": false,
 			"type": "results"
 		},
 		{
-			"id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"position": {
-				"x": 489.33333333333326,
-				"y": -445.7333333333333
-			},
-			"selected": false,
-			"type": "dataset"
-		},
-		{
-			"data": {
-				"capsule_id": "fc1b1e9a-fb4b-47e8-a223-b06d8eeb1462"
-			},
-			"id": "capsule_aind_ophys_decrosstalk_split_session_json_2",
-			"position": {
-				"x": -98.00766025043959,
-				"y": 126.62625666431387
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
 			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 			"position": {
-				"x": 1499.2176457013084,
-				"y": 38.898107056961635
-			},
-			"selected": true,
-			"type": "dataset"
-		},
-		{
-			"data": {
-				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
-			},
-			"id": "capsule_aind_ophys_nwb_10",
-			"position": {
-				"x": 1346.8332942236138,
-				"y": 636.0552838399078
+				"x": 1015.1057542927217,
+				"y": 1167.3720612939433
 			},
 			"selected": false,
-			"type": "capsule"
+			"type": "dataset"
 		},
 		{
 			"data": {
@@ -266,46 +151,10 @@
 			},
 			"id": "capsule_nwb_packaging_subject_11",
 			"position": {
-				"x": 1224.2717036747254,
-				"y": -105.07202256815211
+				"x": 792.3789077981426,
+				"y": 959.2924883504612
 			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "91a8ed4d-3b9a-49c6-9283-3f16ea5482bf"
-			},
-			"id": "capsule_aind_ophys_motion_correction_1",
-			"position": {
-				"x": 595.6371227261882,
-				"y": 30.963909804322043
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "1383b25a-ecd2-4c56-8b7f-cde811c0b053"
-			},
-			"id": "capsule_aind_ophys_decrosstalk_roi_images_3",
-			"position": {
-				"x": 328.638732160892,
-				"y": 408.22988939439267
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
-			},
-			"id": "capsule_aind_ophys_extraction_suite_2_p_4",
-			"position": {
-				"x": 14.517696835559036,
-				"y": 549.7978381558078
-			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -314,8 +163,8 @@
 			},
 			"id": "capsule_aind_ophys_dff_5",
 			"position": {
-				"x": -631.6032641691969,
-				"y": 1013.7162375508835
+				"x": 414.6245851614609,
+				"y": 1011.4725571024628
 			},
 			"selected": false,
 			"type": "capsule"
@@ -326,8 +175,8 @@
 			},
 			"id": "capsule_aind_ophys_oasis_event_detection_8",
 			"position": {
-				"x": -259.07681880434245,
-				"y": 1298.7934537783703
+				"x": 526.7243984137507,
+				"y": 1278.3298804133158
 			},
 			"selected": false,
 			"type": "capsule"
@@ -338,41 +187,59 @@
 			},
 			"id": "capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"position": {
-				"x": 369.5782786989903,
-				"y": 1631.0265326651272
+				"x": 231.83017827209312,
+				"y": 1313.4057454819638
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
+			"position": {
+				"x": 461.08049549456814,
+				"y": 780.3725561301706
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+			"position": {
+				"x": 921.7947043377599,
+				"y": 803.0826564133353
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "13ac4e60-60c3-4fd5-87a5-84b212ef661b"
+			},
+			"id": "capsule_aind_ophys_extraction_4",
+			"position": {
+				"x": 64.95676873090713,
+				"y": 875.1203927264548
 			},
 			"selected": false,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "f52d9390-8569-49bb-9562-2d624b18ee56"
+				"capsule_id": "417df268-7471-4275-9739-3408ff07805b"
 			},
-			"id": "capsule_aind_ophys_movie_qc_13",
+			"id": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
 			"position": {
-				"x": 1061.003840399644,
-				"y": 229.42969755731957
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "4a698b5c-f5f6-4671-8234-dc728d049a68"
-			},
-			"id": "capsule_aind_ophys_quality_control_aggregator_12",
-			"position": {
-				"x": 884.3387124818444,
-				"y": 709.8091612196482
+				"x": 852.0067373785564,
+				"y": 1326.9067874980528
 			},
 			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1737669806015,
+	"timestamp": 1741643210996,
 	"viewport": {
-		"x": 448.78431851141943,
-		"y": 232.14797704065853,
-		"zoom": 0.3
+		"x": 236.78892046387926,
+		"y": -361.44177863960783,
+		"zoom": 0.6475362253437726
 	}
 }

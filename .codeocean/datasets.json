@@ -2,8 +2,12 @@
 	"version": 1,
 	"attached_datasets": [
 		{
-			"id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"mount": "ophys_mount"
+			"id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+			"mount": "multiplane-ophys-test-asset_results"
+		},
+		{
+			"id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
+			"mount": "multiplane-ophys-test-asset"
 		},
 		{
 			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
