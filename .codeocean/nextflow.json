@@ -8,7 +8,6 @@
 				"name": "aind-ophys-extraction",
 				"slug": "5845047",
 				"commit": "5edcf59f85003c7b17b5f34e85461013837982dd",
-				"image_tag": "66f0ee9a5f37824a456b40266a4f8e5d",
 				"arguments": [
 					"--init",
 					"corr_pnr",
@@ -179,8 +178,7 @@
 				"id": "417df268-7471-4275-9739-3408ff07805b",
 				"name": "aind-ophys-nwb with segmentation_masks from ROIs",
 				"slug": "0451644",
-				"commit": "b894f2b91839690137ccdba48556601f05976ca4",
-				"image_tag": "337ca81d3eed378e1d2474a171996ee4"
+				"commit": "b894f2b91839690137ccdba48556601f05976ca4"
 			},
 			"resources": {
 				"cpus": 1,
