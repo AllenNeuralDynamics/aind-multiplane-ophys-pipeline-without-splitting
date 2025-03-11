@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:7a99c23bf9b6decfc529a50b2f84e59bdb05e1ac712c63b30bd4d66d9ce06f4a
+// hash:sha256:a87515d3bf0de387dc4ffb038a952357fa1a26591f891fc3dec648b6a1ec573b
 
 nextflow.enable.dsl = 1
 
@@ -28,7 +28,7 @@ multiplane_ophys_test_asset_to_nwb_packaging_subject_18 = channel.fromPath(param
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_4 {
 	tag 'capsule-5845047'
-	container "$REGISTRY_HOST/capsule/13ac4e60-60c3-4fd5-87a5-84b212ef661b"
+	container "$REGISTRY_HOST/capsule/13ac4e60-60c3-4fd5-87a5-84b212ef661b:66f0ee9a5f37824a456b40266a4f8e5d"
 
 	cpus 4
 	memory '240 GB'
@@ -61,7 +61,7 @@ process capsule_aind_ophys_extraction_4 {
 
 	echo "[${task.tag}] cloning git repo..."
 	git clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-5845047.git" capsule-repo
-	git -C capsule-repo checkout 79a8967be3d34bfff1769052ee222557b30ad5c2 --quiet
+	git -C capsule-repo checkout 5edcf59f85003c7b17b5f34e85461013837982dd --quiet
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -172,7 +172,7 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 // capsule - aind-pipeline-processing-metadata-aggregator
 process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	tag 'capsule-8250608'
-	container "$REGISTRY_HOST/published/d51df783-d892-4304-a129-238a9baea72a:v4"
+	container "$REGISTRY_HOST/published/d51df783-d892-4304-a129-238a9baea72a:v3"
 
 	cpus 1
 	memory '8 GB'
@@ -203,7 +203,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
 	echo "[${task.tag}] cloning git repo..."
-	git clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
+	git clone --branch v3.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
 	mv capsule-repo/code capsule/code
 	rm -rf capsule-repo
 
@@ -219,7 +219,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 // capsule - aind-ophys-nwb with segmentation_masks from ROIs
 process capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10 {
 	tag 'capsule-0451644'
-	container "$REGISTRY_HOST/capsule/417df268-7471-4275-9739-3408ff07805b"
+	container "$REGISTRY_HOST/capsule/417df268-7471-4275-9739-3408ff07805b:337ca81d3eed378e1d2474a171996ee4"
 
 	cpus 1
 	memory '8 GB'
@@ -227,8 +227,8 @@ process capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10 {
 	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_nwb_with_segmentation_masks_from_rois_11.collect()
-	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_nwb_with_segmentation_masks_from_rois_12.collect()
+	path 'capsule/data/processed/' from multiplane_ophys_test_asset_results_to_aind_ophys_nwb_with_segmentation_masks_from_rois_11.collect()
+	path 'capsule/data/processed/' from multiplane_ophys_test_asset_results_to_aind_ophys_nwb_with_segmentation_masks_from_rois_12.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_dff_5_to_capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10_13.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10_14.collect()
 	path 'capsule/data/processed/' from capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10_15.collect()

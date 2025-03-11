@@ -7,7 +7,8 @@
 				"id": "13ac4e60-60c3-4fd5-87a5-84b212ef661b",
 				"name": "aind-ophys-extraction",
 				"slug": "5845047",
-				"commit": "79a8967be3d34bfff1769052ee222557b30ad5c2",
+				"commit": "5edcf59f85003c7b17b5f34e85461013837982dd",
+				"image_tag": "66f0ee9a5f37824a456b40266a4f8e5d",
 				"arguments": [
 					"--init",
 					"corr_pnr",
@@ -120,7 +121,7 @@
 				"id": "d51df783-d892-4304-a129-238a9baea72a",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "8250608",
-				"version": 4,
+				"version": 3,
 				"arguments": [
 					"--processor_full_name",
 					"\"Arielle",
@@ -178,7 +179,8 @@
 				"id": "417df268-7471-4275-9739-3408ff07805b",
 				"name": "aind-ophys-nwb with segmentation_masks from ROIs",
 				"slug": "0451644",
-				"commit": "b894f2b91839690137ccdba48556601f05976ca4"
+				"commit": "b894f2b91839690137ccdba48556601f05976ca4",
+				"image_tag": "337ca81d3eed378e1d2474a171996ee4"
 			},
 			"resources": {
 				"cpus": 1,
@@ -191,6 +193,7 @@
 					"type": "dataset",
 					"name": "multiplane-ophys-test-asset_results",
 					"source_path": "multiplane-ophys-test-asset_results/*/decrosstalk/*.h5",
+					"target_path": "processed",
 					"collect": true
 				},
 				{
@@ -199,6 +202,7 @@
 					"type": "dataset",
 					"name": "multiplane-ophys-test-asset_results",
 					"source_path": "multiplane-ophys-test-asset_results/*/motion_correction/*.png",
+					"target_path": "processed",
 					"collect": true
 				},
 				{
