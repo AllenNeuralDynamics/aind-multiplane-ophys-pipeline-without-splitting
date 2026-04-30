@@ -4,30 +4,15 @@
 		{
 			"name": "capsule_aind_ophys_extraction_4",
 			"capsule": {
-				"id": "13ac4e60-60c3-4fd5-87a5-84b212ef661b",
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction",
-				"slug": "5845047",
-				"commit": "5edcf59f85003c7b17b5f34e85461013837982dd",
-				"arguments": [
-					"--init",
-					"corr_pnr",
-					"--diameter",
-					"16",
-					"--neuropil",
-					"cnmf-e",
-					"--min_corr",
-					".6",
-					"--min_pnr",
-					"4",
-					"--merge_thr",
-					"0.7",
-					"--cnn_thr",
-					"0"
-				]
+				"slug": "9911715",
+				"version": 13,
+				"app_panel": true
 			},
 			"resources": {
-				"cpus": 4,
-				"memory": 240
+				"cpus": 1,
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -47,7 +32,7 @@
 				}
 			],
 			"results": {
-				"id": "13ac4e60-60c3-4fd5-87a5-84b212ef661b"
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			}
 		},
 		{
@@ -56,11 +41,12 @@
 				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
 				"name": "aind-ophys-dff",
 				"slug": "6574773",
-				"version": 4
+				"version": 5,
+				"app_panel": true
 			},
 			"resources": {
-				"cpus": 2,
-				"memory": 16
+				"cpus": 4,
+				"memory": 32
 			},
 			"inputs": [
 				{
@@ -88,11 +74,11 @@
 				"id": "c6394aab-0db7-47b2-90ba-864866d6755e",
 				"name": "aind-ophys-oasis-event-detection",
 				"slug": "8957649",
-				"version": 6
+				"version": 10
 			},
 			"resources": {
-				"cpus": 4,
-				"memory": 32
+				"cpus": 1,
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -120,7 +106,7 @@
 				"id": "d51df783-d892-4304-a129-238a9baea72a",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "8250608",
-				"version": 3,
+				"version": 2,
 				"arguments": [
 					"--processor_full_name",
 					"\"Arielle",
@@ -173,12 +159,12 @@
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"name": "capsule_aind_ophys_nwb_10",
 			"capsule": {
-				"id": "417df268-7471-4275-9739-3408ff07805b",
-				"name": "aind-ophys-nwb with segmentation_masks from ROIs",
-				"slug": "0451644",
-				"commit": "b894f2b91839690137ccdba48556601f05976ca4"
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"name": "aind-ophys-nwb",
+				"slug": "9383700",
+				"version": 12
 			},
 			"resources": {
 				"cpus": 1,
@@ -258,7 +244,7 @@
 				}
 			],
 			"results": {
-				"id": "417df268-7471-4275-9739-3408ff07805b"
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			}
 		},
 		{

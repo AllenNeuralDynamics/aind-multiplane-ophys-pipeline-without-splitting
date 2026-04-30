@@ -23,7 +23,6 @@
 		},
 		{
 			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_extraction_4",
-			"selected": false,
 			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 			"target": "capsule_aind_ophys_extraction_4"
 		},
@@ -60,6 +59,7 @@
 		},
 		{
 			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_oasis_event_detection_8",
+			"selected": false,
 			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 			"target": "capsule_aind_ophys_oasis_event_detection_8"
 		},
@@ -75,30 +75,29 @@
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
-			"id": "reactflow__edge-capsule_nwb_packaging_subject_11-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
-			"selected": false,
+			"id": "reactflow__edge-capsule_nwb_packaging_subject_11-capsule_aind_ophys_nwb_10",
 			"source": "capsule_nwb_packaging_subject_11",
-			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
+			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10-results",
-			"source": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"id": "reactflow__edge-capsule_aind_ophys_nwb_10-results",
+			"source": "capsule_aind_ophys_nwb_10",
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_nwb_10",
 			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
-			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
+			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_ophys_nwb_10",
 			"source": "capsule_aind_ophys_extraction_4",
-			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
+			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"id": "reactflow__edge-capsule_aind_ophys_oasis_event_detection_8-capsule_aind_ophys_nwb_10",
 			"source": "capsule_aind_ophys_oasis_event_detection_8",
-			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
+			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
 			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_nwb_packaging_subject_11",
@@ -107,33 +106,32 @@
 			"target": "capsule_nwb_packaging_subject_11"
 		},
 		{
-			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"id": "reactflow__edge-fb4b5cef-4505-4145-b8bd-e41d6863d7a9-capsule_aind_ophys_nwb_10",
 			"source": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
-			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
+			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
-			"id": "xy-edge__capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"id": "xy-edge__capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_10",
 			"source": "capsule_aind_ophys_dff_5",
-			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
+			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
 			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_ophys_extraction_4",
-			"selected": false,
 			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
 			"target": "capsule_aind_ophys_extraction_4"
 		},
 		{
-			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_ophys_nwb_10",
 			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
-			"target": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10"
+			"target": "capsule_aind_ophys_nwb_10"
 		}
 	],
 	"nodes": [
 		{
 			"id": "results",
 			"position": {
-				"x": 238.63985471312049,
-				"y": 1567.5939240021867
+				"x": 219.37193151608358,
+				"y": 1814.371555718082
 			},
 			"selected": false,
 			"type": "results"
@@ -141,8 +139,8 @@
 		{
 			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
 			"position": {
-				"x": 1008.7829500786609,
-				"y": 1169.2453318468456
+				"x": 1176.2656670990584,
+				"y": 1201.852586487985
 			},
 			"selected": false,
 			"type": "dataset"
@@ -153,8 +151,8 @@
 			},
 			"id": "capsule_nwb_packaging_subject_11",
 			"position": {
-				"x": 913.5139659973545,
-				"y": 1013.0877618017602
+				"x": 1060.2466118824814,
+				"y": 992.3376906664897
 			},
 			"selected": false,
 			"type": "capsule"
@@ -177,10 +175,10 @@
 			},
 			"id": "capsule_aind_ophys_oasis_event_detection_8",
 			"position": {
-				"x": 574.5884245029764,
-				"y": 1284.5058837796676
+				"x": 592.3741997617797,
+				"y": 1317.1131384208068
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -189,8 +187,8 @@
 			},
 			"id": "capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"position": {
-				"x": 234.66647355612952,
-				"y": 1313.4057454819638
+				"x": 188.71988747088778,
+				"y": 1334.1558166172342
 			},
 			"selected": false,
 			"type": "capsule"
@@ -198,8 +196,8 @@
 		{
 			"id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 			"position": {
-				"x": 465.2185934523602,
-				"y": 792.7868500035472
+				"x": 442.16960086242386,
+				"y": 721.0788730570786
 			},
 			"selected": false,
 			"type": "dataset"
@@ -207,41 +205,36 @@
 		{
 			"id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
 			"position": {
-				"x": 499.10806780258395,
-				"y": 695.9387331665092
+				"x": 491.42507027260524,
+				"y": 555.7240282443964
 			},
 			"selected": false,
 			"type": "dataset"
 		},
 		{
 			"data": {
-				"capsule_id": "13ac4e60-60c3-4fd5-87a5-84b212ef661b"
+				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			},
 			"id": "capsule_aind_ophys_extraction_4",
 			"position": {
-				"x": 66.50076957249507,
-				"y": 873.576391884867
+				"x": 26.805282334271368,
+				"y": 872.2958922965372
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "417df268-7471-4275-9739-3408ff07805b"
+				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			},
-			"id": "capsule_aind_ophys_nwb_with_segmentation_masks_from_rois_10",
+			"id": "capsule_aind_ophys_nwb_10",
 			"position": {
-				"x": 912.2227702004855,
-				"y": 1326.9067874980528
+				"x": 1004.1159423709692,
+				"y": 1346.1747106950897
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1741646750877,
-	"viewport": {
-		"x": 193.91350467224913,
-		"y": -390.6539424642457,
-		"zoom": 0.6476680407580307
-	}
+	"timestamp": 1777581677132
 }
