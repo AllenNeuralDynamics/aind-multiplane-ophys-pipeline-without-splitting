@@ -122,6 +122,14 @@
 			},
 			"inputs": [
 				{
+					"id": "eYw4OmXsnYY97jbm",
+					"source_id": "capsule_aind_ophys_classifier_11",
+					"type": "capsule",
+					"name": "aind-ophys-classifier",
+					"source_path": "*/*/*data_process.json",
+					"collect": true
+				},
+				{
 					"id": "qOcbSv7kqKYwuBGw",
 					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
@@ -164,13 +172,31 @@
 				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
 				"name": "aind-ophys-nwb",
 				"slug": "9383700",
-				"version": 12
+				"version": 15
 			},
 			"resources": {
 				"cpus": 1,
 				"memory": 8
 			},
 			"inputs": [
+				{
+					"id": "b2LXI2V1fUlBWF9R",
+					"source_id": "capsule_aind_ophys_classifier_11",
+					"type": "capsule",
+					"name": "aind-ophys-classifier",
+					"source_path": "*/classification/*classification.h5",
+					"target_path": "processed",
+					"collect": true
+				},
+				{
+					"id": "yI77Te6i1FgK9CRg",
+					"source_id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset",
+					"source_path": "multiplane-ophys-test-asset/",
+					"target_path": "raw",
+					"collect": true
+				},
 				{
 					"id": "6x73VGngAO7qjU8r",
 					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
@@ -224,23 +250,6 @@
 					"source_path": "schemas/",
 					"target_path": "schemas",
 					"collect": true
-				},
-				{
-					"id": "yI77Te6i1FgK9CRg",
-					"source_id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
-					"type": "dataset",
-					"name": "multiplane-ophys-test-asset",
-					"source_path": "multiplane-ophys-test-asset/",
-					"target_path": "multiplane-ophys_raw",
-					"collect": true
-				},
-				{
-					"id": "Q779RY6uXlCP9JX6",
-					"source_id": "capsule_nwb_packaging_subject_11",
-					"type": "capsule",
-					"name": "NWB-Packaging-Subject-Capsule",
-					"target_path": "nwb",
-					"collect": true
 				}
 			],
 			"results": {
@@ -248,29 +257,45 @@
 			}
 		},
 		{
-			"name": "capsule_nwb_packaging_subject_11",
+			"name": "capsule_aind_ophys_classifier_11",
 			"capsule": {
-				"id": "bdc9f09f-0005-4d09-aaf9-7e82abd93f19",
-				"name": "NWB Packaging Subject",
-				"slug": "8198603",
-				"version": 3,
-				"app_panel": true
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7",
+				"name": "aind-ophys-classifier",
+				"slug": "0630574",
+				"version": 4
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 16,
+				"memory": 61,
+				"gpus": 1
 			},
 			"inputs": [
 				{
-					"id": "sMNMdyn5rb1GMbHI",
+					"id": "rAa4yfVVRm1cEDTT",
 					"source_id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 					"type": "dataset",
 					"name": "multiplane-ophys-test-asset",
-					"source_path": "multiplane-ophys-test-asset/",
-					"target_path": "ophys_session",
+					"source_path": "multiplane-ophys-test-asset/session.json",
 					"collect": true
+				},
+				{
+					"id": "SfFh9SgDMOUou3de",
+					"source_id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+					"type": "dataset",
+					"name": "2p_roi_classifier",
+					"source_path": "2p_roi_classifier/",
+					"collect": true
+				},
+				{
+					"id": "0hHpOHpwbfsTHA7Q",
+					"source_id": "capsule_aind_ophys_extraction_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction"
 				}
-			]
+			],
+			"results": {
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
+			}
 		}
 	]
 }
