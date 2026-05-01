@@ -387,6 +387,34 @@
 			"results": {
 				"id": "4a698b5c-f5f6-4671-8234-dc728d049a68"
 			}
+		},
+		{
+			"name": "capsule_aind_ophys_collect_previous_results_13",
+			"capsule": {
+				"id": "09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df",
+				"name": "aind-ophys-collect-previous-results",
+				"slug": "3273600",
+				"commit": "297e61eba9301967df9d9f76462ab478c76069ee",
+				"image_tag": "73e4b4a9f76196821214ded980f3c9de",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "xI8POa9wdJeLxVUz",
+					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset_results",
+					"source_path": "multiplane-ophys-test-asset_results/",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df"
+			}
 		}
 	]
 }

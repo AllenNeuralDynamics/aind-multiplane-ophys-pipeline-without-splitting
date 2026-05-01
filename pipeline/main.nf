@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:948f8063bce4571392be90560a3da4d33383fa694f431be797a2eac6f1358bad
+// hash:sha256:7a0663e2cf32b1c0e680c2a7f06fc16f36211e3603977eda7693c4e41de4dfb4
 
 nextflow.enable.dsl = 1
 
@@ -35,6 +35,7 @@ multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_26 = channe
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_27 = channel.create()
 capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_28 = channel.create()
 capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_29 = channel.create()
+multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_30 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/", type: 'any')
 
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_4 {
@@ -409,6 +410,55 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	cd capsule/code
 	chmod +x run
 	./run ${params.capsule_aind_ophys_quality_control_aggregator_12_args}
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-collect-previous-results
+process capsule_aind_ophys_collect_previous_results_13 {
+	tag 'capsule-3273600'
+	container "$REGISTRY_HOST/capsule/09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df:73e4b4a9f76196821214ded980f3c9de"
+
+	cpus 1
+	memory '7.5 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data' from multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_30.collect()
+
+	output:
+	path 'capsule/results/*'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df
+	export CO_CPUS=1
+	export CO_MEMORY=8053063680
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3273600.git" capsule-repo
+	else
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3273600.git" capsule-repo
+	fi
+	git -C capsule-repo checkout 297e61eba9301967df9d9f76462ab478c76069ee --quiet
+	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run ${params.capsule_aind_ophys_collect_previous_results_13_args}
 
 	echo "[${task.tag}] completed!"
 	"""

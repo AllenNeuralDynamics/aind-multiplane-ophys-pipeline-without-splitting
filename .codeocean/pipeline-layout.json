@@ -189,6 +189,16 @@
 			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_pipeline_processing_metadata_aggregator_9",
 			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
+		},
+		{
+			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_ophys_collect_previous_results_13",
+			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+			"target": "capsule_aind_ophys_collect_previous_results_13"
+		},
+		{
+			"id": "xy-edge__capsule_aind_ophys_collect_previous_results_13-results",
+			"source": "capsule_aind_ophys_collect_previous_results_13",
+			"target": "results"
 		}
 	],
 	"nodes": [
@@ -320,9 +330,21 @@
 			},
 			"selected": false,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df"
+			},
+			"id": "capsule_aind_ophys_collect_previous_results_13",
+			"position": {
+				"x": 11.87626515292169,
+				"y": 1716.557285620876
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1777662785089,
+	"timestamp": 1777666595493,
 	"viewport": {
 		"x": 166.57948183841182,
 		"y": -274.5011085828707,
