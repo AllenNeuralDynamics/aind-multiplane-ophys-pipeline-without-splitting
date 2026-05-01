@@ -184,6 +184,11 @@
 			"selected": false,
 			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
 			"target": "capsule_aind_ophys_quality_control_aggregator_12"
+		},
+		{
+			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		}
 	],
 	"nodes": [
@@ -317,7 +322,7 @@
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1777661589897,
+	"timestamp": 1777662785089,
 	"viewport": {
 		"x": 166.57948183841182,
 		"y": -274.5011085828707,

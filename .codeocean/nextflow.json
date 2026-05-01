@@ -122,6 +122,22 @@
 			},
 			"inputs": [
 				{
+					"id": "cjALoNSbJBfrIeUT",
+					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset_results",
+					"source_path": "multiplane-ophys-test-asset_results/*/decrosstalk/*data_process.json",
+					"collect": true
+				},
+				{
+					"id": "mMuW7HTagVwjZH1k",
+					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset_results",
+					"source_path": "multiplane-ophys-test-asset_results/*/motion_correction/*data_process.json",
+					"collect": true
+				},
+				{
 					"id": "eYw4OmXsnYY97jbm",
 					"source_id": "capsule_aind_ophys_classifier_11",
 					"type": "capsule",
