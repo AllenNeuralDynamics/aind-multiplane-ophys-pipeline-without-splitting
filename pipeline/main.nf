@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e9f8a63829e471748af4757e4a720b6114429b224d76af657c2d9d22e6eb3565
+// hash:sha256:5b71e4144fffb4ef2bed34207af97652db54c954fafbd9aee60de642f247b9e8
 
 nextflow.enable.dsl = 1
 
@@ -26,6 +26,13 @@ capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_nwb_10_17 = channel.create
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_nwb_10_18 = channel.create()
 multiplane_ophys_test_asset_to_aind_ophys_classifier_19 = channel.fromPath(params.multiplane_ophys_test_asset_url + "/session.json", type: 'any')
 capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_classifier_11_20 = channel.create()
+multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_21 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/motion_correction/*.json", type: 'any')
+multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_22 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/movie_qc/*.json", type: 'any')
+multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_23 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/classification/*.png", type: 'any')
+multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_24 = channel.fromPath(params.multiplane_ophys_test_asset_url + "/*.json", type: 'any')
+capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_25 = channel.create()
+capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_26 = channel.create()
+capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27 = channel.create()
 
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_4 {
@@ -47,6 +54,7 @@ process capsule_aind_ophys_extraction_4 {
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_extraction_4_to_capsule_aind_pipeline_processing_metadata_aggregator_9_10
 	path 'capsule/results/*/extraction/*.h5' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_nwb_10_17
 	path 'capsule/results/*' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_classifier_11_20
+	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_26
 
 	script:
 	"""
@@ -150,6 +158,7 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 	path 'capsule/results/*'
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_pipeline_processing_metadata_aggregator_9_9
 	path 'capsule/results/*/events/*.h5' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_nwb_10_18
+	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_25
 
 	script:
 	"""
@@ -311,6 +320,7 @@ process capsule_aind_ophys_classifier_11 {
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_classifier_11_to_capsule_aind_pipeline_processing_metadata_aggregator_9_7
 	path 'capsule/results/*/classification/*classification.h5' into capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_nwb_10_12
 	path 'capsule/results/*'
+	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27
 
 	script:
 	"""
@@ -341,6 +351,60 @@ process capsule_aind_ophys_classifier_11 {
 	cd capsule/code
 	chmod +x run
 	./run
+
+	echo "[${task.tag}] completed!"
+	"""
+}
+
+// capsule - aind-ophys-quality-control-aggregator
+process capsule_aind_ophys_quality_control_aggregator_12 {
+	tag 'capsule-4044810'
+	container "$REGISTRY_HOST/published/4a698b5c-f5f6-4671-8234-dc728d049a68:v10"
+
+	cpus 1
+	memory '7.5 GB'
+
+	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+
+	input:
+	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_21.collect()
+	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_22.collect()
+	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_23.collect()
+	path 'capsule/data/' from multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_24.collect()
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_25.collect()
+	path 'capsule/data/' from capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_26.collect()
+	path 'capsule/data/' from capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27.collect()
+
+	output:
+	path 'capsule/results/*'
+
+	script:
+	"""
+	#!/usr/bin/env bash
+	set -e
+
+	export CO_CAPSULE_ID=4a698b5c-f5f6-4671-8234-dc728d049a68
+	export CO_CPUS=1
+	export CO_MEMORY=8053063680
+
+	mkdir -p capsule
+	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
+	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
+	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
+
+	echo "[${task.tag}] cloning git repo..."
+	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
+		git -c credential.helper= clone --filter=tree:0 --branch v10.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4044810.git" capsule-repo
+	else
+		git -c credential.helper= clone --branch v10.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4044810.git" capsule-repo
+	fi
+	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
+	rm -rf capsule-repo
+
+	echo "[${task.tag}] running capsule..."
+	cd capsule/code
+	chmod +x run
+	./run ${params.capsule_aind_ophys_quality_control_aggregator_12_args}
 
 	echo "[${task.tag}] completed!"
 	"""

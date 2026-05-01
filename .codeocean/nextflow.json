@@ -296,6 +296,81 @@
 			"results": {
 				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
 			}
+		},
+		{
+			"name": "capsule_aind_ophys_quality_control_aggregator_12",
+			"capsule": {
+				"id": "4a698b5c-f5f6-4671-8234-dc728d049a68",
+				"name": "aind-ophys-quality-control-aggregator",
+				"slug": "4044810",
+				"version": 10,
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 1,
+				"memory": 8
+			},
+			"inputs": [
+				{
+					"id": "5Xgq4oHJcA419VUZ",
+					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset_results",
+					"source_path": "multiplane-ophys-test-asset_results/*/motion_correction/*.json",
+					"collect": true
+				},
+				{
+					"id": "yZKrC8m19A35a0Xt",
+					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset_results",
+					"source_path": "multiplane-ophys-test-asset_results/*/movie_qc/*.json",
+					"collect": true
+				},
+				{
+					"id": "lmmpWOrcaQSYCw4O",
+					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset_results",
+					"source_path": "multiplane-ophys-test-asset_results/*/classification/*.png",
+					"collect": true
+				},
+				{
+					"id": "nouCddoGsIUrNbhS",
+					"source_id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset",
+					"source_path": "multiplane-ophys-test-asset/*.json",
+					"collect": true
+				},
+				{
+					"id": "VFAdGPplfH8vDqZy",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
+					"source_path": "*/*/*.json",
+					"collect": true
+				},
+				{
+					"id": "KjUqQSLKfYCAdVcF",
+					"source_id": "capsule_aind_ophys_extraction_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction",
+					"source_path": "*/*/*.json",
+					"collect": true
+				},
+				{
+					"id": "4XdBGu4wds73RrcZ",
+					"source_id": "capsule_aind_ophys_classifier_11",
+					"type": "capsule",
+					"name": "aind-ophys-classifier",
+					"source_path": "*/*/*.json",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "4a698b5c-f5f6-4671-8234-dc728d049a68"
+			}
 		}
 	]
 }
