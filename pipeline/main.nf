@@ -1,12 +1,12 @@
 #!/usr/bin/env nextflow
-// hash:sha256:45bcd643ef23d33d655ffaffbcb4b856d8d2daa389c59986079ffd82daf92e71
+// hash:sha256:01f45d6d9c61eb9c5a6e7ae339bb4f0ee45e3e11e3ef03a047008b31e476aadd
 
 nextflow.enable.dsl = 1
 
 params.multiplane_ophys_test_asset_results_url = 's3://aind-scratch-data/pipeline-test-assets/multiplane-ophys-test-asset_results'
 params.multiplane_ophys_test_asset_url = 's3://aind-scratch-data/pipeline-test-assets/multiplane-ophys-test-asset'
 
-multiplane_ophys_test_asset_results_to_aind_ophys_extraction_1 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/V*/decrosstalk/*decrosstalk.h5", type: 'any')
+multiplane_ophys_test_asset_results_to_aind_ophys_extraction_1 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/V*", type: 'any')
 multiplane_ophys_test_asset_to_aind_ophys_extraction_2 = channel.fromPath(params.multiplane_ophys_test_asset_url + "/*.json", type: 'any')
 multiplane_ophys_test_asset_to_aind_ophys_dff_3 = channel.fromPath(params.multiplane_ophys_test_asset_url + "/*.json", type: 'any')
 capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_dff_5_4 = channel.create()
@@ -183,7 +183,7 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 // capsule - aind-pipeline-processing-metadata-aggregator
 process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	tag 'capsule-8250608'
-	container "$REGISTRY_HOST/published/d51df783-d892-4304-a129-238a9baea72a:v2"
+	container "$REGISTRY_HOST/published/d51df783-d892-4304-a129-238a9baea72a:v6"
 
 	cpus 1
 	memory '7.5 GB'
@@ -215,9 +215,9 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v2.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
+		git -c credential.helper= clone --branch v6.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8250608.git" capsule-repo
 	fi
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
@@ -225,7 +225,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --processor_full_name "Arielle Leon" --copy-ancillary-files True
+	./run --processor_full_name "Arielle Leon" --aggregate_quality_control 0
 
 	echo "[${task.tag}] completed!"
 	"""

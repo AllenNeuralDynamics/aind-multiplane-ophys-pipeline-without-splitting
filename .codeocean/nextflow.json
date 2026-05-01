@@ -20,7 +20,7 @@
 					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
 					"type": "dataset",
 					"name": "multiplane-ophys-test-asset_results",
-					"source_path": "multiplane-ophys-test-asset_results/V*/decrosstalk/*decrosstalk.h5"
+					"source_path": "multiplane-ophys-test-asset_results/V*"
 				},
 				{
 					"id": "jcSsLnYjxwWWXdxz",
@@ -106,13 +106,13 @@
 				"id": "d51df783-d892-4304-a129-238a9baea72a",
 				"name": "aind-pipeline-processing-metadata-aggregator",
 				"slug": "8250608",
-				"version": 2,
+				"version": 6,
 				"arguments": [
 					"--processor_full_name",
 					"\"Arielle",
 					"Leon\"",
-					"--copy-ancillary-files",
-					"True"
+					"--aggregate_quality_control",
+					"0"
 				],
 				"app_panel": true
 			},
