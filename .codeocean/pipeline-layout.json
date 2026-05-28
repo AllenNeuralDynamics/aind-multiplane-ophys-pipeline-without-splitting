@@ -128,9 +128,8 @@
 			"target": "results"
 		},
 		{
-			"id": "xy-edge__35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb-capsule_aind_ophys_classifier_11",
-			"selected": false,
-			"source": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+			"id": "xy-edge__57a10c5f-468f-4bb2-b3c6-7f4a80efa8ae-capsule_aind_ophys_classifier_11",
+			"source": "57a10c5f-468f-4bb2-b3c6-7f4a80efa8ae",
 			"target": "capsule_aind_ophys_classifier_11"
 		},
 		{
@@ -311,15 +310,6 @@
 			"type": "capsule"
 		},
 		{
-			"id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
-			"position": {
-				"x": -110.68737789968078,
-				"y": 847.3142431690682
-			},
-			"selected": false,
-			"type": "dataset"
-		},
-		{
 			"data": {
 				"capsule_id": "4a698b5c-f5f6-4671-8234-dc728d049a68"
 			},
@@ -342,12 +332,15 @@
 			},
 			"selected": true,
 			"type": "capsule"
+		},
+		{
+			"id": "57a10c5f-468f-4bb2-b3c6-7f4a80efa8ae",
+			"position": {
+				"x": -110.68737789968078,
+				"y": 847.3142431690682
+			},
+			"type": "dataset"
 		}
 	],
-	"timestamp": 1777666595493,
-	"viewport": {
-		"x": 166.57948183841182,
-		"y": -274.5011085828707,
-		"zoom": 0.5406176166426129
-	}
+	"timestamp": 1780007383101
 }

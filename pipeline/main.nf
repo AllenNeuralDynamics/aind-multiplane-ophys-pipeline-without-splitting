@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:7a0663e2cf32b1c0e680c2a7f06fc16f36211e3603977eda7693c4e41de4dfb4
+// hash:sha256:d61ecb4510e4b98a2a79e7f8f6681abdf43cff66ff25d00b8b24bf399732ee4b
 
 nextflow.enable.dsl = 1
 
@@ -341,7 +341,7 @@ process capsule_aind_ophys_classifier_11 {
 	mkdir -p capsule/results && ln -s \$PWD/capsule/results /results
 	mkdir -p capsule/scratch && ln -s \$PWD/capsule/scratch /scratch
 
-	ln -s "/tmp/data/2p_roi_classifier" "capsule/data/2p_roi_classifier" # id: 35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb
+	ln -s "/tmp/data/2p_roi_classifier" "capsule/data/2p_roi_classifier" # id: 57a10c5f-468f-4bb2-b3c6-7f4a80efa8ae
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
