@@ -53,7 +53,6 @@
 		},
 		{
 			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_dff_5",
-			"selected": false,
 			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
 			"target": "capsule_aind_ophys_dff_5"
 		},
@@ -65,7 +64,6 @@
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_pipeline_processing_metadata_aggregator_9",
-			"selected": false,
 			"source": "capsule_aind_ophys_dff_5",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
@@ -221,18 +219,6 @@
 		},
 		{
 			"data": {
-				"capsule_id": "85987e27-601c-4863-811b-71e5b4bdea37"
-			},
-			"id": "capsule_aind_ophys_dff_5",
-			"position": {
-				"x": 541.3981290844249,
-				"y": 989.3476638345539
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
 				"capsule_id": "c6394aab-0db7-47b2-90ba-864866d6755e"
 			},
 			"id": "capsule_aind_ophys_oasis_event_detection_8",
@@ -340,7 +326,19 @@
 				"y": 847.3142431690682
 			},
 			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "67c14c62-8eeb-49b0-bf09-d9c247754395"
+			},
+			"id": "capsule_aind_ophys_dff_5",
+			"position": {
+				"x": 541.3981290844249,
+				"y": 989.3476638345539
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1780007383101
+	"timestamp": 1780344248986
 }

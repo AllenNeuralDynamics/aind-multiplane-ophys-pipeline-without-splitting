@@ -38,10 +38,9 @@
 		{
 			"name": "capsule_aind_ophys_dff_5",
 			"capsule": {
-				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
+				"id": "67c14c62-8eeb-49b0-bf09-d9c247754395",
 				"name": "aind-ophys-dff",
-				"slug": "6574773",
-				"version": 5,
+				"slug": "3040821",
 				"app_panel": true
 			},
 			"resources": {
@@ -65,7 +64,7 @@
 				}
 			],
 			"results": {
-				"id": "85987e27-601c-4863-811b-71e5b4bdea37"
+				"id": "67c14c62-8eeb-49b0-bf09-d9c247754395"
 			}
 		},
 		{
