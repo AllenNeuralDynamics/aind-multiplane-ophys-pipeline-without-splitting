@@ -41,6 +41,8 @@
 				"id": "67c14c62-8eeb-49b0-bf09-d9c247754395",
 				"name": "aind-ophys-dff",
 				"slug": "3040821",
+				"commit": "43e8dd8371f48fd02ccd307093c0c2bd1e2d7619",
+				"image_tag": "410bb4a4e1037a2e09c6b9510a0c067d",
 				"app_panel": true
 			},
 			"resources": {

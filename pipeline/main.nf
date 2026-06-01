@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:36e24e814c1de351dc550d0dcb45ad4bf7e79aa0d64eec94698214cfb37cd692
+// hash:sha256:672ef7ade1fa0eab0e818ddfcdcf80321b16ddfe42c34ad6578b4b53a2cfbc53
 
 nextflow.enable.dsl = 1
 
@@ -94,7 +94,7 @@ process capsule_aind_ophys_extraction_4 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_5 {
 	tag 'capsule-3040821'
-	container "$REGISTRY_HOST/capsule/67c14c62-8eeb-49b0-bf09-d9c247754395"
+	container "$REGISTRY_HOST/capsule/67c14c62-8eeb-49b0-bf09-d9c247754395:410bb4a4e1037a2e09c6b9510a0c067d"
 
 	cpus 4
 	memory '30 GB'
@@ -131,6 +131,7 @@ process capsule_aind_ophys_dff_5 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3040821.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 43e8dd8371f48fd02ccd307093c0c2bd1e2d7619 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
