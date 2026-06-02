@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:672ef7ade1fa0eab0e818ddfcdcf80321b16ddfe42c34ad6578b4b53a2cfbc53
+// hash:sha256:64859f821e99720f54edefefbfd6405c97a790c685907917f76be78444f4ad2a
 
 nextflow.enable.dsl = 1
 
@@ -138,7 +138,7 @@ process capsule_aind_ophys_dff_5 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_dff_5_args}
+	./run --method=triexp
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -244,7 +244,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --processor_full_name "Arielle Leon" --aggregate_quality_control 0
+	./run --processor_full_name "Sean McCulloch" --aggregate_quality_control 0 --modality "pophys" --pipeline_version 1
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -459,7 +459,7 @@ process capsule_aind_ophys_collect_previous_results_13 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_collect_previous_results_13_args}
+	./run --copy 1
 
 	echo "[${task.tag}] completed!"
 	"""

@@ -43,6 +43,9 @@
 				"slug": "3040821",
 				"commit": "43e8dd8371f48fd02ccd307093c0c2bd1e2d7619",
 				"image_tag": "410bb4a4e1037a2e09c6b9510a0c067d",
+				"arguments": [
+					"--method=triexp"
+				],
 				"app_panel": true
 			},
 			"resources": {
@@ -110,10 +113,14 @@
 				"version": 6,
 				"arguments": [
 					"--processor_full_name",
-					"\"Arielle",
-					"Leon\"",
+					"\"Sean",
+					"McCulloch\"",
 					"--aggregate_quality_control",
-					"0"
+					"0",
+					"--modality",
+					"\"pophys\"",
+					"--pipeline_version",
+					"1"
 				],
 				"app_panel": true
 			},
@@ -397,6 +404,10 @@
 				"slug": "3273600",
 				"commit": "297e61eba9301967df9d9f76462ab478c76069ee",
 				"image_tag": "73e4b4a9f76196821214ded980f3c9de",
+				"arguments": [
+					"--copy",
+					"1"
+				],
 				"app_panel": true
 			},
 			"resources": {
