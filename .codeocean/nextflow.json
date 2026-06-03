@@ -406,7 +406,7 @@
 				"image_tag": "73e4b4a9f76196821214ded980f3c9de",
 				"arguments": [
 					"--copy",
-					"1"
+					"\"true\""
 				],
 				"app_panel": true
 			},

@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:64859f821e99720f54edefefbfd6405c97a790c685907917f76be78444f4ad2a
+// hash:sha256:c0ffc0fe6ebb889013e5b5bbe8d154ed43cb83fcb0af35f6f6b4934640c1ecd3
 
 nextflow.enable.dsl = 1
 
@@ -459,7 +459,7 @@ process capsule_aind_ophys_collect_previous_results_13 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --copy 1
+	./run --copy "true"
 
 	echo "[${task.tag}] completed!"
 	"""
