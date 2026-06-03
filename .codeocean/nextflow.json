@@ -402,7 +402,7 @@
 				"id": "09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df",
 				"name": "aind-ophys-collect-previous-results",
 				"slug": "3273600",
-				"commit": "297e61eba9301967df9d9f76462ab478c76069ee",
+				"commit": "57060f3049ec3cdec03270ead64753818bb16b85",
 				"image_tag": "73e4b4a9f76196821214ded980f3c9de",
 				"arguments": [
 					"--copy",
