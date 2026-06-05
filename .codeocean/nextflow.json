@@ -7,6 +7,8 @@
 				"id": "6bf7aa8d-3613-412a-bc5c-4d48f4887687",
 				"name": "Copy of aind-ophys-extraction",
 				"slug": "0414263",
+				"commit": "0c17c239e6f2c58d548c7b442d633779b2038ac1",
+				"image_tag": "3d1825eb10b984d0abe5c9b8ebd0175f",
 				"app_panel": true
 			},
 			"resources": {
@@ -198,8 +200,8 @@
 				"version": 15
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 4,
+				"memory": 32
 			},
 			"inputs": [
 				{

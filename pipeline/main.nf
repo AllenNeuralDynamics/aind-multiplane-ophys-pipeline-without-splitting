@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:075d77a003b7dba3dd70ac286ea54104df460e63b0e2280fa0d0ef463ab07780
+// hash:sha256:a83072975ba6cff34610ff1e32f4ffd81164755ce94695d0fc9627e2cb0c015d
 
 nextflow.enable.dsl = 1
 
@@ -40,7 +40,7 @@ multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_30 = 
 // capsule - Copy of aind-ophys-extraction
 process capsule_copy_of_aind_ophys_extraction_4 {
 	tag 'capsule-0414263'
-	container "$REGISTRY_HOST/capsule/6bf7aa8d-3613-412a-bc5c-4d48f4887687"
+	container "$REGISTRY_HOST/capsule/6bf7aa8d-3613-412a-bc5c-4d48f4887687:3d1825eb10b984d0abe5c9b8ebd0175f"
 
 	cpus 1
 	memory '7.5 GB'
@@ -79,6 +79,7 @@ process capsule_copy_of_aind_ophys_extraction_4 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0414263.git" capsule-repo
 	fi
+	git -C capsule-repo checkout 0c17c239e6f2c58d548c7b442d633779b2038ac1 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -255,8 +256,8 @@ process capsule_aind_ophys_nwb_10 {
 	tag 'capsule-9383700'
 	container "$REGISTRY_HOST/published/8c436e95-8607-4752-8e9f-2b62024f9326:v15"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 4
+	memory '30 GB'
 
 	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
@@ -278,8 +279,8 @@ process capsule_aind_ophys_nwb_10 {
 	set -e
 
 	export CO_CAPSULE_ID=8c436e95-8607-4752-8e9f-2b62024f9326
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=4
+	export CO_MEMORY=32212254720
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
