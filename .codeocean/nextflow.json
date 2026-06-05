@@ -2,18 +2,17 @@
 	"version": 1,
 	"processes": [
 		{
-			"name": "capsule_copy_of_aind_ophys_extraction_4",
+			"name": "capsule_aind_ophys_extraction_4",
 			"capsule": {
-				"id": "6bf7aa8d-3613-412a-bc5c-4d48f4887687",
-				"name": "Copy of aind-ophys-extraction",
-				"slug": "0414263",
-				"commit": "0c17c239e6f2c58d548c7b442d633779b2038ac1",
-				"image_tag": "3d1825eb10b984d0abe5c9b8ebd0175f",
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
+				"name": "aind-ophys-extraction",
+				"slug": "9911715",
+				"version": 13,
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 4,
+				"memory": 120
 			},
 			"inputs": [
 				{
@@ -33,7 +32,7 @@
 				}
 			],
 			"results": {
-				"id": "6bf7aa8d-3613-412a-bc5c-4d48f4887687"
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			}
 		},
 		{
@@ -64,9 +63,9 @@
 				},
 				{
 					"id": "hyHgztQOJgik27r3",
-					"source_id": "capsule_copy_of_aind_ophys_extraction_4",
+					"source_id": "capsule_aind_ophys_extraction_4",
 					"type": "capsule",
-					"name": "Copy of aind-ophys-extraction"
+					"name": "aind-ophys-extraction"
 				}
 			],
 			"results": {
@@ -172,9 +171,9 @@
 				},
 				{
 					"id": "WMmpNaASauV1vBy0",
-					"source_id": "capsule_copy_of_aind_ophys_extraction_4",
+					"source_id": "capsule_aind_ophys_extraction_4",
 					"type": "capsule",
-					"name": "Copy of aind-ophys-extraction",
+					"name": "aind-ophys-extraction",
 					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
@@ -251,9 +250,9 @@
 				},
 				{
 					"id": "E6C3Vqd94sE51LAS",
-					"source_id": "capsule_copy_of_aind_ophys_extraction_4",
+					"source_id": "capsule_aind_ophys_extraction_4",
 					"type": "capsule",
-					"name": "Copy of aind-ophys-extraction",
+					"name": "aind-ophys-extraction",
 					"source_path": "*/extraction/*.h5",
 					"target_path": "processed",
 					"collect": true
@@ -313,9 +312,9 @@
 				},
 				{
 					"id": "0hHpOHpwbfsTHA7Q",
-					"source_id": "capsule_copy_of_aind_ophys_extraction_4",
+					"source_id": "capsule_aind_ophys_extraction_4",
 					"type": "capsule",
-					"name": "Copy of aind-ophys-extraction"
+					"name": "aind-ophys-extraction"
 				}
 			],
 			"results": {
@@ -378,9 +377,9 @@
 				},
 				{
 					"id": "KjUqQSLKfYCAdVcF",
-					"source_id": "capsule_copy_of_aind_ophys_extraction_4",
+					"source_id": "capsule_aind_ophys_extraction_4",
 					"type": "capsule",
-					"name": "Copy of aind-ophys-extraction",
+					"name": "aind-ophys-extraction",
 					"source_path": "*/*/*.json",
 					"collect": true
 				},
