@@ -27,14 +27,14 @@
 			"target": "capsule_aind_ophys_extraction_4"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_oasis_event_detection_8",
-			"source": "capsule_aind_ophys_dff_5",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_refactor_5-capsule_aind_ophys_oasis_event_detection_8",
+			"source": "capsule_aind_ophys_dff_refactor_5",
 			"target": "capsule_aind_ophys_oasis_event_detection_8"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_ophys_dff_5",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_ophys_dff_refactor_5",
 			"source": "capsule_aind_ophys_extraction_4",
-			"target": "capsule_aind_ophys_dff_5"
+			"target": "capsule_aind_ophys_dff_refactor_5"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-results",
@@ -42,8 +42,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-results",
-			"source": "capsule_aind_ophys_dff_5",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_refactor_5-results",
+			"source": "capsule_aind_ophys_dff_refactor_5",
 			"target": "results"
 		},
 		{
@@ -52,9 +52,9 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_dff_5",
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_dff_refactor_5",
 			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
-			"target": "capsule_aind_ophys_dff_5"
+			"target": "capsule_aind_ophys_dff_refactor_5"
 		},
 		{
 			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_oasis_event_detection_8",
@@ -63,8 +63,8 @@
 			"target": "capsule_aind_ophys_oasis_event_detection_8"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_pipeline_processing_metadata_aggregator_9",
-			"source": "capsule_aind_ophys_dff_5",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_refactor_5-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "capsule_aind_ophys_dff_refactor_5",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
@@ -99,8 +99,8 @@
 			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
-			"id": "xy-edge__capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_10",
-			"source": "capsule_aind_ophys_dff_5",
+			"id": "xy-edge__capsule_aind_ophys_dff_refactor_5-capsule_aind_ophys_nwb_10",
+			"source": "capsule_aind_ophys_dff_refactor_5",
 			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
@@ -315,18 +315,6 @@
 		},
 		{
 			"data": {
-				"capsule_id": "67c14c62-8eeb-49b0-bf09-d9c247754395"
-			},
-			"id": "capsule_aind_ophys_dff_5",
-			"position": {
-				"x": 541.3981290844249,
-				"y": 989.3476638345539
-			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
 				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			},
 			"id": "capsule_aind_ophys_extraction_4",
@@ -336,7 +324,19 @@
 			},
 			"selected": true,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "d8579707-149e-44a1-826a-fc5a984951f4"
+			},
+			"id": "capsule_aind_ophys_dff_refactor_5",
+			"position": {
+				"x": 541.3981290844249,
+				"y": 989.3476638345539
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1780699325023
+	"timestamp": 1780943424071
 }

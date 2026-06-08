@@ -36,16 +36,11 @@
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_dff_5",
+			"name": "capsule_aind_ophys_dff_refactor_5",
 			"capsule": {
-				"id": "67c14c62-8eeb-49b0-bf09-d9c247754395",
-				"name": "aind-ophys-dff",
-				"slug": "3040821",
-				"commit": "43e8dd8371f48fd02ccd307093c0c2bd1e2d7619",
-				"image_tag": "410bb4a4e1037a2e09c6b9510a0c067d",
-				"arguments": [
-					"--method=triexp"
-				],
+				"id": "d8579707-149e-44a1-826a-fc5a984951f4",
+				"name": "aind-ophys-dff (refactor)",
+				"slug": "0909984",
 				"app_panel": true
 			},
 			"resources": {
@@ -69,7 +64,7 @@
 				}
 			],
 			"results": {
-				"id": "67c14c62-8eeb-49b0-bf09-d9c247754395"
+				"id": "d8579707-149e-44a1-826a-fc5a984951f4"
 			}
 		},
 		{
@@ -95,9 +90,9 @@
 				},
 				{
 					"id": "SJJnE102UEhisUEo",
-					"source_id": "capsule_aind_ophys_dff_5",
+					"source_id": "capsule_aind_ophys_dff_refactor_5",
 					"type": "capsule",
-					"name": "aind-ophys-dff"
+					"name": "aind-ophys-dff (refactor)"
 				}
 			],
 			"results": {
@@ -155,9 +150,9 @@
 				},
 				{
 					"id": "qOcbSv7kqKYwuBGw",
-					"source_id": "capsule_aind_ophys_dff_5",
+					"source_id": "capsule_aind_ophys_dff_refactor_5",
 					"type": "capsule",
-					"name": "aind-ophys-dff",
+					"name": "aind-ophys-dff (refactor)",
 					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
@@ -241,9 +236,9 @@
 				},
 				{
 					"id": "jvGfTPyeEH5H7VNc",
-					"source_id": "capsule_aind_ophys_dff_5",
+					"source_id": "capsule_aind_ophys_dff_refactor_5",
 					"type": "capsule",
-					"name": "aind-ophys-dff",
+					"name": "aind-ophys-dff (refactor)",
 					"source_path": "*/dff/*.h5",
 					"target_path": "processed",
 					"collect": true
