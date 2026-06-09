@@ -325,6 +325,9 @@
 				"name": "aind-ophys-quality-control-aggregator",
 				"slug": "4044810",
 				"version": 10,
+				"arguments": [
+					"--image_type=\"multiplane\""
+				],
 				"app_panel": true
 			},
 			"resources": {

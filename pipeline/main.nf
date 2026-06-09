@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:e6118ec4ef9c4e39209e6c2a59b77fd6baaab8477ddbc44575a6650f9ba2a913
+// hash:sha256:06e902fd188008f0b7b0dc9df52bb386ba619a34f6d99630b6ddd514d7bb8d38
 
 nextflow.enable.dsl = 1
 
@@ -421,7 +421,7 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_quality_control_aggregator_12_args}
+	./run --image_type="multiplane"
 
 	echo "[${task.tag}] completed!"
 	"""
