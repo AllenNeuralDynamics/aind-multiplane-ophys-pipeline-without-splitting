@@ -39,8 +39,10 @@
 			"name": "capsule_aind_ophys_dff_refactor_5",
 			"capsule": {
 				"id": "d8579707-149e-44a1-826a-fc5a984951f4",
-				"name": "aind-ophys-dff (refactor)",
+				"name": "aind-ophys-dff",
 				"slug": "0909984",
+				"commit": "3cef2ed4e1b2573fb31b964756f10fb490229aaa",
+				"image_tag": "31e4981d4a3ae5c750d59110c20bbebc",
 				"app_panel": true
 			},
 			"resources": {
@@ -347,27 +349,19 @@
 					"collect": true
 				},
 				{
-					"id": "lmmpWOrcaQSYCw4O",
-					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
-					"type": "dataset",
-					"name": "multiplane-ophys-test-asset_results",
-					"source_path": "multiplane-ophys-test-asset_results/*/classification/*.png",
-					"collect": true
-				},
-				{
-					"id": "nouCddoGsIUrNbhS",
-					"source_id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
-					"type": "dataset",
-					"name": "multiplane-ophys-test-asset",
-					"source_path": "multiplane-ophys-test-asset/*.json",
-					"collect": true
-				},
-				{
-					"id": "VFAdGPplfH8vDqZy",
-					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"id": "4XdBGu4wds73RrcZ",
+					"source_id": "capsule_aind_ophys_classifier_11",
 					"type": "capsule",
-					"name": "aind-ophys-oasis-event-detection",
+					"name": "aind-ophys-classifier",
 					"source_path": "*/*/*.json",
+					"collect": true
+				},
+				{
+					"id": "PdTST8uls7gBAOKw",
+					"source_id": "capsule_aind_ophys_classifier_11",
+					"type": "capsule",
+					"name": "aind-ophys-classifier",
+					"source_path": "*/*/*.png",
 					"collect": true
 				},
 				{
@@ -379,11 +373,35 @@
 					"collect": true
 				},
 				{
-					"id": "4XdBGu4wds73RrcZ",
-					"source_id": "capsule_aind_ophys_classifier_11",
+					"id": "UpkPJpOXz5kyF3En",
+					"source_id": "capsule_aind_ophys_extraction_4",
 					"type": "capsule",
-					"name": "aind-ophys-classifier",
+					"name": "aind-ophys-extraction",
+					"source_path": "*/*/*.png",
+					"collect": true
+				},
+				{
+					"id": "VFAdGPplfH8vDqZy",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
 					"source_path": "*/*/*.json",
+					"collect": true
+				},
+				{
+					"id": "LuWedbJnAy7c8bSe",
+					"source_id": "capsule_aind_ophys_oasis_event_detection_8",
+					"type": "capsule",
+					"name": "aind-ophys-oasis-event-detection",
+					"source_path": "*/*/plots/",
+					"collect": true
+				},
+				{
+					"id": "nouCddoGsIUrNbhS",
+					"source_id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
+					"type": "dataset",
+					"name": "multiplane-ophys-test-asset",
+					"source_path": "multiplane-ophys-test-asset/*.json",
 					"collect": true
 				}
 			],
