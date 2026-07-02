@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:f8bb454a68bf02d88057152670546f591bad4e162d20950b3aebf421dff3a178
+// hash:sha256:caae6a92dcce992e02ef747ec91563d0389029ba796dcda7e1176ff5eb1cc004
 
 nextflow.enable.dsl = 1
 
@@ -44,7 +44,7 @@ multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34 = 
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_4 {
 	tag 'capsule-4741792'
-	container "$REGISTRY_HOST/capsule/de321c38-38e0-4473-8113-583f3c9b599d"
+	container "$REGISTRY_HOST/capsule/de321c38-38e0-4473-8113-583f3c9b599d:80f38ea771f7594e03ab3e72e163ea41"
 
 	cpus 8
 	memory '60 GB'
@@ -84,6 +84,7 @@ process capsule_aind_ophys_extraction_4 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4741792.git" capsule-repo
 	fi
+	git -C capsule-repo checkout dee4043b8277a77b33d24c4eea79bc43211046c4 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -99,7 +100,7 @@ process capsule_aind_ophys_extraction_4 {
 // capsule - aind-ophys-dff
 process capsule_aind_ophys_dff_refactor_5 {
 	tag 'capsule-0909984'
-	container "$REGISTRY_HOST/capsule/d8579707-149e-44a1-826a-fc5a984951f4:d3f26338f771dd9cd372880ced8cc1cb"
+	container "$REGISTRY_HOST/capsule/d8579707-149e-44a1-826a-fc5a984951f4:d3daf8aedf0dd114b6155d3b332dd598"
 
 	cpus 4
 	memory '30 GB'
@@ -136,7 +137,7 @@ process capsule_aind_ophys_dff_refactor_5 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0909984.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 470b8b48bc72d7fa3c6c98abdc3d514a2a52d5a7 --quiet
+	git -C capsule-repo checkout 66e74adc8e45b53c11aea13e4a440505aff3ca45 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -259,7 +260,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 // capsule - aind-ophys-nwb
 process capsule_aind_ophys_nwb_10 {
 	tag 'capsule-8027167'
-	container "$REGISTRY_HOST/capsule/6d44d104-d48f-49cb-812a-6863ed173f20"
+	container "$REGISTRY_HOST/capsule/6d44d104-d48f-49cb-812a-6863ed173f20:466aaed9906174f53dfb7f418b882ce5"
 
 	cpus 1
 	memory '7.5 GB'
@@ -300,6 +301,7 @@ process capsule_aind_ophys_nwb_10 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8027167.git" capsule-repo
 	fi
+	git -C capsule-repo checkout ec50c2d595f74c73c6a94971cac9eddf12f0c28f --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
@@ -315,7 +317,7 @@ process capsule_aind_ophys_nwb_10 {
 // capsule - aind-ophys-classifier
 process capsule_aind_ophys_classifier_11 {
 	tag 'capsule-0178583'
-	container "$REGISTRY_HOST/capsule/6b3d9d79-bdd0-463b-9369-23c828127be8"
+	container "$REGISTRY_HOST/capsule/6b3d9d79-bdd0-463b-9369-23c828127be8:19e8ff918ddf0f11d365865b6c427c03"
 
 	cpus 16
 	memory '60 GB'
@@ -357,6 +359,7 @@ process capsule_aind_ophys_classifier_11 {
 	else
 		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0178583.git" capsule-repo
 	fi
+	git -C capsule-repo checkout ae1e38e0de5467a06aea09e04ebfe30c32db5b7e --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
