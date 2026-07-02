@@ -4,15 +4,13 @@
 		{
 			"name": "capsule_aind_ophys_extraction_4",
 			"capsule": {
-				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
+				"id": "de321c38-38e0-4473-8113-583f3c9b599d",
 				"name": "aind-ophys-extraction",
-				"slug": "9911715",
-				"version": 13,
-				"app_panel": true
+				"slug": "4741792"
 			},
 			"resources": {
-				"cpus": 4,
-				"memory": 120
+				"cpus": 8,
+				"memory": 64
 			},
 			"inputs": [
 				{
@@ -32,7 +30,7 @@
 				}
 			],
 			"results": {
-				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
+				"id": "de321c38-38e0-4473-8113-583f3c9b599d"
 			}
 		},
 		{
@@ -194,14 +192,13 @@
 		{
 			"name": "capsule_aind_ophys_nwb_10",
 			"capsule": {
-				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
+				"id": "6d44d104-d48f-49cb-812a-6863ed173f20",
 				"name": "aind-ophys-nwb",
-				"slug": "9383700",
-				"version": 15
+				"slug": "8027167"
 			},
 			"resources": {
-				"cpus": 4,
-				"memory": 32
+				"cpus": 1,
+				"memory": 8
 			},
 			"inputs": [
 				{
@@ -278,20 +275,20 @@
 				}
 			],
 			"results": {
-				"id": "8c436e95-8607-4752-8e9f-2b62024f9326"
+				"id": "6d44d104-d48f-49cb-812a-6863ed173f20"
 			}
 		},
 		{
 			"name": "capsule_aind_ophys_classifier_11",
 			"capsule": {
-				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7",
+				"id": "6b3d9d79-bdd0-463b-9369-23c828127be8",
 				"name": "aind-ophys-classifier",
-				"slug": "0630574",
-				"version": 4
+				"slug": "0178583",
+				"app_panel": true
 			},
 			"resources": {
 				"cpus": 16,
-				"memory": 61,
+				"memory": 64,
 				"gpus": 1
 			},
 			"inputs": [
@@ -319,7 +316,7 @@
 				}
 			],
 			"results": {
-				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
+				"id": "6b3d9d79-bdd0-463b-9369-23c828127be8"
 			}
 		},
 		{

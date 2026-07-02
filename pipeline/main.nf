@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0b972298bfe2b9eaafc3253b903fa824e22fc1ea439cb8d03b2165689f1b5c86
+// hash:sha256:72f078ce6de9aa7d244e95bc107998b1a84c534bd6c1ab21237c8f6c689dba58
 
 nextflow.enable.dsl = 1
 
@@ -43,11 +43,11 @@ multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34 = 
 
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_4 {
-	tag 'capsule-9911715'
-	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v13"
+	tag 'capsule-4741792'
+	container "$REGISTRY_HOST/capsule/de321c38-38e0-4473-8113-583f3c9b599d"
 
-	cpus 4
-	memory '120 GB'
+	cpus 8
+	memory '60 GB'
 
 	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
@@ -69,9 +69,9 @@ process capsule_aind_ophys_extraction_4 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
-	export CO_CPUS=4
-	export CO_MEMORY=128849018880
+	export CO_CAPSULE_ID=de321c38-38e0-4473-8113-583f3c9b599d
+	export CO_CPUS=8
+	export CO_MEMORY=64424509440
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -80,9 +80,9 @@ process capsule_aind_ophys_extraction_4 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v13.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4741792.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v13.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9911715.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4741792.git" capsule-repo
 	fi
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
@@ -90,7 +90,7 @@ process capsule_aind_ophys_extraction_4 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_extraction_4_args}
+	./run
 
 	echo "[${task.tag}] completed!"
 	"""
@@ -258,11 +258,11 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 
 // capsule - aind-ophys-nwb
 process capsule_aind_ophys_nwb_10 {
-	tag 'capsule-9383700'
-	container "$REGISTRY_HOST/published/8c436e95-8607-4752-8e9f-2b62024f9326:v15"
+	tag 'capsule-8027167'
+	container "$REGISTRY_HOST/capsule/6d44d104-d48f-49cb-812a-6863ed173f20"
 
-	cpus 4
-	memory '30 GB'
+	cpus 1
+	memory '7.5 GB'
 
 	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
@@ -283,9 +283,9 @@ process capsule_aind_ophys_nwb_10 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=8c436e95-8607-4752-8e9f-2b62024f9326
-	export CO_CPUS=4
-	export CO_MEMORY=32212254720
+	export CO_CAPSULE_ID=6d44d104-d48f-49cb-812a-6863ed173f20
+	export CO_CPUS=1
+	export CO_MEMORY=8053063680
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -296,9 +296,9 @@ process capsule_aind_ophys_nwb_10 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v15.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8027167.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v15.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-9383700.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-8027167.git" capsule-repo
 	fi
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
@@ -314,11 +314,11 @@ process capsule_aind_ophys_nwb_10 {
 
 // capsule - aind-ophys-classifier
 process capsule_aind_ophys_classifier_11 {
-	tag 'capsule-0630574'
-	container "$REGISTRY_HOST/published/3819d125-9f03-48f3-ba09-b44c84a7a2c7:v4"
+	tag 'capsule-0178583'
+	container "$REGISTRY_HOST/capsule/6b3d9d79-bdd0-463b-9369-23c828127be8"
 
 	cpus 16
-	memory '61 GB'
+	memory '60 GB'
 	accelerator 1
 	label 'gpu'
 
@@ -340,9 +340,9 @@ process capsule_aind_ophys_classifier_11 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=3819d125-9f03-48f3-ba09-b44c84a7a2c7
+	export CO_CAPSULE_ID=6b3d9d79-bdd0-463b-9369-23c828127be8
 	export CO_CPUS=16
-	export CO_MEMORY=65498251264
+	export CO_MEMORY=64424509440
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -353,9 +353,9 @@ process capsule_aind_ophys_classifier_11 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0630574.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0178583.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v4.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0630574.git" capsule-repo
+		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0178583.git" capsule-repo
 	fi
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
@@ -363,7 +363,7 @@ process capsule_aind_ophys_classifier_11 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run
+	./run ${params.capsule_aind_ophys_classifier_11_args}
 
 	echo "[${task.tag}] completed!"
 	"""
