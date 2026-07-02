@@ -43,6 +43,10 @@
 				"slug": "0909984",
 				"commit": "470b8b48bc72d7fa3c6c98abdc3d514a2a52d5a7",
 				"image_tag": "d3f26338f771dd9cd372880ced8cc1cb",
+				"arguments": [
+					"--sigma_annealing_steps",
+					"1"
+				],
 				"app_panel": true
 			},
 			"resources": {
