@@ -298,18 +298,6 @@
 		},
 		{
 			"data": {
-				"capsule_id": "6b3d9d79-bdd0-463b-9369-23c828127be8"
-			},
-			"id": "capsule_aind_ophys_classifier_11",
-			"position": {
-				"x": -93.12780437203307,
-				"y": 1020.6977445965206
-			},
-			"selected": true,
-			"type": "capsule"
-		},
-		{
-			"data": {
 				"capsule_id": "de321c38-38e0-4473-8113-583f3c9b599d"
 			},
 			"id": "capsule_aind_ophys_extraction_4",
@@ -331,7 +319,19 @@
 			},
 			"selected": true,
 			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
+			},
+			"id": "capsule_aind_ophys_classifier_11",
+			"position": {
+				"x": -93.12780437203307,
+				"y": 1020.6977445965206
+			},
+			"selected": true,
+			"type": "capsule"
 		}
 	],
-	"timestamp": 1783029097281
+	"timestamp": 1783369866068
 }

@@ -285,11 +285,10 @@
 		{
 			"name": "capsule_aind_ophys_classifier_11",
 			"capsule": {
-				"id": "6b3d9d79-bdd0-463b-9369-23c828127be8",
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7",
 				"name": "aind-ophys-classifier",
-				"slug": "0178583",
-				"commit": "ae1e38e0de5467a06aea09e04ebfe30c32db5b7e",
-				"image_tag": "19e8ff918ddf0f11d365865b6c427c03",
+				"slug": "0630574",
+				"version": 5,
 				"app_panel": true
 			},
 			"resources": {
@@ -322,7 +321,7 @@
 				}
 			],
 			"results": {
-				"id": "6b3d9d79-bdd0-463b-9369-23c828127be8"
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
 			}
 		},
 		{
