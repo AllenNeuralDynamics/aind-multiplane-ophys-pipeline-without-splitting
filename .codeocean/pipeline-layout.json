@@ -231,7 +231,7 @@
 				"x": 298.047109316479,
 				"y": 1609.3809001538898
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -302,8 +302,8 @@
 			},
 			"id": "capsule_aind_ophys_extraction_4",
 			"position": {
-				"x": 209.47538082431024,
-				"y": 962.3809194793726
+				"x": 206.80871415764355,
+				"y": 973.0475861460393
 			},
 			"selected": true,
 			"type": "capsule"
@@ -317,7 +317,7 @@
 				"x": 771.6903969423602,
 				"y": 1482.895859336988
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -329,9 +329,14 @@
 				"x": -93.12780437203307,
 				"y": 1020.6977445965206
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1783369866068
+	"timestamp": 1783370115790,
+	"viewport": {
+		"x": 388,
+		"y": -430,
+		"zoom": 0.75
+	}
 }

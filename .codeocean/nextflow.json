@@ -45,7 +45,7 @@
 				"image_tag": "d3daf8aedf0dd114b6155d3b332dd598",
 				"arguments": [
 					"--sigma_anneal_steps",
-					"1"
+					"4"
 				],
 				"app_panel": true
 			},

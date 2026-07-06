@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:0c98ac2bad061bf4f952e2bbecf64ca45d70ab1876ed06f67964947bd32315a2
+// hash:sha256:bbbbbc342b991101f3626ba6196255b2d11bd3b6c6e2761a293d20a4a8b7598c
 
 nextflow.enable.dsl = 1
 
@@ -144,7 +144,7 @@ process capsule_aind_ophys_dff_refactor_5 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --sigma_anneal_steps 1
+	./run --sigma_anneal_steps 4
 
 	echo "[${task.tag}] completed!"
 	"""
