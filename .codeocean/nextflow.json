@@ -197,7 +197,7 @@
 				"id": "6d44d104-d48f-49cb-812a-6863ed173f20",
 				"name": "aind-ophys-nwb",
 				"slug": "8027167",
-				"commit": "ec50c2d595f74c73c6a94971cac9eddf12f0c28f",
+				"commit": "42db22dc75dfeb66ff9f2ccaaff5a687bd028257",
 				"image_tag": "466aaed9906174f53dfb7f418b882ce5"
 			},
 			"resources": {
