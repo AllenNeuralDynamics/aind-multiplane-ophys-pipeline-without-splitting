@@ -8,6 +8,10 @@
 				"name": "aind-ophys-extraction",
 				"slug": "9911715",
 				"version": 14,
+				"arguments": [
+					"--init",
+					"mean"
+				],
 				"app_panel": true
 			},
 			"resources": {

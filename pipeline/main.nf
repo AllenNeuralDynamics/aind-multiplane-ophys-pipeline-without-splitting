@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:47db94eb121ccd94e0f8e8db52962b2c44fe527846130acea6b7621081ec5fdb
+// hash:sha256:59328dddc6a23c7c15d658da2ce70e789a1748ed09d1df0c6e5957dad1f864c4
 
 nextflow.enable.dsl = 1
 
@@ -90,7 +90,7 @@ process capsule_aind_ophys_extraction_4 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run ${params.capsule_aind_ophys_extraction_4_args}
+	./run --init mean
 
 	echo "[${task.tag}] completed!"
 	"""
