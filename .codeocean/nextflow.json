@@ -195,8 +195,8 @@
 				"version": 16
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
@@ -331,8 +331,8 @@
 				"app_panel": true
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 2,
+				"memory": 16
 			},
 			"inputs": [
 				{
@@ -452,6 +452,47 @@
 			],
 			"results": {
 				"id": "cdeeff5d-d8d4-46ee-aa38-bb358b89dc18"
+			}
+		},
+		{
+			"name": "capsule_aind_ophys_classifier_14",
+			"capsule": {
+				"id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7",
+				"name": "aind-ophys-classifier",
+				"slug": "0630574",
+				"version": 3
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 61,
+				"gpus": 1
+			},
+			"inputs": [
+				{
+					"id": "bsGoqpyvGI3Gqjuf",
+					"source_id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
+					"type": "dataset",
+					"name": "ophys_mount",
+					"source_path": "ophys_mount/session.json",
+					"collect": true
+				},
+				{
+					"id": "sQryKwgBv8J5QuU2",
+					"source_id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+					"type": "dataset",
+					"name": "2p_roi_classifier",
+					"source_path": "2p_roi_classifier/",
+					"collect": true
+				},
+				{
+					"id": "uZhzhGIwldAR3RLT",
+					"source_id": "capsule_aind_ophys_extraction_suite_2_p_4",
+					"type": "capsule",
+					"name": "aind-ophys-extraction-suite2p"
+				}
+			],
+			"results": {
+				"id": "76a903cf-ce80-4367-8153-f17842748ab9"
 			}
 		}
 	]

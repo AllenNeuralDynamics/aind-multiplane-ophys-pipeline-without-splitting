@@ -232,7 +232,7 @@
 				"x": 298.047109316479,
 				"y": 1609.3809001538898
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -332,6 +332,14 @@
 			},
 			"selected": true,
 			"type": "capsule"
+		},
+		{
+			"id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+			"position": {
+				"x": -630,
+				"y": -135
+			},
+			"type": "dataset"
 		}
 	],
 	"timestamp": 1783620113791,
