@@ -181,13 +181,14 @@
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
-			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_ophys_collect_previous_results_13",
+			"id": "xy-edge__2cd3cc54-0f19-452e-8ddf-ddb28ece106c-capsule_aind_ophys_collect_previous_results_14",
+			"selected": false,
 			"source": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
-			"target": "capsule_aind_ophys_collect_previous_results_13"
+			"target": "capsule_aind_ophys_collect_previous_results_14"
 		},
 		{
-			"id": "xy-edge__capsule_aind_ophys_collect_previous_results_13-results",
-			"source": "capsule_aind_ophys_collect_previous_results_13",
+			"id": "xy-edge__capsule_aind_ophys_collect_previous_results_14-results",
+			"source": "capsule_aind_ophys_collect_previous_results_14",
 			"target": "results"
 		}
 	],
@@ -265,18 +266,6 @@
 			"type": "capsule"
 		},
 		{
-			"data": {
-				"capsule_id": "09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df"
-			},
-			"id": "capsule_aind_ophys_collect_previous_results_13",
-			"position": {
-				"x": 24.667624766905654,
-				"y": 1667.5237404339375
-			},
-			"selected": true,
-			"type": "capsule"
-		},
-		{
 			"id": "57a10c5f-468f-4bb2-b3c6-7f4a80efa8ae",
 			"position": {
 				"x": -110.68737789968078,
@@ -305,7 +294,7 @@
 				"x": 541.3981290844249,
 				"y": 989.3476638345539
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -317,7 +306,7 @@
 				"x": 206.80871415764355,
 				"y": 973.0475861460393
 			},
-			"selected": true,
+			"selected": false,
 			"type": "capsule"
 		},
 		{
@@ -329,9 +318,26 @@
 				"x": 771.6903969423602,
 				"y": 1482.895859336988
 			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "cdeeff5d-d8d4-46ee-aa38-bb358b89dc18"
+			},
+			"id": "capsule_aind_ophys_collect_previous_results_14",
+			"position": {
+				"x": 76.39889597031419,
+				"y": 1647.1389188637122
+			},
 			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1783618499162
+	"timestamp": 1783620113791,
+	"viewport": {
+		"x": 617.0118049405374,
+		"y": -404.7155810069861,
+		"zoom": 0.4863274737061427
+	}
 }

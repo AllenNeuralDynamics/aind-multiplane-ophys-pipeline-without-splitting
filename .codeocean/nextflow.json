@@ -429,17 +429,12 @@
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_collect_previous_results_13",
+			"name": "capsule_aind_ophys_collect_previous_results_14",
 			"capsule": {
-				"id": "09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df",
+				"id": "cdeeff5d-d8d4-46ee-aa38-bb358b89dc18",
 				"name": "aind-ophys-collect-previous-results",
-				"slug": "3273600",
-				"commit": "57060f3049ec3cdec03270ead64753818bb16b85",
-				"image_tag": "73e4b4a9f76196821214ded980f3c9de",
-				"arguments": [
-					"--copy",
-					"\"true\""
-				],
+				"slug": "0590305",
+				"version": 1,
 				"app_panel": true
 			},
 			"resources": {
@@ -448,16 +443,15 @@
 			},
 			"inputs": [
 				{
-					"id": "xI8POa9wdJeLxVUz",
+					"id": "cAXjVNucgTzVSyIS",
 					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
 					"type": "dataset",
 					"name": "multiplane-ophys-test-asset_results",
-					"source_path": "multiplane-ophys-test-asset_results/",
-					"collect": true
+					"source_path": "multiplane-ophys-test-asset_results/"
 				}
 			],
 			"results": {
-				"id": "09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df"
+				"id": "cdeeff5d-d8d4-46ee-aa38-bb358b89dc18"
 			}
 		}
 	]

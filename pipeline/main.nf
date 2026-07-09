@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:a58d350e9625291f87c826819a6e4c8694b6a88d8fcdd46c747e40a204e93cba
+// hash:sha256:47db94eb121ccd94e0f8e8db52962b2c44fe527846130acea6b7621081ec5fdb
 
 nextflow.enable.dsl = 1
 
@@ -39,7 +39,7 @@ capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_31 = channel.create()
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_32 = channel.create()
 multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_33 = channel.fromPath(params.multiplane_ophys_test_asset_url + "/*.json", type: 'any')
-multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/", type: 'any')
+multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*", type: 'any')
 
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_4 {
@@ -427,9 +427,9 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 }
 
 // capsule - aind-ophys-collect-previous-results
-process capsule_aind_ophys_collect_previous_results_13 {
-	tag 'capsule-3273600'
-	container "$REGISTRY_HOST/capsule/09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df:73e4b4a9f76196821214ded980f3c9de"
+process capsule_aind_ophys_collect_previous_results_14 {
+	tag 'capsule-0590305'
+	container "$REGISTRY_HOST/published/cdeeff5d-d8d4-46ee-aa38-bb358b89dc18:v1"
 
 	cpus 1
 	memory '7.5 GB'
@@ -437,7 +437,7 @@ process capsule_aind_ophys_collect_previous_results_13 {
 	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data' from multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34.collect()
+	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34
 
 	output:
 	path 'capsule/results/*'
@@ -447,7 +447,7 @@ process capsule_aind_ophys_collect_previous_results_13 {
 	#!/usr/bin/env bash
 	set -e
 
-	export CO_CAPSULE_ID=09cccbe2-01bf-4ea6-8f3d-bc2b7d8125df
+	export CO_CAPSULE_ID=cdeeff5d-d8d4-46ee-aa38-bb358b89dc18
 	export CO_CPUS=1
 	export CO_MEMORY=8053063680
 
@@ -458,18 +458,17 @@ process capsule_aind_ophys_collect_previous_results_13 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3273600.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0590305.git" capsule-repo
 	else
-		git -c credential.helper= clone "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-3273600.git" capsule-repo
+		git -c credential.helper= clone --branch v1.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-0590305.git" capsule-repo
 	fi
-	git -C capsule-repo checkout 57060f3049ec3cdec03270ead64753818bb16b85 --quiet
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo
 
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --copy "true"
+	./run ${params.capsule_aind_ophys_collect_previous_results_14_args}
 
 	echo "[${task.tag}] completed!"
 	"""
