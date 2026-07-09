@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:d61ecb4510e4b98a2a79e7f8f6681abdf43cff66ff25d00b8b24bf399732ee4b
+// hash:sha256:3ca725cc7a0c17c533440dbcc8ecffbd45b43a6700162f7aec28c2a38378bd3d
 
 nextflow.enable.dsl = 1
 
@@ -42,10 +42,10 @@ process capsule_aind_ophys_extraction_4 {
 	tag 'capsule-9911715'
 	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v13"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 4
+	memory '120 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_extraction_1
@@ -65,8 +65,8 @@ process capsule_aind_ophys_extraction_4 {
 	set -e
 
 	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=4
+	export CO_MEMORY=128849018880
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -99,7 +99,7 @@ process capsule_aind_ophys_dff_5 {
 	cpus 4
 	memory '30 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from multiplane_ophys_test_asset_to_aind_ophys_dff_3.collect()
@@ -148,10 +148,10 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 	tag 'capsule-8957649'
 	container "$REGISTRY_HOST/published/c6394aab-0db7-47b2-90ba-864866d6755e:v10"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 4
+	memory '120 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from multiplane_ophys_test_asset_to_aind_ophys_oasis_event_detection_5.collect()
@@ -169,8 +169,8 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 	set -e
 
 	export CO_CAPSULE_ID=c6394aab-0db7-47b2-90ba-864866d6755e
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=4
+	export CO_MEMORY=128849018880
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -203,7 +203,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	cpus 1
 	memory '7.5 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_pipeline_processing_metadata_aggregator_7.collect()
@@ -257,7 +257,7 @@ process capsule_aind_ophys_nwb_10 {
 	cpus 1
 	memory '7.5 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/processed/' from capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_nwb_10_14.collect()
@@ -315,7 +315,7 @@ process capsule_aind_ophys_classifier_11 {
 	accelerator 1
 	label 'gpu'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from multiplane_ophys_test_asset_to_aind_ophys_classifier_21.collect()
@@ -369,7 +369,7 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	cpus 1
 	memory '7.5 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_23.collect()
@@ -423,7 +423,7 @@ process capsule_aind_ophys_collect_previous_results_13 {
 	cpus 1
 	memory '7.5 GB'
 
-	publishDir "$RESULTS_PATH", saveAs: { filename -> new File(filename).getName() }
+	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
 	path 'capsule/data' from multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_30.collect()
