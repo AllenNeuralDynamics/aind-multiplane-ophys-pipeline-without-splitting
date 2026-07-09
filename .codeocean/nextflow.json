@@ -451,7 +451,8 @@
 					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
 					"type": "dataset",
 					"name": "multiplane-ophys-test-asset_results",
-					"source_path": "multiplane-ophys-test-asset_results/"
+					"source_path": "multiplane-ophys-test-asset_results/",
+					"collect": true
 				}
 			],
 			"results": {

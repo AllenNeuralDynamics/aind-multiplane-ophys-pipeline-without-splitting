@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:59328dddc6a23c7c15d658da2ce70e789a1748ed09d1df0c6e5957dad1f864c4
+// hash:sha256:b98bfdfa9c603eeccbf06e2c42f9de4c066d40536182eab2ef5403b1e06ca14c
 
 nextflow.enable.dsl = 1
 
@@ -39,7 +39,7 @@ capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_31 = channel.create()
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_32 = channel.create()
 multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_33 = channel.fromPath(params.multiplane_ophys_test_asset_url + "/*.json", type: 'any')
-multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*", type: 'any')
+multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/", type: 'any')
 
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_4 {
@@ -437,7 +437,7 @@ process capsule_aind_ophys_collect_previous_results_14 {
 	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34
+	path 'capsule/data' from multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34.collect()
 
 	output:
 	path 'capsule/results/*'
