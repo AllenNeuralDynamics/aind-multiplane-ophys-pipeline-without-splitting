@@ -16,7 +16,7 @@
 			},
 			"resources": {
 				"cpus": 4,
-				"memory": 32
+				"memory": 120
 			},
 			"inputs": [
 				{
@@ -81,8 +81,8 @@
 				"version": 10
 			},
 			"resources": {
-				"cpus": 1,
-				"memory": 8
+				"cpus": 4,
+				"memory": 120
 			},
 			"inputs": [
 				{

@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:9fbfd8de986db3ddca13ae21d3523fe4ef84697ab6ff8d5cecc04a3fb0318c1c
+// hash:sha256:21e21a57ca192b0ace742bce60a57d9883174aec812b8c499b0292ab7a9bcb3d
 
 nextflow.enable.dsl = 1
 
@@ -47,7 +47,7 @@ process capsule_aind_ophys_extraction_4 {
 	container "$REGISTRY_HOST/published/5e1d659c-e149-4a57-be83-12f5a448a0c9:v14"
 
 	cpus 4
-	memory '30 GB'
+	memory '120 GB'
 
 	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
@@ -71,7 +71,7 @@ process capsule_aind_ophys_extraction_4 {
 
 	export CO_CAPSULE_ID=5e1d659c-e149-4a57-be83-12f5a448a0c9
 	export CO_CPUS=4
-	export CO_MEMORY=32212254720
+	export CO_MEMORY=128849018880
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
@@ -153,8 +153,8 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 	tag 'capsule-8957649'
 	container "$REGISTRY_HOST/published/c6394aab-0db7-47b2-90ba-864866d6755e:v10"
 
-	cpus 1
-	memory '7.5 GB'
+	cpus 4
+	memory '120 GB'
 
 	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
@@ -175,8 +175,8 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 	set -e
 
 	export CO_CAPSULE_ID=c6394aab-0db7-47b2-90ba-864866d6755e
-	export CO_CPUS=1
-	export CO_MEMORY=8053063680
+	export CO_CPUS=4
+	export CO_MEMORY=128849018880
 
 	mkdir -p capsule
 	mkdir -p capsule/data && ln -s \$PWD/capsule/data /data
