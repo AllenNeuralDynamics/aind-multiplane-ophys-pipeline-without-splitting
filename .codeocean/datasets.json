@@ -2,12 +2,16 @@
 	"version": 1,
 	"attached_datasets": [
 		{
-			"id": "35d1284e-4dfa-4ac3-9ba8-5ea1ae2fdaeb",
+			"id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
+			"mount": "multiplane-ophys-test-asset_results"
+		},
+		{
+			"id": "57a10c5f-468f-4bb2-b3c6-7f4a80efa8ae",
 			"mount": "2p_roi_classifier"
 		},
 		{
-			"id": "60c2d29b-79c3-492a-a1ec-680d45174e91",
-			"mount": "ophys_mount"
+			"id": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
+			"mount": "multiplane-ophys-test-asset"
 		},
 		{
 			"id": "fb4b5cef-4505-4145-b8bd-e41d6863d7a9",
