@@ -4,15 +4,15 @@
 		{
 			"name": "capsule_aind_ophys_extraction_4",
 			"capsule": {
-				"id": "de321c38-38e0-4473-8113-583f3c9b599d",
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9",
 				"name": "aind-ophys-extraction",
-				"slug": "4741792",
-				"commit": "dee4043b8277a77b33d24c4eea79bc43211046c4",
-				"image_tag": "80f38ea771f7594e03ab3e72e163ea41"
+				"slug": "9911715",
+				"version": 14,
+				"app_panel": true
 			},
 			"resources": {
-				"cpus": 8,
-				"memory": 64
+				"cpus": 4,
+				"memory": 32
 			},
 			"inputs": [
 				{
@@ -32,21 +32,16 @@
 				}
 			],
 			"results": {
-				"id": "de321c38-38e0-4473-8113-583f3c9b599d"
+				"id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			}
 		},
 		{
-			"name": "capsule_aind_ophys_dff_refactor_5",
+			"name": "capsule_aind_ophys_dff_5",
 			"capsule": {
-				"id": "d8579707-149e-44a1-826a-fc5a984951f4",
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37",
 				"name": "aind-ophys-dff",
-				"slug": "0909984",
-				"commit": "66e74adc8e45b53c11aea13e4a440505aff3ca45",
-				"image_tag": "d3daf8aedf0dd114b6155d3b332dd598",
-				"arguments": [
-					"--sigma_anneal_steps",
-					"4"
-				],
+				"slug": "6574773",
+				"version": 6,
 				"app_panel": true
 			},
 			"resources": {
@@ -70,7 +65,7 @@
 				}
 			],
 			"results": {
-				"id": "d8579707-149e-44a1-826a-fc5a984951f4"
+				"id": "85987e27-601c-4863-811b-71e5b4bdea37"
 			}
 		},
 		{
@@ -96,9 +91,9 @@
 				},
 				{
 					"id": "SJJnE102UEhisUEo",
-					"source_id": "capsule_aind_ophys_dff_refactor_5",
+					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
-					"name": "aind-ophys-dff (refactor)"
+					"name": "aind-ophys-dff"
 				}
 			],
 			"results": {
@@ -156,9 +151,9 @@
 				},
 				{
 					"id": "qOcbSv7kqKYwuBGw",
-					"source_id": "capsule_aind_ophys_dff_refactor_5",
+					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
-					"name": "aind-ophys-dff (refactor)",
+					"name": "aind-ophys-dff",
 					"source_path": "*/*/*data_process.json",
 					"collect": true
 				},
@@ -194,11 +189,10 @@
 		{
 			"name": "capsule_aind_ophys_nwb_10",
 			"capsule": {
-				"id": "6d44d104-d48f-49cb-812a-6863ed173f20",
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326",
 				"name": "aind-ophys-nwb",
-				"slug": "8027167",
-				"commit": "42db22dc75dfeb66ff9f2ccaaff5a687bd028257",
-				"image_tag": "466aaed9906174f53dfb7f418b882ce5"
+				"slug": "9383700",
+				"version": 16
 			},
 			"resources": {
 				"cpus": 1,
@@ -243,9 +237,9 @@
 				},
 				{
 					"id": "jvGfTPyeEH5H7VNc",
-					"source_id": "capsule_aind_ophys_dff_refactor_5",
+					"source_id": "capsule_aind_ophys_dff_5",
 					"type": "capsule",
-					"name": "aind-ophys-dff (refactor)",
+					"name": "aind-ophys-dff",
 					"source_path": "*/dff/*.h5",
 					"target_path": "processed",
 					"collect": true
@@ -279,7 +273,7 @@
 				}
 			],
 			"results": {
-				"id": "6d44d104-d48f-49cb-812a-6863ed173f20"
+				"id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			}
 		},
 		{

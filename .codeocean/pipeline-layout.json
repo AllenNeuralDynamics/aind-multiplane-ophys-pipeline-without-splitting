@@ -27,14 +27,14 @@
 			"target": "capsule_aind_ophys_extraction_4"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_refactor_5-capsule_aind_ophys_oasis_event_detection_8",
-			"source": "capsule_aind_ophys_dff_refactor_5",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_ophys_oasis_event_detection_8",
+			"source": "capsule_aind_ophys_dff_5",
 			"target": "capsule_aind_ophys_oasis_event_detection_8"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_ophys_dff_refactor_5",
+			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-capsule_aind_ophys_dff_5",
 			"source": "capsule_aind_ophys_extraction_4",
-			"target": "capsule_aind_ophys_dff_refactor_5"
+			"target": "capsule_aind_ophys_dff_5"
 		},
 		{
 			"id": "reactflow__edge-capsule_aind_ophys_extraction_4-results",
@@ -42,8 +42,8 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_refactor_5-results",
-			"source": "capsule_aind_ophys_dff_refactor_5",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_5-results",
+			"source": "capsule_aind_ophys_dff_5",
 			"target": "results"
 		},
 		{
@@ -52,9 +52,9 @@
 			"target": "results"
 		},
 		{
-			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_dff_refactor_5",
+			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_dff_5",
 			"source": "eeee0903-0186-46c1-b7a9-6364ebeb82f7",
-			"target": "capsule_aind_ophys_dff_refactor_5"
+			"target": "capsule_aind_ophys_dff_5"
 		},
 		{
 			"id": "reactflow__edge-eeee0903-0186-46c1-b7a9-6364ebeb82f7-capsule_aind_ophys_oasis_event_detection_8",
@@ -63,8 +63,8 @@
 			"target": "capsule_aind_ophys_oasis_event_detection_8"
 		},
 		{
-			"id": "reactflow__edge-capsule_aind_ophys_dff_refactor_5-capsule_aind_pipeline_processing_metadata_aggregator_9",
-			"source": "capsule_aind_ophys_dff_refactor_5",
+			"id": "reactflow__edge-capsule_aind_ophys_dff_5-capsule_aind_pipeline_processing_metadata_aggregator_9",
+			"source": "capsule_aind_ophys_dff_5",
 			"target": "capsule_aind_pipeline_processing_metadata_aggregator_9"
 		},
 		{
@@ -98,8 +98,8 @@
 			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
-			"id": "xy-edge__capsule_aind_ophys_dff_refactor_5-capsule_aind_ophys_nwb_10",
-			"source": "capsule_aind_ophys_dff_refactor_5",
+			"id": "xy-edge__capsule_aind_ophys_dff_5-capsule_aind_ophys_nwb_10",
+			"source": "capsule_aind_ophys_dff_5",
 			"target": "capsule_aind_ophys_nwb_10"
 		},
 		{
@@ -270,10 +270,10 @@
 			},
 			"id": "capsule_aind_ophys_collect_previous_results_13",
 			"position": {
-				"x": 11.87626515292169,
-				"y": 1716.557285620876
+				"x": 24.667624766905654,
+				"y": 1667.5237404339375
 			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		},
 		{
@@ -286,19 +286,31 @@
 		},
 		{
 			"data": {
-				"capsule_id": "d8579707-149e-44a1-826a-fc5a984951f4"
+				"capsule_id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
 			},
-			"id": "capsule_aind_ophys_dff_refactor_5",
+			"id": "capsule_aind_ophys_classifier_11",
 			"position": {
-				"x": 541.3981290844249,
-				"y": 989.3476638345539
+				"x": -93.12780437203307,
+				"y": 1020.6977445965206
 			},
 			"selected": false,
 			"type": "capsule"
 		},
 		{
 			"data": {
-				"capsule_id": "de321c38-38e0-4473-8113-583f3c9b599d"
+				"capsule_id": "85987e27-601c-4863-811b-71e5b4bdea37"
+			},
+			"id": "capsule_aind_ophys_dff_5",
+			"position": {
+				"x": 541.3981290844249,
+				"y": 989.3476638345539
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "5e1d659c-e149-4a57-be83-12f5a448a0c9"
 			},
 			"id": "capsule_aind_ophys_extraction_4",
 			"position": {
@@ -310,33 +322,16 @@
 		},
 		{
 			"data": {
-				"capsule_id": "6d44d104-d48f-49cb-812a-6863ed173f20"
+				"capsule_id": "8c436e95-8607-4752-8e9f-2b62024f9326"
 			},
 			"id": "capsule_aind_ophys_nwb_10",
 			"position": {
 				"x": 771.6903969423602,
 				"y": 1482.895859336988
 			},
-			"selected": false,
-			"type": "capsule"
-		},
-		{
-			"data": {
-				"capsule_id": "3819d125-9f03-48f3-ba09-b44c84a7a2c7"
-			},
-			"id": "capsule_aind_ophys_classifier_11",
-			"position": {
-				"x": -93.12780437203307,
-				"y": 1020.6977445965206
-			},
-			"selected": false,
+			"selected": true,
 			"type": "capsule"
 		}
 	],
-	"timestamp": 1783370115790,
-	"viewport": {
-		"x": 388,
-		"y": -430,
-		"zoom": 0.75
-	}
+	"timestamp": 1783618499162
 }
