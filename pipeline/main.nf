@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:b98bfdfa9c603eeccbf06e2c42f9de4c066d40536182eab2ef5403b1e06ca14c
+// hash:sha256:9fbfd8de986db3ddca13ae21d3523fe4ef84697ab6ff8d5cecc04a3fb0318c1c
 
 nextflow.enable.dsl = 1
 
@@ -249,7 +249,7 @@ process capsule_aind_pipeline_processing_metadata_aggregator_9 {
 	echo "[${task.tag}] running capsule..."
 	cd capsule/code
 	chmod +x run
-	./run --processor_full_name "Sean McCulloch" --aggregate_quality_control 0 --modality "pophys" --pipeline_version 1
+	./run --processor_full_name "Sean McCulloch" --aggregate_quality_control 0 --modality "pophys" --pipeline_version 1 --pipeline_url "https://github.com/AllenNeuralDynamics/aind-multiplane-ophys-pipeline-without-splitting"
 
 	echo "[${task.tag}] completed!"
 	"""
