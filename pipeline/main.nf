@@ -1,5 +1,5 @@
 #!/usr/bin/env nextflow
-// hash:sha256:21e21a57ca192b0ace742bce60a57d9883174aec812b8c499b0292ab7a9bcb3d
+// hash:sha256:69b8b16d87b8f91a082f878587de67514b37634c297d063b49707327abc818f4
 
 nextflow.enable.dsl = 1
 
@@ -31,14 +31,14 @@ capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_classifier_11_22 = channel
 multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_23 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/motion_correction/*.json", type: 'any')
 multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_24 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/movie_qc/*.json", type: 'any')
 multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_25 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/decrosstalk/*.json", type: 'any')
+capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_26 = channel.create()
 capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27 = channel.create()
-capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_28 = channel.create()
+capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_28 = channel.create()
 capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_29 = channel.create()
-capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_30 = channel.create()
+capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_30 = channel.create()
 capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_31 = channel.create()
-capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_32 = channel.create()
-multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_33 = channel.fromPath(params.multiplane_ophys_test_asset_url + "/*.json", type: 'any')
-multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/", type: 'any')
+multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_32 = channel.fromPath(params.multiplane_ophys_test_asset_url + "/*.json", type: 'any')
+multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_33 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/", type: 'any')
 
 // capsule - aind-ophys-extraction
 process capsule_aind_ophys_extraction_4 {
@@ -60,8 +60,8 @@ process capsule_aind_ophys_extraction_4 {
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_extraction_4_to_capsule_aind_pipeline_processing_metadata_aggregator_9_12
 	path 'capsule/results/*/extraction/*.h5' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_nwb_10_19
 	path 'capsule/results/*' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_classifier_11_22
-	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_29
-	path 'capsule/results/*/*/*.png' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_30
+	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_28
+	path 'capsule/results/*/*/*.png' into capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_29
 
 	script:
 	"""
@@ -165,8 +165,8 @@ process capsule_aind_ophys_oasis_event_detection_8 {
 	path 'capsule/results/*'
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_pipeline_processing_metadata_aggregator_9_11
 	path 'capsule/results/*/events/*.h5' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_nwb_10_20
-	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_31
-	path 'capsule/results/*/*/plots/*' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_32
+	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_30
+	path 'capsule/results/*/*/plots/*' into capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_31
 
 	script:
 	"""
@@ -330,8 +330,8 @@ process capsule_aind_ophys_classifier_11 {
 	path 'capsule/results/*/*/*data_process.json' into capsule_aind_ophys_classifier_11_to_capsule_aind_pipeline_processing_metadata_aggregator_9_9
 	path 'capsule/results/*/classification/*classification.h5' into capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_nwb_10_14
 	path 'capsule/results/*'
-	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27
-	path 'capsule/results/*/*/*.png' into capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_28
+	path 'capsule/results/*/*/*.json' into capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_26
+	path 'capsule/results/*/*/*.png' into capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27
 
 	script:
 	"""
@@ -381,13 +381,13 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_23.collect()
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_24.collect()
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_25.collect()
+	path 'capsule/data/' from capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_26.collect()
 	path 'capsule/data/' from capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27.collect()
-	path 'capsule/data/' from capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_28.collect()
+	path 'capsule/data/' from capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_28.collect()
 	path 'capsule/data/' from capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_29.collect()
-	path 'capsule/data/' from capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_30.collect()
+	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_30.collect()
 	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_31.collect()
-	path 'capsule/data/' from capsule_aind_ophys_oasis_event_detection_8_to_capsule_aind_ophys_quality_control_aggregator_12_32.collect()
-	path 'capsule/data/' from multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_33.collect()
+	path 'capsule/data/' from multiplane_ophys_test_asset_to_aind_ophys_quality_control_aggregator_32.collect()
 
 	output:
 	path 'capsule/results/*'
@@ -435,7 +435,7 @@ process capsule_aind_ophys_collect_previous_results_14 {
 	publishDir "$RESULTS_PATH", mode: 'copy', saveAs: { filename -> new File(filename).getName() }
 
 	input:
-	path 'capsule/data' from multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_34.collect()
+	path 'capsule/data' from multiplane_ophys_test_asset_results_to_aind_ophys_collect_previous_results_33.collect()
 
 	output:
 	path 'capsule/results/*'
