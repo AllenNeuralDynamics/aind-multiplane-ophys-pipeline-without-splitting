@@ -31,7 +31,6 @@ capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_classifier_11_22 = channel
 multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_23 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/motion_correction/*.json", type: 'any')
 multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_24 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/movie_qc/*.json", type: 'any')
 multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_25 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/decrosstalk/*.json", type: 'any')
-multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_26 = channel.fromPath(params.multiplane_ophys_test_asset_results_url + "/*/decrosstalk/*.png", type: 'any')
 capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27 = channel.create()
 capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_28 = channel.create()
 capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_29 = channel.create()
@@ -371,7 +370,7 @@ process capsule_aind_ophys_classifier_11 {
 // capsule - aind-ophys-quality-control-aggregator
 process capsule_aind_ophys_quality_control_aggregator_12 {
 	tag 'capsule-4044810'
-	container "$REGISTRY_HOST/published/4a698b5c-f5f6-4671-8234-dc728d049a68:v10"
+	container "$REGISTRY_HOST/published/4a698b5c-f5f6-4671-8234-dc728d049a68:v12"
 
 	cpus 1
 	memory '7.5 GB'
@@ -382,7 +381,6 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_23.collect()
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_24.collect()
 	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_25.collect()
-	path 'capsule/data/' from multiplane_ophys_test_asset_results_to_aind_ophys_quality_control_aggregator_26.collect()
 	path 'capsule/data/' from capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_27.collect()
 	path 'capsule/data/' from capsule_aind_ophys_classifier_11_to_capsule_aind_ophys_quality_control_aggregator_12_28.collect()
 	path 'capsule/data/' from capsule_aind_ophys_extraction_4_to_capsule_aind_ophys_quality_control_aggregator_12_29.collect()
@@ -410,9 +408,9 @@ process capsule_aind_ophys_quality_control_aggregator_12 {
 
 	echo "[${task.tag}] cloning git repo..."
 	if [[ "\$(printf '%s\n' "2.20.0" "\$(git version | awk '{print \$3}')" | sort -V | head -n1)" = "2.20.0" ]]; then
-		git -c credential.helper= clone --filter=tree:0 --branch v10.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4044810.git" capsule-repo
+		git -c credential.helper= clone --filter=tree:0 --branch v12.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4044810.git" capsule-repo
 	else
-		git -c credential.helper= clone --branch v10.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4044810.git" capsule-repo
+		git -c credential.helper= clone --branch v12.0 "https://\$GIT_ACCESS_TOKEN@\$GIT_HOST/capsule-4044810.git" capsule-repo
 	fi
 	mv capsule-repo/code capsule/code && ln -s \$PWD/capsule/code /code
 	rm -rf capsule-repo

@@ -330,7 +330,7 @@
 				"id": "4a698b5c-f5f6-4671-8234-dc728d049a68",
 				"name": "aind-ophys-quality-control-aggregator",
 				"slug": "4044810",
-				"version": 10,
+				"version": 12,
 				"arguments": [
 					"--image_type=\"multiplane\""
 				],
@@ -363,14 +363,6 @@
 					"type": "dataset",
 					"name": "multiplane-ophys-test-asset_results",
 					"source_path": "multiplane-ophys-test-asset_results/*/decrosstalk/*.json",
-					"collect": true
-				},
-				{
-					"id": "1NW4IkpwVsdV6hdv",
-					"source_id": "2cd3cc54-0f19-452e-8ddf-ddb28ece106c",
-					"type": "dataset",
-					"name": "multiplane-ophys-test-asset_results",
-					"source_path": "multiplane-ophys-test-asset_results/*/decrosstalk/*.png",
 					"collect": true
 				},
 				{
